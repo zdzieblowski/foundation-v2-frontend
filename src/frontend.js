@@ -11,12 +11,6 @@ const front_port = 3000;
 
 front.get('/', asyncHandler(async (req, res) => {
 
-/*	let endpoint_scheme =  [
-				{'current': ['blocks','configuration','hashrate','metadata','miners','network','payments','ports','rounds','transactions','workers']},
-                        	{'historical': ['blocks','metadata','miners','network','payments','rounds','transactions','workers']},
-                        	{'combined': ['blocks','rounds']}
-                               ];
-*/
 	let endpoint_scheme =  {
 				'current': ['blocks','configuration','hashrate','metadata','miners','network','payments','ports','rounds','transactions','workers'],
                         	'historical': ['blocks','metadata','miners','network','payments','rounds','transactions','workers'],
@@ -33,16 +27,6 @@ front.get('/', asyncHandler(async (req, res) => {
 				result += `${url}<br><br>${JSON.stringify(data.body)}<hr>`;
 			}
 		}
-/*	for (let endpoints in Object.keys(endpoint_scheme)) {
-		for (let category in endpoint_scheme[endpoints]) {
-			for(let endpoint in endpoint_scheme[endpoints][category]) {
-				let url = `${api}evrmore/${category}/${endpoint_scheme[endpoints][category][endpoint]}`;
-				let response = await fetch(url);
-				let data = await response.json();
-				result += `${url}:<br><br>${data}<hr>`;
-			}
-		}
-	}*/
 	res.send(result);
 }));
 
