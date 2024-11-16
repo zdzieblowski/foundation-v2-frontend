@@ -1,2 +1,2 @@
-# foundation-v2-frontend
-Front-end for Blinkhash Foundation (V2)
+# Foundation Front-end
+Simple front-end for Blinkhash's Foundation Server (V2)

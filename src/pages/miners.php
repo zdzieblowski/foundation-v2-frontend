@@ -1,1 +1,5 @@
 MINERS
+
+<?php
+  echo(getData(''));
+?>

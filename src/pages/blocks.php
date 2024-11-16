@@ -1,1 +1,5 @@
 BLOCKS
+
+<?php
+  echo(getData(''));
+?>

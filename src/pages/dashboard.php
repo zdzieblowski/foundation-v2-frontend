@@ -1,1 +1,5 @@
 DASH
+
+<?php
+  echo(getData(''));
+?>

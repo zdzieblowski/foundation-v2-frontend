@@ -1,1 +1,5 @@
 HOME
+
+<?php
+  echo(getData(''));
+?>

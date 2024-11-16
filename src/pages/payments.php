@@ -1,1 +1,5 @@
 PAYMENTS
+
+<?php
+  echo(getData(''));
+?>
