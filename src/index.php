@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php echo($configuration['page_title']);?></title>
+    <title><?php echo($configuration['page_title']); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo($configuration['page_stylesheet']);?>"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,explore,group,home,payments,star_rate,volunteer_activism"/>
     <meta charset="UTF-8"/>
@@ -15,7 +15,7 @@
     <div class="header">
       <div class="width_limit header_grid">
         <div class="header_top">
-          <img src="img/zp.svg" height="24"/>
+          <img src="<?php echo($configuration['page_logotype']); ?>" height="33"/>
           <div class="header_top_right">
             <div class="header_info"><?php echo($configuration['pool_name']); ?></div>
             <div><a class="header_navi_item" href="/"><span class="material-symbols-outlined">home</span></a></div>
@@ -65,7 +65,7 @@
     <div class="footer">
       <div class="width_limit footer_content">
         <div class="footer_content_left">
-          <a href="/"><?php echo($_SERVER['SERVER_NAME']); ?></a> / <?php echo($_GET['page']); ?>
+          2024+ &copy; <a href="/"><?php echo($_SERVER['SERVER_NAME']); ?></a>
         </div>
         <div class="footer_content_right">
           <div><a href="?page=donate"><span class="material-symbols-outlined">volunteer_activism</span></a></div>

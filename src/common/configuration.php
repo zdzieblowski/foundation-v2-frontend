@@ -3,7 +3,8 @@
 $configuration = [
 
   'page_title' => 'foundation-v2-frontend',
-  'page_stylesheet' => 'css/default/styles.css',
+  'page_stylesheet' => 'themes/tms/styles.css',
+  'page_logotype' => 'themes/tms/logo.svg',
 
   'pool_name' => 'evrmore',
   'pool_donation_currency' => 'Evrmore',
