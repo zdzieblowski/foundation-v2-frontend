@@ -1,5 +1,1 @@
-DASH
-
-<?php
-  echo(getData(''));
-?>
+<div class="text_header">Dashboard</div>
