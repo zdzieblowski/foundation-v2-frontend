@@ -59,7 +59,7 @@
 <div class="home_three_columns" style="margin-top: 8px;">
   <div class="home_div bg_lightgrey">
     <div>Hashrate</div>
-    <div class="text_large"><?php echo round($metadata_current[0]['hashrate']).$configuration['pool_hashrate_unit']; ?></div>
+    <div class="text_large"><?php echo formatBigNumbers(round($metadata_current[0]['hashrate'])).$configuration['pool_hashrate_unit']; ?></div>
   </div>
   <div class="home_div bg_lightgrey">
     <div>Miners</div>
@@ -75,7 +75,7 @@
 <div class="home_three_columns">
   <div class="home_div bg_lightgrey">
     <div>Hashrate</div>
-    <div class="text_large"><?php echo round($network_current[0]['hashrate']).$configuration['pool_hashrate_unit']; ?></div>
+    <div class="text_large"><?php echo formatBigNumbers(round($network_current[0]['hashrate'])).$configuration['pool_hashrate_unit']; ?></div>
   </div>
   <div class="home_div bg_lightgrey">
     <div>Block height</div>

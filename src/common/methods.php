@@ -15,16 +15,12 @@ function getData($data_url) {
   return $result;
 }
 
-function parseDate($date) {
-  return 'parsed date';
-}
-
-function parseBigNumbers($number, $float_precision) {
-  return 'parsed number';
-}
-
-function parseWallets($wallet, $output_length) {
-  return 'parsed wallet';
+function formatBigNumbers($number) { 
+    $units = array('', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q'); 
+    $pow = floor(($number ? log($number) : 0) / log(1000));
+    $pow = min($pow, count($units) - 1);
+    $number /= pow(1000, $pow);
+    return round($number,2).' '.$units[$pow];
 }
 
 ?>
