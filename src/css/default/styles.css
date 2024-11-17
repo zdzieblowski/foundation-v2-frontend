@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
+*:focus {
+    outline: none;
+}
+
 :root {
   --border-radius: 8px;
 }
@@ -234,6 +238,33 @@ a.donate_item_link:hover {
 .donate_item_link_text {
   text-align: right;
   display: none;
+}
+
+/**/
+
+.wallet_address {
+  display: grid;
+  grid-template-columns: auto min-content;
+  width: 100%;
+}
+
+.wallet_address input {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  background-color: #aaa;
+  border: unset;
+  border-radius: 8px 0 0 8px;
+  padding: 16px;
+}
+
+.wallet_address input[type=submit] {
+  background-color: #e42;
+  color: #eee;
+  border-radius: 0 8px 8px 0;
+}
+
+.wallet_address input[type=submit]:hover {
+  background-color: #444;
 }
 
 /**/

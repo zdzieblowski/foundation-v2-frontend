@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="header_navi">
-          <a class="header_navi_item header_navi_item_text" href="/?page=dashboard&address=<?php ?>"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+          <a class="header_navi_item header_navi_item_text" href="/?page=dashboard"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
           <a class="header_navi_item header_navi_item_text" href="/?page=miners"><span class="material-symbols-outlined">group</span>Miners & workers</a>
           <a class="header_navi_item header_navi_item_text" href="/?page=blocks"><span class="material-symbols-outlined">star_rate</span>Blocks & rounds</a>
           <a class="header_navi_item header_navi_item_text" href="/?page=payments"><span class="material-symbols-outlined">payments</span>Payments</a>
