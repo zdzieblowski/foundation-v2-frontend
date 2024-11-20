@@ -15,6 +15,7 @@ body {
   padding: 0px;
   background-color: #ddd;
   color: #444;
+  overflow-y: scroll;
 }
 
 hr {
