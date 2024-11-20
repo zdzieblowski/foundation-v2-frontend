@@ -1,11 +1,12 @@
-<?php require_once('common/configuration.php'); ?>
 <?php require_once('common/methods.php'); ?>
+<?php require_once('common/frontend_configuration.php'); ?>
+<?php require_once('common/server_configuration.php'); ?>
 
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php echo($configuration['page_title']); ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php echo($configuration['page_stylesheet']);?>"/>
+    <title><?php echo($frontend_configuration['page_title']); ?></title>
+    <link rel="stylesheet" type="text/css" href="<?php echo($frontend_configuration['page_stylesheet']);?>"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,explore,group,home,payments,star_rate,volunteer_activism"/>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,9 +16,9 @@
     <div class="header">
       <div class="width_limit header_grid">
         <div class="header_top">
-          <img src="<?php echo($configuration['page_logotype']); ?>" height="33"/>
+          <img src="<?php echo($frontend_configuration['page_logotype']); ?>" height="33"/>
           <div class="header_top_right">
-            <div class="header_info"><?php echo($configuration['pool_name']); ?></div>
+            <div class="header_info"><?php echo($_SERVER['SERVER_NAME']); ?>/<?php echo($server_configuration['symbol']); ?></div>
             <div><a class="header_navi_item" href="/"><span class="material-symbols-outlined">home</span></a></div>
           </div>
         </div>

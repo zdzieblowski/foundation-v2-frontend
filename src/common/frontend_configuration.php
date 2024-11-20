@@ -1,9 +1,8 @@
 <?php
 
-$configuration = [
+$frontend_configuration = [
 
   'page_title' => 'foundation-v2-frontend',
-
   'page_stylesheet' => 'themes/tms/styles.css',
   'page_logotype' => 'themes/tms/logo.svg',
 

@@ -1,5 +1,4 @@
 <?php
-  $configuration_current = getData('http://localhost:3001/api/v2/evrmore/current/configuration');
   $ports_current = getData('http://localhost:3001/api/v2/evrmore/current/ports');
   $metadata_current = getData('http://localhost:3001/api/v2/evrmore/current/metadata');
   $network_current = getData('http://localhost:3001/api/v2/evrmore/current/network');
@@ -8,25 +7,25 @@
 <div class="home_three_columns">
   <div class="home_div bg_orange">
     <div>Currency</div>
-    <div class="text_large"><?php echo $configuration_current[0]['name']; ?></div>
+    <div class="text_large"><?php echo $server_configuration['name']; ?></div>
   </div>
   <div class="home_div bg_lightgrey">
     <div>Symbol</div>
-    <div class="text_large"><?php echo $configuration_current[0]['symbol']; ?></div>
+    <div class="text_large"><?php echo $server_configuration['symbol']; ?></div>
   </div>
   <div class="home_div bg_lightgrey">
     <div>Algorithm</div>
-    <div class="text_large"><?php echo $configuration_current[0]['algorithm']; ?></div>
+    <div class="text_large"><?php echo $server_configuration['algorithm']; ?></div>
   </div>
 </div>
 <div class="home_two_columns" style="margin-top: 8px;">
   <div class="home_div bg_darkgrey">
     <div>Minimal payout</div>
-    <div class="text_large"><?php echo $configuration_current[0]['minimumPayment'].' '.$configuration_current[0]['symbol']; ?></div>
+    <div class="text_large"><?php echo $server_configuration['minimumPayment'].' '.$server_configuration['symbol']; ?></div>
   </div>
   <div class="home_div bg_darkgrey">
     <div>Pool fee</div>
-    <div class="text_large"><?php echo $configuration_current[0]['recipientFee']*100; ?> %</div>
+    <div class="text_large"><?php echo $server_configuration['recipientFee']*100; ?> %</div>
   </div>
 </div>
 <hr/>
@@ -36,14 +35,14 @@
   <?php
     foreach($ports_current as $port){
       echo '<div class="home_port"><div class="home_port_type">'.$port['type'].'</div>';
-      echo '<div class="home_port_command">./miner -a '.$configuration_current[0]['algorithm'].' -o stratum+tcp://'.$_SERVER['SERVER_NAME'].':'.$port['port'].' -u WALLET -w WORKER</div></div>';
+      echo '<div class="home_port_command">./miner -a '.$server_configuration['algorithm'].' -o stratum+tcp://'.$_SERVER['SERVER_NAME'].':'.$port['port'].' -u WALLET -w WORKER</div></div>';
     }
   ?>
 </div>
 <hr/>
 <div class="text_subheader">Pool statistics</div>
 <div class="home_three_columns">
-  <div class="home_div bg_lightgrey">
+  <div class="home_div bg_darkgrey">
     <div>Blocks mined</div>
     <div class="text_large"><?php echo $metadata_current[0]['blocks']; ?></div>
   </div>
@@ -57,9 +56,9 @@
   </div>
 </div>
 <div class="home_three_columns" style="margin-top: 8px;">
-  <div class="home_div bg_lightgrey">
+  <div class="home_div bg_darkgrey">
     <div>Hashrate</div>
-    <div class="text_large"><?php echo formatBigNumbers(round($metadata_current[0]['hashrate'])).$configuration['pool_hashrate_unit']; ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers(round($metadata_current[0]['hashrate'])).$frontend_configuration['pool_hashrate_unit']; ?></div>
   </div>
   <div class="home_div bg_lightgrey">
     <div>Miners</div>
@@ -75,7 +74,7 @@
 <div class="home_three_columns">
   <div class="home_div bg_lightgrey">
     <div>Hashrate</div>
-    <div class="text_large"><?php echo formatBigNumbers(round($network_current[0]['hashrate'])).$configuration['pool_hashrate_unit']; ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers(round($network_current[0]['hashrate'])).$frontend_configuration['pool_hashrate_unit']; ?></div>
   </div>
   <div class="home_div bg_lightgrey">
     <div>Block height</div>

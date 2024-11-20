@@ -1,14 +1,23 @@
+<?php
+  $payments_current = getData('http://localhost:3001/api/v2/evrmore/historical/payments');
+  $transactions_current = getData('http://localhost:3001/api/v2/evrmore/historical/transactions');
+?>
+
 <div class="text_header">Payments</div>
 <div class="text_normal">List of payments.</div>
 <hr/>
 <div class="text_subheader">Payments</div>
 <?php
-  $payments_current = getData('http://localhost:3001/api/v2/evrmore/historical/payments');
-  var_dump($payments_current);
+  foreach($payments_current as $payment){
+    var_dump($payment);
+    echo '<br><br>';
+  }
 ?>
 <hr/>
 <div class="text_subheader">Transactions</div>
 <?php
-  $transactions_current = getData('http://localhost:3001/api/v2/evrmore/historical/transactions');
-  var_dump($transactions_current);
+  foreach($transactions_current as $transaction){
+    var_dump($transaction);
+    echo '<br><br>';
+  }
 ?>
