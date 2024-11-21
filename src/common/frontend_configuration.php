@@ -1,7 +1,7 @@
 <?php
   $frontend_configuration = [
     'page_title' => 'themining.site',
-    'page_theme_path' => 'themes/tms/',
+    'page_theme_path' => '/themes/tms/',
     'page_stylesheet' => 'styles.css',
     'page_logotype' => 'logo.svg',
     'page_precision' => 2,
