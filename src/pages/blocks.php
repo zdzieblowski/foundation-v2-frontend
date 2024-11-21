@@ -28,7 +28,14 @@
 <div class="text_subheader">Rounds</div>
 <?php
   foreach($rounds_combined as $round){
-    var_dump($round);
-    echo '<br><br>';
+    echo 'round: '.$round['round'].' / type: '.($round['solo'] ? 'SOLO' : 'SHARED');
+    echo '<br>';
+    echo 'worker: '.privacyFilter($round['miner']).'.'.getWorkerName($round['worker']);
+    echo '<br>';
+    echo 'work: '.$round['work'].' / valid: '.$round['valid'].' / stale: '.$round['stale'].' / invalid: '.$round['invalid'];
+    echo '<br>';
+    echo 'times (???): '.round($round['times'], $frontend_configuration['page_precision']);
+    echo '<br>';
+    echo '<br>';
   }
 ?>

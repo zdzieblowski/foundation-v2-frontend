@@ -9,7 +9,13 @@
 <div class="text_subheader">Payments</div>
 <?php
   foreach($payments_current as $payment){
-    var_dump($payment);
+    echo 'date: '.formatDateTime($payment['timestamp']);
+    echo '<br>';
+    echo 'transaction: '.privacyFilter($payment['transaction'], 21);
+    echo '<br>';
+    echo 'miner: '.privacyFilter($payment['miner']);
+    echo '<br>';
+    echo 'amount: '.round($payment['amount'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'];
     echo '<br><br>';
   }
 ?>
@@ -17,7 +23,11 @@
 <div class="text_subheader">Transactions</div>
 <?php
   foreach($transactions_current as $transaction){
-    var_dump($transaction);
+    echo 'date: '.formatDateTime($transaction['timestamp']);
+    echo '<br>';
+    echo 'transaction: '.privacyFilter($transaction['transaction'], 21);
+    echo '<br>';
+    echo 'amount: '.round($transaction['amount'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'];
     echo '<br><br>';
   }
 ?>
