@@ -2,11 +2,13 @@
 
 $frontend_configuration = [
 
-  'page_title' => 'foundation-v2-frontend',
+  'page_title' => 'themining.site',
   'page_stylesheet' => 'themes/tms/styles.css',
   'page_logotype' => 'themes/tms/logo.svg',
+  'page_precision' => 2,
 
   'pool_name' => 'evrmore',
+  'pool_currency_symbol' => ' '.$server_configuration['symbol'],
   'pool_hashrate_unit' => 'H/s',
   'pool_donation_currency' => 'Evrmore',
   'pool_donation_wallet' => 'EKD6T8CKqTmebBFnpjmHFRCY2jWs117wPS',

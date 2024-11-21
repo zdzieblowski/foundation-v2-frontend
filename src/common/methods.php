@@ -15,8 +15,8 @@ function getData($data_url) {
   return $result;
 }
 
-function formatLargeNumbers($number) { 
-  $units = array('', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q'); 
+function formatLargeNumbers($number) {
+  $units = array('', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q');
   $pow = floor(($number ? log($number) : 0) / log(1000));
   $pow = min($pow, count($units) - 1);
   $number /= pow(1000, $pow);
@@ -27,8 +27,14 @@ function formatDateTime($timestamp) {
   return date('Y-m-d H:i:s', $timestamp / 1000);
 }
 
-function minerPrivacyFilter($wallet) {
-  return substr($wallet, 0, 12).'**********'.substr($wallet, -12, 12);
+function privacyFilter($input, $size = 12) {
+  return substr($input, 0, $size).str_repeat('*',(strlen($input)-$size*2)).substr($input, -$size, $size);
+}
+
+function getWorkerName($miner){
+  $worker_name = explode('.', $miner, 2)[1];
+  $worker_name = $worker_name ? $worker_name : 'UNNAMED';
+  return $worker_name;
 }
 
 ?>

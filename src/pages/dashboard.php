@@ -16,48 +16,63 @@
     <div class="text_normal">Enter wallet address to see your stats.</div>
   <?php else: ?>
     <?php
-//      var_dump($miners_current);
       $wallet_found = False;
       $blocks_found = False;
       $payments_found = False;
       foreach($miners_current as $miner){
         if($miner['miner'] == $_COOKIE['address']) {
           $wallet_found = True;
-          echo '<div class="text_normal">Statistics for wallet: <b>'.$_COOKIE['address'].'</b></div><hr/>';
-          echo 'miner: '.$miner['miner'].' / hashrate: '.formatLargeNumbers($miner['hashrate']).$frontend_configuration['pool_hashrate_unit'];
+          echo '<div class="text_normal">Statistics for wallet: <b>'.$_COOKIE['address'].'</b></div><hr/><div class="text_subheader">Miner information</div>';
+          echo 'miner: '.$miner['miner'].' / hashrate: '.formatLargeNumbers(round($miner['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit'];
           echo '<br>';
-          echo 'efficiency: '.$miner['efficiency'].' % / effort: '.$miner['effort'].' %';
+          echo 'efficiency: '.round($miner['efficiency'], $frontend_configuration['page_precision']).' % / effort: '.round($miner['effort'], $frontend_configuration['page_precision']).' %';
           echo '<br>';
-          echo 'balance: '.$miner['balance'].' '.$server_configuration['symbol'].' / immature: '.$miner['immature'].' '.$server_configuration['symbol'].' / paid: '.$miner['paid'].' '.$server_configuration['symbol'];    echo '<br>';
+          echo 'balance: '.round($miner['balance'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'].' / immature: '.round($miner['immature'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'].' / paid: '.round($miner['paid'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'];
+          echo '<br>';
           echo 'work: '.$miner['work'].' / valid: '.$miner['valid'].' / stale: '.$miner['stale'].' / invalid: '.$miner['invalid'];
           echo '<br>';
           foreach($workers_current as $worker){
             if($worker['miner'] == $miner['miner']) {
               $worker_name = explode('.', $worker['worker'], 2)[1];
               $worker_name = $worker_name ? $worker_name : 'UNNAMED';
-              echo '- worker: '.$worker_name.' / hashrate: '.formatLargeNumbers($worker['hashrate']).$frontend_configuration['pool_hashrate_unit'].' / type: '.($worker['solo'] ? 'SOLO' : 'SHARED');
+              echo '- worker: '.$worker_name.' / hashrate: '.formatLargeNumbers(round($worker['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit'].' / type: '.($worker['solo'] ? 'SOLO' : 'SHARED');
               echo '<br>';
-              echo '&nbsp;&nbsp;efficiency: '.$worker['efficiency'].' % / effort: '.$worker['effort'].' %';
+              echo '&nbsp;&nbsp;efficiency: '.round($worker['efficiency'], $frontend_configuration['page_precision']).' % / effort: '.round($worker['effort'], $frontend_configuration['page_precision']).' %';
               echo '<br>';
               echo '&nbsp;&nbsp;work: '.$worker['work'].' / valid: '.$worker['valid'].' / stale: '.$worker['stale'].' / invalid: '.$worker['invalid'];
               echo '<br>';
             }
           }
-          echo '<hr/>';
+          echo '<hr/><div class="text_subheader">Blocks</div>';
           foreach($blocks_combined as $block){
             if($block['miner'] == $_COOKIE['address']) {
               $blocks_found = True;
-              var_dump($block);
+              echo 'submitted: '.formatDateTime($block['submitted']).' / confirmed: '.formatDateTime($block['timestamp']).' / type: '.($block['solo'] ? 'SOLO' : 'SHARED');
+              echo '<br>';
+              echo 'round: '.$block['round'];
+              echo '<br>';
+              echo 'hash: '.$block['hash'];
+              echo '<br>';
+              echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).' %';
+              echo '<br>';
+              echo 'transaction: '.$block['transaction'];
+              echo '<br>';
+              echo 'reward: '.round($block['reward'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'];
+
             }
           }
           if(!$blocks_found) {
             echo '<div class="text_normal">No blocks mined by <b>'.$_COOKIE['address'].'</b> were found.</div>';
           }
-          echo '<hr/>';
+          echo '<hr/><div class="text_subheader">Payments</div>';
           foreach($payments_current as $payment){
             if($payment['miner'] == $_COOKIE['address']) {
               $payments_found = True;
-              var_dump($payment);
+              echo 'submitted: '.formatDateTime($payment['timestamp']);
+              echo '<br>';
+              echo 'transaction: '.$payment['transaction'];
+              echo '<br>';
+              echo 'amount: '.round($payment['amount'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'];
             }
           }
           if(!$payments_found) {
@@ -65,7 +80,6 @@
           }
         }
       }
-
       if(!$wallet_found) {
         echo '<div class="text_normal">Wallet <b>'.$_COOKIE['address'].'</b> was not found.</div>';
       }

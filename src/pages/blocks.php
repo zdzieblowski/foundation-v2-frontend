@@ -9,8 +9,19 @@
 <div class="text_subheader">Blocks</div>
 <?php
   foreach($blocks_combined as $block){
-    var_dump($block);
-    echo '<br><br>';
+    echo 'miner: '.privacyFilter($block['miner']).' / worker: '.getWorkerName($block['worker']);
+    echo '<br>';
+    echo 'submitted: '.formatDateTime($block['submitted']).' / confirmed: '.formatDateTime($block['timestamp']).' / type: '.($block['solo'] ? 'SOLO' : 'SHARED');
+    echo '<br>';
+    echo 'round: '.$block['round'];
+    echo '<br>';
+    echo 'hash: '.privacyFilter($block['hash'], 21);
+    echo '<br>';
+    echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).' %';
+    echo '<br>';
+    echo 'transaction: '.privacyFilter($block['transaction'], 21);
+    echo '<br>';
+    echo 'reward: '.round($block['reward'], $frontend_configuration['page_precision']).$frontend_configuration['pool_currency_symbol'];
   }
 ?>
 <hr/>

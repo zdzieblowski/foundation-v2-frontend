@@ -1,6 +1,6 @@
 <?php require_once('common/methods.php'); ?>
-<?php require_once('common/frontend_configuration.php'); ?>
 <?php require_once('common/server_configuration.php'); ?>
+<?php require_once('common/frontend_configuration.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,explore,group,home,payments,star_rate,volunteer_activism"/>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="TMS" />
+    <link rel="manifest" href="/img/site.webmanifest" />
   </head>
   <body>
 
