@@ -200,21 +200,21 @@ a.header_navi_item:hover {
 
 /**/
 
-.home_three_columns {
+.three_columns {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   column-gap: 8px;
   color: #eee;
 }
 
-.home_two_columns {
+.two_columns {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   column-gap: 8px;
   color: #eee;
 }
 
-.home_div {
+.box {
   padding: 16px;
   border-radius: 8px;
 }
