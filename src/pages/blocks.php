@@ -2,7 +2,6 @@
   $blocks_combined = getData('http://localhost:3001/api/v2/evrmore/combined/blocks');
   $rounds_combined = getData('http://localhost:3001/api/v2/evrmore/combined/rounds');
 ?>
-
 <div class="text_header">Blocks & rounds</div>
 <div class="text_normal">List of mined blocks and rounds.</div>
 <hr/>

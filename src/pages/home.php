@@ -3,7 +3,6 @@
   $metadata_current = getData('http://localhost:3001/api/v2/evrmore/current/metadata');
   $network_current = getData('http://localhost:3001/api/v2/evrmore/current/network');
 ?>
-
 <div class="home_three_columns">
   <div class="home_div bg_orange">
     <div>Currency</div>

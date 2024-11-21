@@ -6,23 +6,22 @@
 <html>
   <head>
     <title><?php echo($frontend_configuration['page_title']); ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php echo($frontend_configuration['page_stylesheet']);?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $frontend_configuration['page_theme_path'].$frontend_configuration['page_stylesheet'];?>"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard,explore,group,home,payments,star_rate,volunteer_activism"/>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
-    <link rel="shortcut icon" href="/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/<?php echo $frontend_configuration['page_theme_path']; ?>favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/<?php echo $frontend_configuration['page_theme_path']; ?>favicon.svg" />
+    <link rel="shortcut icon" href="/<?php echo $frontend_configuration['page_theme_path']; ?>favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/<?php echo $frontend_configuration['page_theme_path']; ?>apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="TMS" />
-    <link rel="manifest" href="/img/site.webmanifest" />
+    <link rel="manifest" href="/<?php echo $frontend_configuration['page_theme_path']; ?>site.webmanifest" />
   </head>
   <body>
-
     <div class="header">
       <div class="width_limit header_grid">
         <div class="header_top">
-          <img src="<?php echo($frontend_configuration['page_logotype']); ?>" height="33"/>
+          <img src="<?php echo $frontend_configuration['page_theme_path'].$frontend_configuration['page_logotype']; ?>" height="33"/>
           <div class="header_top_right">
             <div class="header_info"><?php echo($_SERVER['SERVER_NAME']); ?>/<?php echo($server_configuration['symbol']); ?></div>
             <div><a class="header_navi_item" href="/"><span class="material-symbols-outlined">home</span></a></div>
@@ -36,7 +35,6 @@
         </div>
       </div>
     </div>
-
     <div class="content">
       <div class="width_limit">
         <div class="content_content">
@@ -68,7 +66,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer">
       <div class="width_limit footer_content">
         <div class="footer_content_left">
@@ -76,10 +73,10 @@
         </div>
         <div class="footer_content_right">
           <div><a href="?page=donate"><span class="material-symbols-outlined">volunteer_activism</span></a></div>
-          <div><a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="img/github.svg" height="24"/></a></div>
+          <div><a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/img/github.svg" height="24"/></a></div>
         </div>
       </div>
     </div>
-
   </body>
 </html>
+

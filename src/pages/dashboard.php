@@ -4,7 +4,6 @@
   $blocks_combined = getData('http://localhost:3001/api/v2/evrmore/combined/blocks');
   $payments_current = getData('http://localhost:3001/api/v2/evrmore/historical/payments');
 ?>
-
 <div class="text_header">Dashboard</div>
 <?php if(isset($_POST['save_address'])): ?>
   <?php

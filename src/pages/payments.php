@@ -2,7 +2,6 @@
   $payments_current = getData('http://localhost:3001/api/v2/evrmore/historical/payments');
   $transactions_current = getData('http://localhost:3001/api/v2/evrmore/historical/transactions');
 ?>
-
 <div class="text_header">Payments</div>
 <div class="text_normal">List of payments.</div>
 <hr/>

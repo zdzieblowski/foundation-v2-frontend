@@ -2,7 +2,6 @@
   $miners_current = getData('http://localhost:3001/api/v2/evrmore/current/miners');
   $workers_current = getData('http://localhost:3001/api/v2/evrmore/current/workers');
 ?>
-
 <div class="text_header">Miners & workers</div>
 <div class="text_normal">List of miners and workers.</div>
 <hr/>
