@@ -9,7 +9,7 @@
   foreach($miners_current as $miner){
     echo 'miner: '.privacyFilter($miner['miner']).' / hashrate: '.formatLargeNumbers(round($miner['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit'];
     echo '<br>';
-    echo 'efficiency: '.round($miner['efficiency'], $frontend_configuration['page_precision']).' % / effort: '.round($miner['effort'], $frontend_configuration['page_precision']).' %';
+    echo 'efficiency: '.round($miner['efficiency'], $frontend_configuration['page_precision']).'% / effort: '.round($miner['effort'], $frontend_configuration['page_precision']).'%';
     echo '<br>';
     echo 'balance: '.formatLargeNumbers(round($miner['balance'], $frontend_configuration['page_precision'])).$server_configuration['symbol'].' / immature: '.formatLargeNumbers(round($miner['immature'], $frontend_configuration['page_precision'])).$server_configuration['symbol'].' / paid: '.formatLargeNumbers(round($miner['paid'], $frontend_configuration['page_precision'])).$server_configuration['symbol'];
     echo '<br>';
@@ -20,7 +20,7 @@
         $worker_name = getWorkerName($worker['worker']);
         echo '- worker: '.$worker_name.' / hashrate: '.formatLargeNumbers(round($worker['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit'].' / type: '.($worker['solo'] ? 'SOLO' : 'POOL');
         echo '<br>';
-        echo '&nbsp;&nbsp;efficiency: '.round($worker['efficiency'], $frontend_configuration['page_precision']).' % / effort: '.round($worker['effort'], $frontend_configuration['page_precision']).' %';
+        echo '&nbsp;&nbsp;efficiency: '.round($worker['efficiency'], $frontend_configuration['page_precision']).'% / effort: '.round($worker['effort'], $frontend_configuration['page_precision']).'%';
         echo '<br>';
         echo '&nbsp;&nbsp;work: '.formatLargeNumbers($worker['work']).' / valid: '.formatLargeNumbers($worker['valid']).' / stale: '.formatLargeNumbers($worker['stale']).' / invalid: '.formatLargeNumbers($worker['invalid']);
         echo '<br>';

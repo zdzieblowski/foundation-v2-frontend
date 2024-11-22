@@ -24,7 +24,7 @@
   </div>
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
-    <div class="text_large"><?php echo round($server_configuration['recipientFee']*100, $frontend_configuration['page_precision']); ?> %</div>
+    <div class="text_large"><?php echo round($server_configuration['recipientFee']*100, $frontend_configuration['page_precision']); ?>%</div>
   </div>
 </div>
 <hr/>
@@ -47,11 +47,11 @@
   </div>
   <div class="box bg_lightgrey">
     <div>Effort</div>
-    <div class="text_large"><?php echo round($metadata_current[0]['effort'], $frontend_configuration['page_precision']); ?> %</div>
+    <div class="text_large"><?php echo round($metadata_current[0]['effort'], $frontend_configuration['page_precision']); ?>%</div>
   </div>
   <div class="box bg_lightgrey">
     <div>Efficiency</div>
-    <div class="text_large"><?php echo round($metadata_current[0]['efficiency'], $frontend_configuration['page_precision']); ?> %</div>
+    <div class="text_large"><?php echo round($metadata_current[0]['efficiency'], $frontend_configuration['page_precision']); ?>%</div>
   </div>
 </div>
 <div class="three_columns mt-8px">

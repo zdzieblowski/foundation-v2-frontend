@@ -25,7 +25,7 @@
     $pow = floor(($number ? log($number) : 0) / log(1000));
     $pow = min($pow, count($units) - 1);
     $number /= pow(1000, $pow);
-    return round($number, 2).' '.$units[$pow];
+    return round($number, 2).''.$units[$pow];
   }
 
   function formatDateTime($timestamp) {

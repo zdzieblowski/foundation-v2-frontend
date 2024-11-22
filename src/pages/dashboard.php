@@ -36,11 +36,11 @@
       </div>
       <div class="box bg_lightgrey">
         <div>Efficency</div>
-        <div class="text_large"><?php echo round($miner['efficiency'], $frontend_configuration['page_precision']); ?> %</div>
+        <div class="text_large"><?php echo round($miner['efficiency'], $frontend_configuration['page_precision']); ?>%</div>
       </div>
       <div class="box bg_lightgrey">
         <div>Effort</div>
-        <div class="text_large"><?php echo round($miner['effort'], $frontend_configuration['page_precision']); ?> %</div>
+        <div class="text_large"><?php echo round($miner['effort'], $frontend_configuration['page_precision']); ?>%</div>
       </div>
     </div>
     <div class="three_columns mt-8px">
@@ -98,11 +98,11 @@
           <div class="two_columns small_gap">
             <div class="small_box bg_lightgrey">
               <div>Efficiency</div>
-              <div class="text_heavy text_right"><?php echo round($worker['efficiency'], $frontend_configuration['page_precision']); ?> %</div>
+              <div class="text_heavy text_right"><?php echo round($worker['efficiency'], $frontend_configuration['page_precision']); ?>%</div>
             </div>
             <div class="small_box bg_lightgrey">
               <div>Effort</div>
-              <div class="text_heavy text_right"><?php echo round($worker['effort'], $frontend_configuration['page_precision']); ?> %</div>
+              <div class="text_heavy text_right"><?php echo round($worker['effort'], $frontend_configuration['page_precision']); ?>%</div>
             </div>
           </div>
           <div class="three_columns small_gap">
@@ -140,7 +140,7 @@
               echo '<br>';
               echo 'hash: '.$block['hash'];
               echo '<br>';
-              echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).' %';
+              echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).'%';
               echo '<br>';
               echo 'transaction: '.$block['transaction'];
               echo '<br>';

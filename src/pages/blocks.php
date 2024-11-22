@@ -16,7 +16,7 @@
     echo '<br>';
     echo 'hash: '.privacyFilter($block['hash'], 21);
     echo '<br>';
-    echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).' %';
+    echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).'%';
     echo '<br>';
     echo 'transaction: '.privacyFilter($block['transaction'], 21);
     echo '<br>';
