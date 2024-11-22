@@ -1,6 +1,5 @@
 <?php require_once('common/methods.php'); ?>
-<?php require_once('common/server_configuration.php'); ?>
-<?php require_once('common/frontend_configuration.php'); ?>
+<?php require_once('common/configuration.php'); ?>
 
 <!DOCTYPE html>
 <html>
