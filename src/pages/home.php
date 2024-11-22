@@ -10,17 +10,17 @@
   </div>
   <div class="box bg_lightgrey">
     <div>Symbol</div>
-    <div class="text_large"><?php echo $frontend_configuration['pool_currency_symbol']; ?></div>
+    <div class="text_large"><?php echo $server_configuration['symbol']; ?></div>
   </div>
   <div class="box bg_lightgrey">
     <div>Algorithm</div>
     <div class="text_large"><?php echo $server_configuration['algorithm']; ?></div>
   </div>
 </div>
-<div class="two_columns" style="margin-top: 8px;">
+<div class="two_columns mt-8px">
   <div class="box bg_darkgrey">
     <div>Minimal payout</div>
-    <div class="text_large"><?php echo $server_configuration['minimumPayment'].$frontend_configuration['pool_currency_symbol']; ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers($server_configuration['minimumPayment']).$server_configuration['symbol']; ?></div>
   </div>
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
@@ -54,7 +54,7 @@
     <div class="text_large"><?php echo round($metadata_current[0]['efficiency'], $frontend_configuration['page_precision']); ?> %</div>
   </div>
 </div>
-<div class="three_columns" style="margin-top: 8px;">
+<div class="three_columns mt-8px">
   <div class="box bg_darkgrey">
     <div>Hashrate</div>
     <div class="text_large"><?php echo formatLargeNumbers(round($metadata_current[0]['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit']; ?></div>
@@ -81,6 +81,6 @@
   </div>
   <div class="box bg_lightgrey">
     <div>Difficulty</div>
-    <div class="text_large"><?php echo round($network_current[0]['difficulty'], $frontend_configuration['page_precision']); ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers(round($network_current[0]['difficulty'], $frontend_configuration['page_precision'])); ?></div>
   </div>
 </div>
