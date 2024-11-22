@@ -32,44 +32,44 @@
     <div class="three_columns mt-8px">
       <div class="box bg_orange">
         <div>Hashrate</div>
-        <div class="text_large"><?php echo formatLargeNumbers(round($miner['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit']; ?></div>
+        <div class="text_large"><?php echo formatLargeNumbers($miner['hashrate'], $frontend_configuration['math_precision']).$frontend_configuration['pool_hashrate_unit']; ?></div>
       </div>
       <div class="box bg_lightgrey">
         <div>Efficency</div>
-        <div class="text_large"><?php echo round($miner['efficiency'], $frontend_configuration['page_precision']); ?>%</div>
+        <div class="text_large"><?php echo round($miner['efficiency'], $frontend_configuration['math_precision']); ?>%</div>
       </div>
       <div class="box bg_lightgrey">
         <div>Effort</div>
-        <div class="text_large"><?php echo round($miner['effort'], $frontend_configuration['page_precision']); ?>%</div>
+        <div class="text_large"><?php echo round($miner['effort'], $frontend_configuration['math_precision']); ?>%</div>
       </div>
     </div>
     <div class="three_columns mt-8px">
       <div class="box bg_darkgrey">
         <div>Balance</div>
-        <div class="text_large"><?php echo formatLargeNumbers(round($miner['balance'], $frontend_configuration['page_precision'])).$server_configuration['symbol']; ?></div>
+        <div class="text_large"><?php echo formatLargeNumbers($miner['balance'], $frontend_configuration['math_precision']).$server_configuration['symbol']; ?></div>
       </div>
       <div class="box bg_lightgrey">
         <div>Immature</div>
-        <div class="text_large"><?php echo formatLargeNumbers(round($miner['immature'], $frontend_configuration['page_precision'])).$server_configuration['symbol']; ?></div>
+        <div class="text_large"><?php echo formatLargeNumbers($miner['immature'], $frontend_configuration['math_precision']).$server_configuration['symbol']; ?></div>
       </div>
       <div class="box bg_orange">
         <div>Paid</div>
-        <div class="text_large"><?php echo formatLargeNumbers(round($miner['paid'], $frontend_configuration['page_precision'])).$server_configuration['symbol']; ?></div>
+        <div class="text_large"><?php echo formatLargeNumbers($miner['paid'], $frontend_configuration['math_precision']).$server_configuration['symbol']; ?></div>
       </div>
     </div>
     <div class="wrap bg_verylightgrey mt-8px">
       <div class="three_columns">
         <div class="box bg_darkgrey">
           <div>Valid shares</div>
-          <div class="text_large"><?php echo formatLargeNumbers($miner['valid']); ?></div>
+          <div class="text_large"><?php echo formatLargeNumbers($miner['valid'], $frontend_configuration['math_precision']); ?></div>
         </div>
         <div class="box bg_lightgrey">
           <div>Stale shares</div>
-          <div class="text_large"><?php echo formatLargeNumbers($miner['stale']); ?></div>
+          <div class="text_large"><?php echo formatLargeNumbers($miner['stale'], $frontend_configuration['math_precision']); ?></div>
         </div>
         <div class="box bg_lightgrey">
           <div>Invalid shares</div>
-          <div class="text_large"><?php echo formatLargeNumbers($miner['invalid']); ?></div>
+          <div class="text_large"><?php echo formatLargeNumbers($miner['invalid'], $frontend_configuration['math_precision']); ?></div>
         </div>
       </div>
       <hr/>
@@ -88,7 +88,7 @@
           <div class="two_columns small_gap">
             <div class="small_box bg_orange">
               <div>Hashrate</div>
-              <div class="text_heavy text_right"><?php echo formatLargeNumbers(round($worker['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit']; ?></div>
+              <div class="text_heavy text_right"><?php echo formatLargeNumbers($worker['hashrate'], $frontend_configuration['math_precision']).$frontend_configuration['pool_hashrate_unit']; ?></div>
             </div>
             <div class="small_box bg_lightgrey">
               <div>Worker type</div>
@@ -98,25 +98,25 @@
           <div class="two_columns small_gap">
             <div class="small_box bg_lightgrey">
               <div>Efficiency</div>
-              <div class="text_heavy text_right"><?php echo round($worker['efficiency'], $frontend_configuration['page_precision']); ?>%</div>
+              <div class="text_heavy text_right"><?php echo round($worker['efficiency'], $frontend_configuration['math_precision']); ?>%</div>
             </div>
             <div class="small_box bg_lightgrey">
               <div>Effort</div>
-              <div class="text_heavy text_right"><?php echo round($worker['effort'], $frontend_configuration['page_precision']); ?>%</div>
+              <div class="text_heavy text_right"><?php echo round($worker['effort'], $frontend_configuration['math_precision']); ?>%</div>
             </div>
           </div>
           <div class="three_columns small_gap">
             <div class="small_box bg_darkgrey">
               <div>Valid shares</div>
-              <div class="text_heavy text_right"><?php echo formatLargeNumbers($worker['valid']); ?></div>
+              <div class="text_heavy text_right"><?php echo formatLargeNumbers($worker['valid'], $frontend_configuration['math_precision']); ?></div>
             </div>
             <div class="small_box bg_lightgrey">
               <div>Stale shares</div>
-              <div class="text_heavy text_right"><?php echo formatLargeNumbers($worker['stale']); ?></div>
+              <div class="text_heavy text_right"><?php echo formatLargeNumbers($worker['stale'], $frontend_configuration['math_precision']); ?></div>
             </div>
             <div class="small_box bg_lightgrey">
               <div>Invalid shares</div>
-              <div class="text_heavy text_right"><?php echo formatLargeNumbers($worker['invalid']); ?></div>
+              <div class="text_heavy text_right"><?php echo formatLargeNumbers($worker['invalid'], $frontend_configuration['math_precision']); ?></div>
             </div>
           </div>
         </div>
@@ -140,11 +140,11 @@
               echo '<br>';
               echo 'hash: '.$block['hash'];
               echo '<br>';
-              echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).'%';
+              echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['math_precision']).' / luck: '.round($block['luck'], $frontend_configuration['math_precision']).'%';
               echo '<br>';
               echo 'transaction: '.$block['transaction'];
               echo '<br>';
-              echo 'reward: '.formatLargeNumbers(round($block['reward'], $frontend_configuration['page_precision'])).$server_configuration['symbol'];
+              echo 'reward: '.formatLargeNumbers($block['reward'], $frontend_configuration['math_precision']).$server_configuration['symbol'];
 
             }
           }
@@ -159,7 +159,7 @@
               echo '<br>';
               echo 'transaction: '.$payment['transaction'];
               echo '<br>';
-              echo 'amount: '.formatLargeNumbers(round($payment['amount'], $frontend_configuration['page_precision'])).$server_configuration['symbol'];
+              echo 'amount: '.formatLargeNumbers($payment['amount'], $frontend_configuration['math_precision']).$server_configuration['symbol'];
             }
           }
           if(!$payments_found) {

@@ -14,7 +14,7 @@
     echo '<br>';
     echo 'miner: '.privacyFilter($payment['miner']);
     echo '<br>';
-    echo 'amount: '.formatLargeNumbers(round($payment['amount'], $frontend_configuration['page_precision'])).$server_configuration['symbol'];
+    echo 'amount: '.formatLargeNumbers($payment['amount'], $frontend_configuration['math_precision']).$server_configuration['symbol'];
     echo '<br><br>';
   }
 ?>
@@ -26,7 +26,7 @@
     echo '<br>';
     echo 'transaction: '.privacyFilter($transaction['transaction'], 21);
     echo '<br>';
-    echo 'amount: '.formatLargeNumbers(round($transaction['amount'], $frontend_configuration['page_precision'])).$server_configuration['symbol'];
+    echo 'amount: '.formatLargeNumbers($transaction['amount'], $frontend_configuration['math_precision']).$server_configuration['symbol'];
     echo '<br><br>';
   }
 ?>

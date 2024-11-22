@@ -7,22 +7,22 @@
 <hr/>
 <?php
   foreach($miners_current as $miner){
-    echo 'miner: '.privacyFilter($miner['miner']).' / hashrate: '.formatLargeNumbers(round($miner['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit'];
+    echo 'miner: '.privacyFilter($miner['miner']).' / hashrate: '.formatLargeNumbers($miner['hashrate'], $frontend_configuration['math_precision']).$frontend_configuration['pool_hashrate_unit'];
     echo '<br>';
-    echo 'efficiency: '.round($miner['efficiency'], $frontend_configuration['page_precision']).'% / effort: '.round($miner['effort'], $frontend_configuration['page_precision']).'%';
+    echo 'efficiency: '.round($miner['efficiency'], $frontend_configuration['math_precision']).'% / effort: '.round($miner['effort'], $frontend_configuration['math_precision']).'%';
     echo '<br>';
-    echo 'balance: '.formatLargeNumbers(round($miner['balance'], $frontend_configuration['page_precision'])).$server_configuration['symbol'].' / immature: '.formatLargeNumbers(round($miner['immature'], $frontend_configuration['page_precision'])).$server_configuration['symbol'].' / paid: '.formatLargeNumbers(round($miner['paid'], $frontend_configuration['page_precision'])).$server_configuration['symbol'];
+    echo 'balance: '.formatLargeNumbers($miner['balance'], $frontend_configuration['math_precision']).$server_configuration['symbol'].' / immature: '.formatLargeNumbers($miner['immature'], $frontend_configuration['math_precision']).$server_configuration['symbol'].' / paid: '.formatLargeNumbers($miner['paid'], $frontend_configuration['math_precision']).$server_configuration['symbol'];
     echo '<br>';
-    echo 'work: '.formatLargeNumbers($miner['work']).' / valid: '.formatLargeNumbers($miner['valid']).' / stale: '.formatLargeNumbers($miner['stale']).' / invalid: '.formatLargeNumbers($miner['invalid']);
+    echo 'work: '.formatLargeNumbers($miner['work'], $frontend_configuration['math_precision']).' / valid: '.formatLargeNumbers($miner['valid'], $frontend_configuration['math_precision']).' / stale: '.formatLargeNumbers($miner['stale'], $frontend_configuration['math_precision']).' / invalid: '.formatLargeNumbers($miner['invalid'], $frontend_configuration['math_precision']);
     echo '<br>';
     foreach($workers_current as $worker){
       if($worker['miner'] == $miner['miner']) {
         $worker_name = getWorkerName($worker['worker']);
-        echo '- worker: '.$worker_name.' / hashrate: '.formatLargeNumbers(round($worker['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit'].' / type: '.($worker['solo'] ? 'SOLO' : 'POOL');
+        echo '- worker: '.$worker_name.' / hashrate: '.formatLargeNumbers($worker['hashrate'], $frontend_configuration['math_precision']).$frontend_configuration['pool_hashrate_unit'].' / type: '.($worker['solo'] ? 'SOLO' : 'POOL');
         echo '<br>';
-        echo '&nbsp;&nbsp;efficiency: '.round($worker['efficiency'], $frontend_configuration['page_precision']).'% / effort: '.round($worker['effort'], $frontend_configuration['page_precision']).'%';
+        echo '&nbsp;&nbsp;efficiency: '.round($worker['efficiency'], $frontend_configuration['math_precision']).'% / effort: '.round($worker['effort'], $frontend_configuration['math_precision']).'%';
         echo '<br>';
-        echo '&nbsp;&nbsp;work: '.formatLargeNumbers($worker['work']).' / valid: '.formatLargeNumbers($worker['valid']).' / stale: '.formatLargeNumbers($worker['stale']).' / invalid: '.formatLargeNumbers($worker['invalid']);
+        echo '&nbsp;&nbsp;work: '.formatLargeNumbers($worker['work'], $frontend_configuration['math_precision']).' / valid: '.formatLargeNumbers($worker['valid'], $frontend_configuration['math_precision']).' / stale: '.formatLargeNumbers($worker['stale'], $frontend_configuration['math_precision']).' / invalid: '.formatLargeNumbers($worker['invalid'], $frontend_configuration['math_precision']);
         echo '<br>';
       }
     }

@@ -16,11 +16,11 @@
     echo '<br>';
     echo 'hash: '.privacyFilter($block['hash'], 21);
     echo '<br>';
-    echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['page_precision']).' / luck: '.round($block['luck'], $frontend_configuration['page_precision']).'%';
+    echo 'height: '.$block['height'].' / difficulty: '.round($block['difficulty'], $frontend_configuration['math_precision']).' / luck: '.round($block['luck'], $frontend_configuration['math_precision']).'%';
     echo '<br>';
     echo 'transaction: '.privacyFilter($block['transaction'], 21);
     echo '<br>';
-    echo 'reward: '.formatLargeNumbers(round($block['reward'], $frontend_configuration['page_precision'])).$server_configuration['symbol'];
+    echo 'reward: '.formatLargeNumbers($block['reward'], $frontend_configuration['math_precision']).$server_configuration['symbol'];
   }
 ?>
 <hr/>
@@ -31,9 +31,9 @@
     echo '<br>';
     echo 'worker: '.privacyFilter($round['miner']).'.'.getWorkerName($round['worker']);
     echo '<br>';
-    echo 'work: '.formatLargeNumbers($round['work']).' / valid: '.formatLargeNumbers($round['valid']).' / stale: '.formatLargeNumbers($round['stale']).' / invalid: '.formatLargeNumbers($round['invalid']);
+    echo 'work: '.formatLargeNumbers($round['work'], $frontend_configuration['math_precision']).' / valid: '.formatLargeNumbers($round['valid'], $frontend_configuration['math_precision']).' / stale: '.formatLargeNumbers($round['stale'], $frontend_configuration['math_precision']).' / invalid: '.formatLargeNumbers($round['invalid'], $frontend_configuration['math_precision']);
     echo '<br>';
-    echo 'times (???): '.round($round['times'], $frontend_configuration['page_precision']);
+    echo 'times (???): '.round($round['times'], $frontend_configuration['math_precision']);
     echo '<br>';
     echo '<br>';
   }

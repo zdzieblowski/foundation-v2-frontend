@@ -4,7 +4,8 @@
     'page_theme_path' => '/themes/tms/',
     'page_stylesheet' => 'styles.css',
     'page_logotype' => 'logo.svg',
-    'page_precision' => 2,
+
+    'math_precision' => 4,
 
     'pool_name' => 'evrmore',
     'pool_hashrate_unit' => 'H/s',

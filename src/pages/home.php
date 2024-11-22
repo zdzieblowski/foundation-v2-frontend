@@ -20,11 +20,11 @@
 <div class="two_columns mt-8px">
   <div class="box bg_darkgrey">
     <div>Minimal payout</div>
-    <div class="text_large"><?php echo formatLargeNumbers($server_configuration['minimumPayment']).$server_configuration['symbol']; ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers($server_configuration['minimumPayment'], $frontend_configuration['math_precision']).$server_configuration['symbol']; ?></div>
   </div>
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
-    <div class="text_large"><?php echo round($server_configuration['recipientFee']*100, $frontend_configuration['page_precision']); ?>%</div>
+    <div class="text_large"><?php echo round($server_configuration['recipientFee']*100, $frontend_configuration['math_precision']); ?>%</div>
   </div>
 </div>
 <hr/>
@@ -47,17 +47,17 @@
   </div>
   <div class="box bg_lightgrey">
     <div>Effort</div>
-    <div class="text_large"><?php echo round($metadata_current[0]['effort'], $frontend_configuration['page_precision']); ?>%</div>
+    <div class="text_large"><?php echo round($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>%</div>
   </div>
   <div class="box bg_lightgrey">
     <div>Efficiency</div>
-    <div class="text_large"><?php echo round($metadata_current[0]['efficiency'], $frontend_configuration['page_precision']); ?>%</div>
+    <div class="text_large"><?php echo round($metadata_current[0]['efficiency'], $frontend_configuration['math_precision']); ?>%</div>
   </div>
 </div>
 <div class="three_columns mt-8px">
   <div class="box bg_darkgrey">
     <div>Hashrate</div>
-    <div class="text_large"><?php echo formatLargeNumbers(round($metadata_current[0]['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit']; ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']).$frontend_configuration['pool_hashrate_unit']; ?></div>
   </div>
   <div class="box bg_lightgrey">
     <div>Miners</div>
@@ -73,7 +73,7 @@
 <div class="three_columns">
   <div class="box bg_lightgrey">
     <div>Hashrate</div>
-    <div class="text_large"><?php echo formatLargeNumbers(round($network_current[0]['hashrate'], $frontend_configuration['page_precision'])).$frontend_configuration['pool_hashrate_unit']; ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers($network_current[0]['hashrate'], $frontend_configuration['math_precision']).$frontend_configuration['pool_hashrate_unit']; ?></div>
   </div>
   <div class="box bg_lightgrey">
     <div>Block height</div>
@@ -81,6 +81,6 @@
   </div>
   <div class="box bg_lightgrey">
     <div>Difficulty</div>
-    <div class="text_large"><?php echo formatLargeNumbers(round($network_current[0]['difficulty'], $frontend_configuration['page_precision'])); ?></div>
+    <div class="text_large"><?php echo formatLargeNumbers($network_current[0]['difficulty'], $frontend_configuration['math_precision']); ?></div>
   </div>
 </div>
