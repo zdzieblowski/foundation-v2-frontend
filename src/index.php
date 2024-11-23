@@ -7,21 +7,15 @@
     <title><?php echo($frontend_configuration['page_title']); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo $frontend_configuration['page_theme_path'].$frontend_configuration['page_stylesheet'];?>"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/png" href="<?php echo $frontend_configuration['page_theme_path']; ?>favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="<?php echo $frontend_configuration['page_theme_path']; ?>favicon.svg" />
     <link rel="shortcut icon" href="<?php echo $frontend_configuration['page_theme_path']; ?>favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $frontend_configuration['page_theme_path']; ?>apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="TMS" />
     <link rel="manifest" href="<?php echo $frontend_configuration['page_theme_path']; ?>site.webmanifest" />
-    <script>
-      function revealContent(elementId) {
-        if (document.getElementById(elementId).classList.contains('hidden')) {
-          document.getElementById(elementId).classList.toggle('shown');
-        }
-      };
-    </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-title" content="TMS" />
+    <script src="common/methods.js"></script>
   </head>
   <body>
     <div class="header">
