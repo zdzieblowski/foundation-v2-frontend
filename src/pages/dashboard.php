@@ -81,13 +81,15 @@
             $worker_name = $worker_name ? $worker_name : 'UNNAMED';
       ?>
         <div class="list_wrap small_gap">
-          <div class="small_box bg_verylightgrey_orangeborder">
-            <div>Worker</div>
-            <div class="text_heavy text_right reveal_button">
-              <?php echo $worker_name; ?>
-              <a onclick="revealContent('<?php echo $worker['id']; ?>');" style="line-height:1; cursor: pointer;" ><span class="material-symbols-outlined">unfold_more</span></a>
+          <a onclick="revealContent('<?php echo $worker['id']; ?>');" style="cursor: pointer;" >
+            <div class="small_box bg_verylightgrey_orangeborder">
+              <div>Worker</div>
+              <div class="text_heavy text_right reveal_button">
+                <?php echo $worker_name; ?>
+                <span class="material-symbols-outlined">unfold_more</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div id="<?php echo $worker['id'];?>" class="hidden">
             <div class="list_wrap small_gap">
               <div class="two_columns small_gap">
@@ -142,13 +144,15 @@
           $blocks_found = True;
     ?>
       <div class="list_wrap small_gap">
-        <div class="small_box_long_content bg_verylightgrey_orangeborder">
-          <div>Hash</div>
-          <div class="text_heavy text_right reveal_button">
-            <?php echo $block['hash']; ?>
-            <a onclick="revealContent('<?php echo $block['id']; ?>');" style="line-height:1; cursor: pointer;" ><span class="material-symbols-outlined">unfold_more</span></a>
+        <a onclick="revealContent('<?php echo $block['id']; ?>');" style="cursor: pointer;" >
+          <div class="small_box_long_content bg_verylightgrey_orangeborder">
+            <div>Hash</div>
+            <div class="text_heavy text_right reveal_button">
+              <?php echo $block['hash']; ?>
+              <span class="material-symbols-outlined">unfold_more</span>
+            </div>
           </div>
-        </div>
+        </a>
         <div id="<?php echo $block['id'];?>" class="hidden">
           <div class="list_wrap small_gap">
             <div class="small_box_long_content bg_verylightgrey">
