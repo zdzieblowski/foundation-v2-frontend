@@ -240,7 +240,7 @@ a.header_navi_item:hover {
 
 /**/
 
-.header_navi_item .material-symbols-outlined, .small_box .material-symbols-outlined {
+.header_navi_item .material-symbols-outlined, .small_box .material-symbols-outlined, .small_box_long_content .material-symbols-outlined {
   font-size: 20px !important;
 }
 

@@ -200,10 +200,12 @@
           </div>
         </div>
       </div>
-    </div>
     <?php
         }
       }
+    ?>
+    </div>
+    <?php
       if(!$blocks_found) {
     ?>
     <div class="text_normal">
@@ -214,27 +216,50 @@
     ?>
     <hr/>
     <div class="text_subheader">Payments</div>
-    <?php
-      foreach($payments_current as $payment){
-        if($payment['miner'] == $_COOKIE['address']) {
-          $payments_found = True;
-          echo 'submitted: '.formatDateTime($payment['timestamp']);
-          echo '<br>';
-          echo 'transaction: '.$payment['transaction'];
-          echo '<br>';
-          echo 'amount: '.formatLargeNumbers($payment['amount'], $frontend_configuration['math_precision']).$server_configuration['symbol'];
+    <div class="list_wrap">
+      <?php
+        foreach($payments_current as $payment){
+          if($payment['miner'] == $_COOKIE['address']) {
+            $payments_found = True;
+      ?>
+      <div class="list_wrap small_gap">
+        <div class="small_box_long_content bg_verylightgrey_orangeborder">
+          <div>Transaction</div>
+          <div class="text_heavy text_right">
+            <?php echo $payment['transaction']; ?>
+          </div>
+        </div>
+        <div class="two_columns">
+          <div class="small_box bg_lightgrey">
+            <div>Date</div>
+            <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
+          </div>
+          <div class="small_box bg_orange">
+            <div>Amount</div>
+            <div class="text_heavy text_right"><?php echo formatLargeNumbers($payment['amount'], $frontend_configuration['math_precision']).$server_configuration['symbol']; ?></div>
+          </div>
+        </div>
+      </div>
+      <?php
+          }
         }
-      }
+      ?>
+    </div>
+    <?php
       if(!$payments_found) {
-        echo '<div class="text_normal">No payments to <b>'.$_COOKIE['address'].'</b> were found.</div>';
+    ?>
+    <div class="text_normal">No payments to <b><?php echo $_COOKIE['address']; ?></b> were found.</div>
+    <?php
       }
     }
   }
   if(!$wallet_found) {
-    echo '<div class="text_normal">Miner <b>'.$_COOKIE['address'].'</b> was not found.</div>';
+  ?>
+  <div class="text_normal">Miner <b><?php echo $_COOKIE['address']; ?></b> was not found.</div>
+  <?php
   }
   ?>
-    <hr/>
+  <hr/>
   <?php endif ?>
     <form action="/?page=dashboard" method="post">
       <div class="wallet_address">
