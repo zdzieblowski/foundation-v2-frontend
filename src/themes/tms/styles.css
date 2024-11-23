@@ -18,6 +18,21 @@ body {
   overflow-y: scroll;
 }
 
+.reveal_button {
+  display: grid;
+  grid-template-columns: auto min-content;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: unset;
+}
+
 hr {
   margin-top: 16px;
   margin-bottom: 16px;
@@ -225,7 +240,7 @@ a.header_navi_item:hover {
 
 /**/
 
-.header_navi_item .material-symbols-outlined {
+.header_navi_item .material-symbols-outlined, .small_box .material-symbols-outlined {
   font-size: 20px !important;
 }
 
@@ -257,6 +272,7 @@ a.header_navi_item:hover {
   grid-template-columns: max-content auto;
   gap: 8px;
   word-break: break-all;
+  align-items: center;
 }
 
 .wrap {
@@ -295,7 +311,7 @@ a.header_navi_item:hover {
   color: #eee;
 }
 
-.bg_darkgrey_orangeborder {
+.bg_verylightgrey_orangeborder {
   background-color: #bbb;
   color: #444;
   border: 2px solid #e42;
@@ -416,9 +432,19 @@ a.donate_item_link:hover {
   .donate_item_link_text {
     display: unset;
   }
+
+  .small_box_long_content {
+    grid-template-columns: unset;
+  }
+
 }
 
 @media (max-width: 700px) {
+
+  .small_gap .small_gap {
+    gap: 1px !important;
+  }
+
   .three_columns {
     grid-template-columns: auto;
     row-gap: 1px;
@@ -462,6 +488,7 @@ a.donate_item_link:hover {
     font-size: unset;
     text-align: right;
   }
+
 }
 
 @media (max-width: 500px) {
@@ -500,7 +527,7 @@ a.donate_item_link:hover {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   .header_top_right {
     grid-template-columns: unset;
   }
