@@ -18,6 +18,10 @@ body {
   overflow-y: scroll;
 }
 
+b {
+  font-weight: 900;
+}
+
 .reveal_button {
   display: grid;
   grid-template-columns: auto min-content;
@@ -47,6 +51,14 @@ hr {
   row-gap: 8px;
 }
 
+.list_wrap hr {
+  width: calc(100% - 16px);
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .small_gap {
   gap: 4px !important;
 }
@@ -54,7 +66,6 @@ hr {
 .wrap hr {
   margin-top: 8px;
   margin-bottom: 8px;
-  margin: 8px;
   border-top: 1px solid #999;
   border-bottom: 1px solid #bbb;
   border-left: none;
@@ -277,7 +288,7 @@ a.header_navi_item:hover {
 
 .wrap {
   padding: 8px;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 /**/
@@ -315,6 +326,12 @@ a.header_navi_item:hover {
   background-color: #bbb;
   color: #444;
   border: 2px solid #e42;
+}
+
+.bg_verylightgrey_darkgreyborder {
+  background-color: #bbb;
+  color: #444;
+  border: 2px solid #444;
 }
 
 .bg_darkgrey {
@@ -441,7 +458,7 @@ a.donate_item_link:hover {
 
 @media (max-width: 700px) {
 
-  .small_gap .small_gap {
+  .three_columns.small_gap, .two_columns.small_gap {
     gap: 1px !important;
   }
 
