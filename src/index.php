@@ -27,23 +27,23 @@
           <div class="header_info">
             <?php echo ($_SERVER['SERVER_NAME']); ?>/<?php echo ($server_configuration['symbol']); ?>
           </div>
-          <div><a class="header_navi_item" href=""><span class="material-symbols-outlined">home</span></a></div>
+          <div><a class="header_navi_item" href="<?php echo $frontend_configuration['page_subfolder']; ?>"><span class="material-symbols-outlined">home</span></a></div>
         </div>
       </div>
       <div class="header_navi">
-        <a class="header_navi_item header_navi_item_text" href="?page=dashboard">
+        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=dashboard">
           <span class="material-symbols-outlined">dashboard</span>
           Dashboard
         </a>
-        <a class="header_navi_item header_navi_item_text" href="?page=miners">
+        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=miners">
           <span class="material-symbols-outlined">group</span>
           Miners
         </a>
-        <a class="header_navi_item header_navi_item_text" href="?page=blocks">
+        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=blocks">
           <span class="material-symbols-outlined">star_rate</span>
           Blocks
         </a>
-        <a class="header_navi_item header_navi_item_text" href="?page=transactions">
+        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=transactions">
           <span class="material-symbols-outlined">payments</span>
           Transactions
         </a>
