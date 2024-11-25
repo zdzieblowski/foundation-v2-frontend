@@ -29,9 +29,9 @@
         </div>
         <div class="header_navi">
           <a class="header_navi_item header_navi_item_text" href="/?page=dashboard"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
-          <a class="header_navi_item header_navi_item_text" href="/?page=miners"><span class="material-symbols-outlined">group</span>Miners & workers</a>
-          <a class="header_navi_item header_navi_item_text" href="/?page=blocks"><span class="material-symbols-outlined">star_rate</span>Blocks & rounds</a>
-          <a class="header_navi_item header_navi_item_text" href="/?page=payments"><span class="material-symbols-outlined">payments</span>Payments</a>
+          <a class="header_navi_item header_navi_item_text" href="/?page=miners"><span class="material-symbols-outlined">group</span>Miners</a>
+          <a class="header_navi_item header_navi_item_text" href="/?page=blocks"><span class="material-symbols-outlined">star_rate</span>Blocks</a>
+          <a class="header_navi_item header_navi_item_text" href="/?page=transactions"><span class="material-symbols-outlined">payments</span>Transactions</a>
         </div>
       </div>
     </div>
@@ -52,8 +52,8 @@
               case 'blocks':
                 include('pages/blocks.php');
                 break;
-              case 'payments':
-                include('pages/payments.php');
+              case 'transactions':
+                include('pages/transactions.php');
                 break;
               case 'donate':
                 include('pages/donate.php');

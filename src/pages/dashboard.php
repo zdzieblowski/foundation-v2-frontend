@@ -72,7 +72,7 @@
           <div class="text_large"><?php echo formatLargeNumbers($miner['invalid'], $frontend_configuration['math_precision']); ?></div>
         </div>
       </div>
-      <hr/>
+      <hr class="inner_hr wrap_hr"/>
       <div class="list_wrap">
       <?php
         foreach($workers_current as $worker){
@@ -155,7 +155,7 @@
         </a>
         <div id="<?php echo $block['id'];?>" class="hidden">
           <div class="list_wrap small_gap">
-            <div class="small_box_long_content bg_verylightgrey">
+            <div class="small_box_long_content bg_lightgrey">
               <div>Round</div>
               <div class="text_heavy text_right"><?php echo $block['round']; ?></div>
             </div>
@@ -169,7 +169,7 @@
                 <div class="text_heavy text_right"><?php echo formatDateTime($block['timestamp']); ?></div>
               </div>
             </div>
-            <div class="small_box_long_content bg_verylightgrey">
+            <div class="small_box_long_content bg_lightgrey">
               <div>Transaction</div>
               <div class="text_heavy text_right"><?php echo $block['transaction']; ?></div>
             </div>

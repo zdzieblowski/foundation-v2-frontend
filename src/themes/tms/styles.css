@@ -46,30 +46,36 @@ hr {
   border-right: none;
 }
 
-.list_wrap {
-  display: grid;
-  row-gap: 8px;
+.inner_hr {
+  width: calc(100% - 16px);
 }
 
-.list_wrap hr {
-  width: calc(100% - 16px);
+.list_hr {
   margin-top: 4px;
   margin-bottom: 4px;
-  margin-left: 8px;
-  margin-right: 8px;
 }
 
-.small_gap {
-  gap: 4px !important;
-}
-
-.wrap hr {
+.wrap_hr {
   margin-top: 8px;
   margin-bottom: 8px;
   border-top: 1px solid #999;
   border-bottom: 1px solid #bbb;
   border-left: none;
   border-right: none;
+}
+
+.wrappedlist_hr {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.list_wrap {
+  display: grid;
+  row-gap: 8px;
+}
+
+.small_gap {
+  gap: 4px !important;
 }
 
 .width_limit {

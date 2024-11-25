@@ -2,7 +2,7 @@
   $miners_current = getData('http://localhost:3001/api/v2/evrmore/current/miners');
   $workers_current = getData('http://localhost:3001/api/v2/evrmore/current/workers');
 ?>
-<div class="text_header">Miners & workers</div>
+<div class="text_header">Miners</div>
 <div class="text_normal">List of miners and workers.</div>
 <hr/>
 <div class="list_wrap">
@@ -63,7 +63,7 @@
             <div class="text_heavy text_right"><?php echo formatLargeNumbers($miner['invalid'], $frontend_configuration['math_precision']); ?></div>
           </div>
         </div>
-        <hr/>
+        <hr class="inner_hr wrap_hr"/>
         <div class="list_wrap">
           <?php
             foreach($workers_current as $worker){
@@ -129,7 +129,7 @@
       </div>
     </div>
     <?php if ($miner != end($miners_current)) {?>
-    <hr/>
+    <hr class="inner_hr list_hr"/>
     <?php
         }
       }
