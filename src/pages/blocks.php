@@ -103,7 +103,7 @@ $rounds_combined = getData('http://localhost:3001/api/v2/evrmore/combined/rounds
                           <div class="small_box bg_lightgrey">
                             <div>Invalid shares</div>
                             <div class="text_heavy text_right">
-                              <?php echo formatLargeNumbers($round['invalid'], $frontend_configuration['math_precision']); ?>%
+                              <?php echo formatLargeNumbers($round['invalid'], $frontend_configuration['math_precision']); ?>
                             </div>
                           </div>
                         </div>
