@@ -3,7 +3,8 @@ $server_configuration = getData('http://localhost:3001/api/v2/evrmore/current/co
 
 $frontend_configuration = [
   'page_title' => 'themining.site',
-  'page_theme_path' => '/themes/tms/',
+  'page_subfolder' => '/EVR/',
+  'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
   'page_logotype' => 'logo.svg',
 
