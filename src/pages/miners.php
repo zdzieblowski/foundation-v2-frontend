@@ -105,7 +105,7 @@ $workers_current = getData('http://localhost:3001/api/v2/evrmore/current/workers
                         </div>
                         <div class="small_box bg_lightgrey">
                           <div>Worker type</div>
-                          <div class="text_heavy text_right"><?php echo ($worker['solo'] ? 'SOLO' : 'POOL'); ?></div>
+                          <div class="text_heavy text_right"><?php echo ($worker['solo'] ? 'SOLO' : 'SHARED'); ?></div>
                         </div>
                       </div>
                       <div class="two_columns small_gap">
