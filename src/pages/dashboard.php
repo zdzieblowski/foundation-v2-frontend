@@ -8,7 +8,7 @@ $payments_current = getData('http://localhost:3001/api/v2/evrmore/historical/pay
 <?php if (isset($_POST['save_address'])): ?>
   <?php
   setcookie('address', $_POST['save_address']);
-  header("Refresh:0; url=/?page=dashboard");
+  header('Refresh:0; url='.$frontend_configuration['page_subfolder'].'?page=dashboard');
 ?>
 <?php else: ?>
   <?php if (!isset($_COOKIE['address'])): ?>
@@ -285,7 +285,7 @@ $payments_current = getData('http://localhost:3001/api/v2/evrmore/historical/pay
     ?>
     <hr />
   <?php endif ?>
-  <form action="/?page=dashboard" method="post">
+  <form action="<?php echo $frontend_configuration['page_subfolder']; ?>?page=dashboard" method="post">
     <div class="wallet_address">
       <input type="text" name="save_address" value="<?php echo $_COOKIE['address']; ?>" />
       <input type="submit" value="Submit" />

@@ -22,7 +22,7 @@
   <div class="header">
     <div class="width_limit header_grid">
       <div class="header_top">
-        <img src="<?php echo $frontend_configuration['page_theme_path'] . $frontend_configuration['page_logotype']; ?>" height="33" />
+        <a href="/"><img src="<?php echo $frontend_configuration['page_theme_path'] . $frontend_configuration['page_logotype']; ?>" height="33" /></a>
         <div class="header_top_right">
           <div class="header_info">
             <?php echo ($_SERVER['SERVER_NAME']); ?>/<?php echo ($server_configuration['symbol']); ?>
