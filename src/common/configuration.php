@@ -9,7 +9,7 @@ $frontend_configuration = [
 
   'math_precision' => 2,
 
-  'pool_ip' => '5.75.235.4',
+  'pool_ip' => 'localhost',
   'pool_name' => 'evrmore',
   'pool_hashrate_unit' => 'H/s',
   'pool_donation_currency' => 'Evrmore',
