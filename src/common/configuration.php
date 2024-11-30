@@ -11,6 +11,7 @@ $frontend_configuration = [
 
   'pool_ip' => 'localhost',
   'pool_name' => 'evrmore',
+  'pool_color' => '#049dcc',
   'pool_hashrate_unit' => 'H/s',
   'pool_donation_currency' => 'Evrmore',
   'pool_donation_wallet' => 'EKD6T8CKqTmebBFnpjmHFRCY2jWs117wPS',

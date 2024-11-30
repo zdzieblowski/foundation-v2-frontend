@@ -16,16 +16,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-mobile-web-app-title" content="TMS" />
   <script src="common/methods.js"></script>
+  <style>
+    :root {
+      --pool_color: <?php echo $frontend_configuration['pool_color']; ?>;
+    }
+  </style>
 </head>
 
 <body>
   <div class="header">
     <div class="width_limit header_grid">
       <div class="header_top">
-        <a href="/"><img src="<?php echo $frontend_configuration['page_theme_path'] . $frontend_configuration['page_logotype']; ?>" height="33" /></a>
+        <a href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;"><script xmlns=""/>
+          <defs>
+            <style>
+              .st0 {
+                fill: <?php echo $frontend_configuration['pool_color'];?>;
+              }
+            </style>
+          </defs>
+          <polygon class="st0" points="353 328 622.2 328 500.2 159.4 542.3 0 26 0 0 100 68.3 100 8.6 329.2 112 329.2 171.7 100 240.1 100 180.4 329.2 283.7 329.2 343.4 100 412.5 100 398.2 153.9 391.5 179.8 426.4 228 379 228 353 328"/>
+        </svg>
+        </a>
         <div class="header_top_right">
           <div class="header_info">
-            <?php echo ($_SERVER['SERVER_NAME']); ?>/<?php echo ($server_configuration['symbol']); ?>
+            <div><?php echo ($_SERVER['SERVER_NAME']); ?>/</div><div><b style="color: var(--pool_color);"><?php echo ($server_configuration['symbol']); ?></b></div>
           </div>
           <div><a class="header_navi_item" href="<?php echo $frontend_configuration['page_subfolder']; ?>"><span class="material-symbols-outlined">home</span></a></div>
         </div>

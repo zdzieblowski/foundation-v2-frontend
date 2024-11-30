@@ -95,7 +95,7 @@ hr {
 .text_header {
   font-size: 24px;
   font-weight: 900;
-  color: #e42;
+  color: var(--pool_color);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -131,7 +131,7 @@ hr {
 /**/
 
 .header {
-  background-color: #888;
+  background-color: #555;
   position: sticky;
   top: 0px;
   width: 100%;
@@ -166,6 +166,7 @@ hr {
   color: #eee;
   border-radius: 8px;
   font-size: 11px;
+  grid-template-columns: min-content min-content;
 }
 
 .header_navi {
@@ -233,7 +234,7 @@ a.header_navi_item:hover {
 
 .footer_content_left a {
   text-decoration: none;
-  color: #e42;
+  color: var(--pool_color);
 }
 
 .footer_content_left a:hover {
@@ -328,14 +329,14 @@ a.header_navi_item:hover {
 /**/
 
 .bg_orange {
-  background-color: #e42;
+  background-color: var(--pool_color);
   color: #eee;
 }
 
 .bg_verylightgrey_orangeborder {
   background-color: #bbb;
   color: #444;
-  border: 2px solid #e42;
+  border: 2px solid var(--pool_color);
 }
 
 .bg_verylightgrey_darkgreyborder {
@@ -387,7 +388,7 @@ a.header_navi_item:hover {
 }
 
 a.donate_item_link {
-  background-color: #e42;
+  background-color: var(--pool_color);
   color: #eee;
   border-radius: 0 8px 8px 0;
   padding: 16px;
@@ -426,7 +427,7 @@ a.donate_item_link:hover {
 }
 
 .wallet_address input[type=submit] {
-  background-color: #e42;
+  background-color: var(--pool_color);
   color: #eee;
   border-radius: 0 8px 8px 0;
 }
