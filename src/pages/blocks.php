@@ -1,6 +1,6 @@
 <?php
-$blocks_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/combined/blocks');
-$rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/combined/rounds');
+$blocks_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/combined/blocks');
+$rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/combined/rounds');
 ?>
 <div class="text_header">Blocks</div>
 <div class="text_normal">List of mined blocks and rounds.</div>

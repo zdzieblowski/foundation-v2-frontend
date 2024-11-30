@@ -1,6 +1,6 @@
 <?php
-$miners_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/miners');
-$workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/workers');
+$miners_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/miners');
+$workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/workers');
 ?>
 <div class="text_header">Miners</div>
 <div class="text_normal">List of miners and workers.</div>

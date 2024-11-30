@@ -1,6 +1,6 @@
 <?php
-$transactions_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/historical/transactions');
-$payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/historical/payments');
+$transactions_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/transactions');
+$payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/payments');
 ?>
 <div class="text_header">Transactions</div>
 <div class="text_normal">List of payment transactions.</div>

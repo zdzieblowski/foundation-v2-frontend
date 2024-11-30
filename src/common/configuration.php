@@ -17,6 +17,6 @@ $frontend_configuration = [
   'pool_donation_explorer_link' => 'https://evr.cryptoscope.io/address/?address=EKD6T8CKqTmebBFnpjmHFRCY2jWs117wPS'
 ];
 
-$server_configuration = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/configuration')[0];
+$server_configuration = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/configuration')[0];
 
 ?>

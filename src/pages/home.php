@@ -1,7 +1,7 @@
 <?php
-$ports_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/ports');
-$metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/metadata');
-$network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/network');
+$ports_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/ports');
+$metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
+$network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/network');
 ?>
 <div class="three_columns">
   <div class="box bg_orange">

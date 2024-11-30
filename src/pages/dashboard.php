@@ -1,8 +1,8 @@
 <?php
-$miners_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/miners');
-$workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/current/workers');
-$blocks_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/combined/blocks');
-$payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/evrmore/historical/payments');
+$miners_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/miners');
+$workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/workers');
+$blocks_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/combined/blocks');
+$payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/payments');
 ?>
 <div class="text_header">Dashboard</div>
 <?php if (isset($_POST['save_address'])): ?>
