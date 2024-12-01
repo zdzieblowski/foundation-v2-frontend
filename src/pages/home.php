@@ -36,12 +36,19 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
 </div>
 <hr />
 <div class="text_subheader">Getting started</div>
+<div class="text_normal">Download the mining software - we suggest <b><?php echo $frontend_configuration['pool_suggested_software']; ?></b> for the <b><?php echo $server_configuration['algorithm']; ?></b> algorithm.</div>
+<a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['pool_suggested_software_link']; ?>" target="_blank" style="margin-bottom: 16px;">
+  <span class="material-symbols-outlined">download</span>
+  <div>Download <b><?php echo $frontend_configuration['pool_suggested_software']; ?></b></div>
+</a>
 <div class="text_normal">Use one of following commands to connect to the pool.</div>
 <div class="home_ports">
   <?php
   foreach ($ports_current as $port) {
-    echo '<div class="home_port"><div class="home_port_type">' . $port['type'] . '</div>';
-    echo '<div class="home_port_command">./miner -a ' . $server_configuration['algorithm'] . ' -o stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' -u WALLET -w WORKER</div></div>';
+    echo '<div class="home_port"><div class="home_port_type">' . $port['type'] . ' LINUX:</div>';
+    echo '<div class="home_port_command">./'.$frontend_configuration['pool_suggested_software'].' -a ' . $server_configuration['algorithm'] . ' -o stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' -u &lt;WALLET&gt; -w &lt;WORKER&gt;</div></div>';
+    echo '<div class="home_port"><div class="home_port_type">' . $port['type'] . ' WINDOWS:</div>';
+    echo '<div class="home_port_command">'.$frontend_configuration['pool_suggested_software'].'.exe -a ' . $server_configuration['algorithm'] . ' -o stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' -u &lt;WALLET&gt; -w &lt;WORKER&gt;</div></div>';
   }
   ?>
 </div>

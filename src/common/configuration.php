@@ -9,13 +9,19 @@ $frontend_configuration = [
 
   'math_precision' => 2,
 
-  'pool_ip' => 'localhost',
-  'pool_name' => 'evrmore',
   'pool_color' => '#049dcc',
-  'pool_hashrate_unit' => 'H/s',
   'pool_donation_currency' => 'Evrmore',
+
   'pool_donation_wallet' => 'EKD6T8CKqTmebBFnpjmHFRCY2jWs117wPS',
-  'pool_donation_explorer_link' => 'https://evr.cryptoscope.io/address/?address=EKD6T8CKqTmebBFnpjmHFRCY2jWs117wPS'
+  'pool_donation_explorer_link' => 'https://evr.cryptoscope.io/address/?address=EKD6T8CKqTmebBFnpjmHFRCY2jWs117wPS',
+
+  'pool_hashrate_unit' => 'H/s',
+  'pool_ip' => '127.0.0.1',
+
+  'pool_name' => 'evrmore',
+
+  'pool_suggested_software' => 'wildrig-multi',
+  'pool_suggested_software_link' => 'https://github.com/andru-kun/wildrig-multi/releases'
 ];
 
 $server_configuration = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/configuration')[0];
