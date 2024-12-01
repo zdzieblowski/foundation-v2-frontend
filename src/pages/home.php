@@ -46,9 +46,9 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <?php
   foreach ($ports_current as $port) {
     echo '<div class="home_port"><div class="home_port_type">' . $port['type'] . ' LINUX:</div>';
-    echo '<div class="home_port_command">./'.$frontend_configuration['pool_suggested_software'].' -a ' . $server_configuration['algorithm'] . ' -o stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' -u &lt;WALLET&gt; -w &lt;WORKER&gt;</div>';
+    echo '<div class="home_port_command">./'.$frontend_configuration['pool_suggested_software_linux'].' -a ' . $server_configuration['algorithm'] . ' -o stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' -u &lt;WALLET&gt; -w &lt;WORKER&gt;</div>';
     echo '<hr class="list_hr" style="width: 100%;"><div class="home_port_type">' . $port['type'] . ' WINDOWS:</div>';
-    echo '<div class="home_port_command">'.$frontend_configuration['pool_suggested_software'].'.exe -a ' . $server_configuration['algorithm'] . ' -o stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' -u &lt;WALLET&gt; -w &lt;WORKER&gt;</div></div>';
+    echo '<div class="home_port_command">'.$frontend_configuration['pool_suggested_software_windows'].' -a ' . $server_configuration['algorithm'] . ' -o stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' -u &lt;WALLET&gt; -w &lt;WORKER&gt;</div></div>';
   }
   ?>
 </div>

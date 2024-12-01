@@ -21,6 +21,8 @@ $frontend_configuration = [
   'pool_name' => 'evrmore',
 
   'pool_suggested_software' => 'wildrig-multi',
+  'pool_suggested_software_linux' => 'wildrig-multi',
+  'pool_suggested_software_windows' => 'wildrig.exe',
   'pool_suggested_software_link' => 'https://github.com/andru-kun/wildrig-multi/releases'
 ];
 
