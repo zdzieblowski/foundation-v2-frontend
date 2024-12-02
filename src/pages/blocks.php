@@ -10,7 +10,7 @@ $rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   foreach ($blocks_combined as $block) {
     ?>
     <div class="list_wrap small_gap">
-      <a onclick="revealContent('<?php echo $block['id']; ?>');" style="cursor: pointer;">
+      <a onclick="revealContent('block_<?php echo $block['id']; ?>');" style="cursor: pointer;">
         <div class="small_box_long_content bg_verylightgrey_orangeborder">
           <div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div>
           <div class="text_heavy text_right reveal_button">
@@ -19,7 +19,7 @@ $rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
           </div>
         </div>
       </a>
-      <div id="<?php echo $block['id']; ?>" class="hidden">
+      <div id="block_<?php echo $block['id']; ?>" class="hidden">
         <div class="list_wrap small_gap">
           <div class="two_columns small_gap">
             <div class="small_box bg_lightgrey">

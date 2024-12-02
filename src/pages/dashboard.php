@@ -92,7 +92,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                 $worker_name = $worker_name ? $worker_name : 'UNNAMED';
                 ?>
                 <div class="list_wrap small_gap">
-                  <a onclick="revealContent('<?php echo $worker['id']; ?>');" style="cursor: pointer;">
+                  <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" style="cursor: pointer;">
                     <div class="small_box bg_verylightgrey_orangeborder">
                       <div>Worker</div>
                       <div class="text_heavy text_right reveal_button">
@@ -101,7 +101,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                       </div>
                     </div>
                   </a>
-                  <div id="<?php echo $worker['id']; ?>" class="hidden">
+                  <div id="worker_<?php echo $worker['id']; ?>" class="hidden">
                     <div class="list_wrap small_gap">
                       <div class="two_columns small_gap">
                         <div class="small_box bg_orange">
@@ -162,7 +162,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
               $blocks_found = True;
               ?>
               <div class="list_wrap small_gap">
-                <a onclick="revealContent('<?php echo $block['id']; ?>');" style="cursor: pointer;">
+                <a onclick="revealContent('block_<?php echo $block['id']; ?>');" style="cursor: pointer;">
                   <div class="small_box_long_content bg_verylightgrey_orangeborder">
                     <div>Hash</div>
                     <div class="text_heavy text_right reveal_button">
@@ -171,7 +171,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                     </div>
                   </div>
                 </a>
-                <div id="<?php echo $block['id']; ?>" class="hidden">
+                <div id="block_<?php echo $block['id']; ?>" class="hidden">
                   <div class="list_wrap small_gap">
                     <div class="small_box_long_content bg_lightgrey">
                       <div>Round</div>

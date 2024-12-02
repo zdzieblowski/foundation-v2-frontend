@@ -9,7 +9,7 @@ $workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <?php
   foreach ($miners_current as $miner) {
     ?>
-    <a onclick="revealContent('<?php echo $miner['id']; ?>');" style="cursor: pointer;">
+    <a onclick="revealContent('miner_<?php echo $miner['id']; ?>');" style="cursor: pointer;">
       <div class="small_box_long_content bg_verylightgrey_orangeborder reveal_button">
         <div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div>
         <div class="text_right reveal_button">
@@ -18,7 +18,7 @@ $workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
         </div>
       </div>
     </a>
-    <div id="<?php echo $miner['id']; ?>" style="margin-top: -4px;" class="hidden">
+    <div id="miner_<?php echo $miner['id']; ?>" style="margin-top: -4px;" class="hidden">
       <div class="list_wrap small_gap">
         <div class="three_columns small_gap">
           <div class="small_box bg_orange">
@@ -85,7 +85,7 @@ $workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
                 $worker_name = $worker_name ? $worker_name : 'UNNAMED';
                 ?>
                 <div class="list_wrap small_gap">
-                  <a onclick="revealContent('<?php echo $miner['id'] . $worker['id']; ?>');" style="cursor: pointer;">
+                  <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" style="cursor: pointer;">
                     <div class="small_box bg_verylightgrey_darkgreyborder">
                       <div>Worker: <b><?php echo $worker_name; ?></b></div>
                       <div class="text_right reveal_button">
@@ -94,7 +94,7 @@ $workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
                       </div>
                     </div>
                   </a>
-                  <div id="<?php echo $miner['id'] . $worker['id']; ?>" class="hidden">
+                  <div id="minwor_<?php echo $miner['id'] . $worker['id']; ?>" class="hidden">
                     <div class="list_wrap small_gap">
                       <div class="two_columns small_gap">
                         <div class="small_box bg_darkgrey">

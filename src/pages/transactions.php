@@ -9,7 +9,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
   <?php
   foreach ($transactions_current as $transaction) {
     ?>
-    <a onclick="revealContent('<?php echo $transaction['id']; ?>');" style="cursor: pointer;">
+    <a onclick="revealContent('tx_<?php echo $transaction['id']; ?>');" style="cursor: pointer;">
       <div class="small_box_long_content bg_verylightgrey_orangeborder reveal_button">
         <div>Transaction: <b><?php echo privacyFilter($transaction['transaction'], 21); ?></b></div>
         <div class="text_right reveal_button">
@@ -18,7 +18,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
         </div>
       </div>
     </a>
-    <div id="<?php echo $transaction['id']; ?>" style="margin-top: -4px;" class="hidden">
+    <div id="tx_<?php echo $transaction['id']; ?>" style="margin-top: -4px;" class="hidden">
       <div class="list_wrap small_gap">
         <div class="two_columns small_gap">
           <div class="small_box bg_lightgrey">
