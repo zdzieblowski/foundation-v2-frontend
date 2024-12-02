@@ -23,6 +23,10 @@ $frontend_configuration = [
   'pool_suggested_software' => 'WildRig Multi',
   'pool_suggested_software_linux' => 'wildrig-multi',
   'pool_suggested_software_windows' => 'wildrig.exe',
+  'pool_suggested_command_algo' => '-a',
+  'pool_suggested_command_open' => '-o',
+  'pool_suggested_command_wallet' => '-u',
+  'pool_suggested_command_worker' => '-w',
   'pool_suggested_software_link' => 'https://github.com/andru-kun/wildrig-multi/releases'
 ];
 
