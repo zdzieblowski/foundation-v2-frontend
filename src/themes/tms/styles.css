@@ -577,7 +577,7 @@ a.donate_item_link:hover {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .header_top_right {
     grid-template-columns: unset;
   }
