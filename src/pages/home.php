@@ -102,9 +102,17 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <?php
   foreach ($ports_current as $port) {
     echo '<div class="home_port"><div class="home_port_type">' . $port['type'] . ' LINUX:</div>';
-    echo '<div class="home_port_command">./'.$frontend_configuration['pool_suggested_software_linux'].' '.$frontend_configuration['pool_suggested_command_algo'].' ' . $server_configuration['algorithm'] . ' '.$frontend_configuration['pool_suggested_command_open'].' stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' '.$frontend_configuration['pool_suggested_command_wallet'].' &lt;WALLET&gt; '.$frontend_configuration['pool_suggested_command_worker'].' &lt;WORKER&gt;</div>';
+    echo '<div class="home_port_command">./'.$frontend_configuration['pool_suggested_software_linux'].' '.$frontend_configuration['pool_suggested_command_algo'].' ' . $server_configuration['algorithm'] . ' '.$frontend_configuration['pool_suggested_command_open'].' stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' '.$frontend_configuration['pool_suggested_command_wallet'].' &lt;WALLET&gt;';
+    if ($frontend_configuration['pool_suggested_command_worker'] != '') {
+      echo ' '.$frontend_configuration['pool_suggested_command_worker'].' &lt;WORKER&gt;';
+    }
+    echo '</div>';
     echo '<hr class="list_hr" style="width: 100%;"><div class="home_port_type">' . $port['type'] . ' WINDOWS:</div>';
-    echo '<div class="home_port_command">'.$frontend_configuration['pool_suggested_software_windows'].' '.$frontend_configuration['pool_suggested_command_algo'].' ' . $server_configuration['algorithm'] . ' '.$frontend_configuration['pool_suggested_command_open'].' stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' '.$frontend_configuration['pool_suggested_command_wallet'].' &lt;WALLET&gt; '.$frontend_configuration['pool_suggested_command_worker'].' &lt;WORKER&gt;</div></div>';
+    echo '<div class="home_port_command">'.$frontend_configuration['pool_suggested_software_windows'].' '.$frontend_configuration['pool_suggested_command_algo'].' ' . $server_configuration['algorithm'] . ' '.$frontend_configuration['pool_suggested_command_open'].' stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' '.$frontend_configuration['pool_suggested_command_wallet'].' &lt;WALLET&gt;';
+    if ($frontend_configuration['pool_suggested_command_worker'] != '') {
+      echo ' '.$frontend_configuration['pool_suggested_command_worker'].' &lt;WORKER&gt;';
+    }
+    echo '</div></div>';
   }
   ?>
 </div>
