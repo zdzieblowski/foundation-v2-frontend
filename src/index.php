@@ -27,7 +27,7 @@
   <div class="header">
     <div class="width_limit header_grid">
       <div class="header_top">
-        <a href="/">
+        <a href="/" style="width: min-content;">
         <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;"><script xmlns=""/>
           <defs>
             <style>
