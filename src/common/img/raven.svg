@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="evrmore" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill-rule: evenodd;
+      }
+
+      .st0, .st1 {
+        fill: #eee;
+      }
+    </style>
+  </defs>
+  <path class="st1" d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256,256-114.6,256-256S397.4,0,256,0ZM256,488c-128.1,0-232-103.9-232-232S127.9,24,256,24s232,103.9,232,232-103.9,232-232,232Z"/>
+  <polygon class="st0" points="161.8 415.9 216.6 166.3 228.6 142.3 234 122.9 248.4 107.5 269.4 96.9 291.6 96.9 302.5 109.1 350.3 124.7 310.3 138.2 320.8 184.5 337.4 205.6 296.6 355.3 243.6 355.1 161.8 415.9"/>
+</svg>
