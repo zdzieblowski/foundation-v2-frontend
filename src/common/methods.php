@@ -24,10 +24,12 @@ function getWorkerName($miner)
 
 function formatLargeNumbers($number, $precision)
 {
-  $units = array('', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q');
-  $pow = floor(($number ? log($number) : 0) / log(1000));
-  $pow = min($pow, count($units) - 1);
-  $number /= pow(1000, $pow);
+  if($number > 1){
+    $units = array('', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q');
+    $pow = floor(($number ? log($number) : 0) / log(1000));
+    $pow = min($pow, count($units) - 1);
+    $number /= pow(1000, $pow);
+  }
   return round($number, $precision) . '' . $units[$pow];
 }
 
