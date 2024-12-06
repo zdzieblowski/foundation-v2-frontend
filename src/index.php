@@ -28,7 +28,11 @@
     <div class="width_limit header_grid">
       <div class="header_top">
         <div style="display: grid; grid-template-columns: min-content min-content; gap: 16px; align-items: center;">
-          <div><a class="header_navi_item" href="<?php echo $frontend_configuration['page_subfolder']; ?>"><span class="material-symbols-outlined">home</span></a></div>
+          <div>
+            <a class="header_navi_item" href="<?php echo $frontend_configuration['page_subfolder']; ?>">
+              <span class="material-symbols-outlined">home</span>
+            </a>
+          </div>
           <div style="width: min-content;">
             <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;"><script xmlns=""/>
               <defs>
@@ -44,9 +48,14 @@
         </div>
         <div class="header_top_right">
           <div class="header_info">
-            <div><?php echo ($_SERVER['SERVER_NAME']); ?>/</div><div><b style="color: var(--pool_color);"><?php echo ($server_configuration['symbol']); ?></b></div>
+            <div><?php echo ($_SERVER['SERVER_NAME']); ?>/</div>
+            <div><b style="color: var(--pool_color);"><?php echo ($server_configuration['symbol']); ?></b></div>
           </div>
-          <div><a class="header_navi_item" href="/"><span class="material-symbols-outlined">logout</span></a></div>
+          <div>
+            <a class="header_navi_item" href="/">
+              <span class="material-symbols-outlined">logout</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="header_navi">
