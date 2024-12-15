@@ -7,7 +7,7 @@
     <div class="donate_item_name">Foundation Server (V2)</div>
     <div class="donate_item_address">github.com/blinkhash/foundation-v2-server</div>
     <a class="donate_item_link" href="https://github.com/blinkhash/foundation-v2-server" target="_blank">
-      <span class="donate_item_link_text">View on Github</span><img src="common/img/github.svg" height="24" />
+      <span class="donate_item_link_text">View on Github</span><img src="../../_common/images/github.svg" height="24" />
     </a>
   </div>
 </div>
@@ -18,7 +18,7 @@
     <div class="donate_item_name">Foundation Front-end (V2)</div>
     <div class="donate_item_address">github.com/zdzieblowski/foundation-v2-frontend</div>
     <a class="donate_item_link" href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank">
-      <span class="donate_item_link_text">View on Github</span><img src="common/img/github.svg" height="24" />
+      <span class="donate_item_link_text">View on Github</span><img src="../../_common/images/github.svg" height="24" />
     </a>
   </div>
   <div class="donate_grid_item">

@@ -191,13 +191,14 @@ a.header_navi_item_text {
   gap: 8px;
 }
 
-a.header_navi_item:visited {
-  background-color: #444;
-}
-
 a.header_navi_item:hover {
   background-color: #666;
 }
+
+a.header_navi_item:active {
+  background-color: #888;
+}
+
 
 /**/
 
@@ -401,7 +402,11 @@ a.donate_item_link {
 }
 
 a.donate_item_link:hover {
-  background-color: #444;
+  background-color: #666;
+}
+
+a.donate_item_link:active {
+  background-color: #888;
 }
 
 .donate_item_link_text {
@@ -433,7 +438,11 @@ a.donate_item_link:hover {
 }
 
 .wallet_address input[type=submit]:hover {
-  background-color: #444;
+  background-color: #666;
+}
+
+.wallet_address input[type=submit]:active {
+  background-color: #888;
 }
 
 /**/
