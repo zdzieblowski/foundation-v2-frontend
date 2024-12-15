@@ -39,12 +39,12 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
           </div>
           <div class="box bg_lightgrey">
             <div>Efficency</div>
-            <div class="text_large"><?php echo round($miner['efficiency'], $frontend_configuration['math_precision']); ?>%</div>
+            <div class="text_large"><?php echo formatPercents($miner['efficiency'], $frontend_configuration['math_precision']); ?>%</div>
             <?php debugData($miner['efficiency'], $frontend_configuration['page_debugmode']); ?>
           </div>
           <div class="box bg_lightgrey">
             <div>Effort</div>
-            <div class="text_large"><?php echo round($miner['effort'], $frontend_configuration['math_precision']); ?>%</div>
+            <div class="text_large"><?php echo formatPercents($miner['effort'], $frontend_configuration['math_precision']); ?>%</div>
             <?php debugData($miner['effort'], $frontend_configuration['page_debugmode']); ?>
           </div>
         </div>
@@ -133,14 +133,14 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                         <div class="small_box bg_lightgrey">
                           <div>Efficiency</div>
                           <div class="text_heavy text_right">
-                            <?php echo round($worker['efficiency'], $frontend_configuration['math_precision']); ?>%
+                            <?php echo formatPercents($worker['efficiency'], $frontend_configuration['math_precision']); ?>%
                           </div>
                           <?php debugData($worker['efficiency'], $frontend_configuration['page_debugmode']); ?>
                         </div>
                         <div class="small_box bg_lightgrey">
                           <div>Effort</div>
                           <div class="text_heavy text_right">
-                            <?php echo round($worker['effort'], $frontend_configuration['math_precision']); ?>%
+                            <?php echo formatPercents($worker['effort'], $frontend_configuration['math_precision']); ?>%
                           </div>
                           <?php debugData($worker['effort'], $frontend_configuration['page_debugmode']); ?>
                         </div>
@@ -232,7 +232,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                       <div class="small_box bg_darkgrey">
                         <div>Luck</div>
                         <div class="text_heavy text_right">
-                          <?php echo round($block['luck'], $frontend_configuration['math_precision']); ?>%
+                          <?php echo formatPercents($block['luck'], $frontend_configuration['math_precision']); ?>%
                         </div>
                         <?php debugData($block['luck'], $frontend_configuration['page_debugmode']); ?>
                       </div>

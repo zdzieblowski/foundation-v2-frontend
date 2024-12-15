@@ -29,6 +29,14 @@ function getWorkerName($miner)
   return $worker_name;
 }
 
+function formatPercents($number, $precision)
+{
+  if($number < 0) {
+    $number = 0;
+  }
+  return round($number, $precision);
+}
+
 function formatLargeNumbers($number, $precision)
 {
   if($number > 1) {

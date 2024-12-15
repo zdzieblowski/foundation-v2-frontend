@@ -34,7 +34,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
     <div class="text_large">
-      <?php echo round($server_configuration['recipientFee'] * 100, $frontend_configuration['math_precision']); ?>%
+      <?php echo formatPercents($server_configuration['recipientFee'] * 100, $frontend_configuration['math_precision']); ?>%
     </div>
     <?php debugData($server_configuration['recipientFee'], $frontend_configuration['page_debugmode']); ?>
   </div>
@@ -50,14 +50,14 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_lightgrey">
     <div>Effort</div>
     <div class="text_large">
-      <?php echo round($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>%
+      <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>%
     </div>
     <?php debugData($metadata_current[0]['effort'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Efficiency</div>
     <div class="text_large">
-      <?php echo round($metadata_current[0]['efficiency'], $frontend_configuration['math_precision']); ?>%
+      <?php echo formatPercents($metadata_current[0]['efficiency'], $frontend_configuration['math_precision']); ?>%
     </div>
     <?php debugData($metadata_current[0]['efficiency'], $frontend_configuration['page_debugmode']); ?>
   </div>

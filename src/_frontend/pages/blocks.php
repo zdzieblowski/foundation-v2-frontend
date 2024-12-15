@@ -50,7 +50,7 @@ $rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
             <div class="small_box bg_darkgrey">
               <div>Luck</div>
               <div class="text_heavy text_right">
-                <?php echo round($block['luck'], $frontend_configuration['math_precision']); ?>%
+                <?php echo formatPercents($block['luck'], $frontend_configuration['math_precision']); ?>%
               </div>
               <?php debugData($block['luck'], $frontend_configuration['page_debugmode']); ?>
             </div>
