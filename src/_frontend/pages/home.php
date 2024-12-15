@@ -5,7 +5,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
 ?>
 <div class="three_columns">
   <div class="box bg_orange two_columns" style="grid-template-columns: min-content auto; align-items: center;">
-    <img src="common/img/<?php echo $frontend_configuration['pool_name']; ?>.svg" height="33" width="33">
+    <img src="../<?php echo $pool; ?>/logo.svg" height="33" width="33">
     <div>
       <div>Currency</div>
       <div class="text_large"><?php echo $server_configuration['name']; ?></div>
