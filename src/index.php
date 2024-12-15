@@ -35,7 +35,7 @@
               <defs>
                 <style>
                   .st0 {
-                    fill: #444;
+                    fill: #eee;
                   }
                 </style>
               </defs>
@@ -107,8 +107,8 @@
       <div class="footer_content_left">
         2024+ &copy; themining.site
       </div>
-      <div class="footer_content_right">
-        <div><a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="_common/images/github.svg" height="24" /></a></div>
+      <div>
+        <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="_common/images/github.svg" height="24" /></a>
       </div>
     </div>
   </div>
