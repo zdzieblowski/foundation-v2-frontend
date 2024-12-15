@@ -73,7 +73,7 @@
         ?>
           <style>
             a.<?php echo $file; ?> {
-              background-color: #888;
+              background-color: #666;
               border-radius: 8px;
               border-bottom: 4px solid <?php echo $frontend_configuration['pool_color']; ?>;
             }
