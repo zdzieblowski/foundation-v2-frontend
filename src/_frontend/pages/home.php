@@ -9,15 +9,18 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div>
       <div>Currency</div>
       <div class="text_large"><?php echo $server_configuration['name']; ?></div>
+      <?php debugData($server_configuration['name'], $frontend_configuration['page_debugmode']); ?>
     </div>
   </div>
   <div class="box bg_lightgrey">
     <div>Symbol</div>
     <div class="text_large"><?php echo $server_configuration['symbol']; ?></div>
+    <?php debugData($server_configuration['symbol'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Algorithm</div>
     <div class="text_large"><?php echo $server_configuration['algorithm']; ?></div>
+    <?php debugData($server_configuration['algorithm'], $frontend_configuration['page_debugmode']); ?>
   </div>
 </div>
 <div class="two_columns mt-8px">
@@ -26,12 +29,14 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div class="text_large">
       <?php echo formatLargeNumbers($server_configuration['minimumPayment'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
     </div>
+    <?php debugData($server_configuration['minimumPayment'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
     <div class="text_large">
       <?php echo round($server_configuration['recipientFee'] * 100, $frontend_configuration['math_precision']); ?>%
     </div>
+    <?php debugData($server_configuration['recipientFee'], $frontend_configuration['page_debugmode']); ?>
   </div>
 </div>
 <hr />
@@ -40,18 +45,21 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_darkgrey">
     <div>Blocks mined</div>
     <div class="text_large"><?php echo $metadata_current[0]['blocks']; ?></div>
+    <?php debugData($metadata_current[0]['blocks'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Effort</div>
     <div class="text_large">
       <?php echo round($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>%
     </div>
+    <?php debugData($metadata_current[0]['effort'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Efficiency</div>
     <div class="text_large">
       <?php echo round($metadata_current[0]['efficiency'], $frontend_configuration['math_precision']); ?>%
     </div>
+    <?php debugData($metadata_current[0]['efficiency'], $frontend_configuration['page_debugmode']); ?>
   </div>
 </div>
 <div class="three_columns mt-8px">
@@ -60,14 +68,17 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div class="text_large">
       <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
     </div>
+    <?php debugData($metadata_current[0]['hashrate'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Miners</div>
     <div class="text_large"><?php echo $metadata_current[0]['miners']; ?></div>
+    <?php debugData($metadata_current[0]['miners'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Workers</div>
     <div class="text_large"><?php echo $metadata_current[0]['workers']; ?></div>
+    <?php debugData($metadata_current[0]['workers'], $frontend_configuration['page_debugmode']); ?>
   </div>
 </div>
 <hr />
@@ -78,16 +89,19 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div class="text_large">
       <?php echo formatLargeNumbers($network_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
     </div>
+    <?php debugData($network_current[0]['hashrate'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Block height</div>
     <div class="text_large"><?php echo $network_current[0]['height']; ?></div>
+    <?php debugData($network_current[0]['height'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Difficulty</div>
     <div class="text_large">
       <?php echo formatLargeNumbers($network_current[0]['difficulty'], $frontend_configuration['math_precision']); ?>
     </div>
+    <?php debugData($network_current[0]['difficulty'], $frontend_configuration['page_debugmode']); ?>
   </div>
 </div>
 <hr />

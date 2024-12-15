@@ -300,7 +300,7 @@ a.header_navi_item:active {
   display: grid;
   padding: 16px;
   border-radius: 8px;
-  grid-template-columns: max-content auto;
+  grid-template-columns: auto auto;
   gap: 8px;
   word-break: break-all;
   align-items: center;
@@ -470,6 +470,22 @@ a.donate_item_link:active {
   font-size: 11px;
 }
 
+.debug_box {
+  color: #444;
+  background-color: #ddd;
+  padding: 8px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 4px;
+  border: 1px dashed #444;
+  text-align: right;
+}
+
+.small_box .debug_box,
+.small_box_long_content .debug_box {
+  grid-column: span 2;
+}
+
 /**/
 
 @media (max-width: 800px) {
@@ -571,6 +587,9 @@ a.donate_item_link:active {
     text-align: right;
   }
 
+  .debug_box {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 500px) {

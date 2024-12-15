@@ -15,6 +15,13 @@ function getData($data_url)
   return $result;
 }
 
+function debugData($data, $in_debug_mode)
+{
+  if($in_debug_mode){
+    echo '<div class="debug_box">'.$data.'</div>';
+  }
+}
+
 function getWorkerName($miner)
 {
   $worker_name = explode('.', $miner, 2)[1];
@@ -24,11 +31,14 @@ function getWorkerName($miner)
 
 function formatLargeNumbers($number, $precision)
 {
-  if($number > 1){
+  if($number > 1) {
     $units = array('', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q');
     $pow = floor(($number ? log($number) : 0) / log(1000));
     $pow = min($pow, count($units) - 1);
     $number /= pow(1000, $pow);
+  }
+  elseif($number < 0) {
+    $number = 0;
   }
   return round($number, $precision) . '' . $units[$pow];
 }

@@ -5,6 +5,7 @@ $frontend_configuration = [
   'page_subfolder' => '/EVR/',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
+  'page_debugmode' => True,
 
   'math_precision' => 2,
 

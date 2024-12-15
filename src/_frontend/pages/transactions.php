@@ -1,5 +1,5 @@
 <?php
-$transactions_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/transactions');
+$transactions_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/transactions?limit=10&order=timestamp&direction=descending');
 $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/payments');
 ?>
 <div class="text_header">Transactions</div>
@@ -16,6 +16,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
           &nbsp;
           <span class="material-symbols-outlined">unfold_more</span>
         </div>
+        <?php debugData($transaction['transaction'], $frontend_configuration['page_debugmode']); ?>
       </div>
     </a>
     <div id="tx_<?php echo $transaction['id']; ?>" style="margin-top: -4px;" class="hidden">
@@ -24,12 +25,14 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
           <div class="small_box bg_lightgrey">
             <div>Submitted</div>
             <div class="text_heavy text_right"><?php echo formatDateTime($transaction['timestamp']); ?></div>
+            <?php debugData($transaction['timestamp'], $frontend_configuration['page_debugmode']); ?>
           </div>
           <div class="small_box bg_orange">
             <div>Amount</div>
             <div class="text_heavy text_right">
               <?php echo formatLargeNumbers($transaction['amount'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
             </div>
+            <?php debugData($transaction['amount'], $frontend_configuration['page_debugmode']); ?>
           </div>
         </div>
         <div class="wrap bg_verylightgrey">
@@ -41,17 +44,20 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                 <div class="small_box_long_content bg_darkgrey">
                   <div>Miner</div>
                   <div class="text_heavy text_right"><?php echo privacyFilter($payment['miner']); ?></div>
+                  <?php debugData($payment['miner'], $frontend_configuration['page_debugmode']); ?>
                 </div>
                 <div class="two_columns small_gap">
                   <div class="small_box bg_lightgrey">
                     <div>Date</div>
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
+                    <?php debugData($payment['timestamp'], $frontend_configuration['page_debugmode']); ?>
                   </div>
                   <div class="small_box bg_lightgrey">
                     <div>Amount</div>
                     <div class="text_heavy text_right">
                       <?php echo formatLargeNumbers($payment['amount'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
                     </div>
+                    <?php debugData($payment['amount'], $frontend_configuration['page_debugmode']); ?>
                   </div>
                 </div>
                 <?php if ($payment != end($payments_current)) { ?>
