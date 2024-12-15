@@ -73,18 +73,21 @@
         ?>
           <style>
             a.<?php echo $file; ?> {
-              background-color: <?php echo $frontend_configuration['pool_color']; ?>;
+              background-color: #888;
               border-radius: 8px;
+              border-bottom: 4px solid <?php echo $frontend_configuration['pool_color']; ?>;
             }
             a.<?php echo $file; ?>:hover {
-              background-color: #666;
+              background-color: <?php echo $frontend_configuration['pool_color']; ?>;
+              border-bottom: 4px solid #888;
             }
             a.<?php echo $file; ?>:active {
-              background-color: #888;
+              background-color: #444;
+              border-bottom: 4px solid <?php echo $frontend_configuration['pool_color']; ?>;
             }
           </style>
-          <a href="/<?php echo $file; ?>" style="text-decoration: none;" class="<?php echo $file; ?>">
-            <div class="box_long_content bg_orange" style="gap: 8px;display: grid; grid-template-columns: min-content auto min-content; align-items: center;">
+          <a href="/<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
+            <div class="box_long_content bg_orange" style="gap: 8px; display: grid; grid-template-columns: min-content auto min-content; align-items: center;">
               <img src="<?php echo $file; ?>/logo.svg" height="33" width="33">
               <div>
                 <div class="text_large"><?php echo $server_configuration['name']; ?></div>

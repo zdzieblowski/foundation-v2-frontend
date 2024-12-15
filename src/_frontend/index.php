@@ -29,7 +29,7 @@
       <div class="header_top">
         <div style="display: grid; grid-template-columns: min-content min-content; gap: 16px; align-items: center;">
           <div>
-            <a class="header_navi_item" href="<?php echo $frontend_configuration['page_subfolder']; ?>">
+            <a class="header_navi_item <?php if(!$_GET['page']) {echo 'header_navi_item_select';}?>" href="<?php echo $frontend_configuration['page_subfolder']; ?>">
               <span class="material-symbols-outlined">home</span>
             </a>
           </div>
@@ -59,19 +59,19 @@
         </div>
       </div>
       <div class="header_navi">
-        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=dashboard">
+        <a class="header_navi_item header_navi_item_text <?php if($_GET['page'] == 'dashboard') {echo 'header_navi_item_select';}?>" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=dashboard">
           <span class="material-symbols-outlined">dashboard</span>
           Dashboard
         </a>
-        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=miners">
+        <a class="header_navi_item header_navi_item_text <?php if($_GET['page'] == 'miners') {echo 'header_navi_item_select';}?>" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=miners">
           <span class="material-symbols-outlined">group</span>
           Miners
         </a>
-        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=blocks">
+        <a class="header_navi_item header_navi_item_text <?php if($_GET['page'] == 'blocks') {echo 'header_navi_item_select';}?>" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=blocks">
           <span class="material-symbols-outlined">star_rate</span>
           Blocks
         </a>
-        <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=transactions">
+        <a class="header_navi_item header_navi_item_text <?php if($_GET['page'] == 'transactions') {echo 'header_navi_item_select';}?>" href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=transactions">
           <span class="material-symbols-outlined">payments</span>
           Transactions
         </a>
