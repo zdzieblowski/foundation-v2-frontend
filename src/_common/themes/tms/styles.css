@@ -455,6 +455,23 @@ a.donate_item_link:active {
 
 /**/
 
+.pool_list_infos {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.info_box {
+  color: #666;
+  background-color: #eee;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/**/
+
 @media (max-width: 800px) {
   .header_navi {
     grid-template-columns: repeat(2, 1fr);
@@ -567,7 +584,7 @@ a.donate_item_link:active {
 
 }
 
-@media (max-width: 410px) {
+@media (max-width: 450px) {
   .header_navi {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
@@ -592,9 +609,7 @@ a.donate_item_link:active {
   .text_normal {
     word-break: break-all;
   }
-}
 
-@media (max-width: 380px) {
   .header_top_right {
     grid-template-columns: unset;
   }
@@ -610,4 +625,7 @@ a.donate_item_link:active {
     row-gap: 4px;
   }
 
+  .pool_list_infos {
+    grid-template-columns: auto;
+  }
 }

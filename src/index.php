@@ -70,6 +70,7 @@
             while (false !== ($file = readdir($handle))) {
               if (!in_array($file, $blacklist)) {
                 require($file.'/configuration.php');
+                $metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
         ?>
           <style>
             a.<?php echo $file; ?> {
@@ -87,10 +88,15 @@
             }
           </style>
           <a href="/<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
-            <div class="box_long_content bg_orange" style="gap: 8px; display: grid; grid-template-columns: min-content auto min-content; align-items: center;">
-              <img src="<?php echo $file; ?>/logo.svg" height="33" width="33">
+            <div class="box_long_content bg_orange" style="gap: 16px; display: grid; grid-template-columns: min-content auto min-content; align-items: center;">
+              <img src="<?php echo $file; ?>/logo.svg" height="50" width="50">
               <div>
-                <div class="text_large"><?php echo $server_configuration['name']; ?></div>
+                <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
+                <div class="pool_list_infos">
+                  <?php
+                    echo '<div class="info_box">' . formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'] . '</div><div class="info_box">' . $server_configuration['algorithm'] . '</div>';
+                  ?>
+                </div>
               </div>
               <div style="line-height: 0;"><span class="material-symbols-outlined">arrow_forward</span></div>
             </div>
