@@ -334,7 +334,7 @@ a.header_navi_item:active {
 .home_port_command {
   word-break: break-all;
   background-color: #ccc;
-  padding: 8px;
+  padding: 8px 12px;
   border-radius: 8px;
   line-height: 2;
 }

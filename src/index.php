@@ -64,13 +64,18 @@
         <hr/ >
         <div class="pool_list" style="display: grid; row-gap: 8px;">
         <?php
-          // Part of this code was stolen from https://jasonmccreary.me/, thanks xD
           if ($handle = opendir('.')) {
             $blacklist = array('.', '..', '_common', '_frontend', 'index.php', '.index.php.swp');
+            $filelist = array();
             while (false !== ($file = readdir($handle))) {
               if (!in_array($file, $blacklist)) {
-                require($file.'/configuration.php');
-                $metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
+                array_push($filelist,$file);
+              }
+            }
+            sort($filelist);
+            foreach($filelist as $file) {
+              require($file.'/configuration.php');
+              $metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
         ?>
           <style>
             a.<?php echo $file; ?> {
@@ -102,7 +107,6 @@
             </div>
           </a>
         <?php
-              }
             }
             closedir($handle);
           }
