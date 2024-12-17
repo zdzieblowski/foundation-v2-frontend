@@ -74,13 +74,13 @@
         ?>
           <style>
             a.<?php echo $file; ?> {
-              background-color: #666;
-              border-radius: 8px;
-              border-bottom: 4px solid <?php echo $frontend_configuration['pool_color']; ?>;
-            }
-            a.<?php echo $file; ?>:hover {
               background-color: <?php echo $frontend_configuration['pool_color']; ?>;
               border-bottom: 4px solid #888;
+              border-radius: 8px;
+            }
+            a.<?php echo $file; ?>:hover {
+              background-color: #666;
+              border-bottom: 4px solid <?php echo $frontend_configuration['pool_color']; ?>;
             }
             a.<?php echo $file; ?>:active {
               background-color: #444;

@@ -1,5 +1,5 @@
 <?php
-$blocks_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/combined/blocks?limit=10&order=height&direction=descending');
+$blocks_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/combined/blocks?limit=5&order=height&direction=descending');
 $rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/combined/rounds');
 ?>
 <div class="text_header">Blocks</div>
