@@ -20,12 +20,14 @@ $frontend_configuration = [
 
   'pool_name' => 'garlic',
 
+  'pool_suggested_platform_gpu' => True,
+  'pool_suggested_platform_asic' => False,
   'pool_suggested_software' => 'ccminer',
   'pool_suggested_software_linux' => 'ccminer',
   'pool_suggested_software_windows' => 'ccminer.exe',
-  'pool_suggested_command_algo' => '-a',
-  'pool_suggested_command_open' => '-o',
-  'pool_suggested_command_wallet' => '-u',
+  'pool_suggested_command_algo' => ' -a ',
+  'pool_suggested_command_open' => ' -o ',
+  'pool_suggested_command_wallet' => ' -u ',
   'pool_suggested_command_worker' => '',
   'pool_suggested_software_link' => 'https://github.com/fancyIX/ccminer/releases/'
 ];

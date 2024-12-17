@@ -106,27 +106,41 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
 </div>
 <hr />
 <div class="text_subheader">Getting started</div>
+<?php if($frontend_configuration['pool_suggested_software'] != '') {?>
 <div class="text_normal">Download the mining software - we suggest <b><?php echo $frontend_configuration['pool_suggested_software']; ?></b> for the <b><?php echo $server_configuration['algorithm']; ?></b> algorithm.</div>
 <a class="header_navi_item header_navi_item_text" href="<?php echo $frontend_configuration['pool_suggested_software_link']; ?>" target="_blank" style="margin-bottom: 16px;">
   <span class="material-symbols-outlined">download</span>
   <div>Download <b><?php echo $frontend_configuration['pool_suggested_software']; ?></b></div>
 </a>
+<?php } ?>
 <div class="text_normal">Use one of following commands to connect to the pool.</div>
 <div class="home_ports">
   <?php
   foreach ($ports_current as $port) {
-    echo '<div class="home_port"><div class="home_port_type">' . $port['type'] . ' LINUX:</div>';
-    echo '<div class="home_port_command">./'.$frontend_configuration['pool_suggested_software_linux'].' '.$frontend_configuration['pool_suggested_command_algo'].' ' . $server_configuration['algorithm'] . ' '.$frontend_configuration['pool_suggested_command_open'].' stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' '.$frontend_configuration['pool_suggested_command_wallet'].' &lt;WALLET&gt;';
-    if ($frontend_configuration['pool_suggested_command_worker'] != '') {
-      echo ' '.$frontend_configuration['pool_suggested_command_worker'].' &lt;WORKER&gt;';
+    echo '<div class="home_port">';
+    if($frontend_configuration['pool_suggested_platform_gpu']) {
+      echo '<div class="home_port_type">' . $port['type'].' LINUX:</div>';
+      echo '<div class="home_port_command"><strong>./'.$frontend_configuration['pool_suggested_software_linux'].'</strong>'.$frontend_configuration['pool_suggested_command_algo'].'<b>'.$server_configuration['algorithm'].'</b>'.$frontend_configuration['pool_suggested_command_open'].'<b>stratum+tcp://'.$_SERVER['SERVER_NAME'].':'.$port['port'].'</b>'.$frontend_configuration['pool_suggested_command_wallet'].'<b>&lt;WALLET&gt;</b>';
+      if ($frontend_configuration['pool_suggested_command_worker'] != '') {
+        echo ''.$frontend_configuration['pool_suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';
+      }
+      echo '</div>';
+      echo '<hr class="list_hr" style="width: 100%;"><div class="home_port_type">'.$port['type'].' WINDOWS:</div>';
+      echo '<div class="home_port_command"><strong>'.$frontend_configuration['pool_suggested_software_windows'].'</strong>'.$frontend_configuration['pool_suggested_command_algo'].'<b>'.$server_configuration['algorithm'].'</b>'.$frontend_configuration['pool_suggested_command_open'].'<b>stratum+tcp://'.$_SERVER['SERVER_NAME'].':'.$port['port'].'</b>'.$frontend_configuration['pool_suggested_command_wallet'].'<b>&lt;WALLET&gt;</b>';
+      if ($frontend_configuration['pool_suggested_command_worker'] != '') {
+        echo ''.$frontend_configuration['pool_suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';
+      }
+      echo '</div>';
+    }
+    if($frontend_configuration['pool_suggested_platform_asic']) {
+      echo '<div class="home_port_type">'.$port['type'].':</div>';
+      echo '<div class="home_port_command"><strong>'.$frontend_configuration['pool_suggested_software_windows'].'</strong>'.$frontend_configuration['pool_suggested_command_algo'].'<b>'.$server_configuration['algorithm'].'</b>'.$frontend_configuration['pool_suggested_command_open'].'<b>stratum+tcp://'.$_SERVER['SERVER_NAME'].':'.$port['port'].'</b>'.$frontend_configuration['pool_suggested_command_wallet'].'<b>&lt;WALLET&gt;</b>';
+      if ($frontend_configuration['pool_suggested_command_worker'] != '') {
+        echo ''.$frontend_configuration['pool_suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';
+      }
+      echo '</div>';
     }
     echo '</div>';
-    echo '<hr class="list_hr" style="width: 100%;"><div class="home_port_type">' . $port['type'] . ' WINDOWS:</div>';
-    echo '<div class="home_port_command">'.$frontend_configuration['pool_suggested_software_windows'].' '.$frontend_configuration['pool_suggested_command_algo'].' ' . $server_configuration['algorithm'] . ' '.$frontend_configuration['pool_suggested_command_open'].' stratum+tcp://' . $_SERVER['SERVER_NAME'] . ':' . $port['port'] . ' '.$frontend_configuration['pool_suggested_command_wallet'].' &lt;WALLET&gt;';
-    if ($frontend_configuration['pool_suggested_command_worker'] != '') {
-      echo ' '.$frontend_configuration['pool_suggested_command_worker'].' &lt;WORKER&gt;';
-    }
-    echo '</div></div>';
   }
   ?>
 </div>

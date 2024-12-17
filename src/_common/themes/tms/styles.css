@@ -333,6 +333,10 @@ a.header_navi_item:active {
 
 .home_port_command {
   word-break: break-all;
+  background-color: #ccc;
+  padding: 8px;
+  border-radius: 8px;
+  line-height: 2;
 }
 
 /**/
@@ -647,4 +651,13 @@ a.donate_item_link:active {
   .pool_list_infos {
     grid-template-columns: auto;
   }
+}
+
+.home_port_command b {
+/*  color: var(--pool_color);
+  background-color: #333;*/
+  background-color: var(--pool_color);
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
