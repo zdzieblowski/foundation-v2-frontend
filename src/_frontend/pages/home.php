@@ -87,7 +87,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_lightgrey">
     <div>Hashrate</div>
     <div class="text_large">
-      <?php echo formatLargeNumbers($network_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
+      <?php echo formatLargeNumbers($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
     </div>
     <?php debugData($network_current[0]['hashrate'], $frontend_configuration['page_debugmode']); ?>
   </div>
@@ -99,7 +99,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_lightgrey">
     <div>Difficulty</div>
     <div class="text_large">
-      <?php echo formatLargeNumbers($network_current[0]['difficulty'], $frontend_configuration['math_precision']); ?>
+      <?php echo formatLargeNumbers($network_current[0]['difficulty'] * $frontend_configuration['pool_network_difficulty_multiplier'], $frontend_configuration['math_precision']); ?>
     </div>
     <?php debugData($network_current[0]['difficulty'], $frontend_configuration['page_debugmode']); ?>
   </div>

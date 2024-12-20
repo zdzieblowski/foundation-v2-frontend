@@ -461,17 +461,19 @@ a.donate_item_link:active {
 
 .pool_list_infos {
   display: grid;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: repeat(6, 1fr);
   gap: 4px;
   margin-top: 4px;
 }
 
 .info_box {
-  color: #666;
-  background-color: #eee;
+  color: #eee;
+  border: 1px solid rgba(255,255,255,0.33);
   padding: 4px 6px;
   border-radius: 4px;
   font-size: 11px;
+  display: flex;
+  align-items: center;
 }
 
 .debug_box {
@@ -648,16 +650,32 @@ a.donate_item_link:active {
     row-gap: 4px;
   }
 
-  .pool_list_infos {
-    grid-template-columns: auto;
-  }
 }
 
 .home_port_command b {
-/*  color: var(--pool_color);
-  background-color: #333;*/
   background-color: var(--pool_color);
   color: #333;
   padding: 4px 8px;
   border-radius: 4px;
+}
+
+@media (max-width: 888px) {
+  .pool_list_infos {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+@media (max-width: 666px) {
+  .pool_list_infos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+@media (max-width: 444px) {
+  .pool_list_infos {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, auto);
+  }
 }

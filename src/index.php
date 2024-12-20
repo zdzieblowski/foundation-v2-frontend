@@ -65,7 +65,7 @@
         <div class="pool_list" style="display: grid; row-gap: 8px;">
         <?php
           if ($handle = opendir('.')) {
-            $blacklist = array('.', '..', '_common', '_frontend', 'index.php', '.index.php.swp');
+            $blacklist = array('.', '..', '_common', '_frontend');
             $filelist = array();
             while (false !== ($file = readdir($handle))) {
               if (!in_array($file, $blacklist)) {
@@ -74,8 +74,10 @@
             }
             sort($filelist);
             foreach($filelist as $file) {
+             if(is_dir($file)) {
               require($file.'/configuration.php');
               $metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
+              $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/network');
         ?>
           <style>
             a.<?php echo $file; ?> {
@@ -99,7 +101,7 @@
                 <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
                 <div class="pool_list_infos">
                   <?php
-                    echo '<div class="info_box">' . formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'] . '</div><div class="info_box">' . $server_configuration['algorithm'] . '</div>';
+                    echo '<div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;">speed</span>' . formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;">regular_expression</span>' . $server_configuration['algorithm'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;">group</span>' . $metadata_current[0]['miners'] . '/' . $metadata_current[0]['workers'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;">deployed_code</span>' . $metadata_current[0]['blocks'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;">clock_loader_20</span>' . $metadata_current[0]['effort'] . '%</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;">share</span>' . formatLargeNumbers(($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier']), $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'] . '</div>';
                   ?>
                 </div>
               </div>
@@ -107,7 +109,7 @@
             </div>
           </a>
         <?php
-            }
+            }}
             closedir($handle);
           }
         ?>

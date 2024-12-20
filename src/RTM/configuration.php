@@ -5,7 +5,7 @@ $frontend_configuration = [
   'page_subfolder' => '/RTM/',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
-  'page_debugmode' => True,
+  'page_debugmode' => False,
 
   'math_precision' => 2,
 
@@ -15,6 +15,8 @@ $frontend_configuration = [
   'pool_donation_wallet' => 'RQRm1eaSEXs2c5panSf2ziSoVHbThbweTs',
   'pool_donation_explorer_link' => 'https://explorer.rtm-1.zelcore.io/address/RQRm1eaSEXs2c5panSf2ziSoVHbThbweTs',
 
+  'pool_network_difficulty_multiplier' => '1',
+  'pool_network_hashrate_multiplier' => '1',
   'pool_hashrate_unit' => 'H/s',
   'pool_ip' => '127.0.0.1',
 
