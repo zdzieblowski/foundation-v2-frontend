@@ -118,6 +118,8 @@ hr {
 .text_large {
   font-weight: 900;
   font-size: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .text_heavy {
@@ -293,6 +295,7 @@ a.header_navi_item:active {
   padding: 16px;
   border-radius: 8px;
   word-break: break-all;
+  align-items: center;
 }
 
 .small_box,

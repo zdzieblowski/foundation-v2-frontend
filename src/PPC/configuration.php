@@ -15,8 +15,8 @@ $frontend_configuration = [
   'pool_donation_wallet' => 'PBSa1ZPHLQCryfu8d8y9rsXCfS2AVs22Lp',
   'pool_donation_explorer_link' => 'https://chainz.cryptoid.info/ppc/address.dws?PBSa1ZPHLQCryfu8d8y9rsXCfS2AVs22Lp.htm',
 
-  'pool_network_hashrate_multiplier' => '338000000',
-  'pool_network_difficulty_multiplier' => '268000000',
+  'pool_network_hashrate_multiplier' => 283196872,
+  'pool_network_difficulty_multiplier' => 283196872,
   'pool_hashrate_unit' => 'H/s',
   'pool_ip' => '127.0.0.1',
 

@@ -15,8 +15,8 @@ $frontend_configuration = [
   'pool_donation_wallet' => 'DMatnZJEo1UQE72UswofEHH61uQhPhBYDw',
   'pool_donation_explorer_link' => 'https://dogechain.info/address/DMatnZJEo1UQE72UswofEHH61uQhPhBYDw',
 
-  'pool_network_difficulty_multiplier' => '1',
-  'pool_network_hashrate_multiplier' => '1',
+  'pool_network_difficulty_multiplier' => 1,
+  'pool_network_hashrate_multiplier' => 1,
   'pool_hashrate_unit' => 'H/s',
   'pool_ip' => '127.0.0.1',
 
