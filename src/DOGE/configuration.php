@@ -1,8 +1,10 @@
 <?php
 
 $frontend_configuration = [
+  'version' => '0.2.6',
+
   'page_title' => 'The Mining Site: Dogecoin',
-  'page_subfolder' => '/EVR/',
+  'page_subfolder' => '/DOGE/',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
   'page_debugmode' => False,

@@ -120,7 +120,7 @@
   <div class="footer">
     <div class="width_limit footer_content">
       <div class="footer_content_left">
-        2024+ &copy; themining.site
+        2024+ &copy; <?php echo $_SERVER['SERVER_NAME']; ?><br><pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $frontend_configuration['version']; ?></b></pre>
       </div>
       <div>
         <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="_common/images/github.svg" height="24" /></a>

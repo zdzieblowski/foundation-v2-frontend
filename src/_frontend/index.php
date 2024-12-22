@@ -112,7 +112,7 @@
   <div class="footer">
     <div class="width_limit footer_content">
       <div class="footer_content_left">
-        2024+ &copy; <a href="<?php echo $frontend_configuration['page_subfolder']; ?>"><?php echo $_SERVER['SERVER_NAME'].'/'.$server_configuration['symbol']; ?></a>
+        2024+ &copy; <a href="<?php echo $frontend_configuration['page_subfolder']; ?>"><?php echo $_SERVER['SERVER_NAME'].'/'.$server_configuration['symbol']; ?></a> <br><pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $frontend_configuration['version']; ?></b></pre>
       </div>
       <div class="footer_content_right">
         <div><a href="<?php echo $frontend_configuration['page_subfolder']; ?>?page=donate"><span class="material-symbols-outlined">volunteer_activism</span></a></div>

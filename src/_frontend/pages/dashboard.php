@@ -22,7 +22,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
       if ($miner['miner'] == $_COOKIE['address']) {
         $wallet_found = True;
         ?>
-        <div class="text_normal">Statistics for wallet address: <b><?php echo $_COOKIE['address']; ?></b></div>
+        <div class="text_normal">Statistics for wallet address: <b style="word-break: break-all;"><?php echo $_COOKIE['address']; ?></b></div>
         <hr />
         <div class="text_subheader">Miner information</div>
         <div class="box_long_content bg_darkgrey">

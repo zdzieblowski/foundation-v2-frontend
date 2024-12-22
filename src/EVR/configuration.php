@@ -1,6 +1,8 @@
 <?php
 
 $frontend_configuration = [
+  'version' => '0.2.6',
+
   'page_title' => 'The Mining Site: Evrmore',
   'page_subfolder' => '/EVR/',
   'page_theme_path' => 'themes/tms/',

@@ -634,10 +634,6 @@ a.donate_item_link:active {
     border-radius: 0 0 8px 8px;
   }
 
-  .text_normal {
-    word-break: break-all;
-  }
-
   .header_top_right {
     grid-template-columns: unset;
   }
