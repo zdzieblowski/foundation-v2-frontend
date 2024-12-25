@@ -114,7 +114,11 @@
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>
-                    <?php echo ($frontend_configuration['pool_network_hashrate_multiplier'] == 1 ? '' : '<span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>') . formatLargeNumbers(($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier']), $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'];?>
+                    <?php if ($frontend_configuration['pool_network_hashrate_multiplier'] == 1) { ?>
+                       <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>
+                    <?php }
+                      echo formatLargeNumbers(($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier']), $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'];
+                    ?>
                   </div>
                 </div>
               </div>
@@ -133,7 +137,9 @@
   <div class="footer">
     <div class="width_limit footer_content">
       <div class="footer_content_left">
-        2024+ &copy; <?php echo getServerVariable('SERVER_NAME'); ?><br><pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $frontend_configuration['version']; ?></b></pre>
+        2024+ &copy; <?php echo getServerVariable('SERVER_NAME'); ?>
+        <br>
+        <pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $frontend_configuration['version']; ?></b></pre>
       </div>
       <div>
         <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="_common/images/github.svg" height="24" /></a>
