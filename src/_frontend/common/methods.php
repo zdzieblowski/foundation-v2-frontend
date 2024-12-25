@@ -29,6 +29,17 @@ function getWorkerName($miner)
   return $worker_name;
 }
 
+function getRandomEmote()
+{
+  $emotes = ['favorite', 'mood', 'person_celebrate', 'sentiment_very_satisfied', 'emoticon', 'taunt', 'cheer', 'raven', 'sentiment_excited', 'sentiment_calm', 'skull', 'sentiment_satisfied', 'sentiment_neutral', 'sentiment_stressed', 'pets', 'sunny', 'diamond', 'potted_plant', 'bomb', 'comedy_mask', 'sword_rose', 'owl', 'crown', 'celebration', 'savings', 'local_florist', 'park', 'flag_2', 'imagesearch_roller', 'flight', 'sailing', 'moped', 'snowmobile', 'motorcycle', 'pedal_bike', 'cake', 'hiking', 'science', 'fertile', 'smart_toy', 'dark_mode', 'spa', 'cottage', 'lunch_dining', 'beach_access', 'fitness_center', 'local_bar', 'pool', 'liquor', 'bakery_dining', 'ramen_dining', 'icecream', 'grass', 'ac_unit', 'child_care', 'outlet', 'smart_outlet', 'nature', 'forest', 'emoji_nature', 'landscape', 'water_drop', 'rocket', 'hive', 'emoji_events', 'globe', 'nutrition', 'kid_star', 'anchor', 'healing', 'restaurant', 'handyman', 'fastfood', 'pest_control_rodent', 'pet_supplies', 'theater_comedy', 'takeout_dining', 'cloud', 'music_note', 'self_improvement', 'headphones', 'joystick', 'brunch_dining', 'bento', 'golf_course', 'cabin', 'bungalow', 'concierge', 'trip', 'chair', 'coffee', 'kitchen', 'coffee_maker', 'umbrella', 'mode_heat', 'table_lamp', 'wall_lamp', 'rocket_launch', 'workspace_premium', 'candle'];
+  return $emotes[array_rand($emotes)];
+}
+
+function getServerVariable($variable)
+{
+  return $_SERVER[$variable];
+}
+
 function formatPercents($number, $precision)
 {
   if($number < 0) {
@@ -59,5 +70,17 @@ function formatDateTime($timestamp)
 function privacyFilter($input, $size = 12)
 {
   return substr($input, 0, $size) . str_repeat('*', (strlen($input) - $size * 2)) . substr($input, -$size, $size);
+}
+
+function listFiles($directory, $blacklist)
+{
+  $files = array();
+  while (false !== ($file = readdir($directory))) {
+    if (!in_array($file, $blacklist)) {
+      array_push($files,$file);
+    }
+  }
+  sort($files);
+  return $files;
 }
 ?>

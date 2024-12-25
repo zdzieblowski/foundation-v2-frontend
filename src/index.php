@@ -24,10 +24,9 @@
         <div style="display: grid; grid-template-columns: min-content min-content; gap: 16px; align-items: center;">
           <div>
             <a class="header_navi_item">
-              <?php
-                $emotes = ['favorite', 'mood', 'person_celebrate', 'sentiment_very_satisfied', 'emoticon', 'taunt', 'cheer', 'raven', 'sentiment_excited', 'sentiment_calm', 'skull', 'sentiment_satisfied', 'sentiment_neutral', 'sentiment_stressed', 'pets', 'sunny', 'diamond', 'potted_plant', 'bomb', 'comedy_mask', 'sword_rose', 'owl', 'crown', 'celebration', 'savings', 'local_florist', 'park', 'flag_2', 'imagesearch_roller', 'flight', 'sailing', 'moped', 'snowmobile', 'motorcycle', 'pedal_bike', 'cake', 'hiking', 'science', 'fertile', 'smart_toy', 'dark_mode', 'spa', 'cottage', 'lunch_dining', 'beach_access', 'fitness_center', 'local_bar', 'pool', 'liquor', 'bakery_dining', 'ramen_dining', 'icecream', 'grass', 'ac_unit', 'child_care', 'outlet', 'smart_outlet', 'nature', 'forest', 'emoji_nature', 'landscape', 'water_drop', 'rocket', 'hive', 'emoji_events', 'globe', 'nutrition', 'kid_star', 'anchor', 'healing', 'restaurant', 'handyman', 'fastfood', 'pest_control_rodent', 'pet_supplies', 'theater_comedy', 'takeout_dining', 'cloud', 'music_note', 'self_improvement', 'headphones', 'joystick', 'brunch_dining', 'bento', 'golf_course', 'cabin', 'bungalow', 'concierge', 'trip', 'chair', 'coffee', 'kitchen', 'coffee_maker', 'umbrella', 'mode_heat', 'table_lamp', 'wall_lamp', 'rocket_launch', 'workspace_premium', 'candle'];
-                echo '<span class="material-symbols-outlined">'.$emotes[array_rand($emotes)].'</span>';
-              ?>
+              <span class="material-symbols-outlined">
+                <?php echo getRandomEmote(); ?>
+              </span>
             </a>
           </div>
           <div style="width: min-content;">
@@ -45,7 +44,7 @@
         </div>
         <div class="header_top_right">
           <div class="header_info">
-            <div><?php echo ($_SERVER['SERVER_NAME']); ?>/</div>
+            <div><?php echo getServerVariable('SERVER_NAME'); ?>/</div>
           </div>
           <div>
             <a class="header_navi_item" href="/">
@@ -61,18 +60,11 @@
       <div class="content_content">
         <div class="text_header" style="color: #444;">Available pools</div>
         <div class="text_normal">Choose a pool from the list below.</div>
-        <hr/ >
+        <hr />
         <div class="pool_list" style="display: grid; row-gap: 8px;">
         <?php
-          if ($handle = opendir('.')) {
-            $blacklist = array('.', '..', '_common', '_frontend');
-            $filelist = array();
-            while (false !== ($file = readdir($handle))) {
-              if (!in_array($file, $blacklist)) {
-                array_push($filelist,$file);
-              }
-            }
-            sort($filelist);
+          if ($directory = opendir('.')) {
+            $filelist = listFiles($directory, array('.', '..', '_common', '_frontend'));
             foreach($filelist as $file) {
              if(is_dir($file)) {
               require($file.'/configuration.php');
@@ -100,9 +92,30 @@
               <div>
                 <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
                 <div class="pool_list_infos">
-                  <?php
-                    echo '<div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="HASHRATE">speed</span>' . formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="ALGORITHM">regular_expression</span>' . $server_configuration['algorithm'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="MINERS">group</span>' . $metadata_current[0]['miners'] . '/' . $metadata_current[0]['workers'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="BLOCKS">deployed_code</span>' . $metadata_current[0]['blocks'] . '</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="EFFORT">clock_loader_20</span>' . formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']) . '%</div><div class="info_box"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>' . ($frontend_configuration['pool_network_hashrate_multiplier'] == 1 ? '' : '<span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>') . formatLargeNumbers(($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier']), $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'] . '</div>';
-                  ?>
+                  <div class="info_box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="HASHRATE">speed</span>
+                    <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
+                  </div>
+                  <div class="info_box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="ALGORITHM">regular_expression</span>
+                    <?php echo $server_configuration['algorithm']; ?>
+                  </div>
+                  <div class="info_box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="MINERS">group</span>
+                    <?php echo $metadata_current[0]['miners']. '/' . $metadata_current[0]['workers']; ?>
+                  </div>
+                  <div class="info_box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="BLOCKS">deployed_code</span>
+                    <?php echo $metadata_current[0]['blocks']; ?>
+                  </div>
+                  <div class="info_box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="EFFORT">clock_loader_20</span>
+                    <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']).'%'; ?>
+                  </div>
+                  <div class="info_box">
+                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>
+                    <?php echo ($frontend_configuration['pool_network_hashrate_multiplier'] == 1 ? '' : '<span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>') . formatLargeNumbers(($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier']), $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'];?>
+                  </div>
                 </div>
               </div>
               <div style="line-height: 0;"><span class="material-symbols-outlined">arrow_forward</span></div>
@@ -110,7 +123,7 @@
           </a>
         <?php
             }}
-            closedir($handle);
+            closedir($directory);
           }
         ?>
         </div>
@@ -120,7 +133,7 @@
   <div class="footer">
     <div class="width_limit footer_content">
       <div class="footer_content_left">
-        2024+ &copy; <?php echo $_SERVER['SERVER_NAME']; ?><br><pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $frontend_configuration['version']; ?></b></pre>
+        2024+ &copy; <?php echo getServerVariable('SERVER_NAME'); ?><br><pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $frontend_configuration['version']; ?></b></pre>
       </div>
       <div>
         <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="_common/images/github.svg" height="24" /></a>

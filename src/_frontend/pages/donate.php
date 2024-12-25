@@ -58,9 +58,9 @@
 <div class="text_subheader">Pool maintenance</div>
 <div class="donate_grid">
   <div class="donate_grid_item">
-    <div class="donate_item_name"><?php echo ($frontend_configuration['pool_donation_currency']); ?></div>
-    <div class="donate_item_address"><?php echo ($frontend_configuration['pool_donation_wallet']); ?></div>
-    <a class="donate_item_link" href="<?php echo ($frontend_configuration['pool_donation_explorer_link']); ?>" target="_blank">
+    <div class="donate_item_name"><?php echo $frontend_configuration['pool_donation_currency']; ?></div>
+    <div class="donate_item_address"><?php echo $frontend_configuration['pool_donation_wallet']; ?></div>
+    <a class="donate_item_link" href="<?php echo $frontend_configuration['pool_donation_explorer_link']; ?>" target="_blank">
       <span class="donate_item_link_text">View on explorer</span>
       <span class="material-symbols-outlined">explore</span>
     </a>
