@@ -34,7 +34,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
     <div class="text_large">
-      <?php echo formatPercents($server_configuration['recipientFee'] * 100, $frontend_configuration['math_precision']); ?>%
+      <?php echo formatPercents($server_configuration['recipientFee'] * 100, $frontend_configuration['math_precision']); ?>
     </div>
     <?php debugData($server_configuration['recipientFee'], $frontend_configuration['page_debugmode']); ?>
   </div>
@@ -50,14 +50,14 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_lightgrey">
     <div>Effort</div>
     <div class="text_large">
-      <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>%
+      <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>
     </div>
     <?php debugData($metadata_current[0]['effort'], $frontend_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Efficiency</div>
     <div class="text_large">
-      <?php echo formatPercents($metadata_current[0]['efficiency'], $frontend_configuration['math_precision']); ?>%
+      <?php echo formatPercents($metadata_current[0]['efficiency'], $frontend_configuration['math_precision']); ?>
     </div>
     <?php debugData($metadata_current[0]['efficiency'], $frontend_configuration['page_debugmode']); ?>
   </div>
@@ -124,7 +124,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
         <?php echo $port['type']; ?> LINUX:
       </div>
       <div class="home_port_command">
-        <strong><?php echo $frontend_configuration['pool_suggested_software_linux']; ?></strong><?php echo $frontend_configuration['pool_suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $frontend_configuration['pool_suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $frontend_configuration['pool_suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
+        <strong>./<?php echo $frontend_configuration['pool_suggested_software_linux']; ?></strong><?php echo $frontend_configuration['pool_suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $frontend_configuration['pool_suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $frontend_configuration['pool_suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
         <?php if ($frontend_configuration['pool_suggested_command_worker'] != '') { echo ''.$frontend_configuration['pool_suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
       </div>
       <hr class="list_hr" style="width: 100%;">
@@ -138,7 +138,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <?php }
     if($frontend_configuration['pool_suggested_platform_asic']) { ?>
       <div class="home_port_type">
-        <?php echo $port['type']; ?>
+        <?php echo $port['type']; ?>:
       </div>
       <div class="home_port_command">
         <strong><?php echo $frontend_configuration['pool_suggested_software_windows']; ?></strong><?php echo $frontend_configuration['pool_suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $frontend_configuration['pool_suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $frontend_configuration['pool_suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>

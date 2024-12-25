@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <title><?php echo ($frontend_configuration['page_title']); ?></title>
+  <title><?php echo $frontend_configuration['page_title']; ?></title>
   <link rel="stylesheet" type="text/css" href="<?php echo '../_common/'.$frontend_configuration['page_theme_path'].$frontend_configuration['page_stylesheet']; ?>" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="icon" type="image/png" href="<?php echo '../_common/'.$frontend_configuration['page_theme_path']; ?>favicon-96x96.png" sizes="96x96" />

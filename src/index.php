@@ -110,7 +110,7 @@
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="EFFORT">clock_loader_20</span>
-                    <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']).'%'; ?>
+                    <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>
