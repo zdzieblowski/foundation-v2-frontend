@@ -114,7 +114,7 @@
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>
-                    <?php if ($frontend_configuration['pool_network_hashrate_multiplier'] == 1) { ?>
+                    <?php if ($frontend_configuration['pool_network_hashrate_multiplier'] != 1) { ?>
                        <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>
                     <?php }
                       echo formatLargeNumbers(($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier']), $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'];
