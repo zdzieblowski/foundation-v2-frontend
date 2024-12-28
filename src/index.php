@@ -87,8 +87,8 @@
             }
           </style>
           <a href="/<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
-            <div class="box_long_content bg_orange" style="gap: 16px; display: grid; grid-template-columns: min-content auto min-content; align-items: center;">
-              <img src="<?php echo $file; ?>/logo.svg" height="50" width="50">
+            <div class="box_long_content bg_orange pool_list_wrap">
+              <img src="<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img">
               <div>
                 <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
                 <div class="pool_list_infos">

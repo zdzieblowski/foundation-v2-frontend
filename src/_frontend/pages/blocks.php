@@ -12,7 +12,7 @@ $rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div class="list_wrap small_gap">
       <a onclick="revealContent('block_<?php echo $block['id']; ?>');" style="cursor: pointer;">
         <div class="small_box_long_content bg_verylightgrey_orangeborder">
-          <div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div>
+          <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">deployed_code</span><div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div></div>
           <div class="text_heavy text_right reveal_button">
             &nbsp;
             <span class="material-symbols-outlined">unfold_more</span>
@@ -75,7 +75,7 @@ $rounds_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
             <div class="list_wrap small_gap">
               <a onclick="revealContent('<?php echo $block['round']; ?>');" style="cursor: pointer;">
                 <div class="small_box_long_content bg_verylightgrey_darkgreyborder">
-                  <div>Round</div>
+                  <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">cached</span>Round</div>
                   <div class="text_heavy text_right reveal_button">
                     <?php echo $block['round']; ?>
                     <span class="material-symbols-outlined">unfold_more</span>

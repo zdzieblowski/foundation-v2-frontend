@@ -127,7 +127,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="home_port">
     <?php if($frontend_configuration['pool_suggested_platform_gpu']) { ?>
       <div class="home_port_type">
-        <?php echo $port['type']; ?> LINUX:
+        <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px; font-size: 20px;">terminal</span><?php echo $port['type']; ?> LINUX:</div>
       </div>
       <div class="home_port_command">
         <strong>./<?php echo $frontend_configuration['pool_suggested_software_linux']; ?></strong><?php echo $frontend_configuration['pool_suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $frontend_configuration['pool_suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $frontend_configuration['pool_suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -135,7 +135,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
       </div>
       <hr class="list_hr" style="width: 100%;">
       <div class="home_port_type">
-        <?php echo $port['type']; ?> WINDOWS:
+        <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px; font-size: 20px;">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
       </div>
       <div class="home_port_command">
         <strong><?php echo $frontend_configuration['pool_suggested_software_windows']; ?></strong><?php echo $frontend_configuration['pool_suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $frontend_configuration['pool_suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $frontend_configuration['pool_suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -144,7 +144,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <?php }
     if($frontend_configuration['pool_suggested_platform_asic']) { ?>
       <div class="home_port_type">
-        <?php echo $port['type']; ?>:
+<div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px; font-size: 20px;">terminal</span><?php echo $port['type']; ?>:</div>
       </div>
       <div class="home_port_command">
         <strong><?php echo $frontend_configuration['pool_suggested_software_windows']; ?></strong><?php echo $frontend_configuration['pool_suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $frontend_configuration['pool_suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $frontend_configuration['pool_suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -152,7 +152,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
       </div>
     <?php } ?>
     </div>
-  <?php 
+  <?php
   }
   ?>
 </div>

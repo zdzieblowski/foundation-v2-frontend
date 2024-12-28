@@ -1,7 +1,7 @@
 <?php
 
 $frontend_configuration = [
-  'version' => '0.2.8',
+  'version' => '0.2.9',
 
   'page_title' => 'The Mining Site: Garlicoin',
   'page_subfolder' => '/GRLC/',

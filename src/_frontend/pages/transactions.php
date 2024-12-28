@@ -11,7 +11,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
     ?>
     <a onclick="revealContent('tx_<?php echo $transaction['id']; ?>');" style="cursor: pointer;">
       <div class="small_box_long_content bg_verylightgrey_orangeborder reveal_button">
-        <div>Transaction: <b><?php echo privacyFilter($transaction['transaction'], 21); ?></b></div>
+        <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">send_money</span><div>Transaction: <b><?php echo privacyFilter($transaction['transaction'], 21); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
           <span class="material-symbols-outlined">unfold_more</span>
