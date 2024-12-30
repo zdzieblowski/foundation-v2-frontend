@@ -8,6 +8,12 @@
   --border-radius: 8px;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
 body {
   font-family: "JetBrains Mono", monospace;
   font-size: 13px;

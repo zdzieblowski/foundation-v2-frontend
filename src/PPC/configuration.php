@@ -1,7 +1,7 @@
 <?php
 
 $frontend_configuration = [
-  'version' => '0.2.9',
+  'version' => '0.2.10',
 
   'page_title' => 'The Mining Site: Peercoin',
   'page_subfolder' => '/PPC/',
