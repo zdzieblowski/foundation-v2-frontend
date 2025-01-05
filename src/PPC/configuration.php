@@ -1,13 +1,10 @@
 <?php
 
 $frontend_configuration = [
-  'version' => '0.2.10',
-
   'page_title' => 'The Mining Site: Peercoin',
   'page_subfolder' => '/PPC/',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
-  'page_debugmode' => False,
 
   'math_precision' => 2,
 
