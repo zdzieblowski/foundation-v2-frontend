@@ -61,10 +61,10 @@
         <hr />
         <div class="pool_list" style="display: grid; row-gap: 8px;">
         <?php
-          if ($directory = opendir('.')) {
-            $filelist = listFiles($directory, array('.', '..', '_common', '_frontend', 'configuration'));
+          if ($directory = opendir('configurations')) {
+            $filelist = listFiles($directory, array('.', '..'));
             foreach($filelist as $file) {
-             if(is_dir($file)) {
+             if(is_dir('configurations/'.$file)) {
               require('configurations/'.$file.'/configuration.php');
               $metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
               $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/network');
@@ -86,7 +86,7 @@
           </style>
           <a href="?coin=<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
             <div class="box_long_content bg_orange pool_list_wrap">
-              <img src="<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img">
+              <img src="configurations/<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img">
               <div>
                 <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
                 <div class="pool_list_infos">

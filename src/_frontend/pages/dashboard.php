@@ -7,11 +7,11 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
 <div class="text_header">Dashboard</div>
 <?php if (isset($_POST['save_address'])): ?>
   <?php
-  setcookie('address', $_POST['save_address']);
-  header('Refresh:0; url='.$frontend_configuration['page_subfolder'].'?page=dashboard');
+  setcookie('address_'.$pool, $_POST['save_address']);
+  header('Refresh:0; url=?coin='.$pool.'&page=dashboard');
 ?>
 <?php else: ?>
-  <?php if (!isset($_COOKIE['address'])): ?>
+  <?php if (!isset($_COOKIE['address_'.$pool])): ?>
     <div class="text_normal">Enter wallet address to see your statistics.</div>
   <?php else: ?>
     <?php
@@ -19,10 +19,10 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
     $blocks_found = False;
     $payments_found = False;
     foreach ($miners_current as $miner) {
-      if ($miner['miner'] == $_COOKIE['address']) {
+      if ($miner['miner'] == $_COOKIE['address_'.$pool]) {
         $wallet_found = True;
         ?>
-        <div class="text_normal">Statistics for wallet address: <b style="word-break: break-all;"><?php echo $_COOKIE['address']; ?></b></div>
+        <div class="text_normal">Statistics for wallet address: <b style="word-break: break-all;"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
         <hr />
         <div class="text_subheader">Miner information</div>
         <div class="box_long_content bg_darkgrey">
@@ -182,7 +182,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
         <div class="list_wrap">
           <?php
           foreach ($blocks_combined as $block) {
-            if ($block['miner'] == $_COOKIE['address']) {
+            if ($block['miner'] == $_COOKIE['address_'.$pool]) {
               $blocks_found = True;
               ?>
               <div class="list_wrap small_gap">
@@ -263,7 +263,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
         if (!$blocks_found) {
           ?>
           <div class="text_normal">
-            No blocks mined by <b><?php echo $_COOKIE['address']; ?></b> were found.
+            No blocks mined by <b><?php echo $_COOKIE['address_'.$pool]; ?></b> were found.
           </div>
           <?php
         }
@@ -273,7 +273,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
         <div class="list_wrap">
           <?php
           foreach ($payments_current as $payment) {
-            if ($payment['miner'] == $_COOKIE['address']) {
+            if ($payment['miner'] == $_COOKIE['address_'.$pool]) {
               $payments_found = True;
               ?>
               <div class="list_wrap small_gap">
@@ -306,22 +306,22 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
         <?php
         if (!$payments_found) {
           ?>
-          <div class="text_normal">No payments to <b><?php echo $_COOKIE['address']; ?></b> were found.</div>
+          <div class="text_normal">No payments to <b><?php echo $_COOKIE['address_'.$pool]; ?></b> were found.</div>
           <?php
         }
       }
     }
     if (!$wallet_found) {
       ?>
-      <div class="text_normal">Miner <b><?php echo $_COOKIE['address']; ?></b> was not found.</div>
+      <div class="text_normal">Miner <b><?php echo $_COOKIE['address_'.$pool]; ?></b> was not found.</div>
       <?php
     }
     ?>
     <hr />
   <?php endif ?>
-  <form action="<?php echo $frontend_configuration['page_subfolder']; ?>?page=dashboard" method="post">
+  <form action="<?php echo '?coin='.$pool.'&page=dashboard'; ?>" method="post">
     <div class="wallet_address">
-      <input type="text" name="save_address" value="<?php echo $_COOKIE['address']; ?>" />
+      <input type="text" name="save_address" value="<?php echo $_COOKIE['address_'.$pool]; ?>" />
       <input type="submit" value="Submit" />
     </div>
   </form>
