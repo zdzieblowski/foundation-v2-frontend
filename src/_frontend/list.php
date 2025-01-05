@@ -65,7 +65,7 @@
             $filelist = listFiles($directory, array('.', '..', '_common', '_frontend', 'configuration'));
             foreach($filelist as $file) {
              if(is_dir($file)) {
-              require($file.'/configuration.php');
+              require('configurations/'.$file.'/configuration.php');
               $metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
               $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/network');
         ?>
