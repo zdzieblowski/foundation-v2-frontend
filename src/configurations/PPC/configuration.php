@@ -1,8 +1,7 @@
 <?php
 
 $frontend_configuration = [
-  'page_title' => 'The Mining Site: Peercoin',
-  'page_subfolder' => '/PPC/',
+  'pool_title' => 'Peercoin',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
 

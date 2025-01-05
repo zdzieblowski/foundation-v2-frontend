@@ -1,8 +1,7 @@
 <?php
 
 $frontend_configuration = [
-  'page_title' => 'The Mining Site: Raptoreum',
-  'page_subfolder' => '/RTM/',
+  'pool_title' => 'Raptoreum',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
 

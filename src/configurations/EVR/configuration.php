@@ -1,8 +1,7 @@
 <?php
 
 $frontend_configuration = [
-  'page_title' => 'The Mining Site: Evrmore',
-  'page_subfolder' => '/EVR/',
+  'pool_title' => 'Evrmore',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
 

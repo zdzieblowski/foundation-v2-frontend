@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>The Mining Site</title>
+  <title><?php echo $page_configuration['page_title']; ?></title>
   <link rel="stylesheet" type="text/css" href="_common/themes/tms/styles.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="icon" type="image/png" href="_common/themes/tms/favicon-96x96.png" sizes="96x96" />

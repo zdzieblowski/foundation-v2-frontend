@@ -1,8 +1,7 @@
 <?php
 
 $frontend_configuration = [
-  'page_title' => 'The Mining Site: Dogecoin',
-  'page_subfolder' => '/DOGE/',
+  'pool_title' => 'Dogecoin',
   'page_theme_path' => 'themes/tms/',
   'page_stylesheet' => 'styles.css',
 
