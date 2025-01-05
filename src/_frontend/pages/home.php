@@ -9,18 +9,18 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div>
       <div>Currency</div>
       <div class="text_large"><?php echo $server_configuration['name']; ?></div>
-      <?php debugData($server_configuration['name'], $pool_configuration['page_debugmode']); ?>
+      <?php debugData($server_configuration['name'], $page_configuration['page_debugmode']); ?>
     </div>
   </div>
   <div class="box bg_lightgrey">
     <div>Symbol</div>
     <div class="text_large"><?php echo $server_configuration['symbol']; ?></div>
-    <?php debugData($server_configuration['symbol'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($server_configuration['symbol'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Algorithm</div>
     <div class="text_large"><?php echo $server_configuration['algorithm']; ?></div>
-    <?php debugData($server_configuration['algorithm'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($server_configuration['algorithm'], $page_configuration['page_debugmode']); ?>
   </div>
 </div>
 <div class="two_columns mt-8px">
@@ -29,14 +29,14 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div class="text_large">
       <?php echo formatLargeNumbers($server_configuration['minimumPayment'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
     </div>
-    <?php debugData($server_configuration['minimumPayment'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($server_configuration['minimumPayment'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
     <div class="text_large">
       <?php echo formatPercents($server_configuration['recipientFee'] * 100, $frontend_configuration['math_precision']); ?>
     </div>
-    <?php debugData($server_configuration['recipientFee'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($server_configuration['recipientFee'], $page_configuration['page_debugmode']); ?>
   </div>
 </div>
 <hr />
@@ -45,21 +45,21 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
   <div class="box bg_darkgrey">
     <div>Blocks mined</div>
     <div class="text_large"><?php echo $metadata_current[0]['blocks']; ?></div>
-    <?php debugData($metadata_current[0]['blocks'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($metadata_current[0]['blocks'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Effort</div>
     <div class="text_large">
       <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>
     </div>
-    <?php debugData($metadata_current[0]['effort'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($metadata_current[0]['effort'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Efficiency</div>
     <div class="text_large">
       <?php echo formatPercents($metadata_current[0]['efficiency'], $frontend_configuration['math_precision']); ?>
     </div>
-    <?php debugData($metadata_current[0]['efficiency'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($metadata_current[0]['efficiency'], $page_configuration['page_debugmode']); ?>
   </div>
 </div>
 <div class="three_columns mt-8px">
@@ -68,17 +68,17 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
     <div class="text_large">
       <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
     </div>
-    <?php debugData($metadata_current[0]['hashrate'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($metadata_current[0]['hashrate'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Miners</div>
     <div class="text_large"><?php echo $metadata_current[0]['miners']; ?></div>
-    <?php debugData($metadata_current[0]['miners'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($metadata_current[0]['miners'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Workers</div>
     <div class="text_large"><?php echo $metadata_current[0]['workers']; ?></div>
-    <?php debugData($metadata_current[0]['workers'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($metadata_current[0]['workers'], $page_configuration['page_debugmode']); ?>
   </div>
 </div>
 <hr />
@@ -92,12 +92,12 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
       <?php }
       echo formatLargeNumbers($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
     </div>
-    <?php debugData($network_current[0]['hashrate'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($network_current[0]['hashrate'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Block height</div>
     <div class="text_large"><?php echo $network_current[0]['height']; ?></div>
-    <?php debugData($network_current[0]['height'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($network_current[0]['height'], $page_configuration['page_debugmode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Difficulty</div>
@@ -107,7 +107,7 @@ $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/a
       <?php }
       echo formatLargeNumbers($network_current[0]['difficulty'] * $frontend_configuration['pool_network_difficulty_multiplier'], $frontend_configuration['math_precision']); ?>
     </div>
-    <?php debugData($network_current[0]['difficulty'], $pool_configuration['page_debugmode']); ?>
+    <?php debugData($network_current[0]['difficulty'], $page_configuration['page_debugmode']); ?>
   </div>
 </div>
 <hr />
