@@ -1,7 +1,7 @@
 <?php
 
 require_once 'configurations/configuration.php';
-require_once '_frontend/common/methods.php';
+require_once 'common/methods.php';
 
 if(!empty($_GET['coin'])) {
   $pool = $_GET['coin'];

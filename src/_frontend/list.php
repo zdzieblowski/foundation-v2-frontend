@@ -142,7 +142,7 @@
       <div class="footer_content_right">
         <div></div>
         <div>
-          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="../_common/images/github.svg" height="24" /></a>
+          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/images/github.svg" height="24" /></a>
         </div>
       </div>
     </div>

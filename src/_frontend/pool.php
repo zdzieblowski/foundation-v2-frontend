@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-mobile-web-app-title" content="TMS" />
-  <script src="_frontend/common/methods.js"></script>
+  <script src="common/methods.js"></script>
   <style>
     :root {
       --pool_color: <?php echo $frontend_configuration['pool_color']; ?>;
@@ -119,7 +119,7 @@
           <a href="?coin=<?php echo $pool; ?>&page=donate"><span class="material-symbols-outlined">volunteer_activism</span></a>
         </div>
         <div>
-          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="../_common/images/github.svg" height="24" /></a>
+          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/images/github.svg" height="24" /></a>
         </div>
       </div>
     </div>
