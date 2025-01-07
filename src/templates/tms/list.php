@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
   <title><?php echo $page_configuration['page_title']; ?></title>
-  <link rel="stylesheet" type="text/css" href="templates/tms/assets/styles.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <link rel="icon" type="image/png" href="templates/tms/assets/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="templates/tms/assets/favicon.svg" />
-  <link rel="shortcut icon" href="templates/tms/assets/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="templates/tms/assets/apple-touch-icon.png" />
-  <link rel="manifest" href="templates/tms/assets/site.webmanifest" />
-  <meta name="apple-mobile-web-app-title" content="TMS" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="UTF-8" />
 </head>
 
 <body>
