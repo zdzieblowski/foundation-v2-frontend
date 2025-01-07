@@ -1,6 +1,6 @@
 <?php
-$transactions_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/transactions?limit=10&order=timestamp&direction=descending');
-$payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/payments');
+$transactions_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/historical/transactions?limit=10&order=timestamp&direction=descending');
+$payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/historical/payments');
 ?>
 <div class="text_header">Transactions</div>
 <div class="text_normal">List of payment transactions.</div>
@@ -16,7 +16,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
           &nbsp;
           <span class="material-symbols-outlined">unfold_more</span>
         </div>
-        <?php debugData($transaction['transaction'], $page_configuration['page_debugmode']); ?>
+        <?php debugData($transaction['transaction'], $configuration['debug_mode']); ?>
       </div>
     </a>
     <div id="tx_<?php echo $transaction['id']; ?>" style="margin-top: -4px;" class="hidden">
@@ -25,14 +25,14 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
           <div class="small_box bg_lightgrey">
             <div>Submitted</div>
             <div class="text_heavy text_right"><?php echo formatDateTime($transaction['timestamp']); ?></div>
-            <?php debugData($transaction['timestamp'], $page_configuration['page_debugmode']); ?>
+            <?php debugData($transaction['timestamp'], $configuration['debug_mode']); ?>
           </div>
           <div class="small_box bg_orange">
             <div>Amount</div>
             <div class="text_heavy text_right">
-              <?php echo formatLargeNumbers($transaction['amount'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($transaction['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
             </div>
-            <?php debugData($transaction['amount'], $page_configuration['page_debugmode']); ?>
+            <?php debugData($transaction['amount'], $configuration['debug_mode']); ?>
           </div>
         </div>
         <div class="wrap bg_verylightgrey">
@@ -44,20 +44,20 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                 <div class="small_box_long_content bg_darkgrey">
                   <div>Miner</div>
                   <div class="text_heavy text_right"><?php echo privacyFilter($payment['miner']); ?></div>
-                  <?php debugData($payment['miner'], $page_configuration['page_debugmode']); ?>
+                  <?php debugData($payment['miner'], $configuration['debug_mode']); ?>
                 </div>
                 <div class="two_columns small_gap">
                   <div class="small_box bg_lightgrey">
                     <div>Date</div>
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
-                    <?php debugData($payment['timestamp'], $page_configuration['page_debugmode']); ?>
+                    <?php debugData($payment['timestamp'], $configuration['debug_mode']); ?>
                   </div>
                   <div class="small_box bg_lightgrey">
                     <div>Amount</div>
                     <div class="text_heavy text_right">
-                      <?php echo formatLargeNumbers($payment['amount'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
+                      <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
                     </div>
-                    <?php debugData($payment['amount'], $page_configuration['page_debugmode']); ?>
+                    <?php debugData($payment['amount'], $configuration['debug_mode']); ?>
                   </div>
                 </div>
                 <?php if ($payment != end($payments_current)) { ?>

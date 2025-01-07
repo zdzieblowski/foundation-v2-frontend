@@ -1,14 +1,14 @@
 <?php
-$miners_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/miners');
-$workers_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/workers');
-$blocks_combined = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/combined/blocks?limit=5&order=timestamp&direction=descending');
-$payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
+$miners_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/miners');
+$workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/workers');
+$blocks_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/combined/blocks?limit=5&order=timestamp&direction=descending');
+$payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
 ?>
 <div class="text_header">Dashboard</div>
 <?php if (isset($_POST['save_address'])): ?>
   <?php
   setcookie('address_'.$pool, $_POST['save_address']);
-  header('Refresh:0; url=?coin='.$pool.'&page=dashboard');
+  header('Refresh:0; url=?pool='.$pool.'&page=dashboard');
 ?>
 <?php else: ?>
   <?php if (!isset($_COOKIE['address_'.$pool])): ?>
@@ -33,42 +33,42 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
           <div class="box bg_orange">
             <div>Hashrate</div>
             <div class="text_large">
-              <?php echo formatLargeNumbers($miner['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
+              <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
             </div>
-            <?php debugData($miner['hashrate'], $page_configuration['page_debugmode']); ?>
+            <?php debugData($miner['hashrate'], $configuration['debug_mode']); ?>
           </div>
           <div class="box bg_lightgrey">
             <div>Efficency</div>
-            <div class="text_large"><?php echo formatPercents($miner['efficiency'], $frontend_configuration['math_precision']); ?></div>
-            <?php debugData($miner['efficiency'], $page_configuration['page_debugmode']); ?>
+            <div class="text_large"><?php echo formatPercents($miner['efficiency'], $pool_configuration['math_precision']); ?></div>
+            <?php debugData($miner['efficiency'], $configuration['debug_mode']); ?>
           </div>
           <div class="box bg_lightgrey">
             <div>Effort</div>
-            <div class="text_large"><?php echo formatPercents($miner['effort'], $frontend_configuration['math_precision']); ?></div>
-            <?php debugData($miner['effort'], $page_configuration['page_debugmode']); ?>
+            <div class="text_large"><?php echo formatPercents($miner['effort'], $pool_configuration['math_precision']); ?></div>
+            <?php debugData($miner['effort'], $configuration['debug_mode']); ?>
           </div>
         </div>
         <div class="three_columns mt-8px">
           <div class="box bg_darkgrey">
             <div>Balance</div>
             <div class="text_large">
-              <?php echo formatLargeNumbers($miner['balance'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($miner['balance'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
             </div>
-            <?php debugData($miner['balance'], $page_configuration['page_debugmode']); ?>
+            <?php debugData($miner['balance'], $configuration['debug_mode']); ?>
           </div>
           <div class="box bg_lightgrey">
             <div>Immature</div>
             <div class="text_large">
-              <?php echo formatLargeNumbers($miner['immature'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($miner['immature'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
             </div>
-            <?php debugData($miner['immature'], $page_configuration['page_debugmode']); ?>
+            <?php debugData($miner['immature'], $configuration['debug_mode']); ?>
           </div>
           <div class="box bg_orange">
             <div>Paid</div>
             <div class="text_large">
-              <?php echo formatLargeNumbers($miner['paid'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($miner['paid'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
             </div>
-            <?php debugData($miner['paid'], $page_configuration['page_debugmode']); ?>
+            <?php debugData($miner['paid'], $configuration['debug_mode']); ?>
           </div>
         </div>
         <div class="wrap bg_verylightgrey mt-8px">
@@ -76,23 +76,23 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
             <div class="box bg_darkgrey">
               <div>Valid shares</div>
               <div class="text_large">
-                <?php echo formatLargeNumbers($miner['valid'], $frontend_configuration['math_precision']); ?>
+                <?php echo formatLargeNumbers($miner['valid'], $pool_configuration['math_precision']); ?>
               </div>
-              <?php debugData($miner['valid'], $page_configuration['page_debugmode']); ?>
+              <?php debugData($miner['valid'], $configuration['debug_mode']); ?>
             </div>
             <div class="box bg_lightgrey">
               <div>Stale shares</div>
               <div class="text_large">
-                <?php echo formatLargeNumbers($miner['stale'], $frontend_configuration['math_precision']); ?>
+                <?php echo formatLargeNumbers($miner['stale'], $pool_configuration['math_precision']); ?>
               </div>
-              <?php debugData($miner['stale'], $page_configuration['page_debugmode']); ?>
+              <?php debugData($miner['stale'], $configuration['debug_mode']); ?>
             </div>
             <div class="box bg_lightgrey">
               <div>Invalid shares</div>
               <div class="text_large">
-                <?php echo formatLargeNumbers($miner['invalid'], $frontend_configuration['math_precision']); ?>
+                <?php echo formatLargeNumbers($miner['invalid'], $pool_configuration['math_precision']); ?>
               </div>
-              <?php debugData($miner['invalid'], $page_configuration['page_debugmode']); ?>
+              <?php debugData($miner['invalid'], $configuration['debug_mode']); ?>
             </div>
           </div>
           <hr class="inner_hr wrap_hr" />
@@ -119,53 +119,53 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                         <div class="small_box bg_orange">
                           <div>Hashrate</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatLargeNumbers($worker['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
+                            <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
                           </div>
-                          <?php debugData($worker['hashrate'], $page_configuration['page_debugmode']); ?>
+                          <?php debugData($worker['hashrate'], $configuration['debug_mode']); ?>
                         </div>
                         <div class="small_box bg_lightgrey">
                           <div>Worker type</div>
                           <div class="text_heavy text_right"><?php echo ($worker['solo'] ? 'SOLO' : 'SHARED'); ?></div>
-                          <?php debugData($worker['solo'] ? 'true' : 'false', $page_configuration['page_debugmode']); ?>
+                          <?php debugData($worker['solo'] ? 'true' : 'false', $configuration['debug_mode']); ?>
                         </div>
                       </div>
                       <div class="two_columns small_gap">
                         <div class="small_box bg_lightgrey">
                           <div>Efficiency</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatPercents($worker['efficiency'], $frontend_configuration['math_precision']); ?>
+                            <?php echo formatPercents($worker['efficiency'], $pool_configuration['math_precision']); ?>
                           </div>
-                          <?php debugData($worker['efficiency'], $page_configuration['page_debugmode']); ?>
+                          <?php debugData($worker['efficiency'], $configuration['debug_mode']); ?>
                         </div>
                         <div class="small_box bg_lightgrey">
                           <div>Effort</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatPercents($worker['effort'], $frontend_configuration['math_precision']); ?>
+                            <?php echo formatPercents($worker['effort'], $pool_configuration['math_precision']); ?>
                           </div>
-                          <?php debugData($worker['effort'], $page_configuration['page_debugmode']); ?>
+                          <?php debugData($worker['effort'], $configuration['debug_mode']); ?>
                         </div>
                       </div>
                       <div class="three_columns small_gap">
                         <div class="small_box bg_darkgrey">
                           <div>Valid shares</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatLargeNumbers($worker['valid'], $frontend_configuration['math_precision']); ?>
+                            <?php echo formatLargeNumbers($worker['valid'], $pool_configuration['math_precision']); ?>
                           </div>
-                          <?php debugData($worker['valid'], $page_configuration['page_debugmode']); ?>
+                          <?php debugData($worker['valid'], $configuration['debug_mode']); ?>
                         </div>
                         <div class="small_box bg_lightgrey">
                           <div>Stale shares</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatLargeNumbers($worker['stale'], $frontend_configuration['math_precision']); ?>
+                            <?php echo formatLargeNumbers($worker['stale'], $pool_configuration['math_precision']); ?>
                           </div>
-                          <?php debugData($worker['stale'], $page_configuration['page_debugmode']); ?>
+                          <?php debugData($worker['stale'], $configuration['debug_mode']); ?>
                         </div>
                         <div class="small_box bg_lightgrey">
                           <div>Invalid shares</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatLargeNumbers($worker['invalid'], $frontend_configuration['math_precision']); ?>
+                            <?php echo formatLargeNumbers($worker['invalid'], $pool_configuration['math_precision']); ?>
                           </div>
-                          <?php debugData($worker['invalid'], $page_configuration['page_debugmode']); ?>
+                          <?php debugData($worker['invalid'], $configuration['debug_mode']); ?>
                         </div>
                       </div>
                     </div>
@@ -205,12 +205,12 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                       <div class="small_box bg_lightgrey">
                         <div>Submitted</div>
                         <div class="text_heavy text_right"><?php echo formatDateTime($block['submitted']); ?></div>
-                        <?php debugData($block['submitted'], $page_configuration['page_debugmode']); ?>
+                        <?php debugData($block['submitted'], $configuration['debug_mode']); ?>
                       </div>
                       <div class="small_box bg_darkgrey">
                         <div>Confirmed</div>
                         <div class="text_heavy text_right"><?php echo formatDateTime($block['timestamp']); ?></div>
-                        <?php debugData($block['timestamp'], $page_configuration['page_debugmode']); ?>
+                        <?php debugData($block['timestamp'], $configuration['debug_mode']); ?>
                       </div>
                     </div>
                     <div class="small_box_long_content bg_lightgrey">
@@ -221,34 +221,34 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                       <div class="small_box bg_lightgrey">
                         <div>Height</div>
                         <div class="text_heavy text_right"><?php echo $block['height']; ?></div>
-                        <?php debugData($block['height'], $page_configuration['page_debugmode']); ?>
+                        <?php debugData($block['height'], $configuration['debug_mode']); ?>
                       </div>
                       <div class="small_box bg_lightgrey">
                         <div>Difficulty</div>
                         <div class="text_heavy text_right">
-                          <?php echo formatLargeNumbers($block['difficulty'], $frontend_configuration['math_precision']); ?></div>
-                        <?php debugData($block['difficulty'], $page_configuration['page_debugmode']); ?>
+                          <?php echo formatLargeNumbers($block['difficulty'], $pool_configuration['math_precision']); ?></div>
+                        <?php debugData($block['difficulty'], $configuration['debug_mode']); ?>
                       </div>
                       <div class="small_box bg_darkgrey">
                         <div>Luck</div>
                         <div class="text_heavy text_right">
-                          <?php echo formatPercents($block['luck'], $frontend_configuration['math_precision']); ?>
+                          <?php echo formatPercents($block['luck'], $pool_configuration['math_precision']); ?>
                         </div>
-                        <?php debugData($block['luck'], $page_configuration['page_debugmode']); ?>
+                        <?php debugData($block['luck'], $configuration['debug_mode']); ?>
                       </div>
                     </div>
                     <div class="two_columns small_gap">
                       <div class="small_box bg_lightgrey">
                         <div>Block type</div>
                         <div class="text_heavy text_right"><?php echo $block['solo'] ? 'SOLO' : 'SHARED'; ?></div>
-                        <?php debugData($block['solo'] ? 'true' : 'false', $page_configuration['page_debugmode']); ?>
+                        <?php debugData($block['solo'] ? 'true' : 'false', $configuration['debug_mode']); ?>
                     </div>
                       <div class="small_box bg_orange">
                         <div>Reward</div>
                         <div class="text_heavy text_right">
-                          <?php echo formatLargeNumbers($block['reward'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
+                          <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
                         </div>
-                        <?php debugData($block['reward'], $page_configuration['page_debugmode']); ?>
+                        <?php debugData($block['reward'], $configuration['debug_mode']); ?>
                       </div>
                     </div>
                   </div>
@@ -287,14 +287,14 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
                   <div class="small_box bg_lightgrey">
                     <div>Date</div>
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
-                    <?php debugData($payment['timestamp'], $page_configuration['page_debugmode']); ?>
+                    <?php debugData($payment['timestamp'], $configuration['debug_mode']); ?>
                   </div>
                   <div class="small_box bg_orange">
                     <div>Amount</div>
                     <div class="text_heavy text_right">
-                      <?php echo formatLargeNumbers($payment['amount'], $frontend_configuration['math_precision']) . $server_configuration['symbol']; ?>
+                      <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
                     </div>
-                    <?php debugData($payment['amount'], $page_configuration['page_debugmode']); ?>
+                    <?php debugData($payment['amount'], $configuration['debug_mode']); ?>
                   </div>
                 </div>
               </div>
@@ -319,7 +319,7 @@ $payments_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/
     ?>
     <hr />
   <?php endif ?>
-  <form action="<?php echo '?coin='.$pool.'&page=dashboard'; ?>" method="post">
+  <form action="<?php echo '?pool='.$pool.'&page=dashboard'; ?>" method="post">
     <div class="wallet_address">
       <input type="text" name="save_address" value="<?php echo $_COOKIE['address_'.$pool]; ?>" />
       <input type="submit" value="Submit" />

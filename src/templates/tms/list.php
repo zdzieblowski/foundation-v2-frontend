@@ -1,4 +1,4 @@
-  <title><?php echo $page_configuration['page_title']; ?></title>
+  <title><?php echo $configuration['page_title']; ?></title>
 </head>
 
 <body>
@@ -52,25 +52,25 @@
             foreach($filelist as $file) {
              if(is_dir('configurations/'.$file)) {
               require('configurations/'.$file.'/configuration.php');
-              $metadata_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/metadata');
-              $network_current = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/network');
+              $metadata_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/metadata');
+              $network_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/network');
         ?>
           <style>
             a.<?php echo $file; ?> {
-              background-color: <?php echo $frontend_configuration['pool_color']; ?>;
+              background-color: <?php echo $pool_configuration['pool_color']; ?>;
               border-bottom: 4px solid #888;
               border-radius: 8px;
             }
             a.<?php echo $file; ?>:hover {
               background-color: #666;
-              border-bottom: 4px solid <?php echo $frontend_configuration['pool_color']; ?>;
+              border-bottom: 4px solid <?php echo $pool_configuration['pool_color']; ?>;
             }
             a.<?php echo $file; ?>:active {
               background-color: #444;
-              border-bottom: 4px solid <?php echo $frontend_configuration['pool_color']; ?>;
+              border-bottom: 4px solid <?php echo $pool_configuration['pool_color']; ?>;
             }
           </style>
-          <a href="?coin=<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
+          <a href="?pool=<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
             <div class="box_long_content bg_orange pool_list_wrap">
               <img src="configurations/<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img">
               <div>
@@ -78,7 +78,7 @@
                 <div class="pool_list_infos">
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="HASHRATE">speed</span>
-                    <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit']; ?>
+                    <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="ALGORITHM">regular_expression</span>
@@ -94,14 +94,14 @@
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="EFFORT">clock_loader_20</span>
-                    <?php echo formatPercents($metadata_current[0]['effort'], $frontend_configuration['math_precision']); ?>
+                    <?php echo formatPercents($metadata_current[0]['effort'], $pool_configuration['math_precision']); ?>
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>
-                    <?php if ($frontend_configuration['pool_network_hashrate_multiplier'] != 1) { ?>
+                    <?php if ($pool_configuration['pool_network_hashrate_multiplier'] != 1) { ?>
                        <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>
                     <?php }
-                      echo formatLargeNumbers(($network_current[0]['hashrate'] * $frontend_configuration['pool_network_hashrate_multiplier']), $frontend_configuration['math_precision']) . $frontend_configuration['pool_hashrate_unit'];
+                      echo formatLargeNumbers(($network_current[0]['hashrate'] * $pool_configuration['pool_network_hashrate_multiplier']), $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit'];
                     ?>
                   </div>
                 </div>
@@ -123,7 +123,7 @@
       <div class="footer_content_left">
         2024+ &copy; <?php echo getServerVariable('SERVER_NAME'); ?>/
         <br>
-        <pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $page_configuration['version']; ?></b></pre>
+        <pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $configuration['version']; ?></b></pre>
       </div>
       <div class="footer_content_right">
         <div></div>

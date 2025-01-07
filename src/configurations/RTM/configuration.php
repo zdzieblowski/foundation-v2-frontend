@@ -1,9 +1,7 @@
 <?php
 
-$frontend_configuration = [
+$pool_configuration = [
   'pool_title' => 'Raptoreum',
-  'page_theme_path' => 'themes/tms/',
-  'page_stylesheet' => 'styles.css',
 
   'math_precision' => 2,
 
@@ -17,6 +15,7 @@ $frontend_configuration = [
   'pool_network_hashrate_multiplier' => 1,
   'pool_hashrate_unit' => 'H/s',
   'pool_ip' => '127.0.0.1',
+  'pool_port' => '3001',
 
   'pool_name' => 'raptoreum',
 
@@ -32,6 +31,6 @@ $frontend_configuration = [
   'pool_suggested_software_link' => 'https://github.com/andru-kun/wildrig-multi/releases'
 ];
 
-$server_configuration = getData('http://'.$frontend_configuration['pool_ip'].':3001/api/v2/'.$frontend_configuration['pool_name'].'/current/configuration')[0];
+$server_configuration = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/configuration')[0];
 
 ?>
