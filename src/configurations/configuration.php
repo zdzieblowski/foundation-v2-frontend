@@ -1,8 +1,8 @@
 <?php
 
 $configuration = [
-  'version' => '0.3.9',
-  'debug_mode' => True,
+  'version' => '0.3.10',
+  'debug_mode' => False,
 
   'page_title' => 'The Mining Site',
   'page_short_title' => 'TMS',
