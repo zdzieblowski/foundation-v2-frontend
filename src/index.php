@@ -11,10 +11,10 @@ if(!empty($_GET['coin'])) {
     header('Refresh:0; url=/');
   } else {
     require_once($pool_configuration_file);
-    include '_frontend/pool.php';
+    include '_frontend/tms/pool.php';
   }
 } else {
-  include '_frontend/list.php';
+  include '_frontend/tms/list.php';
 }
 
 ?>
