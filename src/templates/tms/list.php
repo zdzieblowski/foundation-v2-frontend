@@ -3,13 +3,13 @@
 
 <head>
   <title><?php echo $page_configuration['page_title']; ?></title>
-  <link rel="stylesheet" type="text/css" href="_frontend/tms/assets/styles.css" />
+  <link rel="stylesheet" type="text/css" href="templates/tms/assets/styles.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <link rel="icon" type="image/png" href="_frontend/tms/assets/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="_frontend/tms/assets/favicon.svg" />
-  <link rel="shortcut icon" href="_frontend/tms/assets/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="_frontend/tms/assets/apple-touch-icon.png" />
-  <link rel="manifest" href="_frontend/tms/assets/site.webmanifest" />
+  <link rel="icon" type="image/png" href="templates/tms/assets/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="templates/tms/assets/favicon.svg" />
+  <link rel="shortcut icon" href="templates/tms/assets/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="templates/tms/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="templates/tms/assets/site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="TMS" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8" />
@@ -142,7 +142,7 @@
       <div class="footer_content_right">
         <div></div>
         <div>
-          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/images/github.svg" height="24" /></a>
+          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" /></a>
         </div>
       </div>
     </div>
