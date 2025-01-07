@@ -3,7 +3,7 @@
 require_once 'configurations/configuration.php';
 require_once 'common/methods.php';
 
-include 'templates/'.$configuration['page_theme'].'/head.php';
+include 'templates/'.$configuration['page_template'].'/head.php';
 
 if(!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
@@ -13,10 +13,10 @@ if(!empty($_GET['pool'])) {
     header('Refresh:0; url=/');
   } else {
     require_once($pool_configuration_file);
-    include 'templates/'.$configuration['page_theme'].'/pool.php';
+    include 'templates/'.$configuration['page_template'].'/pool.php';
   }
 } else {
-  include 'templates/'.$configuration['page_theme'].'/list.php';
+  include 'templates/'.$configuration['page_template'].'/list.php';
 }
 
 ?>
