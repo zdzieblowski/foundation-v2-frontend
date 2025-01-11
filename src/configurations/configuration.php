@@ -1,7 +1,7 @@
 <?php
 
 $configuration = [
-  'version' => '0.3.11',
+  'version' => '0.3.12',
   'debug_mode' => False,
 
   'page_title' => 'The Mining Site',
@@ -10,6 +10,7 @@ $configuration = [
   'page_template' => 'tms',
 
   'html_encoding' => 'UTF-8',
+  'html_language' => 'en',
   'html_viewport' => 'width=device-width, initial-scale=1.0'
 ];
 

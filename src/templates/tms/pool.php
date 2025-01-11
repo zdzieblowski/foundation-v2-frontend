@@ -1,11 +1,9 @@
-  <script src="common/methods.js"></script>
-  <title><?php echo $configuration['page_title'].': '.$pool_configuration['pool_title']; ?></title>
-  <style>
-    :root {
-      --pool_color: <?php echo $pool_configuration['pool_color']; ?>;
-    }
-  </style>
-</head>
+<!DOCTYPE html>
+<html lang="<?php echo $configuration['html_language']; ?>">
+
+<?php
+include 'templates/'.$configuration['page_template'].'/head.php';
+?>
 
 <body>
   <div class="header">
@@ -18,7 +16,7 @@
             </a>
           </div>
           <div style="width: min-content;">
-            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;"><script xmlns=""/>
+            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;">
               <defs>
                 <style>
                   .st0 {
@@ -105,7 +103,7 @@
           <a href="?pool=<?php echo $pool; ?>&page=donate"><span class="material-symbols-outlined">volunteer_activism</span></a>
         </div>
         <div>
-          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" /></a>
+          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" alt></a>
         </div>
       </div>
     </div>

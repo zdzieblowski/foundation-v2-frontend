@@ -3,8 +3,6 @@
 require_once 'configurations/configuration.php';
 require_once 'common/methods.php';
 
-include 'templates/'.$configuration['page_template'].'/head.php';
-
 if(!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
   $pool_configuration_file = 'configurations/'.$pool.'/configuration.php';

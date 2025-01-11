@@ -4,7 +4,7 @@ $rounds_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
 ?>
 <div class="text_header">Blocks</div>
 <div class="text_normal">List of mined blocks and rounds.</div>
-<hr />
+<hr>
 <div class="list_wrap">
   <?php
   foreach ($blocks_combined as $block) {
@@ -121,7 +121,7 @@ $rounds_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
                         </div>
                       </div>
                       <?php if ($round != end($rounds_combined)) { ?>
-                        <hr class="inner_hr wrap_hr wrappedlist_hr" />
+                        <hr class="inner_hr wrap_hr wrappedlist_hr">
                         <?php
                       }
                     }
@@ -149,7 +149,7 @@ $rounds_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
       </div>
     </div>
     <?php if ($block != end($blocks_combined)) { ?>
-      <hr class="inner_hr list_hr" />
+      <hr class="inner_hr list_hr">
       <?php
     }
   } ?>

@@ -23,7 +23,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
         $wallet_found = True;
         ?>
         <div class="text_normal">Statistics for wallet address: <b style="word-break: break-all;"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
-        <hr />
+        <hr>
         <div class="text_subheader">Miner information</div>
         <div class="box_long_content bg_darkgrey">
           <div>Wallet address</div>
@@ -95,7 +95,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
               <?php debugData($miner['invalid'], $configuration['debug_mode']); ?>
             </div>
           </div>
-          <hr class="inner_hr wrap_hr" />
+          <hr class="inner_hr wrap_hr">
           <div class="list_wrap">
             <?php
             foreach ($workers_current as $worker) {
@@ -177,7 +177,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
             ?>
           </div>
         </div>
-        <hr />
+        <hr>
         <div class="text_subheader">Blocks</div>
         <div class="list_wrap">
           <?php
@@ -268,7 +268,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
           <?php
         }
         ?>
-        <hr />
+        <hr>
         <div class="text_subheader">Payments</div>
         <div class="list_wrap">
           <?php
@@ -317,12 +317,12 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
       <?php
     }
     ?>
-    <hr />
+    <hr>
   <?php endif ?>
   <form action="<?php echo '?pool='.$pool.'&page=dashboard'; ?>" method="post">
     <div class="wallet_address">
-      <input type="text" name="save_address" value="<?php echo $_COOKIE['address_'.$pool]; ?>" />
-      <input type="submit" value="Submit" />
+      <input type="text" name="save_address" value="<?php echo $_COOKIE['address_'.$pool]; ?>">
+      <input type="submit" value="Submit">
     </div>
   </form>
 <?php endif ?>

@@ -4,7 +4,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
 ?>
 <div class="text_header">Transactions</div>
 <div class="text_normal">List of payment transactions.</div>
-<hr />
+<hr>
 <div class="list_wrap">
   <?php
   foreach ($transactions_current as $transaction) {
@@ -61,7 +61,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
                   </div>
                 </div>
                 <?php if ($payment != end($payments_current)) { ?>
-                  <hr class="inner_hr wrap_hr wrappedlist_hr" />
+                  <hr class="inner_hr wrap_hr wrappedlist_hr">
                   <?php
                 }
               }
@@ -72,7 +72,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
       </div>
     </div>
     <?php if ($transaction != end($transactions_current)) { ?>
-      <hr class="inner_hr list_hr" />
+      <hr class="inner_hr list_hr">
       <?php
     }
   }

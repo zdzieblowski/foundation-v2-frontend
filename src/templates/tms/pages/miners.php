@@ -4,7 +4,7 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
 ?>
 <div class="text_header">Miners</div>
 <div class="text_normal">List of miners and workers.</div>
-<hr />
+<hr>
 <div class="list_wrap">
   <?php
   foreach ($miners_current as $miner) {
@@ -91,7 +91,7 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
               <?php debugData($miner['invalid'], $configuration['debug_mode']); ?>
             </div>
           </div>
-          <hr class="inner_hr wrap_hr" />
+          <hr class="inner_hr wrap_hr">
           <div class="list_wrap">
             <?php
             foreach ($workers_current as $worker) {
@@ -176,7 +176,7 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
       </div>
     </div>
     <?php if ($miner != end($miners_current)) { ?>
-      <hr class="inner_hr list_hr" />
+      <hr class="inner_hr list_hr">
       <?php
     }
   }

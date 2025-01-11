@@ -1,5 +1,9 @@
-  <title><?php echo $configuration['page_title']; ?></title>
-</head>
+<!DOCTYPE html>
+<html lang="<?php echo $configuration['html_language']; ?>">
+
+<?php
+include 'templates/'.$configuration['page_template'].'/head.php';
+?>
 
 <body>
   <div class="header" style="background-color: #555;">
@@ -14,7 +18,7 @@
             </a>
           </div>
           <div style="width: min-content;">
-            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;"><script xmlns=""/>
+            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;">
               <defs>
                 <style>
                   .st0 {
@@ -44,7 +48,7 @@
       <div class="content_content">
         <div class="text_header" style="color: #444;">Available pools</div>
         <div class="text_normal">Choose a pool from the list below.</div>
-        <hr />
+        <hr>
         <div class="pool_list" style="display: grid; row-gap: 8px;">
         <?php
           if ($directory = opendir('configurations')) {
@@ -72,7 +76,7 @@
           </style>
           <a href="?pool=<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
             <div class="box_long_content bg_orange pool_list_wrap">
-              <img src="configurations/<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img">
+              <img src="configurations/<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img" alt>
               <div>
                 <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
                 <div class="pool_list_infos">
@@ -128,7 +132,7 @@
       <div class="footer_content_right">
         <div></div>
         <div>
-          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" /></a>
+          <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" alt></a>
         </div>
       </div>
     </div>

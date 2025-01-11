@@ -5,7 +5,7 @@ $network_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
 ?>
 <div class="three_columns">
   <div class="box bg_orange two_columns" style="grid-template-columns: min-content auto; align-items: center;">
-    <img src="configurations/<?php echo $pool; ?>/logo.svg" height="37" width="37">
+    <img src="configurations/<?php echo $pool; ?>/logo.svg" height="37" width="37" alt>
     <div>
       <div>Currency</div>
       <div class="text_large"><?php echo $server_configuration['name']; ?></div>
@@ -39,7 +39,7 @@ $network_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
     <?php debugData($server_configuration['recipientFee'], $configuration['debug_mode']); ?>
   </div>
 </div>
-<hr />
+<hr>
 <div class="text_subheader">Pool statistics</div>
 <div class="three_columns">
   <div class="box bg_darkgrey">
@@ -81,7 +81,7 @@ $network_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
     <?php debugData($metadata_current[0]['workers'], $configuration['debug_mode']); ?>
   </div>
 </div>
-<hr />
+<hr>
 <div class="text_subheader">Network statistics</div>
 <div class="three_columns">
   <div class="box bg_lightgrey">
@@ -110,7 +110,7 @@ $network_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
     <?php debugData($network_current[0]['difficulty'], $configuration['debug_mode']); ?>
   </div>
 </div>
-<hr />
+<hr>
 <div class="text_subheader">Getting started</div>
 <?php if($pool_configuration['pool_suggested_software'] != '') {?>
 <div class="text_normal">Download the mining software - we suggest <b><?php echo $pool_configuration['pool_suggested_software']; ?></b> for the <b><?php echo $server_configuration['algorithm']; ?></b> algorithm.</div>
