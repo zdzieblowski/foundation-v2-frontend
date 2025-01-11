@@ -1,7 +1,7 @@
 <?php
 
 $configuration = [
-  'version' => '0.3.12',
+  'version' => '0.3.13',
   'debug_mode' => False,
 
   'page_title' => 'The Mining Site',

@@ -13,6 +13,7 @@
 
   <meta name="viewport" content="<?php echo $configuration['html_viewport']; ?>">
   <meta charset="<?php echo $configuration['html_encoding']; ?>">
+
 <?php
   if(!empty($pool)) {
     $page_title = $configuration['page_title'].': '.$pool_configuration['pool_title'];

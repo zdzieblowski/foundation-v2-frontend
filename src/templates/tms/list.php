@@ -49,7 +49,7 @@ include 'templates/'.$configuration['page_template'].'/head.php';
         <div class="text_header" style="color: #444;">Available pools</div>
         <div class="text_normal">Choose a pool from the list below.</div>
         <hr>
-        <div class="pool_list" style="display: grid; row-gap: 8px;">
+        <div class="pool_list">
         <?php
           if ($directory = opendir('configurations')) {
             $filelist = listFiles($directory, array('.', '..'));

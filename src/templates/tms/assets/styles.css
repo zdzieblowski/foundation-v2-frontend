@@ -96,6 +96,11 @@ hr {
   margin-top: 8px;
 }
 
+.pool_list {
+  display: grid;
+  row-gap: 8px;
+}
+
 /**/
 
 .text_header {
