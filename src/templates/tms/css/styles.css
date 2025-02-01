@@ -184,7 +184,7 @@ hr {
 
 .header_navi {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   box-shadow: 10px;
 }
@@ -219,6 +219,15 @@ a.header_navi_item:active {
 
 .header_navi_item_select {
   border-bottom: 4px solid var(--pool_color) !important;
+  background-color: #444 !important;
+}
+
+.header_navi_item_select:hover {
+  background-color: #333 !important;
+}
+
+.header_navi_item_select:active {
+  background-color: #888 !important;
 }
 
 /**/
@@ -511,7 +520,11 @@ a.donate_item_link:active {
 @media (max-width: 800px) {
   .header_navi {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .header_navi_item:first-child {
+    grid-column: span 2;
   }
 
   .donate_grid_item {
@@ -626,7 +639,11 @@ a.donate_item_link:active {
 @media (max-width: 450px) {
   .header_navi {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+  }
+
+  .header_navi_item:first-child {
+    grid-column: unset;
   }
 
   .header {

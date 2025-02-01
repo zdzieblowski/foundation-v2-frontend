@@ -49,6 +49,10 @@ include 'templates/'.$configuration['page_template'].'/head.php';
           <span class="material-symbols-outlined">group</span>
           Miners
         </a>
+        <a class="header_navi_item header_navi_item_text <?php if($_GET['page'] == 'rounds') {echo 'header_navi_item_select';}?>" href="?pool=<?php echo $pool; ?>&page=rounds">
+          <span class="material-symbols-outlined">cached</span>
+          Rounds
+        </a>
         <a class="header_navi_item header_navi_item_text <?php if($_GET['page'] == 'blocks') {echo 'header_navi_item_select';}?>" href="?pool=<?php echo $pool; ?>&page=blocks">
           <span class="material-symbols-outlined">star_rate</span>
           Blocks
@@ -73,6 +77,9 @@ include 'templates/'.$configuration['page_template'].'/head.php';
             break;
           case 'miners':
             include('pages/miners.php');
+            break;
+          case 'rounds':
+            include('pages/rounds.php');
             break;
           case 'blocks':
             include('pages/blocks.php');

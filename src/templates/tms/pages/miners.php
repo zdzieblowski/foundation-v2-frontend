@@ -96,8 +96,9 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
             <?php
             foreach ($workers_current as $worker) {
               if ($worker['miner'] == $miner['miner']) {
-                $worker_name = explode('.', $worker['worker'], 2)[1];
-                $worker_name = $worker_name ? $worker_name : 'UNNAMED';
+                //$worker_name = explode('.', $worker['worker'], 2)[1];
+                //$worker_name = $worker_name ? $worker_name : 'UNNAMED';
+                $worker_name = getWorkerName($worker['worker']);
                 ?>
                 <div class="list_wrap small_gap">
                   <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" style="cursor: pointer;">

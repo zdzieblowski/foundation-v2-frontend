@@ -89,8 +89,9 @@ include 'templates/'.$configuration['page_template'].'/head.php';
                     <?php echo $server_configuration['algorithm']; ?>
                   </div>
                   <div class="info_box">
-                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="MINERS">group</span>
-                    <?php echo $metadata_current[0]['miners']. '/' . $metadata_current[0]['workers']; ?>
+                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="MINERS">dns</span>
+                    <?php echo $metadata_current[0]['miners']; ?>&nbsp;<span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="WORKERS">memory</span>
+                    <?php echo $metadata_current[0]['workers']; ?>
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="BLOCKS">deployed_code</span>

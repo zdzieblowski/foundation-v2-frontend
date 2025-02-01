@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="templates/<?php echo $configuration['page_template']; ?>/assets/styles.css">
+  <link rel="stylesheet" type="text/css" href="templates/<?php echo $configuration['page_template']; ?>/css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 
   <link rel="shortcut icon" href="templates/<?php echo $configuration['page_template']; ?>/assets/favicon.ico">
