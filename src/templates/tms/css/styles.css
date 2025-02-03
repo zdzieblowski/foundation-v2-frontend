@@ -177,6 +177,13 @@ hr {
   gap: 8px;
 }
 
+.header_top_logo {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  gap: 16px;
+  align-items: center;
+}
+
 .header_top_right {
   display: grid;
   grid-template-columns: repeat(2, min-content);

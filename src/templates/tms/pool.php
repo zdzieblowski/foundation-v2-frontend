@@ -4,7 +4,7 @@ include 'templates/'.$configuration['page_template'].'/head.php';
   <div class="header">
     <div class="width_limit header_grid">
       <div class="header_top">
-        <div style="display: grid; grid-template-columns: min-content min-content; gap: 16px; align-items: center;">
+        <div class="header_top_logo">
           <div>
             <a class="header_navi_item <?php if(!$_GET['page']) {echo 'header_navi_item_select';}?>" href="<?php echo '?pool='.$pool; ?>">
               <span class="material-symbols-outlined">home</span>
