@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="<?php echo $configuration['html_language']; ?>">
-
-<?php
-include 'templates/'.$configuration['page_template'].'/head.php';
-?>
-
-<body>
   <div class="header">
     <div class="width_limit header_grid">
       <div class="header_top">
@@ -20,7 +12,7 @@ include 'templates/'.$configuration['page_template'].'/head.php';
               <defs>
                 <style>
                   .st0 {
-                    fill: <?php echo $pool_configuration['pool_color'];?>;
+                    fill: <?php echo $pool_configuration['color'];?>;
                   }
                 </style>
               </defs>
@@ -31,7 +23,7 @@ include 'templates/'.$configuration['page_template'].'/head.php';
         <div class="header_top_right">
           <div class="header_info">
             <div><?php echo ($_SERVER['SERVER_NAME']); ?>/</div>
-            <div><b style="color: var(--pool_color);"><?php echo ($server_configuration['symbol']); ?></b></div>
+            <div><b style="color: var(--color-pool);"><?php echo ($server_configuration['symbol']); ?></b></div>
           </div>
           <div>
             <a class="header_navi_item" href="/">
@@ -115,6 +107,3 @@ include 'templates/'.$configuration['page_template'].'/head.php';
       </div>
     </div>
   </div>
-</body>
-
-</html>

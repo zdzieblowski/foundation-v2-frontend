@@ -6,6 +6,18 @@
 
 :root {
   --border-radius: 8px;
+
+  --max-width: 1024px;
+
+  --color-dark: #444;
+
+  --color-body: #ddd;
+  --color-body_shadow: #aaa;
+
+  --color-text_light: #eee;
+  --color-text_dark: var(--color-dark);
+
+  --color-bg_dark: var(--color-dark);
 }
 
 html {
@@ -19,8 +31,8 @@ body {
   font-size: 13px;
   margin: 0px;
   padding: 0px;
-  background-color: #ddd;
-  color: #444;
+  background-color: var(--color-body);
+  color: var(--color-text_dark);
   overflow-y: scroll;
 }
 
@@ -46,8 +58,8 @@ b {
 hr {
   margin-top: 16px;
   margin-bottom: 16px;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid var(--color-body_shadow);
+  border-bottom: 1px solid var(--color-body);
   border-left: none;
   border-right: none;
 }
@@ -86,7 +98,7 @@ hr {
 
 .width_limit {
   width: auto;
-  max-width: 1024px;
+  max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
   padding: 16px;
@@ -106,7 +118,7 @@ hr {
 .text_header {
   font-size: 24px;
   font-weight: 900;
-  color: var(--pool_color);
+  color: var(--color-pool);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -114,7 +126,7 @@ hr {
 .text_subheader {
   font-size: 16px;
   font-weight: 700;
-  color: #444;
+  color: var(--color-text_dark);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -176,7 +188,7 @@ hr {
   display: grid;
   align-items: center;
   padding: 12px;
-  color: #eee;
+  color: var(--color-text_light);
   border-radius: 8px;
   font-size: 11px;
   grid-template-columns: min-content min-content;
@@ -198,7 +210,7 @@ a.header_navi_item {
   background-color: #666;
   padding: 12px;
   border-radius: var(--border-radius);
-  color: #eee;
+  color: var(--color-text_light);
   display: grid;
   border-bottom: 4px solid #333;
 }
@@ -214,11 +226,11 @@ a.header_navi_item:hover {
 }
 
 a.header_navi_item:active {
-  background-color: #444;
+  background-color: var(--color-bg_dark);
 }
 
 .header_navi_item_select {
-  border-bottom: 4px solid var(--pool_color) !important;
+  border-bottom: 4px solid var(--color-pool) !important;
 }
 
 /**/
@@ -237,7 +249,7 @@ a.header_navi_item:active {
 
 .footer {
   background-color: #111;
-  color: #eee;
+  color: var(--color-text_light);
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -256,7 +268,7 @@ a.header_navi_item:active {
 
 .footer_content_left a {
   text-decoration: none;
-  color: var(--pool_color);
+  color: var(--color-pool);
 }
 
 .footer_content_left a:hover {
@@ -333,7 +345,7 @@ a.header_navi_item:active {
 }
 
 .home_port {
-  background-color: #ddd;
+  background-color: var(--color-body);
   padding: 16px;
   border-radius: 8px;
   display: grid;
@@ -355,35 +367,35 @@ a.header_navi_item:active {
 
 /**/
 
-.bg_orange {
-  background-color: var(--pool_color);
-  color: #eee;
+.bg_pool {
+  background-color: var(--color-pool);
+  color: var(--color-text_light);
 }
 
-.bg_verylightgrey_orangeborder {
+.bg_verylightgrey_poolborder {
   background-color: #bbb;
-  color: #444;
-  border: 2px solid var(--pool_color);
+  color: var(--color-text_dark);
+  border: 2px solid var(--color-pool);
 }
 
 .bg_verylightgrey_darkgreyborder {
   background-color: #bbb;
-  color: #444;
-  border: 2px solid #444;
+  color: var(--color-text_dark);
+  border: 2px solid var(--color-dark);
 }
 
 .bg_darkgrey {
-  background-color: #444;
-  color: #eee;
+  background-color: var(--color-bg_dark);
+  color: var(--color-text_light);
 }
 
 .bg_lightgrey {
   background-color: #666;
-  color: #eee;
+  color: var(--color-text_light);
 }
 
 .bg_verylightgrey {
-  background-color: #aaa;
+  background-color: var(--color-body_shadow);
 }
 
 /**/
@@ -399,8 +411,8 @@ a.header_navi_item:active {
 }
 
 .donate_item_name {
-  background-color: #444;
-  color: #eee;
+  background-color: var(--color-bg_dark);
+  color: var(--color-text_light);
   border-radius: 8px 0 0 8px;
   padding: 16px;
   align-content: center;
@@ -415,8 +427,8 @@ a.header_navi_item:active {
 }
 
 a.donate_item_link {
-  background-color: var(--pool_color);
-  color: #eee;
+  background-color: var(--color-pool);
+  color: var(--color-text_light);
   border-radius: 0 8px 8px 0;
   padding: 16px;
   align-content: center;
@@ -451,15 +463,15 @@ a.donate_item_link:active {
 .wallet_address input {
   font-family: "JetBrains Mono", monospace;
   font-size: 13px;
-  background-color: #aaa;
+  background-color: var(--color-body_shadow);
   border: unset;
   border-radius: 8px 0 0 8px;
   padding: 16px;
 }
 
 .wallet_address input[type=submit] {
-  background-color: var(--pool_color);
-  color: #eee;
+  background-color: var(--color-pool);
+  color: var(--color-text_light);
   border-radius: 0 8px 8px 0;
 }
 
@@ -481,7 +493,7 @@ a.donate_item_link:active {
 }
 
 .info_box {
-  color: #eee;
+  color: var(--color-text_light);
   border: 1px solid rgba(255,255,255,0.33);
   padding: 4px 6px;
   border-radius: 4px;
@@ -491,13 +503,13 @@ a.donate_item_link:active {
 }
 
 .debug_box {
-  color: #444;
-  background-color: #ddd;
+  color: var(--color-text_dark);
+  background-color: var(--color-body);
   padding: 8px 8px;
   border-radius: 4px;
   font-size: 12px;
   margin-top: 4px;
-  border: 1px dashed #444;
+  border: 1px dashed var(--color-dark);
   text-align: right;
 }
 
@@ -679,7 +691,7 @@ a.donate_item_link:active {
 }
 
 .home_port_command b {
-  background-color: var(--pool_color);
+  background-color: var(--color-pool);
   color: #333;
   padding: 4px 8px;
   border-radius: 4px;

@@ -1,6 +1,6 @@
 <?php
-$blocks_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/combined/blocks?limit=5&order=height&direction=descending');
-$rounds_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/combined/rounds');
+$blocks_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/blocks?limit=5&order=height&direction=descending');
+$rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/rounds');
 ?>
 <div class="text_header">Blocks</div>
 <div class="text_normal">List of mined blocks and rounds.</div>
@@ -11,7 +11,7 @@ $rounds_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
     ?>
     <div class="list_wrap small_gap">
       <a onclick="revealContent('block_<?php echo $block['id']; ?>');" style="cursor: pointer;">
-        <div class="small_box_long_content bg_verylightgrey_orangeborder">
+        <div class="small_box_long_content bg_verylightgrey_poolborder">
           <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">deployed_code</span><div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div></div>
           <div class="text_heavy text_right reveal_button">
             &nbsp;
@@ -137,7 +137,7 @@ $rounds_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
               <div class="text_heavy text_right"><?php echo ($block['solo'] ? 'SOLO' : 'SHARED'); ?></div>
               <?php debugData($block['solo'] ? 'true' : 'false', $configuration['debug_mode']); ?>
             </div>
-            <div class="small_box bg_orange">
+            <div class="small_box bg_pool">
               <div>Reward</div>
               <div class="text_heavy text_right">
                 <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>

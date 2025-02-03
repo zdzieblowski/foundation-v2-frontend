@@ -1,8 +1,8 @@
 <?php
-$miners_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/miners');
-$workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/workers');
-$blocks_combined = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/combined/blocks?limit=5&order=timestamp&direction=descending');
-$payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
+$miners_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners');
+$workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/workers');
+$blocks_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/blocks?limit=5&order=timestamp&direction=descending');
+$payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
 ?>
 <div class="text_header">Dashboard</div>
 <?php if (isset($_POST['save_address'])): ?>
@@ -30,10 +30,10 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
           <div class="text_large"><?php echo $miner['miner']; ?></div>
         </div>
         <div class="three_columns mt-8px">
-          <div class="box bg_orange">
+          <div class="box bg_pool">
             <div>Hashrate</div>
             <div class="text_large">
-              <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
+              <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
             </div>
             <?php debugData($miner['hashrate'], $configuration['debug_mode']); ?>
           </div>
@@ -63,7 +63,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
             </div>
             <?php debugData($miner['immature'], $configuration['debug_mode']); ?>
           </div>
-          <div class="box bg_orange">
+          <div class="box bg_pool">
             <div>Paid</div>
             <div class="text_large">
               <?php echo formatLargeNumbers($miner['paid'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
@@ -106,7 +106,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
                 ?>
                 <div class="list_wrap small_gap">
                   <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" style="cursor: pointer;">
-                    <div class="small_box bg_verylightgrey_orangeborder">
+                    <div class="small_box bg_verylightgrey_poolborder">
                       <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">memory</span>Worker</div>
                       <div class="text_heavy text_right reveal_button">
                         <?php echo $worker_name; ?>
@@ -117,10 +117,10 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
                   <div id="worker_<?php echo $worker['id']; ?>" class="hidden">
                     <div class="list_wrap small_gap">
                       <div class="two_columns small_gap">
-                        <div class="small_box bg_orange">
+                        <div class="small_box bg_pool">
                           <div>Hashrate</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
+                            <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
                           </div>
                           <?php debugData($worker['hashrate'], $configuration['debug_mode']); ?>
                         </div>
@@ -188,7 +188,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
               ?>
               <div class="list_wrap small_gap">
                 <a onclick="revealContent('block_<?php echo $block['id']; ?>');" style="cursor: pointer;">
-                  <div class="small_box_long_content bg_verylightgrey_orangeborder">
+                  <div class="small_box_long_content bg_verylightgrey_poolborder">
                     <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">deployed_code</span>Hash</div>
                     <div class="text_heavy text_right reveal_button">
                       <?php echo $block['hash']; ?>
@@ -244,7 +244,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
                         <div class="text_heavy text_right"><?php echo $block['solo'] ? 'SOLO' : 'SHARED'; ?></div>
                         <?php debugData($block['solo'] ? 'true' : 'false', $configuration['debug_mode']); ?>
                     </div>
-                      <div class="small_box bg_orange">
+                      <div class="small_box bg_pool">
                         <div>Reward</div>
                         <div class="text_heavy text_right">
                           <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
@@ -278,7 +278,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
               $payments_found = True;
               ?>
               <div class="list_wrap small_gap">
-                <div class="small_box_long_content bg_verylightgrey_orangeborder">
+                <div class="small_box_long_content bg_verylightgrey_poolborder">
                   <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">send_money</span>Transaction</div>
                   <div class="text_heavy text_right">
                     <?php echo $payment['transaction']; ?>
@@ -290,7 +290,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
                     <?php debugData($payment['timestamp'], $configuration['debug_mode']); ?>
                   </div>
-                  <div class="small_box bg_orange">
+                  <div class="small_box bg_pool">
                     <div>Amount</div>
                     <div class="text_heavy text_right">
                       <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>

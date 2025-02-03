@@ -1,6 +1,6 @@
 <?php
-$transactions_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/historical/transactions?limit=10&order=timestamp&direction=descending');
-$payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/historical/payments');
+$transactions_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/transactions?limit=10&order=timestamp&direction=descending');
+$payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments');
 ?>
 <div class="text_header">Transactions</div>
 <div class="text_normal">List of payment transactions.</div>
@@ -10,7 +10,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
   foreach ($transactions_current as $transaction) {
     ?>
     <a onclick="revealContent('tx_<?php echo $transaction['id']; ?>');" style="cursor: pointer;">
-      <div class="small_box_long_content bg_verylightgrey_orangeborder reveal_button">
+      <div class="small_box_long_content bg_verylightgrey_poolborder reveal_button">
         <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">send_money</span><div>Transaction: <b><?php echo privacyFilter($transaction['transaction'], 21); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
@@ -27,7 +27,7 @@ $payments_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_c
             <div class="text_heavy text_right"><?php echo formatDateTime($transaction['timestamp']); ?></div>
             <?php debugData($transaction['timestamp'], $configuration['debug_mode']); ?>
           </div>
-          <div class="small_box bg_orange">
+          <div class="small_box bg_pool">
             <div>Amount</div>
             <div class="text_heavy text_right">
               <?php echo formatLargeNumbers($transaction['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>

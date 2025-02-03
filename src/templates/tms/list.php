@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="<?php echo $configuration['html_language']; ?>">
-
-<?php
-include 'templates/'.$configuration['page_template'].'/head.php';
-?>
-
-<body>
   <div class="header" style="background-color: #555;">
     <div class="width_limit header_grid">
       <div class="header_top">
@@ -56,33 +48,33 @@ include 'templates/'.$configuration['page_template'].'/head.php';
             foreach($filelist as $file) {
              if(is_dir('configurations/'.$file)) {
               require('configurations/'.$file.'/configuration.php');
-              $metadata_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/metadata');
-              $network_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/network');
+              $metadata_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/metadata');
+              $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/network');
         ?>
           <style>
             a.<?php echo $file; ?> {
-              background-color: <?php echo $pool_configuration['pool_color']; ?>;
+              background-color: <?php echo $pool_configuration['color']; ?>;
               border-bottom: 4px solid #888;
               border-radius: 8px;
             }
             a.<?php echo $file; ?>:hover {
               background-color: #666;
-              border-bottom: 4px solid <?php echo $pool_configuration['pool_color']; ?>;
+              border-bottom: 4px solid <?php echo $pool_configuration['color']; ?>;
             }
             a.<?php echo $file; ?>:active {
               background-color: #444;
-              border-bottom: 4px solid <?php echo $pool_configuration['pool_color']; ?>;
+              border-bottom: 4px solid <?php echo $pool_configuration['color']; ?>;
             }
           </style>
           <a href="?pool=<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
-            <div class="box_long_content bg_orange pool_list_wrap">
+            <div class="box_long_content bg_pool pool_list_wrap">
               <img src="configurations/<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img" alt>
               <div>
                 <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
                 <div class="pool_list_infos">
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="HASHRATE">speed</span>
-                    <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
+                    <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="ALGORITHM">regular_expression</span>
@@ -103,10 +95,10 @@ include 'templates/'.$configuration['page_template'].'/head.php';
                   </div>
                   <div class="info_box">
                     <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>
-                    <?php if ($pool_configuration['pool_network_hashrate_multiplier'] != 1) { ?>
+                    <?php if ($pool_configuration['network_hashrate_multiplier'] != 1) { ?>
                        <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>
                     <?php }
-                      echo formatLargeNumbers(($network_current[0]['hashrate'] * $pool_configuration['pool_network_hashrate_multiplier']), $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit'];
+                      echo formatLargeNumbers(($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier']), $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit'];
                     ?>
                   </div>
                 </div>
@@ -138,7 +130,3 @@ include 'templates/'.$configuration['page_template'].'/head.php';
       </div>
     </div>
   </div>
-
-</body>
-
-</html>

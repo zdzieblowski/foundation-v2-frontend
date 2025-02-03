@@ -1,8 +1,18 @@
 <?php
-
 require_once 'configurations/configuration.php';
 require_once 'common/methods.php';
+?>
 
+<!DOCTYPE html>
+<html lang="<?php echo $configuration['html_language']; ?>">
+
+<?php
+include 'templates/'.$configuration['page_template'].'/head.php';
+?>
+
+<body>
+
+<?php
 if(!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
   $pool_configuration_file = 'configurations/'.$pool.'/configuration.php';
@@ -16,5 +26,7 @@ if(!empty($_GET['pool'])) {
 } else {
   include 'templates/'.$configuration['page_template'].'/list.php';
 }
-
 ?>
+
+</body>
+</html>

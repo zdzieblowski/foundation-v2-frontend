@@ -1,6 +1,6 @@
 <?php
-$miners_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/miners?limit=10&order=hashrate&direction=descending');
-$workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_configuration['pool_port'].'/api/v2/'.$pool_configuration['pool_name'].'/current/workers?order=hashrate&direction=descending');
+$miners_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners?limit=10&order=hashrate&direction=descending');
+$workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/workers?order=hashrate&direction=descending');
 ?>
 <div class="text_header">Miners</div>
 <div class="text_normal">List of miners and workers.</div>
@@ -10,7 +10,7 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
   foreach ($miners_current as $miner) {
     ?>
     <a onclick="revealContent('miner_<?php echo $miner['id']; ?>');" style="cursor: pointer;">
-      <div class="small_box_long_content bg_verylightgrey_orangeborder reveal_button">
+      <div class="small_box_long_content bg_verylightgrey_poolborder reveal_button">
         <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">dns</span><div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
@@ -22,10 +22,10 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
     <div id="miner_<?php echo $miner['id']; ?>" style="margin-top: -4px;" class="hidden">
       <div class="list_wrap small_gap">
         <div class="three_columns small_gap">
-          <div class="small_box bg_orange">
+          <div class="small_box bg_pool">
             <div>Hashrate</div>
             <div class="text_heavy text_right">
-              <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
+              <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
             </div>
             <?php debugData($miner['hashrate'], $configuration['debug_mode']); ?>
           </div>
@@ -59,7 +59,7 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
             </div>
             <?php debugData($miner['immature'], $configuration['debug_mode']); ?>
           </div>
-          <div class="small_box bg_orange">
+          <div class="small_box bg_pool">
             <div>Paid</div>
             <div class="text_heavy text_right">
               <?php echo formatLargeNumbers($miner['paid'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
@@ -116,7 +116,7 @@ $workers_current = getData('http://'.$pool_configuration['pool_ip'].':'.$pool_co
                         <div class="small_box bg_darkgrey">
                           <div>Hashrate</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['pool_hashrate_unit']; ?>
+                            <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
                           </div>
                           <?php debugData($worker['hashrate'], $configuration['debug_mode']); ?>
                         </div>
