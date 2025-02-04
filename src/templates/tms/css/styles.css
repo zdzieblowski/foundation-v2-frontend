@@ -780,7 +780,7 @@ a.donate_item_link:active {
 }
 
 .list_small_icon {
-  font-size: 16px;
+  font-size: 16px !important;
   margin-right: 4px;
 }
 
@@ -840,7 +840,7 @@ a.donate_item_link:active {
 }
 
 .large_icon {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 
 .inherit_font_size {
