@@ -22,7 +22,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
       if ($miner['miner'] == $_COOKIE['address_'.$pool]) {
         $wallet_found = True;
         ?>
-        <div class="text_normal">Statistics for wallet address: <b style="word-break: break-all;"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
+        <div class="text_normal">Statistics for wallet address: <b class="break_all"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
         <hr>
         <div class="text_subheader">Miner information</div>
         <div class="box_long_content bg_darkgrey">
@@ -105,9 +105,9 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                 $worker_name = getWorkerName($worker['worker']);
                 ?>
                 <div class="list_wrap small_gap">
-                  <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" style="cursor: pointer;">
+                  <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" class="cursor_pointer">
                     <div class="small_box bg_verylightgrey_poolborder">
-                      <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">memory</span>Worker</div>
+                      <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">memory</span>Worker</div>
                       <div class="text_heavy text_right reveal_button">
                         <?php echo $worker_name; ?>
                         <span class="material-symbols-outlined">unfold_more</span>
@@ -187,9 +187,9 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               $blocks_found = True;
               ?>
               <div class="list_wrap small_gap">
-                <a onclick="revealContent('block_<?php echo $block['id']; ?>');" style="cursor: pointer;">
+                <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
                   <div class="small_box_long_content bg_verylightgrey_poolborder">
-                    <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">deployed_code</span>Hash</div>
+                    <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">deployed_code</span>Hash</div>
                     <div class="text_heavy text_right reveal_button">
                       <?php echo $block['hash']; ?>
                       <span class="material-symbols-outlined">unfold_more</span>
@@ -279,7 +279,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               ?>
               <div class="list_wrap small_gap">
                 <div class="small_box_long_content bg_verylightgrey_poolborder">
-                  <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">send_money</span>Transaction</div>
+                  <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">send_money</span>Transaction</div>
                   <div class="text_heavy text_right">
                     <?php echo $payment['transaction']; ?>
                   </div>

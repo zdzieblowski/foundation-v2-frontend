@@ -10,9 +10,9 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   foreach ($blocks_combined as $block) {
     ?>
     <div class="list_wrap small_gap">
-      <a onclick="revealContent('block_<?php echo $block['id']; ?>');" style="cursor: pointer;">
+      <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
         <div class="small_box_long_content bg_verylightgrey_poolborder">
-          <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">deployed_code</span><div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div></div>
+          <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">deployed_code</span><div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div></div>
           <div class="text_heavy text_right reveal_button">
             &nbsp;
             <span class="material-symbols-outlined">unfold_more</span>
@@ -73,9 +73,9 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
           </div>
           <div class="wrap bg_verylightgrey">
             <div class="list_wrap small_gap">
-              <a onclick="revealContent('<?php echo $block['round']; ?>');" style="cursor: pointer;">
+              <a onclick="revealContent('<?php echo $block['round']; ?>');" class="cursor_pointer">
                 <div class="small_box_long_content bg_verylightgrey_darkgreyborder">
-                  <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">cached</span>Round</div>
+                  <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">cached</span>Round</div>
                   <div class="text_heavy text_right reveal_button">
                     <?php echo $block['round']; ?>
                     <span class="material-symbols-outlined">unfold_more</span>

@@ -2,12 +2,12 @@
 <div class="text_normal">Consider donating to further development of this software.</div>
 <hr>
 <div class="text_subheader">Server developer</div>
-<div class="donate_grid" style="margin-bottom: 8px;">
+<div class="donate_grid" class="margin_bottom">
   <div class="donate_grid_item">
     <div class="donate_item_name">Foundation Server (V2)</div>
     <div class="donate_item_address">github.com/blinkhash/foundation-v2-server</div>
     <a class="donate_item_link" href="https://github.com/blinkhash/foundation-v2-server" target="_blank">
-      <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" style="margin: 2px; margin-left: 1px;" alt>
+      <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" class="donate_github_icon" alt>
     </a>
   </div>
 </div>
@@ -18,7 +18,7 @@
     <div class="donate_item_name">Foundation Front-end (V2)</div>
     <div class="donate_item_address">github.com/zdzieblowski/foundation-v2-frontend</div>
     <a class="donate_item_link" href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank">
-      <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" style="margin: 2px; margin-left: 1px;" alt>
+      <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" class="donate_github_icon" alt>
     </a>
   </div>
   <div class="donate_grid_item">

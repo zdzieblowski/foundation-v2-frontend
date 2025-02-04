@@ -10,8 +10,8 @@ include 'templates/'.$configuration['page_template'].'/head.php';
               <span class="material-symbols-outlined">home</span>
             </a>
           </div>
-          <div style="width: min-content;">
-            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;">
+          <div class="width_min_content">
+            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" class="logo_height">
               <defs>
                 <style>
                   .st0 {
@@ -26,7 +26,7 @@ include 'templates/'.$configuration['page_template'].'/head.php';
         <div class="header_top_right">
           <div class="header_info">
             <div><?php echo ($_SERVER['SERVER_NAME']); ?>/</div>
-            <div><b style="color: var(--color-pool);"><?php echo ($server_configuration['symbol']); ?></b></div>
+            <div><b class="color_pool"><?php echo ($server_configuration['symbol']); ?></b></div>
           </div>
           <div>
             <a class="header_navi_item" href="/">

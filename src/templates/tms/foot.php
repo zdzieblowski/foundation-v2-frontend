@@ -13,7 +13,7 @@
   }
 ?>
         <br>
-        <pre style="margin: unset; padding: unset; font-family: inherit; color: #666;">        VERSION <b><?php echo $configuration['version']; ?></b></pre>
+        <pre class="pre_version">        VERSION <b><?php echo $configuration['version']; ?></b></pre>
       </div>
       <div class="footer_content_right">
         <div>

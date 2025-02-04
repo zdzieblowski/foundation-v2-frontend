@@ -12,8 +12,8 @@ include 'templates/'.$configuration['page_template'].'/head.php';
               </span>
             </a>
           </div>
-          <div style="width: min-content;">
-            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" style="height: 33px;">
+          <div class="width_min_content">
+            <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" class="logo_height">
               <defs>
                 <style>
                   .st0 {
@@ -41,7 +41,7 @@ include 'templates/'.$configuration['page_template'].'/head.php';
   <div class="content">
     <div class="width_limit">
       <div class="content_content">
-        <div class="text_header" style="color: #444;">Available pools</div>
+        <div class="text_header" class="color_verydark">Available pools</div>
         <div class="text_normal">Choose a pool from the list below.</div>
         <hr>
         <div class="pool_list">
@@ -69,44 +69,46 @@ include 'templates/'.$configuration['page_template'].'/head.php';
               border-bottom: 4px solid <?php echo $pool_configuration['color']; ?>;
             }
           </style>
-          <a href="?pool=<?php echo $file; ?>" style="text-decoration: none; user-select: none;" class="<?php echo $file; ?>">
+          <a href="?pool=<?php echo $file; ?>" class="list_button <?php echo $file; ?>">
             <div class="box_long_content bg_pool pool_list_wrap">
               <img src="configurations/<?php echo $file; ?>/logo.svg" height="50" width="50" class="pool_list_img" alt>
               <div>
-                <div class="text_large" style="text-align: left;"><?php echo $server_configuration['name']; ?></div>
+                <div class="text_large text_left"><?php echo $server_configuration['name']; ?></div>
                 <div class="pool_list_infos">
                   <div class="info_box">
-                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="HASHRATE">speed</span>
+                    <span class="material-symbols-outlined list_small_icon" title="HASHRATE">speed</span>
                     <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
                   </div>
                   <div class="info_box">
-                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="ALGORITHM">regular_expression</span>
+                    <span class="material-symbols-outlined list_small_icon" title="ALGORITHM">regular_expression</span>
                     <?php echo $server_configuration['algorithm']; ?>
                   </div>
                   <div class="info_box">
-                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="MINERS">dns</span>
-                    <?php echo $metadata_current[0]['miners']; ?>&nbsp;<span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="WORKERS">memory</span>
+                    <span class="material-symbols-outlined list_small_icon" title="MINERS">dns</span>
+                    <?php echo $metadata_current[0]['miners']; ?>&nbsp;<span class="material-symbols-outlined list_small_icon" title="WORKERS">memory</span>
                     <?php echo $metadata_current[0]['workers']; ?>
                   </div>
                   <div class="info_box">
-                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="BLOCKS">deployed_code</span>
+                    <span class="material-symbols-outlined list_small_icon" title="BLOCKS">deployed_code</span>
                     <?php echo $metadata_current[0]['blocks']; ?>
                   </div>
                   <div class="info_box">
-                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="EFFORT">clock_loader_20</span>
+                    <span class="material-symbols-outlined list_small_icon" title="EFFORT">clock_loader_20</span>
                     <?php echo formatPercents($metadata_current[0]['effort'], $pool_configuration['math_precision']); ?>
                   </div>
                   <div class="info_box">
-                    <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="NETWORK HASHRATE">share</span>
+                    <span class="material-symbols-outlined list_small_icon" title="NETWORK HASHRATE">share</span>
                     <?php if ($pool_configuration['network_hashrate_multiplier'] != 1) { ?>
-                       <span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px;" title="Warning! This value is estimated">warning</span>
+                       <span class="material-symbols-outlined list_small_icon" title="Warning! This value is estimated">warning</span>
                     <?php }
                       echo formatLargeNumbers(($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier']), $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit'];
                     ?>
                   </div>
                 </div>
               </div>
-              <div style="line-height: 0;"><span class="material-symbols-outlined">arrow_forward</span></div>
+              <div class="line_height_zero">
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
             </div>
           </a>
         <?php

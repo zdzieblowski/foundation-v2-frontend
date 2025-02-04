@@ -9,9 +9,9 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   <?php
   foreach ($miners_current as $miner) {
     ?>
-    <a onclick="revealContent('miner_<?php echo $miner['id']; ?>');" style="cursor: pointer;">
+    <a onclick="revealContent('miner_<?php echo $miner['id']; ?>');" class="cursor_pointer">
       <div class="small_box_long_content bg_verylightgrey_poolborder reveal_button">
-        <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">dns</span><div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div></div>
+        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">dns</span><div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
           <span class="material-symbols-outlined">unfold_more</span>
@@ -19,7 +19,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
         <?php debugData($miner['miner'], $configuration['debug_mode']); ?>
       </div>
     </a>
-    <div id="miner_<?php echo $miner['id']; ?>" style="margin-top: -4px;" class="hidden">
+    <div id="miner_<?php echo $miner['id']; ?>" class="margin_less_top hidden">
       <div class="list_wrap small_gap">
         <div class="three_columns small_gap">
           <div class="small_box bg_pool">
@@ -101,9 +101,9 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 $worker_name = getWorkerName($worker['worker']);
                 ?>
                 <div class="list_wrap small_gap">
-                  <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" style="cursor: pointer;">
+                  <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');"  class="cursor_pointer">
                     <div class="small_box bg_verylightgrey_darkgreyborder">
-                      <div style="display: grid; grid-template-columns: min-content auto; align-items: center;"><span class="material-symbols-outlined" style="margin-right: 8px;">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
+                      <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
                       <div class="text_right reveal_button">
                         &nbsp;
                         <span class="material-symbols-outlined">unfold_more</span>
