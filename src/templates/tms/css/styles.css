@@ -642,7 +642,7 @@ a.donate_item_link:active {
 
 /*  */
 
-@media (max-width: 950px) {
+@media (max-width: 850px) {
   .pool_list_infos {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -657,9 +657,7 @@ a.donate_item_link:active {
   .pool_list_wrap {
     gap: 8px;
   }
-}
 
-@media (max-width: 800px) {
   .header_navi {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
