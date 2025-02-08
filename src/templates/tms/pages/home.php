@@ -9,18 +9,18 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <div>
       <div>Currency</div>
       <div class="text_large"><?php echo $server_configuration['name']; ?></div>
-      <?php debugData($server_configuration['name'], $configuration['debug_mode']); ?>
+      <?php debugData($server_configuration['name'], $page_configuration['debug_mode']); ?>
     </div>
   </div>
   <div class="box bg_lightgrey">
     <div>Symbol</div>
     <div class="text_large"><?php echo $server_configuration['symbol']; ?></div>
-    <?php debugData($server_configuration['symbol'], $configuration['debug_mode']); ?>
+    <?php debugData($server_configuration['symbol'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Algorithm</div>
     <div class="text_large"><?php echo $server_configuration['algorithm']; ?></div>
-    <?php debugData($server_configuration['algorithm'], $configuration['debug_mode']); ?>
+    <?php debugData($server_configuration['algorithm'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
 <div class="two_columns margin_top">
@@ -29,14 +29,14 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <div class="text_large">
       <?php echo formatLargeNumbers($server_configuration['minimumPayment'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
     </div>
-    <?php debugData($server_configuration['minimumPayment'], $configuration['debug_mode']); ?>
+    <?php debugData($server_configuration['minimumPayment'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_darkgrey">
     <div>Pool fee</div>
     <div class="text_large">
       <?php echo formatPercents($server_configuration['recipientFee'] * 100, $pool_configuration['math_precision']); ?>
     </div>
-    <?php debugData($server_configuration['recipientFee'], $configuration['debug_mode']); ?>
+    <?php debugData($server_configuration['recipientFee'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
 <hr>
@@ -45,21 +45,21 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   <div class="box bg_darkgrey">
     <div>Blocks mined</div>
     <div class="text_large"><?php echo $metadata_current[0]['blocks']; ?></div>
-    <?php debugData($metadata_current[0]['blocks'], $configuration['debug_mode']); ?>
+    <?php debugData($metadata_current[0]['blocks'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Effort</div>
     <div class="text_large">
       <?php echo formatPercents($metadata_current[0]['effort'], $pool_configuration['math_precision']); ?>
     </div>
-    <?php debugData($metadata_current[0]['effort'], $configuration['debug_mode']); ?>
+    <?php debugData($metadata_current[0]['effort'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Efficiency</div>
     <div class="text_large">
       <?php echo formatPercents($metadata_current[0]['efficiency'], $pool_configuration['math_precision']); ?>
     </div>
-    <?php debugData($metadata_current[0]['efficiency'], $configuration['debug_mode']); ?>
+    <?php debugData($metadata_current[0]['efficiency'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
 <div class="three_columns margin_top">
@@ -68,17 +68,17 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <div class="text_large">
       <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
     </div>
-    <?php debugData($metadata_current[0]['hashrate'], $configuration['debug_mode']); ?>
+    <?php debugData($metadata_current[0]['hashrate'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Miners</div>
     <div class="text_large"><?php echo $metadata_current[0]['miners']; ?></div>
-    <?php debugData($metadata_current[0]['miners'], $configuration['debug_mode']); ?>
+    <?php debugData($metadata_current[0]['miners'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Workers</div>
     <div class="text_large"><?php echo $metadata_current[0]['workers']; ?></div>
-    <?php debugData($metadata_current[0]['workers'], $configuration['debug_mode']); ?>
+    <?php debugData($metadata_current[0]['workers'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
 <hr>
@@ -92,12 +92,12 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       <?php }
       echo formatLargeNumbers($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
     </div>
-    <?php debugData($network_current[0]['hashrate'], $configuration['debug_mode']); ?>
+    <?php debugData($network_current[0]['hashrate'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Block height</div>
     <div class="text_large"><?php echo $network_current[0]['height']; ?></div>
-    <?php debugData($network_current[0]['height'], $configuration['debug_mode']); ?>
+    <?php debugData($network_current[0]['height'], $page_configuration['debug_mode']); ?>
   </div>
   <div class="box bg_lightgrey">
     <div>Difficulty</div>
@@ -107,7 +107,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       <?php }
       echo formatLargeNumbers($network_current[0]['difficulty'] * $pool_configuration['network_difficulty_multiplier'], $pool_configuration['math_precision']); ?>
     </div>
-    <?php debugData($network_current[0]['difficulty'], $configuration['debug_mode']); ?>
+    <?php debugData($network_current[0]['difficulty'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
 <hr>
@@ -130,7 +130,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right large_icon">terminal</span><?php echo $port['type']; ?> LINUX:</div>
       </div>
       <div class="home_port_command">
-        <strong>./<?php echo $pool_configuration['suggested_software_linux']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable(variable_name: 'SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
+        <strong>./<?php echo $pool_configuration['suggested_software_linux']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
         <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
       </div>
       <hr class="list_hr">
@@ -138,7 +138,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right large_icon">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
       </div>
       <div class="home_port_command">
-        <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable(variable_name: 'SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
+        <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
         <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
       </div>
     <?php }
@@ -147,7 +147,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 <div class="reveal_button_text"><span class="material-symbols-outlined margin_right large_icon">terminal</span><?php echo $port['type']; ?>:</div>
       </div>
       <div class="home_port_command">
-        <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable(variable_name: 'SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
+        <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
         <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
       </div>
     <?php } ?>

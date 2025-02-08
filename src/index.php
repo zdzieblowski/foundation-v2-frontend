@@ -1,15 +1,15 @@
 <?php
-require_once 'common/configurations/page.php';
+require_once 'common/configuration.php';
 require_once 'common/methods.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="<?php echo $configuration['html_language']; ?>">
+<html lang="<?php echo $page_configuration['html_language']; ?>">
 
 <?php
 if (!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
-  $pool_configuration_file = $configuration['directory_configurations'] . '/' . $pool . '/configuration.php';
+  $pool_configuration_file = $page_configuration['directory_configurations'] . '/' . $pool . '/configuration.php';
 
   if (!file_exists($pool_configuration_file)) {
     $pool = '';
@@ -21,22 +21,22 @@ if (!empty($_GET['pool'])) {
 } else {
   $mode = 'list';
 }
-include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/html.php';
+include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/head.php';
 ?>
 
 <body>
   
-  <?php include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/head.php'; ?>
+  <?php include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/header.php'; ?>
 
   <div class="content">
     <div class="width_limit">
       <div class="content_content">
-        <?php include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/' . $mode . '.php'; ?>
+        <?php include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/' . $mode . '.php'; ?>
       </div>
     </div>
   </div>
   
-  <?php include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/foot.php'; ?>
+  <?php include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/footer.php'; ?>
 
 </body>
 

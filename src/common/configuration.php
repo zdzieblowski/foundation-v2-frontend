@@ -1,5 +1,5 @@
 <?php
-$configuration = [
+$page_configuration = [
   'version' => '0.4.6',
   'debug_mode' => False,
 
@@ -9,6 +9,7 @@ $configuration = [
   'directory_configurations' => 'configurations',
   
   'page_template' => 'tms',
+  
   'page_title' => 'The Mining Site',
   'page_short_title' => 'TMS'
 ];

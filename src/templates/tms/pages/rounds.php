@@ -16,7 +16,7 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
           &nbsp;
           <span class="material-symbols-outlined">unfold_more</span>
         </div>
-        <?php debugData($round['worker'], $configuration['debug_mode']); ?>
+        <?php debugData($round['worker'], $page_configuration['debug_mode']); ?>
       </div>
     </a>
     <div id="tx_<?php echo $round['id']; ?>" class="margin_less_top hidden">
@@ -25,46 +25,46 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
           <div class="small_box bg_lightgrey">
             <div>Submitted</div>
             <div class="text_heavy text_right"><?php echo formatDateTime($round['submitted']); ?></div>
-            <?php debugData($round['submitted'], $configuration['debug_mode']); ?>
+            <?php debugData($round['submitted'], $page_configuration['debug_mode']); ?>
           </div>
           <div class="small_box bg_darkgrey">
             <div>Confirmed</div>
             <div class="text_heavy text_right"><?php echo formatDateTime($round['timestamp']); ?></div>
-            <?php debugData($round['timestamp'], $configuration['debug_mode']); ?>
+            <?php debugData($round['timestamp'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
         <div class="three_columns small_gap">
           <div class="small_box bg_lightgrey">
             <div>Invalid shares</div>
             <div class="text_heavy text_right"><?php echo $round['invalid']; ?></div>
-            <?php debugData($round['invalid'], $configuration['debug_mode']); ?>
+            <?php debugData($round['invalid'], $page_configuration['debug_mode']); ?>
           </div>
           <div class="small_box bg_lightgrey">
             <div>Stale shares</div>
             <div class="text_heavy text_right"><?php echo $round['stale']; ?></div>
-            <?php debugData($round['stale'], $configuration['debug_mode']); ?>
+            <?php debugData($round['stale'], $page_configuration['debug_mode']); ?>
           </div>
           <div class="small_box bg_darkgrey">
             <div>Valid shares</div>
             <div class="text_heavy text_right"><?php echo $round['valid']; ?></div>
-            <?php debugData($round['valid'], $configuration['debug_mode']); ?>
+            <?php debugData($round['valid'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
         <div class="three_columns small_gap">
           <div class="small_box bg_lightgrey">
             <div>Time</div>
             <div class="text_heavy text_right"><?php echo formatLargeNumbers($round['times'], $pool_configuration['math_precision']); ?></div>
-            <?php debugData($round['times'], $configuration['debug_mode']); ?>
+            <?php debugData($round['times'], $page_configuration['debug_mode']); ?>
           </div>
           <div class="small_box bg_darkgrey">
             <div>Work type</div>
             <div class="text_heavy text_right"><?php echo ($round['solo'] ? 'SOLO' : 'SHARED'); ?></div>
-            <?php debugData($round['solo'] ? 'true' : 'false', $configuration['debug_mode']); ?>
+            <?php debugData($round['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
           </div>
           <div class="small_box bg_pool">
             <div>Work ammount</div>
             <div class="text_heavy text_right"><?php echo formatLargeNumbers($round['work'], $pool_configuration['math_precision']); ?></div>
-            <?php debugData($round['work'], $configuration['debug_mode']); ?>
+            <?php debugData($round['work'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
       </div>

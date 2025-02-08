@@ -3,7 +3,7 @@
     <div class="footer_content_left">
       2024+ &copy; <?php echo getServerVariable('SERVER_NAME') . '/' . (empty($pool) ? '' : '<a href="?pool='.$pool.'">'.$server_configuration['symbol'].'</a>'); ?>
       <br>
-      <pre class="pre_version">        VERSION <b><?php echo $configuration['version']; ?></b></pre>
+      <pre class="pre_version">        VERSION <b><?php echo $page_configuration['version']; ?></b></pre>
     </div>
     <div class="footer_content_right">
       <div>

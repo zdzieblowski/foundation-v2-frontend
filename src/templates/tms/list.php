@@ -3,10 +3,10 @@
 <hr>
 <div class="pool_list">
   <?php
-  if ($pool_directory = opendir($configuration['directory_configurations'])) {
+  if ($pool_directory = opendir($page_configuration['directory_configurations'])) {
     $pool_list = listFiles($pool_directory, array('.', '..'));
     foreach ($pool_list as $pool_config) {
-      $pool_directory_path = $configuration['directory_configurations'] . '/' . $pool_config;
+      $pool_directory_path = $page_configuration['directory_configurations'] . '/' . $pool_config;
       if (is_dir($pool_directory_path)) {
         require($pool_directory_path . '/configuration.php');
         $metadata_current = getData('http://' . $pool_configuration['ip'] . ':' . $pool_configuration['port'] . '/api/v2/' . $pool_configuration['name'] . '/current/metadata');

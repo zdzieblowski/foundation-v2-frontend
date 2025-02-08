@@ -17,7 +17,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             &nbsp;
             <span class="material-symbols-outlined">unfold_more</span>
           </div>
-          <?php debugData($block['hash'], $configuration['debug_mode']); ?>
+          <?php debugData($block['hash'], $page_configuration['debug_mode']); ?>
         </div>
       </a>
       <div id="block_<?php echo $block['id']; ?>" class="hidden">
@@ -26,33 +26,33 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             <div class="small_box bg_lightgrey">
               <div>Submitted</div>
               <div class="text_heavy text_right"><?php echo formatDateTime($block['submitted']); ?></div>
-              <?php debugData($block['submitted'], $configuration['debug_mode']); ?>
+              <?php debugData($block['submitted'], $page_configuration['debug_mode']); ?>
             </div>
             <div class="small_box bg_darkgrey">
               <div>Confirmed</div>
               <div class="text_heavy text_right"><?php echo formatDateTime($block['timestamp']); ?></div>
-              <?php debugData($block['timestamp'], $configuration['debug_mode']); ?>
+              <?php debugData($block['timestamp'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
           <div class="three_columns small_gap">
             <div class="small_box bg_lightgrey">
               <div>Height</div>
               <div class="text_heavy text_right"><?php echo $block['height']; ?></div>
-              <?php debugData($block['height'], $configuration['debug_mode']); ?>
+              <?php debugData($block['height'], $page_configuration['debug_mode']); ?>
             </div>
             <div class="small_box bg_lightgrey">
               <div>Difficulty</div>
               <div class="text_heavy text_right">
                 <?php echo formatLargeNumbers($block['difficulty'], $pool_configuration['math_precision']); ?>
               </div>
-              <?php debugData($block['difficulty'], $configuration['debug_mode']); ?>
+              <?php debugData($block['difficulty'], $page_configuration['debug_mode']); ?>
             </div>
             <div class="small_box bg_darkgrey">
               <div>Luck</div>
               <div class="text_heavy text_right">
                 <?php echo formatPercents($block['luck'], $pool_configuration['math_precision']); ?>
               </div>
-              <?php debugData($block['luck'], $configuration['debug_mode']); ?>
+              <?php debugData($block['luck'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
           <div class="wrap bg_verylightgrey">
@@ -62,12 +62,12 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 <div class="text_heavy text_right">
                   <?php echo privacyFilter($block['miner']) . '.' . getWorkerName($block['worker']); ?>
                 </div>
-                <?php debugData($block['worker'], $configuration['debug_mode']); ?>
+                <?php debugData($block['worker'], $page_configuration['debug_mode']); ?>
               </div>
               <div class="small_box_long_content bg_lightgrey">
                 <div>Transaction</div>
                 <div class="text_heavy text_right"><?php echo privacyFilter($block['transaction'], 21); ?></div>
-                <?php debugData($block['transaction'], $configuration['debug_mode']); ?>
+                <?php debugData($block['transaction'], $page_configuration['debug_mode']); ?>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                           <div class="text_heavy text_right">
                             <?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?>
                           </div>
-                          <?php debugData($round['worker'], $configuration['debug_mode']); ?>
+                          <?php debugData($round['worker'], $page_configuration['debug_mode']); ?>
                         </div>
                         <div class="three_columns small_gap">
                           <div class="small_box bg_darkgrey">
@@ -102,21 +102,21 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                             <div class="text_heavy text_right">
                               <?php echo formatLargeNumbers($round['valid'], $pool_configuration['math_precision']); ?>
                             </div>
-                            <?php debugData($round['valid'], $configuration['debug_mode']); ?>
+                            <?php debugData($round['valid'], $page_configuration['debug_mode']); ?>
                           </div>
                           <div class="small_box bg_lightgrey">
                             <div>Stale shares</div>
                             <div class="text_heavy text_right">
                               <?php echo formatLargeNumbers($round['stale'], $pool_configuration['math_precision']); ?>
                             </div>
-                            <?php debugData($round['stale'], $configuration['debug_mode']); ?>
+                            <?php debugData($round['stale'], $page_configuration['debug_mode']); ?>
                           </div>
                           <div class="small_box bg_lightgrey">
                             <div>Invalid shares</div>
                             <div class="text_heavy text_right">
                               <?php echo formatLargeNumbers($round['invalid'], $pool_configuration['math_precision']); ?>
                             </div>
-                            <?php debugData($round['invalid'], $configuration['debug_mode']); ?>
+                            <?php debugData($round['invalid'], $page_configuration['debug_mode']); ?>
                           </div>
                         </div>
                       </div>
@@ -135,20 +135,20 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             <div class="small_box bg_lightgrey">
               <div>Block type</div>
               <div class="text_heavy text_right"><?php echo ($block['solo'] ? 'SOLO' : 'SHARED'); ?></div>
-              <?php debugData($block['solo'] ? 'true' : 'false', $configuration['debug_mode']); ?>
+              <?php debugData($block['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
             </div>
             <div class="small_box bg_pool">
               <div>Reward</div>
               <div class="text_heavy text_right">
                 <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
               </div>
-              <?php debugData($block['reward'], $configuration['debug_mode']); ?>
+              <?php debugData($block['reward'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <?php if ($block != end(array: $blocks_combined)) { ?>
+    <?php if ($block != end($blocks_combined)) { ?>
       <hr class="inner_hr list_hr">
       <?php
     }
