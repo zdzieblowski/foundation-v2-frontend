@@ -1,4 +1,4 @@
-<footer>
+<div class="footer">
   <div class="width_limit footer_content">
     <div class="footer_content_left">
       <?php
@@ -33,4 +33,4 @@
       </div>
     </div>
   </div>
-</footer>
+</div>
