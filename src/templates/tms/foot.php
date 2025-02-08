@@ -1,18 +1,12 @@
 <div class="footer">
   <div class="width_limit footer_content">
     <div class="footer_content_left">
-      <?php
-      if (!empty($pool)) {
-        ?>
-        2024+ &copy; <?php echo $_SERVER['SERVER_NAME'] . '/'; ?><a
-          href="<?php echo '?pool=' . $pool; ?>"><?php echo $server_configuration['symbol']; ?></a>
-        <?php
-      } else {
-        ?>
-        2024+ &copy; <?php echo getServerVariable('SERVER_NAME'); ?>/
-        <?php
-      }
-      ?>
+      <?php if (!empty($pool)) { ?>
+      2024+ &copy; <?php echo $_SERVER['SERVER_NAME'] . '/'; ?><a
+        href="<?php echo '?pool=' . $pool; ?>"><?php echo $server_configuration['symbol']; ?></a>
+      <?php } else { ?>
+      2024+ &copy; <?php echo getServerVariable(variable_name: 'SERVER_NAME'); ?>/
+      <?php } ?>
       <br>
       <pre class="pre_version">        VERSION <b><?php echo $configuration['version']; ?></b></pre>
     </div>

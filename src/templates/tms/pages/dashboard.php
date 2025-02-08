@@ -1,14 +1,14 @@
 <?php
-$miners_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners');
-$workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/workers');
-$blocks_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/blocks?limit=5&order=timestamp&direction=descending');
-$payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
+$miners_current = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners');
+$workers_current = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/workers');
+$blocks_combined = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/blocks?limit=5&order=timestamp&direction=descending');
+$payments_current = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
 ?>
 <div class="text_header">Dashboard</div>
 <?php if (isset($_POST['save_address'])): ?>
   <?php
   setcookie('address_'.$pool, $_POST['save_address']);
-  header('Refresh:0; url=?pool='.$pool.'&page=dashboard');
+  header(header: 'Refresh:0; url=?pool='.$pool.'&page=dashboard');
 ?>
 <?php else: ?>
   <?php if (!isset($_COOKIE['address_'.$pool])): ?>
@@ -100,8 +100,6 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php
             foreach ($workers_current as $worker) {
               if ($worker['miner'] == $miner['miner']) {
-                //$worker_name = explode('.', $worker['worker'], 2)[1];
-                //$worker_name = $worker_name ? $worker_name : 'UNNAMED';
                 $worker_name = getWorkerName($worker['worker']);
                 ?>
                 <div class="list_wrap small_gap">

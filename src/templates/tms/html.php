@@ -9,25 +9,28 @@
   <link rel="manifest" href="templates/<?php echo $configuration['page_template']; ?>/assets/site.webmanifest">
 
   <meta name="apple-mobile-web-app-title" content="<?php echo $configuration['page_short_title']; ?>">
-  <link rel="apple-touch-icon" sizes="180x180" href="templates/<?php echo $configuration['page_template']; ?>/assets/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="templates/<?php echo $configuration['page_template']; ?>/assets/apple-touch-icon.png" sizes="180x180">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
 
-<?php
-  if(!empty($pool)) {
-    $page_title = $configuration['page_title'].': '.$pool_configuration['title'];
-?>
+  <?php
+  if (!empty($pool)) {
+    $page_title = $configuration['page_title'] . ': ' . $pool_configuration['title'];
+  ?>
   <script src="common/methods.js"></script>
   <style>
     :root {
-      --color-pool: <?php echo $pool_configuration['color']; ?>;
+      --color-pool:
+        <?php echo $pool_configuration['color']; ?>
+      ;
     }
   </style>
-<?php
+  <?php
   } else {
     $page_title = $configuration['page_title'];
   }
-?>
+  ?>
+
   <title><?php echo $page_title; ?></title>
 </head>
