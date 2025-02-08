@@ -5,6 +5,9 @@ require_once 'common/methods.php';
 
 <!DOCTYPE html>
 <html lang="<?php echo $configuration['html_language']; ?>">
+<?php
+include 'templates/'.$configuration['page_template'].'/head.php';
+?>
 <body>
 
 <?php
