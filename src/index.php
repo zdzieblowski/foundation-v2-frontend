@@ -24,15 +24,15 @@ if(!empty($_GET['pool'])) {
   } else {
     require_once($pool_configuration_file);
     // includePageElements('pool', $configuration);
-    include 'templates/'.$config['page_template'].'/head.php';
-    include 'templates/'.$config['page_template'].'/pool.php';
-    include 'templates/'.$config['page_template'].'/foot.php';
+    include 'templates/'.$configuration['page_template'].'/head.php';
+    include 'templates/'.$configuration['page_template'].'/pool.php';
+    include 'templates/'.$configuration['page_template'].'/foot.php';
   }
 } else {
   // includePageElements('list', $configuration);
-  include 'templates/'.$config['page_template'].'/head.php';
-  include 'templates/'.$config['page_template'].'/list.php';
-  include 'templates/'.$config['page_template'].'/foot.php';
+  include 'templates/'.$configuration['page_template'].'/head.php';
+  include 'templates/'.$configuration['page_template'].'/list.php';
+  include 'templates/'.$configuration['page_template'].'/foot.php';
 }
 ?>
 
