@@ -29,7 +29,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
           <div>Wallet address</div>
           <div class="text_large"><?php echo $miner['miner']; ?></div>
         </div>
-        <div class="three_columns mt-8px">
+        <div class="three_columns margin_top">
           <div class="box bg_pool">
             <div>Hashrate</div>
             <div class="text_large">
@@ -48,7 +48,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php debugData($miner['effort'], $configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="three_columns mt-8px">
+        <div class="three_columns margin_top">
           <div class="box bg_darkgrey">
             <div>Balance</div>
             <div class="text_large">
@@ -71,7 +71,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php debugData($miner['paid'], $configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="wrap bg_verylightgrey mt-8px">
+        <div class="wrap bg_verylightgrey margin_top">
           <div class="three_columns">
             <div class="box bg_darkgrey">
               <div>Valid shares</div>

@@ -23,7 +23,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php debugData($server_configuration['algorithm'], $configuration['debug_mode']); ?>
   </div>
 </div>
-<div class="two_columns mt-8px">
+<div class="two_columns margin_top">
   <div class="box bg_darkgrey">
     <div>Minimal payout</div>
     <div class="text_large">
@@ -62,7 +62,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php debugData($metadata_current[0]['efficiency'], $configuration['debug_mode']); ?>
   </div>
 </div>
-<div class="three_columns mt-8px">
+<div class="three_columns margin_top">
   <div class="box bg_darkgrey">
     <div>Hashrate</div>
     <div class="text_large">
