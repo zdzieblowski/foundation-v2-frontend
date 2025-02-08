@@ -1,15 +1,15 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="templates/<?php echo $configuration['page_template']; ?>/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo $configuration['directory_templates'].'/'.$configuration['page_template']; ?>/css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 
-  <link rel="shortcut icon" href="templates/<?php echo $configuration['page_template']; ?>/assets/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="templates/<?php echo $configuration['page_template']; ?>/assets/favicon.svg">
-  <link rel="icon" type="image/png" href="templates/<?php echo $configuration['page_template']; ?>/assets/favicon-96x96.png" sizes="96x96">
+  <link rel="shortcut icon" href="<?php echo $configuration['directory_templates'].'/'.$configuration['page_template']; ?>/assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="<?php echo $configuration['directory_templates'].'/'.$configuration['page_template']; ?>/assets/favicon.svg">
+  <link rel="icon" type="image/png" href="<?php echo $configuration['directory_templates'].'/'.$configuration['page_template']; ?>/assets/favicon-96x96.png" sizes="96x96">
 
-  <link rel="manifest" href="templates/<?php echo $configuration['page_template']; ?>/assets/site.webmanifest">
+  <link rel="manifest" href="<?php echo $configuration['directory_templates'].'/'.$configuration['page_template']; ?>/assets/site.webmanifest">
 
   <meta name="apple-mobile-web-app-title" content="<?php echo $configuration['page_short_title']; ?>">
-  <link rel="apple-touch-icon" href="templates/<?php echo $configuration['page_template']; ?>/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="<?php echo $configuration['directory_templates'].'/'.$configuration['page_template']; ?>/assets/apple-touch-icon.png" sizes="180x180">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">

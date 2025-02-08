@@ -21,28 +21,22 @@ if (!empty($_GET['pool'])) {
 } else {
   $mode = 'list';
 }
-include 'templates/' . $configuration['page_template'] . '/html.php';
+include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/html.php';
 ?>
 
 <body>
   
-  <?php
-  include 'templates/' . $configuration['page_template'] . '/head.php';
-  ?>
+  <?php include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/head.php'; ?>
 
   <div class="content">
     <div class="width_limit">
       <div class="content_content">
-        <?php
-        include 'templates/' . $configuration['page_template'] . '/' . $mode . '.php';
-        ?>
+        <?php include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/' . $mode . '.php'; ?>
       </div>
     </div>
   </div>
   
-  <?php
-  include 'templates/' . $configuration['page_template'] . '/foot.php';
-  ?>
+  <?php include $configuration['directory_templates'] . '/' . $configuration['page_template'] . '/foot.php'; ?>
 
 </body>
 

@@ -35,9 +35,9 @@
       </div>
       <div class="header_top_right">
         <div class="header_info">
-          <div><?php echo getServerVariable(variable_name: 'SERVER_NAME'); ?>/</div>
+          <div><?php echo getServerVariable('SERVER_NAME'); ?>/</div>
 
-        <?php if(empty($pool)) { ?>
+    <?php if(empty($pool)) { ?>
 
         </div>
         <div>
@@ -46,7 +46,9 @@
           </a>
         </div>
       </div>
-        <?php } else { ?>
+    </div>
+
+    <?php } else { ?>
 
           <div><b class="color_pool"><?php echo $server_configuration['symbol']; ?></b></div>
         </div>
@@ -56,9 +58,6 @@
           </a>
         </div>
       </div>
-        
-        <?php } ?>
-      
     </div>
     <div class="header_navi">
         <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'dashboard') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=dashboard">
@@ -82,6 +81,9 @@
           Transactions
         </a>
       </div>
+        
+    <?php } ?>
+      
   </div>
 </div>
 

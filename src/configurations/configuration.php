@@ -5,10 +5,11 @@ $configuration = [
 
   'html_language' => 'en',
 
+  'directory_templates' => 'templates',
+  'directory_configurations' => 'configurations',
+  
   'page_title' => 'The Mining Site',
   'page_short_title' => 'TMS',
-  'page_template' => 'tms',
-
-  'pool_configurations_directory' => 'configurations'
+  'page_template' => 'tms'
 ];
 ?>
