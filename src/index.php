@@ -31,7 +31,18 @@ include 'templates/'.$configuration['page_template'].'/html.php';
 
 <?php
 include 'templates/'.$configuration['page_template'].'/head.php';
+?>
+
+<div class="content">
+  <div class="width_limit">
+    <div class="content_content">
+<?php
 include 'templates/'.$configuration['page_template'].'/'.$mode.'.php';
+?>
+    </div>
+  </div>
+</div>
+<?php
 include 'templates/'.$configuration['page_template'].'/foot.php';
 ?>
 

@@ -1,7 +1,5 @@
 
-  <div class="content">
-    <div class="width_limit">
-      <div class="content_content">
+
         <div class="text_header" class="color_verydark">Available pools</div>
         <div class="text_normal">Choose a pool from the list below.</div>
         <hr>
@@ -78,6 +76,4 @@
           }
         ?>
         </div>
-      </div>
-    </div>
-  </div>
+

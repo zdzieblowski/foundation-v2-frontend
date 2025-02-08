@@ -1,7 +1,3 @@
-
-  <div class="content">
-    <div class="width_limit">
-      <div class="content_content">
         <?php
         switch ($_GET['page']) {
           case '':
@@ -30,6 +26,3 @@
             break;
         }
         ?>
-      </div>
-    </div>
-  </div>
