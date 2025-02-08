@@ -118,8 +118,4 @@
       </div>
     </div>
   </div>
-
-<?php
-include 'templates/'.$configuration['page_template'].'/foot.php';
-?>
 </body>

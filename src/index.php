@@ -7,21 +7,26 @@ require_once 'common/methods.php';
 <html lang="<?php echo $configuration['html_language']; ?>">
 
 <?php
+
+function includePageElements($target, $configuration) {
+  include 'templates/'.$configuration['page_template'].'/head.php';
+  include 'templates/'.$configuration['page_template'].'/'.$target.'.php';
+  include 'templates/'.$configuration['page_template'].'/foot.php';
+}
+
 if(!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
   $pool_configuration_file = 'configurations/'.$pool.'/configuration.php';
-
-  include 'templates/'.$configuration['page_template'].'/head.php';
 
   if(!file_exists($pool_configuration_file)) {
     $pool = '';
     header('Refresh:0; url=/');
   } else {
     require_once($pool_configuration_file);
-    include 'templates/'.$configuration['page_template'].'/pool.php';
+    includePageElements('pool', $configuration);
   }
 } else {
-  include 'templates/'.$configuration['page_template'].'/list.php';
+  includePageElements('list', $configuration);
 }
 ?>
 
