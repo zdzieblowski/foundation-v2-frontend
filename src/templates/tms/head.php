@@ -55,7 +55,30 @@
             <span class="material-symbols-outlined">logout</span>
           </a>
         </div>
-      
+
+        <div class="header_navi">
+          <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'dashboard') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+          </a>
+          <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'miners') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=miners">
+            <span class="material-symbols-outlined">group</span>
+            Miners
+          </a>
+          <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'rounds') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=rounds">
+            <span class="material-symbols-outlined">cached</span>
+            Rounds
+          </a>
+          <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'blocks') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=blocks">
+            <span class="material-symbols-outlined">star_rate</span>
+            Blocks
+          </a>
+          <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'transactions') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=transactions">
+            <span class="material-symbols-outlined">payments</span>
+            Transactions
+          </a>
+        </div>
+        
         <?php } ?>
 
       </div>
@@ -66,25 +89,4 @@
 
 
 
-<!-- </div>
-    <div class="header_navi">
-      <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'dashboard') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=dashboard">
-        <span class="material-symbols-outlined">dashboard</span>
-        Dashboard
-      </a>
-      <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'miners') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=miners">
-        <span class="material-symbols-outlined">group</span>
-        Miners
-      </a>
-      <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'rounds') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=rounds">
-        <span class="material-symbols-outlined">cached</span>
-        Rounds
-      </a>
-      <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'blocks') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=blocks">
-        <span class="material-symbols-outlined">star_rate</span>
-        Blocks
-      </a>
-      <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'transactions') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=transactions">
-        <span class="material-symbols-outlined">payments</span>
-        Transactions
-      </a> -->
+

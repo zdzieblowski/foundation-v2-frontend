@@ -11,7 +11,7 @@
         require($pool_directory_path . '/configuration.php');
         $metadata_current = getData('http://' . $pool_configuration['ip'] . ':' . $pool_configuration['port'] . '/api/v2/' . $pool_configuration['name'] . '/current/metadata');
         $network_current = getData('http://' . $pool_configuration['ip'] . ':' . $pool_configuration['port'] . '/api/v2/' . $pool_configuration['name'] . '/current/network');
-        ?>
+  ?>
         <style>
           a.<?php echo $pool_config; ?> {
             background-color:
@@ -79,7 +79,7 @@
             </div>
           </div>
         </a>
-        <?php
+  <?php
       }
     }
     closedir($pool_directory);
