@@ -1,6 +1,6 @@
 <?php
-$transactions_current = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/transactions?limit=10&order=timestamp&direction=descending');
-$payments_current = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments');
+$transactions_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/transactions?limit=10&order=timestamp&direction=descending');
+$payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments');
 ?>
 <div class="text_header">Transactions</div>
 <div class="text_normal">List of payment transactions.</div>

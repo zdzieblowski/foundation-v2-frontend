@@ -7,6 +7,8 @@ $configuration = [
 
   'page_title' => 'The Mining Site',
   'page_short_title' => 'TMS',
-  'page_template' => 'tms'
+  'page_template' => 'tms',
+
+  'pool_configurations_directory' => 'configurations'
 ];
 ?>

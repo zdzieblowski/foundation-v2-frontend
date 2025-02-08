@@ -11,9 +11,9 @@ if (!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
   $pool_configuration_file = 'configurations/' . $pool . '/configuration.php';
 
-  if (!file_exists(filename: $pool_configuration_file)) {
+  if (!file_exists($pool_configuration_file)) {
     $pool = '';
-    header(header: 'Refresh:0; url=/');
+    header('Refresh:0; url=/');
   } else {
     require_once($pool_configuration_file);
     $mode = 'pool';

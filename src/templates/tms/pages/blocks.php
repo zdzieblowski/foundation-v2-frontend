@@ -1,6 +1,6 @@
 <?php
-$blocks_combined = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/blocks?limit=5&order=height&direction=descending');
-$rounds_combined = getData(data_url: 'http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/rounds');
+$blocks_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/blocks?limit=5&order=height&direction=descending');
+$rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/rounds');
 ?>
 <div class="text_header">Blocks</div>
 <div class="text_normal">List of mined blocks and rounds.</div>

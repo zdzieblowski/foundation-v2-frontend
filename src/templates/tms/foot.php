@@ -1,12 +1,7 @@
 <div class="footer">
   <div class="width_limit footer_content">
     <div class="footer_content_left">
-      <?php if (!empty($pool)) { ?>
-      2024+ &copy; <?php echo $_SERVER['SERVER_NAME'] . '/'; ?><a
-        href="<?php echo '?pool=' . $pool; ?>"><?php echo $server_configuration['symbol']; ?></a>
-      <?php } else { ?>
-      2024+ &copy; <?php echo getServerVariable(variable_name: 'SERVER_NAME'); ?>/
-      <?php } ?>
+      2024+ &copy; <?php echo getServerVariable('SERVER_NAME') . '/' . empty($pool) ? '' : '<a href="?pool='.$pool.'">'.$server_configuration['symbol'].'</a>'; ?>
       <br>
       <pre class="pre_version">        VERSION <b><?php echo $configuration['version']; ?></b></pre>
     </div>
@@ -22,8 +17,7 @@
         ?>
       </div>
       <div>
-        <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img
-            src="common/assets/github.svg" height="24" alt></a>
+        <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" alt></a>
       </div>
     </div>
   </div>
