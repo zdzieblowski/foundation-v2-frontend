@@ -8,8 +8,8 @@ $configuration = [
   'directory_templates' => 'templates',
   'directory_configurations' => 'configurations',
   
+  'page_template' => 'tms',
   'page_title' => 'The Mining Site',
-  'page_short_title' => 'TMS',
-  'page_template' => 'tms'
+  'page_short_title' => 'TMS'
 ];
 ?>

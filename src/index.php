@@ -1,5 +1,5 @@
 <?php
-require_once 'configurations/configuration.php';
+require_once 'common/configurations/page.php';
 require_once 'common/methods.php';
 ?>
 
@@ -9,7 +9,7 @@ require_once 'common/methods.php';
 <?php
 if (!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
-  $pool_configuration_file = 'configurations/' . $pool . '/configuration.php';
+  $pool_configuration_file = $configuration['directory_configurations'] . '/' . $pool . '/configuration.php';
 
   if (!file_exists($pool_configuration_file)) {
     $pool = '';
