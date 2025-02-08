@@ -56,7 +56,11 @@
           </a>
         </div>
       </div>
-      <div class="header_navi">
+        
+        <?php } ?>
+      
+    </div>
+    <div class="header_navi">
         <a class="header_navi_item header_navi_item_text <?php if ($_GET['page'] == 'dashboard') { echo 'header_navi_item_select'; } ?>" href="?pool=<?php echo $pool; ?>&page=dashboard">
           <span class="material-symbols-outlined">dashboard</span>
           Dashboard
@@ -78,10 +82,6 @@
           Transactions
         </a>
       </div>
-        
-        <?php } ?>
-      
-    </div>
   </div>
 </div>
 
