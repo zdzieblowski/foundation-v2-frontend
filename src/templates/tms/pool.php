@@ -1,3 +1,4 @@
+<body>
   <div class="header">
     <div class="width_limit header_grid">
       <div class="header_top">
@@ -94,3 +95,4 @@
 <?php
 include 'templates/'.$configuration['page_template'].'/foot.php';
 ?>
+</body>
