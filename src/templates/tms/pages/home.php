@@ -4,7 +4,7 @@ $metadata_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
 $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/network');
 ?>
 <div class="three_columns">
-  <div class="box bg_pool two_columns reveal_button_text">
+  <div class="box bg_pool reveal_button_text">
     <img src="configurations/<?php echo $pool; ?>/logo.svg" height="37" width="37" alt>
     <div>
       <div>Currency</div>

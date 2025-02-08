@@ -473,6 +473,7 @@ a.header_navi_item:active {
   display: grid;
   grid-template-columns: min-content auto;
   align-items: center;
+  column-gap: 8px;
 }
 
 .small_box,
