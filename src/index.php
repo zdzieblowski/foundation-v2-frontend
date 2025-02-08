@@ -8,10 +8,10 @@ require_once 'common/methods.php';
 
 <?php
 
-function includePageElements($target, $configuration) {
-  include 'templates/'.$configuration['page_template'].'/head.php';
-  include 'templates/'.$configuration['page_template'].'/'.$target.'.php';
-  include 'templates/'.$configuration['page_template'].'/foot.php';
+function includePageElements($mode, $config) {
+  include 'templates/'.$config['page_template'].'/head.php';
+  include 'templates/'.$config['page_template'].'/'.$mode.'.php';
+  include 'templates/'.$config['page_template'].'/foot.php';
 }
 
 if(!empty($_GET['pool'])) {
