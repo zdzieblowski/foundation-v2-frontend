@@ -23,13 +23,14 @@ if(!empty($_GET['pool'])) {
   $mode = 'list';
 }
 
-include 'templates/'.$configuration['page_template'].'/head.php';
+include 'templates/'.$configuration['page_template'].'/html.php';
 
 ?>
 
 <body>
 
 <?php
+include 'templates/'.$configuration['page_template'].'/head.php';
 include 'templates/'.$configuration['page_template'].'/'.$mode.'.php';
 include 'templates/'.$configuration['page_template'].'/foot.php';
 ?>
