@@ -8,12 +8,6 @@ require_once 'common/methods.php';
 
 <?php
 
-// function includePageElements($mode, $config) {
-  // include 'templates/'.$config['page_template'].'/head.php';
-  // include 'templates/'.$config['page_template'].'/'.$mode.'.php';
-  // include 'templates/'.$config['page_template'].'/foot.php';
-// }
-
 if(!empty($_GET['pool'])) {
   $pool = $_GET['pool'];
   $pool_configuration_file = 'configurations/'.$pool.'/configuration.php';
@@ -23,17 +17,22 @@ if(!empty($_GET['pool'])) {
     header('Refresh:0; url=/');
   } else {
     require_once($pool_configuration_file);
-    // includePageElements('pool', $configuration);
-    include 'templates/'.$configuration['page_template'].'/head.php';
-    include 'templates/'.$configuration['page_template'].'/pool.php';
-    include 'templates/'.$configuration['page_template'].'/foot.php';
+    $mode = 'pool';
   }
 } else {
-  // includePageElements('list', $configuration);
-  include 'templates/'.$configuration['page_template'].'/head.php';
-  include 'templates/'.$configuration['page_template'].'/list.php';
-  include 'templates/'.$configuration['page_template'].'/foot.php';
+  $mode = 'list';
 }
+
+include 'templates/'.$configuration['page_template'].'/head.php';
+
 ?>
 
+<body>
+
+<?php
+include 'templates/'.$configuration['page_template'].'/'.$mode.'.php';
+include 'templates/'.$configuration['page_template'].'/foot.php';
+?>
+
+</body>
 </html>
