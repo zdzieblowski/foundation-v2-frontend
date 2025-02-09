@@ -5,7 +5,7 @@ $pool_configuration = [
 
   'math_precision' => 2,
 
-  'color' => '#cf4a29',
+  'color' => '#B64225',
   'donation_currency' => 'Raptoreum',
 
   'donation_wallet' => 'RQRm1eaSEXs2c5panSf2ziSoVHbThbweTs',
