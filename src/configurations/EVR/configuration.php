@@ -5,7 +5,7 @@ $pool_configuration = [
 
   'math_precision' => 2,
 
-  'color' => '#00b0e5',
+  'color' => '#00a6d9',
   'donation_currency' => 'Evrmore',
 
   'donation_wallet' => 'EKD6T8CKqTmebBFnpjmHFRCY2jWs117wPS',
