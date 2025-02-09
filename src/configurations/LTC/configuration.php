@@ -5,7 +5,7 @@ $pool_configuration = [
 
   'math_precision' => 2,
 
-  'color' => '#375c9a',
+  'color' => '#406ab3',
   'donation_currency' => 'Litecoin',
 
   'donation_wallet' => 'ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09',
