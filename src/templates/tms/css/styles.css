@@ -415,31 +415,31 @@ a.header_navi_item:active {
   row-gap: 8px;
 }
 
-.margin_top {
-  margin-top: 8px;
-}
-
-.margin_less_top {
+.margin_top_a {
   margin-top: -4px;
 }
 
-.margin_less_right {
+.margin_top_b {
+  margin-top: 8px;
+}
+
+.margin_right_a {
   margin-right: 4px;
 }
 
-.margin_right {
+.margin_right_b {
   margin-right: 8px;
 }
 
-.margin_bottom {
+.margin_bottom_b {
   margin-bottom: 8px;
 }
 
-.margin_more_bottom {
+.margin_bottom_c {
   margin-bottom: 16px;
 }
 
-.margin_unset_bottom {
+.margin_bottom_unset {
   margin-bottom: unset;
 }
 
@@ -538,6 +538,14 @@ a.header_navi_item:active {
   text-align: right;
 }
 
+.text_inherit_fontsize {
+  font-size: inherit;
+}
+
+.text_break_all {
+  word-break: break-all;
+}
+
 .three_columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -548,14 +556,6 @@ a.header_navi_item:active {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 8px;
-}
-
-.break_all {
-  word-break: break-all;
-}
-
-.inherit_font_size {
-  font-size: inherit;
 }
 
 .wallet_address {

@@ -23,7 +23,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php debugData($server_configuration['algorithm'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
-<div class="two_columns margin_top">
+<div class="two_columns margin_top_b">
   <div class="box bg_darkgrey">
     <div>Minimal payout</div>
     <div class="text_large">
@@ -62,7 +62,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php debugData($metadata_current[0]['efficiency'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
-<div class="three_columns margin_top">
+<div class="three_columns margin_top_b">
   <div class="box bg_darkgrey">
     <div>Hashrate</div>
     <div class="text_large">
@@ -88,7 +88,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <div>Hashrate</div>
     <div class="text_large">
       <?php if ($pool_configuration['network_hashrate_multiplier'] != 1) { ?>
-        <span class="material-symbols-outlined inherit_font_size margin_less_right" title="Warning! This value is estimated">warning</span>
+        <span class="material-symbols-outlined text_inherit_fontsize margin_right_a" title="Warning! This value is estimated">warning</span>
       <?php }
       echo formatLargeNumbers($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
     </div>
@@ -103,7 +103,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <div>Difficulty</div>
     <div class="text_large">
       <?php if ($pool_configuration['network_difficulty_multiplier'] != 1) { ?>
-        <span class="material-symbols-outlined inherit_font_size margin_less_right" title="Warning! This value is estimated">warning</span>
+        <span class="material-symbols-outlined text_inherit_fontsize margin_right_a" title="Warning! This value is estimated">warning</span>
       <?php }
       echo formatLargeNumbers($network_current[0]['difficulty'] * $pool_configuration['network_difficulty_multiplier'], $pool_configuration['math_precision']); ?>
     </div>
@@ -114,7 +114,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 <div class="text_subheader">Getting started</div>
 <?php if($pool_configuration['suggested_software'] != '') {?>
 <div class="text_normal">Download the mining software - we suggest <b><?php echo $pool_configuration['suggested_software']; ?></b> for the <b><?php echo $server_configuration['algorithm']; ?></b> algorithm.</div>
-<a class="header_navi_item header_navi_item_text margin_more_bottom" href="<?php echo $pool_configuration['suggested_software_link']; ?>" target="_blank">
+<a class="header_navi_item header_navi_item_text margin_bottom_c" href="<?php echo $pool_configuration['suggested_software_link']; ?>" target="_blank">
   <span class="material-symbols-outlined">download</span>
   <div>Download <b><?php echo $pool_configuration['suggested_software']; ?></b></div>
 </a>
@@ -127,7 +127,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   <div class="home_port">
     <?php if($pool_configuration['suggested_platform_gpu']) { ?>
       <div class="home_port_type">
-        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right large_icon">terminal</span><?php echo $port['type']; ?> LINUX:</div>
+        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b large_icon">terminal</span><?php echo $port['type']; ?> LINUX:</div>
       </div>
       <div class="home_port_command">
         <strong>./<?php echo $pool_configuration['suggested_software_linux']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -135,7 +135,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       </div>
       <hr class="list_hr">
       <div class="home_port_type">
-        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right large_icon">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
+        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b large_icon">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
       </div>
       <div class="home_port_command">
         <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -144,7 +144,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php }
     if($pool_configuration['suggested_platform_asic']) { ?>
       <div class="home_port_type">
-<div class="reveal_button_text"><span class="material-symbols-outlined margin_right large_icon">terminal</span><?php echo $port['type']; ?>:</div>
+<div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b large_icon">terminal</span><?php echo $port['type']; ?>:</div>
       </div>
       <div class="home_port_command">
         <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>

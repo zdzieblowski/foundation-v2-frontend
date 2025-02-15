@@ -22,14 +22,14 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
       if ($miner['miner'] == $_COOKIE['address_'.$pool]) {
         $wallet_found = True;
         ?>
-        <div class="text_normal">Statistics for wallet address: <b class="break_all"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
+        <div class="text_normal">Statistics for wallet address: <b class="text_break_all"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
         <hr>
         <div class="text_subheader">Miner information</div>
         <div class="box_long_content bg_darkgrey">
           <div>Wallet address</div>
           <div class="text_large"><?php echo $miner['miner']; ?></div>
         </div>
-        <div class="three_columns margin_top">
+        <div class="three_columns margin_top_b">
           <div class="box bg_pool">
             <div>Hashrate</div>
             <div class="text_large">
@@ -48,7 +48,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php debugData($miner['effort'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="three_columns margin_top">
+        <div class="three_columns margin_top_b">
           <div class="box bg_darkgrey">
             <div>Balance</div>
             <div class="text_large">
@@ -71,7 +71,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php debugData($miner['paid'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="wrap bg_verylightgrey margin_top">
+        <div class="wrap bg_verylightgrey margin_top_b">
           <div class="three_columns">
             <div class="box bg_darkgrey">
               <div>Valid shares</div>
@@ -105,7 +105,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                 <div class="list_wrap small_gap">
                   <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" class="cursor_pointer">
                     <div class="small_box bg_verylightgrey_poolborder">
-                      <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">memory</span>Worker</div>
+                      <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span>Worker</div>
                       <div class="text_heavy text_right reveal_button">
                         <?php echo $worker_name; ?>
                         <span class="material-symbols-outlined">unfold_more</span>
@@ -187,7 +187,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               <div class="list_wrap small_gap">
                 <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
                   <div class="small_box_long_content bg_verylightgrey_poolborder">
-                    <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">deployed_code</span>Hash</div>
+                    <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">deployed_code</span>Hash</div>
                     <div class="text_heavy text_right reveal_button">
                       <?php echo $block['hash']; ?>
                       <span class="material-symbols-outlined">unfold_more</span>
@@ -277,7 +277,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               ?>
               <div class="list_wrap small_gap">
                 <div class="small_box_long_content bg_verylightgrey_poolborder">
-                  <div class="reveal_button_text"><span class="material-symbols-outlined margin_right">send_money</span>Transaction</div>
+                  <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">send_money</span>Transaction</div>
                   <div class="text_heavy text_right">
                     <?php echo $payment['transaction']; ?>
                   </div>
