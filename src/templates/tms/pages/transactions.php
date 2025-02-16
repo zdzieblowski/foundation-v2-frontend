@@ -3,7 +3,7 @@ $transactions_current = getData('http://'.$pool_configuration['ip'].':'.$pool_co
 $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments');
 ?>
 <div class="text_header">Transactions</div>
-<div class="text_normal">List of payment transactions.</div>
+<div class="text_normal">List of transactions and payment amounts.</div>
 <hr>
 <div class="list_wrap">
   <?php

@@ -4,7 +4,7 @@
 <div class="text_subheader">Server developer</div>
 <div class="donate_grid" class="margin_bottom_b">
   <div class="donate_grid_item">
-    <div class="donate_item_name">Foundation Server (V2)</div>
+    <div class="donate_item_name">Foundation Server (v2)</div>
     <div class="donate_item_address">github.com/blinkhash/foundation-v2-server</div>
     <a class="donate_item_link" href="https://github.com/blinkhash/foundation-v2-server" target="_blank">
       <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" class="donate_github_icon" alt>
@@ -15,7 +15,7 @@
 <div class="text_subheader">Front-end developer</div>
 <div class="donate_grid">
   <div class="donate_grid_item">
-    <div class="donate_item_name">Foundation Front-end (V2)</div>
+    <div class="donate_item_name">Foundation Front-end (v2)</div>
     <div class="donate_item_address">github.com/zdzieblowski/foundation-v2-frontend</div>
     <a class="donate_item_link" href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank">
       <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" class="donate_github_icon" alt>

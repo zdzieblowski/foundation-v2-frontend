@@ -3,7 +3,7 @@ $blocks_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/combined/rounds');
 ?>
 <div class="text_header">Blocks</div>
-<div class="text_normal">List of mined blocks and rounds.</div>
+<div class="text_normal">List of mined blocks and corresponding rounds.</div>
 <hr>
 <div class="list_wrap">
   <?php
