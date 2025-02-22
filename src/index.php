@@ -1,5 +1,5 @@
 <?php
-require_once 'configurations/common.php';
+require_once 'common/configuration.php';
 require_once 'common/methods.php';
 ?>
 
