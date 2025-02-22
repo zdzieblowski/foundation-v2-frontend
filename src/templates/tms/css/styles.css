@@ -98,11 +98,11 @@ hr {
   align-items: center;
 }
 
-.content {
+.content_wrap {
   margin-bottom: 60px;
 }
 
-.content_content {
+.content {
   background-color: #ccc;
   border-radius: 8px;
   padding: 16px;
@@ -237,7 +237,7 @@ a.donate_item_link:active {
   font-size: 24px !important;
 }
 
-.pre_version {
+.footer_version {
   margin: unset;
   padding: unset;
   font-family: inherit;
@@ -587,7 +587,7 @@ a.header_navi_item:active {
   background-color: #888;
 }
 
-.width_limit {
+.content_width {
   width: auto;
   max-width: var(--max-width);
   margin-left: auto;
@@ -814,7 +814,7 @@ a.header_navi_item:active {
     padding-bottom: 14px;
   }
 
-  .content {
+  .content_wrap {
     margin-bottom: 80px;
   }
 

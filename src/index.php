@@ -1,5 +1,5 @@
 <?php
-require_once 'common/configuration.php';
+require_once 'configurations/common.php';
 require_once 'common/methods.php';
 ?>
 
@@ -28,9 +28,9 @@ include $page_configuration['directory_templates'] . '/' . $page_configuration['
   
   <?php include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/header.php'; ?>
 
-  <div class="content">
-    <div class="width_limit">
-      <div class="content_content">
+  <div class="content_wrap">
+    <div class="content_width">
+      <div class="content">
         <?php include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/' . $mode . '.php'; ?>
       </div>
     </div>

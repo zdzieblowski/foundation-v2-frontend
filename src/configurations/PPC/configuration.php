@@ -1,6 +1,10 @@
 <?php
 
 $pool_configuration = [
+  'ip' => '127.0.0.1',
+  'port' => '5001',
+  'name' => 'peercoin',
+
   'title' => 'Peercoin',
 
   'math_precision' => 2,
@@ -14,13 +18,10 @@ $pool_configuration = [
   'network_hashrate_multiplier' => 283196872,
   'network_difficulty_multiplier' => 283196872,
   'hashrate_unit' => 'H/s',
-  'ip' => '127.0.0.1',
-  'port' => '3001',
-
-  'name' => 'peercoin',
 
   'suggested_platform_gpu' => False,
   'suggested_platform_asic' => True,
+  
   'suggested_software' => '',
   'suggested_software_linux' => '&lt;miner&gt;',
   'suggested_software_windows' => '&lt;miner&gt;',
@@ -31,6 +32,6 @@ $pool_configuration = [
   'suggested_software_link' => ''
 ];
 
-$server_configuration = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/configuration')[0];
+$server_configuration = getServerConfiguration($pool_configuration);
 
 ?>

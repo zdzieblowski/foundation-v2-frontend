@@ -1,6 +1,10 @@
 <?php
 
 $pool_configuration = [
+  'ip' => '127.0.0.1',
+  'port' => '6001',
+  'name' => 'ravencoin',
+
   'title' => 'Ravencoin',
 
   'math_precision' => 2,
@@ -14,13 +18,10 @@ $pool_configuration = [
   'network_difficulty_multiplier' => 1,
   'network_hashrate_multiplier' => 1,
   'hashrate_unit' => 'H/s',
-  'ip' => '127.0.0.1',
-  'port' => '2005',
-
-  'name' => 'ravencoin',
 
   'suggested_platform_gpu' => True,
   'suggested_platform_asic' => False,
+  
   'suggested_software' => 'WildRig Multi',
   'suggested_software_linux' => 'wildrig-multi',
   'suggested_software_windows' => 'wildrig.exe',
@@ -31,6 +32,6 @@ $pool_configuration = [
   'suggested_software_link' => 'https://github.com/andru-kun/wildrig-multi/releases'
 ];
 
-$server_configuration = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/configuration')[0];
+$server_configuration = getServerConfiguration($pool_configuration);
 
 ?>

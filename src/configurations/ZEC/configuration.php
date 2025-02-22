@@ -1,6 +1,10 @@
 <?php
 
 $pool_configuration = [
+  'ip' => '127.0.0.1',
+  'port' => '7001',
+  'name' => 'zcash',
+
   'title' => 'Zcash',
 
   'math_precision' => 2,
@@ -14,13 +18,10 @@ $pool_configuration = [
   'network_difficulty_multiplier' => 1,
   'network_hashrate_multiplier' => 1,
   'hashrate_unit' => 'H/s',
-  'ip' => '127.0.0.1',
-  'port' => '2007',
-
-  'name' => 'zcash',
 
   'suggested_platform_gpu' => False,
   'suggested_platform_asic' => True,
+  
   'suggested_software' => '',
   'suggested_software_linux' => '',
   'suggested_software_windows' => '',
@@ -31,6 +32,6 @@ $pool_configuration = [
   'suggested_software_link' => ''
 ];
 
-$server_configuration = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/configuration')[0];
+$server_configuration = getServerConfiguration($pool_configuration);
 
 ?>

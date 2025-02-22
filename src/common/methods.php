@@ -35,6 +35,10 @@ function getRandomEmote(): string
   return $emotes[array_rand($emotes)];
 }
 
+function getServerConfiguration($configuration): mixed {
+  return getData('http://'.$configuration['ip'].':'.$configuration['port'].'/api/v2/'.$configuration['name'].'/current/configuration')[0];
+}
+
 function getServerVariable($variable_name): mixed
 {
   return $_SERVER[$variable_name];

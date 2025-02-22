@@ -1,9 +1,9 @@
 <div class="footer">
-  <div class="width_limit footer_content">
+  <div class="content_width footer_content">
     <div class="footer_content_left">
       2024+ &copy; <?php echo getServerVariable('SERVER_NAME') . '/' . (empty($pool) ? '' : '<a href="?pool='.$pool.'">'.$server_configuration['symbol'].'</a>'); ?>
       <br>
-      <pre class="pre_version">        VERSION <b><?php echo $page_configuration['version']; ?></b></pre>
+      <pre class="footer_version">        VERSION <b><?php echo $page_configuration['version']; ?></b></pre>
     </div>
     <div class="footer_content_right">
       <div>
