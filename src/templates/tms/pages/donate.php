@@ -1,6 +1,18 @@
 <div class="text_header">Donate</div>
 <div class="text_normal">Consider donating to further development of this software.</div>
 <hr>
+<div class="text_subheader">Pool maintenance</div>
+<div class="donate_grid">
+  <div class="donate_grid_item">
+    <div class="donate_item_name"><?php echo $pool_configuration['donation_currency']; ?></div>
+    <div class="donate_item_address"><?php echo $pool_configuration['donation_wallet']; ?></div>
+    <a class="donate_item_link" href="<?php echo $pool_configuration['donation_explorer_link']; ?>" target="_blank">
+      <span class="donate_item_link_text">View on explorer</span>
+      <span class="material-symbols-outlined">explore</span>
+    </a>
+  </div>
+</div>
+<hr>
 <div class="text_subheader">Server developer</div>
 <div class="donate_grid" class="margin_bottom_b">
   <div class="donate_grid_item">
@@ -49,18 +61,6 @@
     <div class="donate_item_name">Litecoin</div>
     <div class="donate_item_address">ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09</div>
     <a class="donate_item_link" href="https://litecoinspace.org/address/ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09" target="_blank">
-      <span class="donate_item_link_text">View on explorer</span>
-      <span class="material-symbols-outlined">explore</span>
-    </a>
-  </div>
-</div>
-<hr>
-<div class="text_subheader">Pool maintenance</div>
-<div class="donate_grid">
-  <div class="donate_grid_item">
-    <div class="donate_item_name"><?php echo $pool_configuration['donation_currency']; ?></div>
-    <div class="donate_item_address"><?php echo $pool_configuration['donation_wallet']; ?></div>
-    <a class="donate_item_link" href="<?php echo $pool_configuration['donation_explorer_link']; ?>" target="_blank">
       <span class="donate_item_link_text">View on explorer</span>
       <span class="material-symbols-outlined">explore</span>
     </a>
