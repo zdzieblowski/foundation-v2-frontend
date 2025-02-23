@@ -29,7 +29,7 @@ include $page_configuration['directory_templates'] . '/' . $page_configuration['
   <?php include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/header.php'; ?>
 
   <div class="content_wrap">
-    <div class="content_width">
+    <div class="width_max">
       <div class="content">
         <?php include $page_configuration['directory_templates'] . '/' . $page_configuration['page_template'] . '/' . $mode . '.php'; ?>
       </div>

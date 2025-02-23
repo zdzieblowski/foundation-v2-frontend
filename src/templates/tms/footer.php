@@ -1,5 +1,5 @@
 <div class="footer">
-  <div class="content_width footer_content">
+  <div class="width_max footer_content">
     <div class="footer_content_left">
       2024+ &copy; <?php echo getServerVariable('SERVER_NAME') . '/' . (empty($pool) ? '' : '<a href="?pool='.$pool.'">'.$server_configuration['symbol'].'</a>'); ?>
       <br>

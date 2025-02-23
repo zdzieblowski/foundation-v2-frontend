@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="content_width header_grid">
+  <div class="width_max header_grid">
     <div class="header_top">
       <div class="header_top_logo">
 
@@ -19,7 +19,7 @@
         </div>
         <?php } ?>
 
-        <div class="width_min_content">
+        <div class="width_min">
           <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" class="logo_height">
             <defs>
               <style>
