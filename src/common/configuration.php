@@ -1,6 +1,6 @@
 <?php
 $page_configuration = [
-  'version' => '0.4.8',
+  'version' => '0.4.9',
   'debug_mode' => False,
 
   'html_language' => 'en',

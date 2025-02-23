@@ -99,7 +99,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 $worker_name = getWorkerName($worker['worker']);
                 ?>
                 <div class="list_wrap small_gap">
-                  <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');"  class="cursor_pointer">
+                  <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" class="cursor_pointer">
                     <div class="small_box bg_verylightgrey_darkgreyborder">
                       <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
                       <div class="text_right reveal_button">

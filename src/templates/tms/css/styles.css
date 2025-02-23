@@ -631,7 +631,8 @@ a.header_navi_item:active {
 /**/
 
 @media (max-width: 900px) {
-  .donate_grid_item {
+  .donate_grid_item,
+  .small_box_long_content {
     grid-template-columns: unset;
   }
 
@@ -670,10 +671,6 @@ a.header_navi_item:active {
 
   .pool_list_wrap {
     gap: 8px;
-  }
-
-  .small_box_long_content {
-    grid-template-columns: unset;
   }
 
 }
@@ -781,7 +778,8 @@ a.header_navi_item:active {
     position: unset;
   }
 
-  .header_top_right {
+  .header_top_right,
+  .wallet_address {
     grid-template-columns: unset;
   }
 
@@ -797,10 +795,6 @@ a.header_navi_item:active {
   .pool_list_img {
     width: 20px;
     height: 20px;
-  }
-
-  .wallet_address {
-    grid-template-columns: unset;
   }
 
   .wallet_address input {

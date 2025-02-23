@@ -14,7 +14,7 @@
 </div>
 <hr>
 <div class="text_subheader">Server developer</div>
-<div class="donate_grid" class="margin_bottom_b">
+<div class="donate_grid margin_bottom_b">
   <div class="donate_grid_item">
     <div class="donate_item_name">Foundation Server (v2)</div>
     <div class="donate_item_address">github.com/blinkhash/foundation-v2-server</div>
