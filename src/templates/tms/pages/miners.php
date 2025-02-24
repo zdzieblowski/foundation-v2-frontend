@@ -10,7 +10,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   foreach ($miners_current as $miner) {
     ?>
     <a onclick="revealContent('miner_<?php echo $miner['id']; ?>');" class="cursor_pointer">
-      <div class="small_box_long_content bg_verylightgrey_bd_pool reveal_button">
+      <div class="small_box_long_content bg_vlight_bdr_pool reveal_button">
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">dns</span><div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
@@ -29,14 +29,14 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             </div>
             <?php debugData($miner['hashrate'], $page_configuration['debug_mode']); ?>
           </div>
-          <div class="small_box bg_lightgrey">
+          <div class="small_box bg_light">
             <div>Efficency</div>
             <div class="text_heavy text_right">
               <?php echo formatPercents($miner['efficiency'], $pool_configuration['math_precision']); ?>
             </div>
             <?php debugData($miner['efficiency'], $page_configuration['debug_mode']); ?>
           </div>
-          <div class="small_box bg_lightgrey">
+          <div class="small_box bg_light">
             <div>Effort</div>
             <div class="text_heavy text_right">
               <?php echo formatPercents($miner['effort'], $pool_configuration['math_precision']); ?>
@@ -45,14 +45,14 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
           </div>
         </div>
         <div class="three_columns small_gap">
-          <div class="small_box bg_darkgrey">
+          <div class="small_box bg_dark">
             <div>Balance</div>
             <div class="text_heavy text_right">
               <?php echo formatLargeNumbers($miner['balance'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
             </div>
             <?php debugData($miner['balance'], $page_configuration['debug_mode']); ?>
           </div>
-          <div class="small_box bg_lightgrey">
+          <div class="small_box bg_light">
             <div>Immature</div>
             <div class="text_heavy text_right">
               <?php echo formatLargeNumbers($miner['immature'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
@@ -67,23 +67,23 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             <?php debugData($miner['paid'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="wrap bg_verylightgrey small_gap">
+        <div class="wrap bg_vlight small_gap">
           <div class="three_columns small_gap">
-            <div class="small_box bg_darkgrey">
+            <div class="small_box bg_dark">
               <div>Valid shares</div>
               <div class="text_heavy text_right">
                 <?php echo formatLargeNumbers($miner['valid'], $pool_configuration['math_precision']); ?>
               </div>
               <?php debugData($miner['valid'], $page_configuration['debug_mode']); ?>
             </div>
-            <div class="small_box bg_lightgrey">
+            <div class="small_box bg_light">
               <div>Stale shares</div>
               <div class="text_heavy text_right">
                 <?php echo formatLargeNumbers($miner['stale'], $pool_configuration['math_precision']); ?>
               </div>
               <?php debugData($miner['stale'], $page_configuration['debug_mode']); ?>
             </div>
-            <div class="small_box bg_lightgrey">
+            <div class="small_box bg_light">
               <div>Invalid shares</div>
               <div class="text_heavy text_right">
                 <?php echo formatLargeNumbers($miner['invalid'], $pool_configuration['math_precision']); ?>
@@ -100,7 +100,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 ?>
                 <div class="list_wrap small_gap">
                   <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" class="cursor_pointer">
-                    <div class="small_box bg_verylightgrey_bd_darkgrey">
+                    <div class="small_box bg_vlight_bdr_dark">
                       <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
                       <div class="text_right reveal_button">
                         &nbsp;
@@ -111,28 +111,28 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                   <div id="minwor_<?php echo $miner['id'] . $worker['id']; ?>" class="hidden">
                     <div class="list_wrap small_gap">
                       <div class="two_columns small_gap">
-                        <div class="small_box bg_darkgrey">
+                        <div class="small_box bg_dark">
                           <div>Hashrate</div>
                           <div class="text_heavy text_right">
                             <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
                           </div>
                           <?php debugData($worker['hashrate'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Worker type</div>
                           <div class="text_heavy text_right"><?php echo ($worker['solo'] ? 'SOLO' : 'SHARED'); ?></div>
                           <?php debugData($worker['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
                         </div>
                       </div>
                       <div class="two_columns small_gap">
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Efficiency</div>
                           <div class="text_heavy text_right">
                             <?php echo formatPercents($worker['efficiency'], $pool_configuration['math_precision']); ?>
                           </div>
                           <?php debugData($worker['efficiency'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Effort</div>
                           <div class="text_heavy text_right">
                             <?php echo formatPercents($worker['effort'], $pool_configuration['math_precision']); ?>
@@ -141,21 +141,21 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                         </div>
                       </div>
                       <div class="three_columns small_gap">
-                        <div class="small_box bg_darkgrey">
+                        <div class="small_box bg_dark">
                           <div>Valid shares</div>
                           <div class="text_heavy text_right">
                             <?php echo formatLargeNumbers($worker['valid'], $pool_configuration['math_precision']); ?>
                           </div>
                           <?php debugData($worker['valid'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Stale shares</div>
                           <div class="text_heavy text_right">
                             <?php echo formatLargeNumbers($worker['stale'], $pool_configuration['math_precision']); ?>
                           </div>
                           <?php debugData($worker['stale'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Invalid shares</div>
                           <div class="text_heavy text_right">
                             <?php echo formatLargeNumbers($worker['invalid'], $pool_configuration['math_precision']); ?>

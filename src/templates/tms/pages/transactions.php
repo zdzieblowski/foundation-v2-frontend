@@ -10,7 +10,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
   foreach ($transactions_current as $transaction) {
     ?>
     <a onclick="revealContent('tx_<?php echo $transaction['id']; ?>');" class="cursor_pointer">
-      <div class="small_box_long_content bg_verylightgrey_bd_pool reveal_button">
+      <div class="small_box_long_content bg_vlight_bdr_pool reveal_button">
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">send_money</span><div>Transaction: <b><?php echo privacyFilter($transaction['transaction'], 21); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
@@ -22,7 +22,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
     <div id="tx_<?php echo $transaction['id']; ?>" class="margin_top_a hidden">
       <div class="list_wrap small_gap">
         <div class="two_columns small_gap">
-          <div class="small_box bg_lightgrey">
+          <div class="small_box bg_light">
             <div>Submitted</div>
             <div class="text_heavy text_right"><?php echo formatDateTime($transaction['timestamp']); ?></div>
             <?php debugData($transaction['timestamp'], $page_configuration['debug_mode']); ?>
@@ -35,24 +35,24 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php debugData($transaction['amount'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="wrap bg_verylightgrey">
+        <div class="wrap bg_vlight">
           <div class="list_wrap small_gap">
             <?php
             foreach ($payments_current as $payment) {
               if ($payment['transaction'] == $transaction['transaction']) {
                 ?>
-                <div class="small_box_long_content bg_darkgrey">
+                <div class="small_box_long_content bg_dark">
                   <div>Miner</div>
                   <div class="text_heavy text_right"><?php echo privacyFilter($payment['miner']); ?></div>
                   <?php debugData($payment['miner'], $page_configuration['debug_mode']); ?>
                 </div>
                 <div class="two_columns small_gap">
-                  <div class="small_box bg_lightgrey">
+                  <div class="small_box bg_light">
                     <div>Date</div>
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
                     <?php debugData($payment['timestamp'], $page_configuration['debug_mode']); ?>
                   </div>
-                  <div class="small_box bg_lightgrey">
+                  <div class="small_box bg_light">
                     <div>Amount</div>
                     <div class="text_heavy text_right">
                       <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>

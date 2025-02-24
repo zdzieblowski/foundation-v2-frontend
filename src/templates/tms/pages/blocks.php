@@ -11,7 +11,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     ?>
     <div class="list_wrap small_gap">
       <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
-        <div class="small_box_long_content bg_verylightgrey_bd_pool">
+        <div class="small_box_long_content bg_vlight_bdr_pool">
           <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">deployed_code</span><div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div></div>
           <div class="text_heavy text_right reveal_button">
             &nbsp;
@@ -23,31 +23,31 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       <div id="block_<?php echo $block['id']; ?>" class="hidden">
         <div class="list_wrap small_gap">
           <div class="two_columns small_gap">
-            <div class="small_box bg_lightgrey">
+            <div class="small_box bg_light">
               <div>Submitted</div>
               <div class="text_heavy text_right"><?php echo formatDateTime($block['submitted']); ?></div>
               <?php debugData($block['submitted'], $page_configuration['debug_mode']); ?>
             </div>
-            <div class="small_box bg_darkgrey">
+            <div class="small_box bg_dark">
               <div>Confirmed</div>
               <div class="text_heavy text_right"><?php echo formatDateTime($block['timestamp']); ?></div>
               <?php debugData($block['timestamp'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
           <div class="three_columns small_gap">
-            <div class="small_box bg_lightgrey">
+            <div class="small_box bg_light">
               <div>Height</div>
               <div class="text_heavy text_right"><?php echo $block['height']; ?></div>
               <?php debugData($block['height'], $page_configuration['debug_mode']); ?>
             </div>
-            <div class="small_box bg_lightgrey">
+            <div class="small_box bg_light">
               <div>Difficulty</div>
               <div class="text_heavy text_right">
                 <?php echo formatLargeNumbers($block['difficulty'], $pool_configuration['math_precision']); ?>
               </div>
               <?php debugData($block['difficulty'], $page_configuration['debug_mode']); ?>
             </div>
-            <div class="small_box bg_darkgrey">
+            <div class="small_box bg_dark">
               <div>Luck</div>
               <div class="text_heavy text_right">
                 <?php echo formatPercents($block['luck'], $pool_configuration['math_precision']); ?>
@@ -55,26 +55,26 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
               <?php debugData($block['luck'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
-          <div class="wrap bg_verylightgrey">
+          <div class="wrap bg_vlight">
             <div class="list_wrap small_gap">
-              <div class="small_box_long_content bg_lightgrey">
+              <div class="small_box_long_content bg_light">
                 <div>Winner</div>
                 <div class="text_heavy text_right">
                   <?php echo privacyFilter($block['miner']) . '.' . getWorkerName($block['worker']); ?>
                 </div>
                 <?php debugData($block['worker'], $page_configuration['debug_mode']); ?>
               </div>
-              <div class="small_box_long_content bg_lightgrey">
+              <div class="small_box_long_content bg_light">
                 <div>Transaction</div>
                 <div class="text_heavy text_right"><?php echo privacyFilter($block['transaction'], 21); ?></div>
                 <?php debugData($block['transaction'], $page_configuration['debug_mode']); ?>
               </div>
             </div>
           </div>
-          <div class="wrap bg_verylightgrey">
+          <div class="wrap bg_vlight">
             <div class="list_wrap small_gap">
               <a onclick="revealContent('<?php echo $block['round']; ?>');" class="cursor_pointer">
-                <div class="small_box_long_content bg_verylightgrey_bd_darkgrey">
+                <div class="small_box_long_content bg_vlight_bdr_dark">
                   <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">cached</span>Round</div>
                   <div class="text_heavy text_right reveal_button">
                     <?php echo $block['round']; ?>
@@ -89,7 +89,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                     if ($round['round'] == $block['round']) {
                       ?>
                       <div class="list_wrap small_gap">
-                        <div class="small_box_long_content bg_lightgrey">
+                        <div class="small_box_long_content bg_light">
                           <div>Worker</div>
                           <div class="text_heavy text_right">
                             <?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?>
@@ -97,21 +97,21 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                           <?php debugData($round['worker'], $page_configuration['debug_mode']); ?>
                         </div>
                         <div class="three_columns small_gap">
-                          <div class="small_box bg_darkgrey">
+                          <div class="small_box bg_dark">
                             <div>Valid shares</div>
                             <div class="text_heavy text_right">
                               <?php echo formatLargeNumbers($round['valid'], $pool_configuration['math_precision']); ?>
                             </div>
                             <?php debugData($round['valid'], $page_configuration['debug_mode']); ?>
                           </div>
-                          <div class="small_box bg_lightgrey">
+                          <div class="small_box bg_light">
                             <div>Stale shares</div>
                             <div class="text_heavy text_right">
                               <?php echo formatLargeNumbers($round['stale'], $pool_configuration['math_precision']); ?>
                             </div>
                             <?php debugData($round['stale'], $page_configuration['debug_mode']); ?>
                           </div>
-                          <div class="small_box bg_lightgrey">
+                          <div class="small_box bg_light">
                             <div>Invalid shares</div>
                             <div class="text_heavy text_right">
                               <?php echo formatLargeNumbers($round['invalid'], $pool_configuration['math_precision']); ?>
@@ -132,7 +132,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             </div>
           </div>
           <div class="two_columns small_gap">
-            <div class="small_box bg_lightgrey">
+            <div class="small_box bg_light">
               <div>Block type</div>
               <div class="text_heavy text_right"><?php echo ($block['solo'] ? 'SOLO' : 'SHARED'); ?></div>
               <?php debugData($block['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>

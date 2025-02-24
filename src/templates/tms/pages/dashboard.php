@@ -25,7 +25,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
         <div class="text_normal">Statistics for wallet address: <b class="text_break_all"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
         <hr>
         <div class="text_subheader">Miner information</div>
-        <div class="box_long_content bg_darkgrey">
+        <div class="box_long_content bg_dark">
           <div>Wallet address</div>
           <div class="text_large"><?php echo $miner['miner']; ?></div>
         </div>
@@ -37,26 +37,26 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             </div>
             <?php debugData($miner['hashrate'], $page_configuration['debug_mode']); ?>
           </div>
-          <div class="box bg_lightgrey">
+          <div class="box bg_light">
             <div>Efficency</div>
             <div class="text_large"><?php echo formatPercents($miner['efficiency'], $pool_configuration['math_precision']); ?></div>
             <?php debugData($miner['efficiency'], $page_configuration['debug_mode']); ?>
           </div>
-          <div class="box bg_lightgrey">
+          <div class="box bg_light">
             <div>Effort</div>
             <div class="text_large"><?php echo formatPercents($miner['effort'], $pool_configuration['math_precision']); ?></div>
             <?php debugData($miner['effort'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
         <div class="three_columns margin_top_b">
-          <div class="box bg_darkgrey">
+          <div class="box bg_dark">
             <div>Balance</div>
             <div class="text_large">
               <?php echo formatLargeNumbers($miner['balance'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
             </div>
             <?php debugData($miner['balance'], $page_configuration['debug_mode']); ?>
           </div>
-          <div class="box bg_lightgrey">
+          <div class="box bg_light">
             <div>Immature</div>
             <div class="text_large">
               <?php echo formatLargeNumbers($miner['immature'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
@@ -71,23 +71,23 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php debugData($miner['paid'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="wrap bg_verylightgrey margin_top_b">
+        <div class="wrap bg_vlight margin_top_b">
           <div class="three_columns">
-            <div class="box bg_darkgrey">
+            <div class="box bg_dark">
               <div>Valid shares</div>
               <div class="text_large">
                 <?php echo formatLargeNumbers($miner['valid'], $pool_configuration['math_precision']); ?>
               </div>
               <?php debugData($miner['valid'], $page_configuration['debug_mode']); ?>
             </div>
-            <div class="box bg_lightgrey">
+            <div class="box bg_light">
               <div>Stale shares</div>
               <div class="text_large">
                 <?php echo formatLargeNumbers($miner['stale'], $pool_configuration['math_precision']); ?>
               </div>
               <?php debugData($miner['stale'], $page_configuration['debug_mode']); ?>
             </div>
-            <div class="box bg_lightgrey">
+            <div class="box bg_light">
               <div>Invalid shares</div>
               <div class="text_large">
                 <?php echo formatLargeNumbers($miner['invalid'], $pool_configuration['math_precision']); ?>
@@ -104,7 +104,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                 ?>
                 <div class="list_wrap small_gap">
                   <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" class="cursor_pointer">
-                    <div class="small_box bg_verylightgrey_bd_pool">
+                    <div class="small_box bg_vlight_bdr_pool">
                       <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span>Worker</div>
                       <div class="text_heavy text_right reveal_button">
                         <?php echo $worker_name; ?>
@@ -122,21 +122,21 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                           </div>
                           <?php debugData($worker['hashrate'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Worker type</div>
                           <div class="text_heavy text_right"><?php echo $worker['solo'] ? 'SOLO' : 'SHARED'; ?></div>
                           <?php debugData($worker['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
                         </div>
                       </div>
                       <div class="two_columns small_gap">
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Efficiency</div>
                           <div class="text_heavy text_right">
                             <?php echo formatPercents($worker['efficiency'], $pool_configuration['math_precision']); ?>
                           </div>
                           <?php debugData($worker['efficiency'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Effort</div>
                           <div class="text_heavy text_right">
                             <?php echo formatPercents($worker['effort'], $pool_configuration['math_precision']); ?>
@@ -145,21 +145,21 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                         </div>
                       </div>
                       <div class="three_columns small_gap">
-                        <div class="small_box bg_darkgrey">
+                        <div class="small_box bg_dark">
                           <div>Valid shares</div>
                           <div class="text_heavy text_right">
                             <?php echo formatLargeNumbers($worker['valid'], $pool_configuration['math_precision']); ?>
                           </div>
                           <?php debugData($worker['valid'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Stale shares</div>
                           <div class="text_heavy text_right">
                             <?php echo formatLargeNumbers($worker['stale'], $pool_configuration['math_precision']); ?>
                           </div>
                           <?php debugData($worker['stale'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="small_box bg_lightgrey">
+                        <div class="small_box bg_light">
                           <div>Invalid shares</div>
                           <div class="text_heavy text_right">
                             <?php echo formatLargeNumbers($worker['invalid'], $pool_configuration['math_precision']); ?>
@@ -186,7 +186,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               ?>
               <div class="list_wrap small_gap">
                 <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
-                  <div class="small_box_long_content bg_verylightgrey_bd_pool">
+                  <div class="small_box_long_content bg_vlight_bdr_pool">
                     <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">deployed_code</span>Hash</div>
                     <div class="text_heavy text_right reveal_button">
                       <?php echo $block['hash']; ?>
@@ -196,39 +196,39 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                 </a>
                 <div id="block_<?php echo $block['id']; ?>" class="hidden">
                   <div class="list_wrap small_gap">
-                    <div class="small_box_long_content bg_lightgrey">
+                    <div class="small_box_long_content bg_light">
                       <div>Round</div>
                       <div class="text_heavy text_right"><?php echo $block['round']; ?></div>
                     </div>
                     <div class="two_columns small_gap">
-                      <div class="small_box bg_lightgrey">
+                      <div class="small_box bg_light">
                         <div>Submitted</div>
                         <div class="text_heavy text_right"><?php echo formatDateTime($block['submitted']); ?></div>
                         <?php debugData($block['submitted'], $page_configuration['debug_mode']); ?>
                       </div>
-                      <div class="small_box bg_darkgrey">
+                      <div class="small_box bg_dark">
                         <div>Confirmed</div>
                         <div class="text_heavy text_right"><?php echo formatDateTime($block['timestamp']); ?></div>
                         <?php debugData($block['timestamp'], $page_configuration['debug_mode']); ?>
                       </div>
                     </div>
-                    <div class="small_box_long_content bg_lightgrey">
+                    <div class="small_box_long_content bg_light">
                       <div>Transaction</div>
                       <div class="text_heavy text_right"><?php echo $block['transaction']; ?></div>
                     </div>
                     <div class="three_columns small_gap">
-                      <div class="small_box bg_lightgrey">
+                      <div class="small_box bg_light">
                         <div>Height</div>
                         <div class="text_heavy text_right"><?php echo $block['height']; ?></div>
                         <?php debugData($block['height'], $page_configuration['debug_mode']); ?>
                       </div>
-                      <div class="small_box bg_lightgrey">
+                      <div class="small_box bg_light">
                         <div>Difficulty</div>
                         <div class="text_heavy text_right">
                           <?php echo formatLargeNumbers($block['difficulty'], $pool_configuration['math_precision']); ?></div>
                         <?php debugData($block['difficulty'], $page_configuration['debug_mode']); ?>
                       </div>
-                      <div class="small_box bg_darkgrey">
+                      <div class="small_box bg_dark">
                         <div>Luck</div>
                         <div class="text_heavy text_right">
                           <?php echo formatPercents($block['luck'], $pool_configuration['math_precision']); ?>
@@ -237,7 +237,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                       </div>
                     </div>
                     <div class="two_columns small_gap">
-                      <div class="small_box bg_lightgrey">
+                      <div class="small_box bg_light">
                         <div>Block type</div>
                         <div class="text_heavy text_right"><?php echo $block['solo'] ? 'SOLO' : 'SHARED'; ?></div>
                         <?php debugData($block['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
@@ -276,14 +276,14 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               $payments_found = True;
               ?>
               <div class="list_wrap small_gap">
-                <div class="small_box_long_content bg_verylightgrey_bd_pool">
+                <div class="small_box_long_content bg_vlight_bdr_pool">
                   <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">send_money</span>Transaction</div>
                   <div class="text_heavy text_right">
                     <?php echo $payment['transaction']; ?>
                   </div>
                 </div>
                 <div class="two_columns">
-                  <div class="small_box bg_lightgrey">
+                  <div class="small_box bg_light">
                     <div>Date</div>
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
                     <?php debugData($payment['timestamp'], $page_configuration['debug_mode']); ?>

@@ -1,4 +1,4 @@
-<div class="text_header color_verydark">Available pools</div>
+<div class="text_header color_dark">Available pools</div>
 <div class="text_normal">Choose a pool from the list below.</div>
 <hr>
 <div class="pool_list">

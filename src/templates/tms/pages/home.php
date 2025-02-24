@@ -12,26 +12,26 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       <?php debugData($server_configuration['name'], $page_configuration['debug_mode']); ?>
     </div>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Symbol</div>
     <div class="text_large"><?php echo $server_configuration['symbol']; ?></div>
     <?php debugData($server_configuration['symbol'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Algorithm</div>
     <div class="text_large"><?php echo $server_configuration['algorithm']; ?></div>
     <?php debugData($server_configuration['algorithm'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
 <div class="two_columns margin_top_b">
-  <div class="box bg_darkgrey">
+  <div class="box bg_dark">
     <div>Minimal payout</div>
     <div class="text_large">
       <?php echo formatLargeNumbers($server_configuration['minimumPayment'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
     </div>
     <?php debugData($server_configuration['minimumPayment'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_darkgrey">
+  <div class="box bg_dark">
     <div>Pool fee</div>
     <div class="text_large">
       <?php echo formatPercents($server_configuration['recipientFee'] * 100, $pool_configuration['math_precision']); ?>
@@ -42,19 +42,19 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 <hr>
 <div class="text_subheader">Pool statistics</div>
 <div class="three_columns">
-  <div class="box bg_darkgrey">
+  <div class="box bg_dark">
     <div>Blocks mined</div>
     <div class="text_large"><?php echo $metadata_current[0]['blocks']; ?></div>
     <?php debugData($metadata_current[0]['blocks'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Effort</div>
     <div class="text_large">
       <?php echo formatPercents($metadata_current[0]['effort'], $pool_configuration['math_precision']); ?>
     </div>
     <?php debugData($metadata_current[0]['effort'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Efficiency</div>
     <div class="text_large">
       <?php echo formatPercents($metadata_current[0]['efficiency'], $pool_configuration['math_precision']); ?>
@@ -63,19 +63,19 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   </div>
 </div>
 <div class="three_columns margin_top_b">
-  <div class="box bg_darkgrey">
+  <div class="box bg_dark">
     <div>Hashrate</div>
     <div class="text_large">
       <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
     </div>
     <?php debugData($metadata_current[0]['hashrate'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Miners</div>
     <div class="text_large"><?php echo $metadata_current[0]['miners']; ?></div>
     <?php debugData($metadata_current[0]['miners'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Workers</div>
     <div class="text_large"><?php echo $metadata_current[0]['workers']; ?></div>
     <?php debugData($metadata_current[0]['workers'], $page_configuration['debug_mode']); ?>
@@ -84,7 +84,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 <hr>
 <div class="text_subheader">Network statistics</div>
 <div class="three_columns">
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Hashrate</div>
     <div class="text_large">
       <?php if ($pool_configuration['network_hashrate_multiplier'] != 1) { ?>
@@ -94,12 +94,12 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     </div>
     <?php debugData($network_current[0]['hashrate'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Block height</div>
     <div class="text_large"><?php echo $network_current[0]['height']; ?></div>
     <?php debugData($network_current[0]['height'], $page_configuration['debug_mode']); ?>
   </div>
-  <div class="box bg_lightgrey">
+  <div class="box bg_light">
     <div>Difficulty</div>
     <div class="text_large">
       <?php if ($pool_configuration['network_difficulty_multiplier'] != 1) { ?>
