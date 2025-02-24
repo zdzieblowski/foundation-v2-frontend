@@ -56,8 +56,7 @@ function formatLargeNumbers($number, $precision): string
 {
   if ($number > 1) {
     $units = array('', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q');
-    $pow = floor(($number ? log($number) : 0) / log(1000));
-    $pow = min($pow, count($units) - 1);
+    $pow = min(floor(log($number)/log(1000)), count($units)-1);
     $number /= pow(1000, $pow);
   } elseif ($number < 0) {
     $number = 0;
@@ -67,12 +66,12 @@ function formatLargeNumbers($number, $precision): string
 
 function formatDateTime($timestamp): string
 {
-  return date('Y-m-d H:i:s', $timestamp / 1000);
+  return date('Y-m-d H:i:s', $timestamp/1000);
 }
 
 function privacyFilter($input, $size = 12): string
 {
-  return substr($input, 0, $size) . str_repeat('*', (strlen($input) - $size * 2)) . substr($input, -$size, $size);
+  return substr($input, 0, $size) . str_repeat('*', (strlen($input)-$size*2)) . substr($input, -$size, $size);
 }
 
 function listFiles($directory, $blacklist): array

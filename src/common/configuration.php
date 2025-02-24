@@ -1,15 +1,15 @@
 <?php
 $page_configuration = [
-  'version' => '0.4.14',
+  'version' => '0.4.15',
   'debug_mode' => False,
 
   'html_language' => 'en',
 
   'directory_templates' => 'templates',
   'directory_configurations' => 'configurations',
-  
+
   'page_template' => 'tms',
-  
+
   'page_title' => 'The Mining Site',
   'page_short_title' => 'TMS'
 ];
