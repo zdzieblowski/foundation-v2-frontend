@@ -10,7 +10,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
   foreach ($transactions_current as $transaction) {
     ?>
     <a onclick="revealContent('tx_<?php echo $transaction['id']; ?>');" class="cursor_pointer">
-      <div class="small_box_long_content bg_verylightgrey_poolborder reveal_button">
+      <div class="small_box_long_content bg_verylightgrey_bd_pool reveal_button">
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">send_money</span><div>Transaction: <b><?php echo privacyFilter($transaction['transaction'], 21); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
@@ -61,7 +61,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                   </div>
                 </div>
                 <?php if ($payment != end($payments_current)) { ?>
-                  <hr class="inner_hr wrap_hr wrappedlist_hr">
+                  <hr class="hr_inner hr_wrap hr_wlist">
                   <?php
                 }
               }
@@ -72,7 +72,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
       </div>
     </div>
     <?php if ($transaction != end($transactions_current)) { ?>
-      <hr class="inner_hr list_hr">
+      <hr class="hr_inner hr_list">
       <?php
     }
   }

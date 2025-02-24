@@ -9,7 +9,7 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
   foreach ($rounds_current as $round) {
     ?>
     <a onclick="revealContent('tx_<?php echo $round['id']; ?>');" class="cursor_pointer">
-      <div class="small_box_long_content bg_verylightgrey_poolborder reveal_button"><div>
+      <div class="small_box_long_content bg_verylightgrey_bd_pool reveal_button"><div>
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">cached</span><div>Round: <b><?php echo $round['id']; ?></b></div></div>
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?></b></div></div></div>
         <div class="text_right reveal_button">
@@ -70,7 +70,7 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
       </div>
     </div>
     <?php if ($round != end($rounds_current)) { ?>
-      <hr class="inner_hr list_hr">
+      <hr class="hr_inner list_hr">
       <?php
     }
   }

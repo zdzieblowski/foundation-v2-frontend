@@ -95,7 +95,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               <?php debugData($miner['invalid'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
-          <hr class="inner_hr wrap_hr">
+          <hr class="hr_inner hr_wrap">
           <div class="list_wrap">
             <?php
             foreach ($workers_current as $worker) {
@@ -104,7 +104,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                 ?>
                 <div class="list_wrap small_gap">
                   <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" class="cursor_pointer">
-                    <div class="small_box bg_verylightgrey_poolborder">
+                    <div class="small_box bg_verylightgrey_bd_pool">
                       <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span>Worker</div>
                       <div class="text_heavy text_right reveal_button">
                         <?php echo $worker_name; ?>
@@ -186,7 +186,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               ?>
               <div class="list_wrap small_gap">
                 <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
-                  <div class="small_box_long_content bg_verylightgrey_poolborder">
+                  <div class="small_box_long_content bg_verylightgrey_bd_pool">
                     <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">deployed_code</span>Hash</div>
                     <div class="text_heavy text_right reveal_button">
                       <?php echo $block['hash']; ?>
@@ -276,7 +276,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               $payments_found = True;
               ?>
               <div class="list_wrap small_gap">
-                <div class="small_box_long_content bg_verylightgrey_poolborder">
+                <div class="small_box_long_content bg_verylightgrey_bd_pool">
                   <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">send_money</span>Transaction</div>
                   <div class="text_heavy text_right">
                     <?php echo $payment['transaction']; ?>

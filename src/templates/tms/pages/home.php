@@ -133,7 +133,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
         <strong>./<?php echo $pool_configuration['suggested_software_linux']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
         <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
       </div>
-      <hr class="list_hr">
+      <hr class="hr_list">
       <div class="home_port_type">
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b large_icon">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
       </div>

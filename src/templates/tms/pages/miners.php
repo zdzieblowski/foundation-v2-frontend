@@ -10,7 +10,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   foreach ($miners_current as $miner) {
     ?>
     <a onclick="revealContent('miner_<?php echo $miner['id']; ?>');" class="cursor_pointer">
-      <div class="small_box_long_content bg_verylightgrey_poolborder reveal_button">
+      <div class="small_box_long_content bg_verylightgrey_bd_pool reveal_button">
         <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">dns</span><div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
@@ -91,7 +91,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
               <?php debugData($miner['invalid'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
-          <hr class="inner_hr wrap_hr">
+          <hr class="hr_inner hr_wrap">
           <div class="list_wrap">
             <?php
             foreach ($workers_current as $worker) {
@@ -100,7 +100,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 ?>
                 <div class="list_wrap small_gap">
                   <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" class="cursor_pointer">
-                    <div class="small_box bg_verylightgrey_darkgreyborder">
+                    <div class="small_box bg_verylightgrey_bd_darkgrey">
                       <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
                       <div class="text_right reveal_button">
                         &nbsp;
@@ -175,7 +175,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       </div>
     </div>
     <?php if ($miner != end($miners_current)) { ?>
-      <hr class="inner_hr list_hr">
+      <hr class="hr_inner hr_list">
       <?php
     }
   }
