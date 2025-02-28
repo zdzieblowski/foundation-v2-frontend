@@ -29,7 +29,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
           <div>Wallet address</div>
           <div class="text_large"><?php echo $miner['miner']; ?></div>
         </div>
-        <div class="three_columns margin_top_b">
+        <div class="columns_three margin_top_b">
           <div class="box bg_pool">
             <div>Hashrate</div>
             <div class="text_large">
@@ -48,7 +48,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             <?php debugData($miner['effort'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="three_columns margin_top_b">
+        <div class="columns_three margin_top_b">
           <div class="box bg_dark">
             <div>Balance</div>
             <div class="text_large">
@@ -72,7 +72,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
           </div>
         </div>
         <div class="wrap bg_vlight margin_top_b">
-          <div class="three_columns">
+          <div class="columns_three">
             <div class="box bg_dark">
               <div>Valid shares</div>
               <div class="text_large">
@@ -102,7 +102,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               if ($worker['miner'] == $miner['miner']) {
                 $worker_name = getWorkerName($worker['worker']);
                 ?>
-                <div class="list_wrap small_gap">
+                <div class="list_wrap gap_small">
                   <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" class="cursor_pointer">
                     <div class="box_small bg_vlight_bdr_pool">
                       <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span>Worker</div>
@@ -113,8 +113,8 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                     </div>
                   </a>
                   <div id="worker_<?php echo $worker['id']; ?>" class="hidden">
-                    <div class="list_wrap small_gap">
-                      <div class="two_columns small_gap">
+                    <div class="list_wrap gap_small">
+                      <div class="columns_two gap_small">
                         <div class="box_small bg_pool">
                           <div>Hashrate</div>
                           <div class="text_heavy text_right">
@@ -128,7 +128,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                           <?php debugData($worker['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
                         </div>
                       </div>
-                      <div class="two_columns small_gap">
+                      <div class="columns_two gap_small">
                         <div class="box_small bg_light">
                           <div>Efficiency</div>
                           <div class="text_heavy text_right">
@@ -144,7 +144,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                           <?php debugData($worker['effort'], $page_configuration['debug_mode']); ?>
                         </div>
                       </div>
-                      <div class="three_columns small_gap">
+                      <div class="columns_three gap_small">
                         <div class="box_small bg_dark">
                           <div>Valid shares</div>
                           <div class="text_heavy text_right">
@@ -184,7 +184,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             if ($block['miner'] == $_COOKIE['address_'.$pool]) {
               $blocks_found = True;
               ?>
-              <div class="list_wrap small_gap">
+              <div class="list_wrap gap_small">
                 <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
                   <div class="box_small_long_content bg_vlight_bdr_pool">
                     <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">deployed_code</span>Hash</div>
@@ -195,12 +195,12 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                   </div>
                 </a>
                 <div id="block_<?php echo $block['id']; ?>" class="hidden">
-                  <div class="list_wrap small_gap">
+                  <div class="list_wrap gap_small">
                     <div class="box_small_long_content bg_light">
                       <div>Round</div>
                       <div class="text_heavy text_right"><?php echo $block['round']; ?></div>
                     </div>
-                    <div class="two_columns small_gap">
+                    <div class="columns_two gap_small">
                       <div class="box_small bg_light">
                         <div>Submitted</div>
                         <div class="text_heavy text_right"><?php echo formatDateTime($block['submitted']); ?></div>
@@ -216,7 +216,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                       <div>Transaction</div>
                       <div class="text_heavy text_right"><?php echo $block['transaction']; ?></div>
                     </div>
-                    <div class="three_columns small_gap">
+                    <div class="columns_three gap_small">
                       <div class="box_small bg_light">
                         <div>Height</div>
                         <div class="text_heavy text_right"><?php echo $block['height']; ?></div>
@@ -236,7 +236,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                         <?php debugData($block['luck'], $page_configuration['debug_mode']); ?>
                       </div>
                     </div>
-                    <div class="two_columns small_gap">
+                    <div class="columns_two gap_small">
                       <div class="box_small bg_light">
                         <div>Block type</div>
                         <div class="text_heavy text_right"><?php echo $block['solo'] ? 'SOLO' : 'SHARED'; ?></div>
@@ -275,14 +275,14 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
             if ($payment['miner'] == $_COOKIE['address_'.$pool]) {
               $payments_found = True;
               ?>
-              <div class="list_wrap small_gap">
+              <div class="list_wrap gap_small">
                 <div class="box_small_long_content bg_vlight_bdr_pool">
                   <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">send_money</span>Transaction</div>
                   <div class="text_heavy text_right">
                     <?php echo $payment['transaction']; ?>
                   </div>
                 </div>
-                <div class="two_columns">
+                <div class="columns_two">
                   <div class="box_small bg_light">
                     <div>Date</div>
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>

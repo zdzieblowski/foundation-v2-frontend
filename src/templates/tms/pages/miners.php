@@ -20,8 +20,8 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       </div>
     </a>
     <div id="miner_<?php echo $miner['id']; ?>" class="margin_top_a hidden">
-      <div class="list_wrap small_gap">
-        <div class="three_columns small_gap">
+      <div class="list_wrap gap_small">
+        <div class="columns_three gap_small">
           <div class="box_small bg_pool">
             <div>Hashrate</div>
             <div class="text_heavy text_right">
@@ -44,7 +44,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             <?php debugData($miner['effort'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="three_columns small_gap">
+        <div class="columns_three gap_small">
           <div class="box_small bg_dark">
             <div>Balance</div>
             <div class="text_heavy text_right">
@@ -67,8 +67,8 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             <?php debugData($miner['paid'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="wrap bg_vlight small_gap">
-          <div class="three_columns small_gap">
+        <div class="wrap bg_vlight gap_small">
+          <div class="columns_three gap_small">
             <div class="box_small bg_dark">
               <div>Valid shares</div>
               <div class="text_heavy text_right">
@@ -98,7 +98,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
               if ($worker['miner'] == $miner['miner']) {
                 $worker_name = getWorkerName($worker['worker']);
                 ?>
-                <div class="list_wrap small_gap">
+                <div class="list_wrap gap_small">
                   <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" class="cursor_pointer">
                     <div class="box_small bg_vlight_bdr_dark">
                       <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
@@ -109,8 +109,8 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                     </div>
                   </a>
                   <div id="minwor_<?php echo $miner['id'] . $worker['id']; ?>" class="hidden">
-                    <div class="list_wrap small_gap">
-                      <div class="two_columns small_gap">
+                    <div class="list_wrap gap_small">
+                      <div class="columns_two gap_small">
                         <div class="box_small bg_dark">
                           <div>Hashrate</div>
                           <div class="text_heavy text_right">
@@ -124,7 +124,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                           <?php debugData($worker['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
                         </div>
                       </div>
-                      <div class="two_columns small_gap">
+                      <div class="columns_two gap_small">
                         <div class="box_small bg_light">
                           <div>Efficiency</div>
                           <div class="text_heavy text_right">
@@ -140,7 +140,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                           <?php debugData($worker['effort'], $page_configuration['debug_mode']); ?>
                         </div>
                       </div>
-                      <div class="three_columns small_gap">
+                      <div class="columns_three gap_small">
                         <div class="box_small bg_dark">
                           <div>Valid shares</div>
                           <div class="text_heavy text_right">

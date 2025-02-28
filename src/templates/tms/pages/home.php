@@ -3,7 +3,7 @@ $ports_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configura
 $metadata_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/metadata');
 $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/network');
 ?>
-<div class="three_columns">
+<div class="columns_three">
   <div class="box bg_pool reveal_button_text">
     <img src="configurations/<?php echo $pool; ?>/logo.svg" height="37" width="37" alt>
     <div>
@@ -23,7 +23,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php debugData($server_configuration['algorithm'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
-<div class="two_columns margin_top_b">
+<div class="columns_two margin_top_b">
   <div class="box bg_dark">
     <div>Minimal payout</div>
     <div class="text_large">
@@ -41,7 +41,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 </div>
 <hr>
 <div class="text_subheader">Pool statistics</div>
-<div class="three_columns">
+<div class="columns_three">
   <div class="box bg_dark">
     <div>Blocks mined</div>
     <div class="text_large"><?php echo $metadata_current[0]['blocks']; ?></div>
@@ -62,7 +62,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php debugData($metadata_current[0]['efficiency'], $page_configuration['debug_mode']); ?>
   </div>
 </div>
-<div class="three_columns margin_top_b">
+<div class="columns_three margin_top_b">
   <div class="box bg_dark">
     <div>Hashrate</div>
     <div class="text_large">
@@ -83,7 +83,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 </div>
 <hr>
 <div class="text_subheader">Network statistics</div>
-<div class="three_columns">
+<div class="columns_three">
   <div class="box bg_light">
     <div>Hashrate</div>
     <div class="text_large">

@@ -20,8 +20,8 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
       </div>
     </a>
     <div id="tx_<?php echo $round['id']; ?>" class="margin_top_a hidden">
-      <div class="list_wrap small_gap">
-        <div class="two_columns small_gap">
+      <div class="list_wrap gap_small">
+        <div class="columns_two gap_small">
           <div class="box_small bg_light">
             <div>Submitted</div>
             <div class="text_heavy text_right"><?php echo formatDateTime($round['submitted']); ?></div>
@@ -33,7 +33,7 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
             <?php debugData($round['timestamp'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="three_columns small_gap">
+        <div class="columns_three gap_small">
           <div class="box_small bg_light">
             <div>Invalid shares</div>
             <div class="text_heavy text_right"><?php echo $round['invalid']; ?></div>
@@ -50,7 +50,7 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
             <?php debugData($round['valid'], $page_configuration['debug_mode']); ?>
           </div>
         </div>
-        <div class="three_columns small_gap">
+        <div class="columns_three gap_small">
           <div class="box_small bg_light">
             <div>Time</div>
             <div class="text_heavy text_right"><?php echo formatLargeNumbers($round['times'], $pool_configuration['math_precision']); ?></div>

@@ -9,7 +9,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   <?php
   foreach ($blocks_combined as $block) {
     ?>
-    <div class="list_wrap small_gap">
+    <div class="list_wrap gap_small">
       <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
         <div class="box_small_long_content bg_vlight_bdr_pool">
           <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">deployed_code</span><div>Block: <b><?php echo privacyFilter($block['hash'], 21); ?></b></div></div>
@@ -21,8 +21,8 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
         </div>
       </a>
       <div id="block_<?php echo $block['id']; ?>" class="hidden">
-        <div class="list_wrap small_gap">
-          <div class="two_columns small_gap">
+        <div class="list_wrap gap_small">
+          <div class="columns_two gap_small">
             <div class="box_small bg_light">
               <div>Submitted</div>
               <div class="text_heavy text_right"><?php echo formatDateTime($block['submitted']); ?></div>
@@ -34,7 +34,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
               <?php debugData($block['timestamp'], $page_configuration['debug_mode']); ?>
             </div>
           </div>
-          <div class="three_columns small_gap">
+          <div class="columns_three gap_small">
             <div class="box_small bg_light">
               <div>Height</div>
               <div class="text_heavy text_right"><?php echo $block['height']; ?></div>
@@ -56,7 +56,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             </div>
           </div>
           <div class="wrap bg_vlight">
-            <div class="list_wrap small_gap">
+            <div class="list_wrap gap_small">
               <div class="box_small_long_content bg_light">
                 <div>Winner</div>
                 <div class="text_heavy text_right">
@@ -72,7 +72,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             </div>
           </div>
           <div class="wrap bg_vlight">
-            <div class="list_wrap small_gap">
+            <div class="list_wrap gap_small">
               <a onclick="revealContent('<?php echo $block['round']; ?>');" class="cursor_pointer">
                 <div class="box_small_long_content bg_vlight_bdr_dark">
                   <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">cached</span>Round</div>
@@ -83,12 +83,12 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 </div>
               </a>
               <div id="<?php echo $block['round']; ?>" class="hidden">
-                <div class="list_wrap small_gap">
+                <div class="list_wrap gap_small">
                   <?php
                   foreach ($rounds_combined as $round) {
                     if ($round['round'] == $block['round']) {
                       ?>
-                      <div class="list_wrap small_gap">
+                      <div class="list_wrap gap_small">
                         <div class="box_small_long_content bg_light">
                           <div>Worker</div>
                           <div class="text_heavy text_right">
@@ -96,7 +96,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                           </div>
                           <?php debugData($round['worker'], $page_configuration['debug_mode']); ?>
                         </div>
-                        <div class="three_columns small_gap">
+                        <div class="columns_three gap_small">
                           <div class="box_small bg_dark">
                             <div>Valid shares</div>
                             <div class="text_heavy text_right">
@@ -131,7 +131,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
               </div>
             </div>
           </div>
-          <div class="two_columns small_gap">
+          <div class="columns_two gap_small">
             <div class="box_small bg_light">
               <div>Block type</div>
               <div class="text_heavy text_right"><?php echo ($block['solo'] ? 'SOLO' : 'SHARED'); ?></div>

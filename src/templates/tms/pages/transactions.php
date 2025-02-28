@@ -20,8 +20,8 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
       </div>
     </a>
     <div id="tx_<?php echo $transaction['id']; ?>" class="margin_top_a hidden">
-      <div class="list_wrap small_gap">
-        <div class="two_columns small_gap">
+      <div class="list_wrap gap_small">
+        <div class="columns_two gap_small">
           <div class="box_small bg_light">
             <div>Submitted</div>
             <div class="text_heavy text_right"><?php echo formatDateTime($transaction['timestamp']); ?></div>
@@ -36,7 +36,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
           </div>
         </div>
         <div class="wrap bg_vlight">
-          <div class="list_wrap small_gap">
+          <div class="list_wrap gap_small">
             <?php
             foreach ($payments_current as $payment) {
               if ($payment['transaction'] == $transaction['transaction']) {
@@ -46,7 +46,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                   <div class="text_heavy text_right"><?php echo privacyFilter($payment['miner']); ?></div>
                   <?php debugData($payment['miner'], $page_configuration['debug_mode']); ?>
                 </div>
-                <div class="two_columns small_gap">
+                <div class="columns_two gap_small">
                   <div class="box_small bg_light">
                     <div>Date</div>
                     <div class="text_heavy text_right"><?php echo formatDateTime($payment['timestamp']); ?></div>
