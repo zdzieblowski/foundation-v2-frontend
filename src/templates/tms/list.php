@@ -37,36 +37,36 @@
         </style>
         <a href="?pool=<?php echo $pool_config; ?>" class="list_button <?php echo $pool_config; ?>">
           <div class="box_long_content bg_pool pool_list_wrap">
-            <img src="configurations/<?php echo $pool_config; ?>/logo.svg" height="50" width="50" class="pool_list_img" alt>
+            <img src="configurations/<?php echo $pool_config; ?>/logo.svg" height="50" width="50" class="pool_list_icon" alt>
             <div>
               <div class="text_large text_left"><?php echo $server_configuration['name']; ?></div>
               <div class="pool_list_infos">
-                <div class="info_box">
-                  <span class="material-symbols-outlined list_small_icon" title="HASHRATE">speed</span>
+                <div class="box_info">
+                  <span class="material-symbols-outlined list_icon_small" title="HASHRATE">speed</span>
                   <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
                 </div>
-                <div class="info_box">
-                  <span class="material-symbols-outlined list_small_icon" title="ALGORITHM">regular_expression</span>
+                <div class="box_info">
+                  <span class="material-symbols-outlined list_icon_small" title="ALGORITHM">regular_expression</span>
                   <?php echo $server_configuration['algorithm']; ?>
                 </div>
-                <div class="info_box">
-                  <span class="material-symbols-outlined list_small_icon" title="MINERS">dns</span>
-                  <?php echo $metadata_current[0]['miners']; ?>&nbsp;<span class="material-symbols-outlined list_small_icon"
+                <div class="box_info">
+                  <span class="material-symbols-outlined list_icon_small" title="MINERS">dns</span>
+                  <?php echo $metadata_current[0]['miners']; ?>&nbsp;<span class="material-symbols-outlined list_icon_small"
                     title="WORKERS">memory</span>
                   <?php echo $metadata_current[0]['workers']; ?>
                 </div>
-                <div class="info_box">
-                  <span class="material-symbols-outlined list_small_icon" title="BLOCKS">deployed_code</span>
+                <div class="box_info">
+                  <span class="material-symbols-outlined list_icon_small" title="BLOCKS">deployed_code</span>
                   <?php echo $metadata_current[0]['blocks']; ?>
                 </div>
-                <div class="info_box">
-                  <span class="material-symbols-outlined list_small_icon" title="EFFORT">clock_loader_20</span>
+                <div class="box_info">
+                  <span class="material-symbols-outlined list_icon_small" title="EFFORT">clock_loader_20</span>
                   <?php echo formatPercents($metadata_current[0]['effort'], $pool_configuration['math_precision']); ?>
                 </div>
-                <div class="info_box">
-                  <span class="material-symbols-outlined list_small_icon" title="NETWORK HASHRATE">share</span>
+                <div class="box_info">
+                  <span class="material-symbols-outlined list_icon_small" title="NETWORK HASHRATE">share</span>
                   <?php if ($pool_configuration['network_hashrate_multiplier'] != 1) { ?>
-                    <span class="material-symbols-outlined list_small_icon"
+                    <span class="material-symbols-outlined list_icon_small"
                       title="Warning! This value is estimated">warning</span>
                   <?php }
                   echo formatLargeNumbers(($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier']), $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit'];

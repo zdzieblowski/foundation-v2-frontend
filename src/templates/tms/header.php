@@ -1,8 +1,7 @@
 <div class="header">
-  <div class="width_max header_grid">
+  <div class="width_max header_content">
     <div class="header_top">
-      <div class="header_top_logo">
-
+      <div class="header_top_left">
         <?php if (empty($pool)) { ?>
         <div>
           <a class="header_navi_item">
@@ -31,7 +30,6 @@
             <polygon class="st0" points="353 328 622.2 328 500.2 159.4 542.3 0 26 0 0 100 68.3 100 8.6 329.2 112 329.2 171.7 100 240.1 100 180.4 329.2 283.7 329.2 343.4 100 412.5 100 398.2 153.9 391.5 179.8 426.4 228 379 228 353 328" />
           </svg>
         </div>
-
       </div>
       <div class="header_top_right">
         <div class="header_info">

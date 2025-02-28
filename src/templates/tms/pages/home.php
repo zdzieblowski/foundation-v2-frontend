@@ -127,7 +127,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   <div class="home_port">
     <?php if($pool_configuration['suggested_platform_gpu']) { ?>
       <div class="home_port_type">
-        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b large_icon">terminal</span><?php echo $port['type']; ?> LINUX:</div>
+        <div class="reveal_button_text"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?> LINUX:</div>
       </div>
       <div class="home_port_command">
         <strong>./<?php echo $pool_configuration['suggested_software_linux']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -135,7 +135,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       </div>
       <hr class="hr_list">
       <div class="home_port_type">
-        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b large_icon">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
+        <div class="reveal_button_text"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
       </div>
       <div class="home_port_command">
         <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -144,7 +144,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php }
     if($pool_configuration['suggested_platform_asic']) { ?>
       <div class="home_port_type">
-<div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b large_icon">terminal</span><?php echo $port['type']; ?>:</div>
+<div class="reveal_button_text"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?>:</div>
       </div>
       <div class="home_port_command">
         <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
