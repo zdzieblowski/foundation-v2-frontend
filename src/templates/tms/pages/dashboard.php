@@ -105,7 +105,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                 <div class="list_wrap gap_small">
                   <a onclick="revealContent('worker_<?php echo $worker['id']; ?>');" class="cursor_pointer">
                     <div class="box_small bg_vlight_bdr_pool">
-                      <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span>Worker</div>
+                      <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">memory</span>Worker</div>
                       <div class="text_heavy text_right reveal_button">
                         <?php echo $worker_name; ?>
                         <span class="material-symbols-outlined">unfold_more</span>
@@ -187,7 +187,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               <div class="list_wrap gap_small">
                 <a onclick="revealContent('block_<?php echo $block['id']; ?>');" class="cursor_pointer">
                   <div class="box_small_long_content bg_vlight_bdr_pool">
-                    <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">deployed_code</span>Hash</div>
+                    <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">deployed_code</span>Hash</div>
                     <div class="text_heavy text_right reveal_button">
                       <?php echo $block['hash']; ?>
                       <span class="material-symbols-outlined">unfold_more</span>
@@ -277,7 +277,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
               ?>
               <div class="list_wrap gap_small">
                 <div class="box_small_long_content bg_vlight_bdr_pool">
-                  <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">send_money</span>Transaction</div>
+                  <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">send_money</span>Transaction</div>
                   <div class="text_heavy text_right">
                     <?php echo $payment['transaction']; ?>
                   </div>

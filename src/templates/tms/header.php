@@ -19,7 +19,7 @@
         <?php } ?>
 
         <div class="width_min">
-          <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" class="logo_height">
+          <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" class="header_logo">
             <defs>
               <style>
                 .st0 {

@@ -10,8 +10,8 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
     ?>
     <a onclick="revealContent('tx_<?php echo $round['id']; ?>');" class="cursor_pointer">
       <div class="box_small_long_content bg_vlight_bdr_pool reveal_button"><div>
-        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">cached</span><div>Round: <b><?php echo $round['id']; ?></b></div></div>
-        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?></b></div></div></div>
+        <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">cached</span><div>Round: <b><?php echo $round['id']; ?></b></div></div>
+        <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?></b></div></div></div>
         <div class="text_right reveal_button">
           &nbsp;
           <span class="material-symbols-outlined">unfold_more</span>

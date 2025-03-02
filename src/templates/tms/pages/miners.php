@@ -11,7 +11,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     ?>
     <a onclick="revealContent('miner_<?php echo $miner['id']; ?>');" class="cursor_pointer">
       <div class="box_small_long_content bg_vlight_bdr_pool reveal_button">
-        <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">dns</span><div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div></div>
+        <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">dns</span><div>Miner: <b><?php echo privacyFilter($miner['miner']); ?></b></div></div>
         <div class="text_right reveal_button">
           &nbsp;
           <span class="material-symbols-outlined">unfold_more</span>
@@ -101,7 +101,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 <div class="list_wrap gap_small">
                   <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" class="cursor_pointer">
                     <div class="box_small bg_vlight_bdr_dark">
-                      <div class="reveal_button_text"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
+                      <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
                       <div class="text_right reveal_button">
                         &nbsp;
                         <span class="material-symbols-outlined">unfold_more</span>
