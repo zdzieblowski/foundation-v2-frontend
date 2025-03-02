@@ -12,12 +12,11 @@
         </div>
         <?php } else { ?>
         <div>
-          <a class="header_navi_item <?php if (!$_GET['page']) { echo 'header_navi_item_select'; } ?>" href="<?php echo '?pool=' . $pool; ?>">
+          <a class="header_navi_item <?php if (!$_GET['page']) { echo 'header_navi_item_select'; } ?>" href="<?php echo '?pool='.$pool; ?>">
             <span class="material-symbols-outlined">home</span>
           </a>
         </div>
         <?php } ?>
-
         <div class="width_min">
           <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" class="header_logo">
             <defs>
@@ -34,9 +33,7 @@
       <div class="header_top_right">
         <div class="header_info">
           <div><?php echo getServerVariable('SERVER_NAME'); ?>/</div>
-
     <?php if(empty($pool)) { ?>
-
         </div>
         <div>
           <a class="header_navi_item" href="/">
@@ -45,9 +42,7 @@
         </div>
       </div>
     </div>
-
     <?php } else { ?>
-
           <div><b class="color_pool"><?php echo $server_configuration['symbol']; ?></b></div>
         </div>
         <div>
@@ -78,14 +73,7 @@
           <span class="material-symbols-outlined">payments</span>
           Transactions
         </a>
-      </div>
-        
-    <?php } ?>
-      
+      </div>        
+    <?php } ?>      
   </div>
 </div>
-
-
-
-
-

@@ -30,7 +30,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
           <div class="box_small bg_pool">
             <div>Amount</div>
             <div class="text_heavy text_right">
-              <?php echo formatLargeNumbers($transaction['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($transaction['amount'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
             </div>
             <?php debugData($transaction['amount'], $page_configuration['debug_mode']); ?>
           </div>
@@ -55,7 +55,7 @@ $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_config
                   <div class="box_small bg_light">
                     <div>Amount</div>
                     <div class="text_heavy text_right">
-                      <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+                      <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
                     </div>
                     <?php debugData($payment['amount'], $page_configuration['debug_mode']); ?>
                   </div>

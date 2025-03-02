@@ -4,21 +4,23 @@ $blocks_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
 ?>
 <div class="text_header">Dashboard</div>
-<?php if (isset($_POST['save_address'])):
+<?php
+if (isset($_POST['save_address'])) {
   setcookie('address_'.$pool, $_POST['save_address']);
   header('Refresh:0; url=?pool='.$pool.'&page=dashboard');
-else:
-  if (!isset($_COOKIE['address_'.$pool])): ?>
+} else {
+  if (!isset($_COOKIE['address_'.$pool])) {
+  ?>
     <div class="text_normal">Enter wallet address to see your statistics.</div>
-  <?php else:
-    $wallet_found = False;
-    $blocks_found = False;
-    $payments_found = False;
-    $miner = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners?miner='.$_COOKIE['address_'.$pool])[0];
+    <?php } else {
+      $wallet_found = False;
+      $blocks_found = False;
+      $payments_found = False;
+      $miner = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners?miner='.$_COOKIE['address_'.$pool])[0];
 
-    if ($miner['miner'] == $_COOKIE['address_'.$pool]) {
-      $wallet_found = True;
-      ?>
+      if ($miner['miner'] == $_COOKIE['address_'.$pool]) {
+        $wallet_found = True;
+        ?>
       <div class="text_normal">Statistics for wallet address: <b class="text_break_all"><?php echo $_COOKIE['address_'.$pool]; ?></b></div>
       <hr>
       <div class="text_subheader">Miner information</div>
@@ -30,7 +32,7 @@ else:
         <div class="box bg_pool">
           <div>Hashrate</div>
           <div class="text_large">
-            <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
+            <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']).$pool_configuration['hashrate_unit']; ?>
           </div>
           <?php debugData($miner['hashrate'], $page_configuration['debug_mode']); ?>
         </div>
@@ -49,21 +51,21 @@ else:
         <div class="box bg_dark">
           <div>Balance</div>
           <div class="text_large">
-            <?php echo formatLargeNumbers($miner['balance'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+            <?php echo formatLargeNumbers($miner['balance'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
           </div>
           <?php debugData($miner['balance'], $page_configuration['debug_mode']); ?>
         </div>
         <div class="box bg_light">
           <div>Immature</div>
           <div class="text_large">
-            <?php echo formatLargeNumbers($miner['immature'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+            <?php echo formatLargeNumbers($miner['immature'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
           </div>
           <?php debugData($miner['immature'], $page_configuration['debug_mode']); ?>
         </div>
         <div class="box bg_pool">
           <div>Paid</div>
           <div class="text_large">
-            <?php echo formatLargeNumbers($miner['paid'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+            <?php echo formatLargeNumbers($miner['paid'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
           </div>
           <?php debugData($miner['paid'], $page_configuration['debug_mode']); ?>
         </div>
@@ -115,7 +117,7 @@ else:
                       <div class="box_small bg_pool">
                         <div>Hashrate</div>
                         <div class="text_heavy text_right">
-                          <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
+                          <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']).$pool_configuration['hashrate_unit']; ?>
                         </div>
                         <?php debugData($worker['hashrate'], $page_configuration['debug_mode']); ?>
                       </div>
@@ -242,7 +244,7 @@ else:
                     <div class="box_small bg_pool">
                       <div>Reward</div>
                       <div class="text_heavy text_right">
-                        <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+                        <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
                       </div>
                       <?php debugData($block['reward'], $page_configuration['debug_mode']); ?>
                     </div>
@@ -250,18 +252,18 @@ else:
                 </div>
               </div>
             </div>
-            <?php
+          <?php
           }
         }
         ?>
       </div>
       <?php
       if (!$blocks_found) {
-        ?>
+      ?>
         <div class="text_normal">
           No blocks mined by <b><?php echo $_COOKIE['address_'.$pool]; ?></b> were found.
         </div>
-        <?php
+      <?php
       }
       ?>
       <hr>
@@ -288,37 +290,34 @@ else:
                 <div class="box_small bg_pool">
                   <div>Amount</div>
                   <div class="text_heavy text_right">
-                    <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+                    <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
                   </div>
                   <?php debugData($payment['amount'], $page_configuration['debug_mode']); ?>
                 </div>
               </div>
             </div>
-            <?php
+          <?php
           }
         }
         ?>
       </div>
       <?php
       if (!$payments_found) {
-        ?>
+      ?>
         <div class="text_normal">No payments to <b><?php echo $_COOKIE['address_'.$pool]; ?></b> were found.</div>
-        <?php
+      <?php
       }
     }
-
     if (!$wallet_found) {
-      ?>
-      <div class="text_normal">Miner <b><?php echo $_COOKIE['address_'.$pool]; ?></b> was not found.</div>
-      <?php
-    }
     ?>
+      <div class="text_normal">Miner <b><?php echo $_COOKIE['address_'.$pool]; ?></b> was not found.</div>
+    <?php } ?>
     <hr>
-  <?php endif ?>
+  <?php } ?>
   <form action="<?php echo '?pool='.$pool.'&page=dashboard'; ?>" method="post">
     <div class="wallet_address">
       <input type="text" name="save_address" value="<?php echo $_COOKIE['address_'.$pool]; ?>">
       <input type="submit" value="Submit">
     </div>
   </form>
-<?php endif ?>
+<?php } ?>

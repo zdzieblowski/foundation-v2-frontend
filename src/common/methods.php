@@ -18,7 +18,7 @@ function getData($data_url): mixed
 function debugData($data, $debug_mode): void
 {
   if ($debug_mode) {
-    echo '<div class="box_debug">' . $data . '</div>';
+    echo '<div class="box_debug">'.$data.'</div>';
   }
 }
 
@@ -49,7 +49,7 @@ function formatPercents($number, $precision): string
   if ($number < 0) {
     $number = 0;
   }
-  return round($number, $precision) . '%';
+  return round($number, $precision).'%';
 }
 
 function formatLargeNumbers($number, $precision): string
@@ -61,7 +61,7 @@ function formatLargeNumbers($number, $precision): string
   } elseif ($number < 0) {
     $number = 0;
   }
-  return round($number, $precision) . '' . $units[$pow];
+  return round($number, $precision).''.$units[$pow];
 }
 
 function formatDateTime($timestamp): string
@@ -71,7 +71,7 @@ function formatDateTime($timestamp): string
 
 function privacyFilter($input, $size = 12): string
 {
-  return substr($input, 0, $size) . str_repeat('*', (strlen($input)-$size*2)) . substr($input, -$size, $size);
+  return substr($input, 0, $size).str_repeat('*', (strlen($input)-$size*2)).substr($input, -$size, $size);
 }
 
 function listFiles($directory, $blacklist): array

@@ -25,7 +25,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
           <div class="box_small bg_pool">
             <div>Hashrate</div>
             <div class="text_heavy text_right">
-              <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
+              <?php echo formatLargeNumbers($miner['hashrate'], $pool_configuration['math_precision']).$pool_configuration['hashrate_unit']; ?>
             </div>
             <?php debugData($miner['hashrate'], $page_configuration['debug_mode']); ?>
           </div>
@@ -48,21 +48,21 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
           <div class="box_small bg_dark">
             <div>Balance</div>
             <div class="text_heavy text_right">
-              <?php echo formatLargeNumbers($miner['balance'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($miner['balance'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
             </div>
             <?php debugData($miner['balance'], $page_configuration['debug_mode']); ?>
           </div>
           <div class="box_small bg_light">
             <div>Immature</div>
             <div class="text_heavy text_right">
-              <?php echo formatLargeNumbers($miner['immature'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($miner['immature'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
             </div>
             <?php debugData($miner['immature'], $page_configuration['debug_mode']); ?>
           </div>
           <div class="box_small bg_pool">
             <div>Paid</div>
             <div class="text_heavy text_right">
-              <?php echo formatLargeNumbers($miner['paid'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+              <?php echo formatLargeNumbers($miner['paid'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
             </div>
             <?php debugData($miner['paid'], $page_configuration['debug_mode']); ?>
           </div>
@@ -99,7 +99,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                 $worker_name = getWorkerName($worker['worker']);
                 ?>
                 <div class="list_wrap gap_small">
-                  <a onclick="revealContent('minwor_<?php echo $miner['id'] . $worker['id']; ?>');" class="cursor_pointer">
+                  <a onclick="revealContent('minwor_<?php echo $miner['id'].$worker['id']; ?>');" class="cursor_pointer">
                     <div class="box_small bg_vlight_bdr_dark">
                       <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo $worker_name; ?></b></div></div>
                       <div class="text_right reveal_button">
@@ -108,13 +108,13 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                       </div>
                     </div>
                   </a>
-                  <div id="minwor_<?php echo $miner['id'] . $worker['id']; ?>" class="hidden">
+                  <div id="minwor_<?php echo $miner['id'].$worker['id']; ?>" class="hidden">
                     <div class="list_wrap gap_small">
                       <div class="columns_two gap_small">
                         <div class="box_small bg_dark">
                           <div>Hashrate</div>
                           <div class="text_heavy text_right">
-                            <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
+                            <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']).$pool_configuration['hashrate_unit']; ?>
                           </div>
                           <?php debugData($worker['hashrate'], $page_configuration['debug_mode']); ?>
                         </div>
@@ -176,7 +176,7 @@ $workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     </div>
     <?php if ($miner != end($miners_current)) { ?>
       <hr class="hr_inner hr_list">
-      <?php
+    <?php
     }
   }
   ?>

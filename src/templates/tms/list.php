@@ -6,33 +6,25 @@
   if ($pool_directory = opendir($page_configuration['directory_configurations'])) {
     $pool_list = listFiles($pool_directory, array('.', '..'));
     foreach ($pool_list as $pool_config) {
-      $pool_directory_path = $page_configuration['directory_configurations'] . '/' . $pool_config;
+      $pool_directory_path = $page_configuration['directory_configurations'].'/'.$pool_config;
       if (is_dir($pool_directory_path)) {
-        require($pool_directory_path . '/configuration.php');
-        $metadata_current = getData('http://' . $pool_configuration['ip'] . ':' . $pool_configuration['port'] . '/api/v2/' . $pool_configuration['name'] . '/current/metadata');
-        $network_current = getData('http://' . $pool_configuration['ip'] . ':' . $pool_configuration['port'] . '/api/v2/' . $pool_configuration['name'] . '/current/network');
-  ?>
+        require($pool_directory_path.'/configuration.php');
+        $metadata_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/metadata');
+        $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/network');
+        ?>
         <style>
           a.<?php echo $pool_config; ?> {
-            background-color:
-              <?php echo $pool_configuration['color']; ?>
-            ;
+            background-color: <?php echo $pool_configuration['color']; ?>;
             border-bottom: 4px solid #888;
             border-radius: 8px;
           }
-
           a.<?php echo $pool_config; ?>:hover {
             background-color: #666;
-            border-bottom: 4px solid
-              <?php echo $pool_configuration['color']; ?>
-            ;
+            border-bottom: 4px solid <?php echo $pool_configuration['color']; ?>;
           }
-
           a.<?php echo $pool_config; ?>:active {
             background-color: #444;
-            border-bottom: 4px solid
-              <?php echo $pool_configuration['color']; ?>
-            ;
+            border-bottom: 4px solid <?php echo $pool_configuration['color']; ?>;
           }
         </style>
         <a href="?pool=<?php echo $pool_config; ?>" class="list_button <?php echo $pool_config; ?>">
@@ -43,7 +35,7 @@
               <div class="pool_list_info">
                 <div class="box_info">
                   <span class="material-symbols-outlined list_icon_medium" title="HASHRATE">speed</span>
-                  <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
+                  <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']).$pool_configuration['hashrate_unit']; ?>
                 </div>
                 <div class="box_info">
                   <span class="material-symbols-outlined list_icon_medium" title="ALGORITHM">regular_expression</span>
@@ -69,7 +61,7 @@
                     <span class="material-symbols-outlined list_icon_medium"
                       title="Warning! This value is estimated">warning</span>
                   <?php }
-                  echo formatLargeNumbers(($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier']), $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit'];
+                  echo formatLargeNumbers(($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier']), $pool_configuration['math_precision']).$pool_configuration['hashrate_unit'];
                   ?>
                 </div>
               </div>
@@ -79,7 +71,7 @@
             </div>
           </div>
         </a>
-  <?php
+      <?php
       }
     }
     closedir($pool_directory);

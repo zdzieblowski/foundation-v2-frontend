@@ -27,7 +27,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   <div class="box bg_dark">
     <div>Minimal payout</div>
     <div class="text_large">
-      <?php echo formatLargeNumbers($server_configuration['minimumPayment'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+      <?php echo formatLargeNumbers($server_configuration['minimumPayment'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
     </div>
     <?php debugData($server_configuration['minimumPayment'], $page_configuration['debug_mode']); ?>
   </div>
@@ -66,7 +66,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
   <div class="box bg_dark">
     <div>Hashrate</div>
     <div class="text_large">
-      <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
+      <?php echo formatLargeNumbers($metadata_current[0]['hashrate'], $pool_configuration['math_precision']).$pool_configuration['hashrate_unit']; ?>
     </div>
     <?php debugData($metadata_current[0]['hashrate'], $page_configuration['debug_mode']); ?>
   </div>
@@ -90,7 +90,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       <?php if ($pool_configuration['network_hashrate_multiplier'] != 1) { ?>
         <span class="material-symbols-outlined text_inherit margin_right_a" title="Warning! This value is estimated">warning</span>
       <?php }
-      echo formatLargeNumbers($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
+      echo formatLargeNumbers($network_current[0]['hashrate'] * $pool_configuration['network_hashrate_multiplier'], $pool_configuration['math_precision']).$pool_configuration['hashrate_unit']; ?>
     </div>
     <?php debugData($network_current[0]['hashrate'], $page_configuration['debug_mode']); ?>
   </div>
@@ -112,7 +112,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 </div>
 <hr>
 <div class="text_subheader">Getting started</div>
-<?php if($pool_configuration['suggested_software'] != '') {?>
+<?php if($pool_configuration['suggested_software'] != '') { ?>
 <div class="text_normal">Download the mining software - we suggest <b><?php echo $pool_configuration['suggested_software']; ?></b> for the <b><?php echo $server_configuration['algorithm']; ?></b> algorithm.</div>
 <a class="header_navi_item header_navi_item_text margin_bottom_c" href="<?php echo $pool_configuration['suggested_software_link']; ?>" target="_blank">
   <span class="material-symbols-outlined">download</span>
@@ -144,7 +144,7 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
     <?php }
     if($pool_configuration['suggested_platform_asic']) { ?>
       <div class="home_port_type">
-<div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?>:</div>
+        <div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?>:</div>
       </div>
       <div class="home_port_command">
         <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
@@ -152,7 +152,5 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
       </div>
     <?php } ?>
     </div>
-  <?php
-  }
-  ?>
+  <?php } ?>
 </div>

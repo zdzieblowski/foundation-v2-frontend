@@ -60,7 +60,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
               <div class="box_small_long_content bg_light">
                 <div>Winner</div>
                 <div class="text_heavy text_right">
-                  <?php echo privacyFilter($block['miner']) . '.' . getWorkerName($block['worker']); ?>
+                  <?php echo privacyFilter($block['miner']).'.'.getWorkerName($block['worker']); ?>
                 </div>
                 <?php debugData($block['worker'], $page_configuration['debug_mode']); ?>
               </div>
@@ -92,7 +92,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
                         <div class="box_small_long_content bg_light">
                           <div>Worker</div>
                           <div class="text_heavy text_right">
-                            <?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?>
+                            <?php echo privacyFilter($round['miner']).'.'.getWorkerName($round['worker']); ?>
                           </div>
                           <?php debugData($round['worker'], $page_configuration['debug_mode']); ?>
                         </div>
@@ -140,7 +140,7 @@ $rounds_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
             <div class="box_small bg_pool">
               <div>Reward</div>
               <div class="text_heavy text_right">
-                <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
+                <?php echo formatLargeNumbers($block['reward'], $pool_configuration['math_precision']).$server_configuration['symbol']; ?>
               </div>
               <?php debugData($block['reward'], $page_configuration['debug_mode']); ?>
             </div>
