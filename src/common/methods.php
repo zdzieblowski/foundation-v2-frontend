@@ -85,4 +85,5 @@ function listFiles($directory, $blacklist): array
   sort($files);
   return $files;
 }
+
 ?>

@@ -123,34 +123,34 @@ $network_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 <div class="home_ports">
   <?php
   foreach ($ports_current as $port) {
-  ?>
-  <div class="home_port">
-    <?php if($pool_configuration['suggested_platform_gpu']) { ?>
-      <div class="home_port_type">
-        <div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?> LINUX:</div>
+    ?>
+    <div class="home_port">
+      <?php if($pool_configuration['suggested_platform_gpu']) { ?>
+        <div class="home_port_type">
+          <div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?> LINUX:</div>
+        </div>
+        <div class="home_port_command">
+          <strong>./<?php echo $pool_configuration['suggested_software_linux']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
+          <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>'; } ?>
+        </div>
+        <hr class="hr_list">
+        <div class="home_port_type">
+          <div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
+        </div>
+        <div class="home_port_command">
+          <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
+          <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>'; } ?>
+        </div>
+      <?php }
+      if($pool_configuration['suggested_platform_asic']) { ?>
+        <div class="home_port_type">
+          <div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?>:</div>
+        </div>
+        <div class="home_port_command">
+          <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
+          <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>'; } ?>
+        </div>
+      <?php } ?>
       </div>
-      <div class="home_port_command">
-        <strong>./<?php echo $pool_configuration['suggested_software_linux']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
-        <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
-      </div>
-      <hr class="hr_list">
-      <div class="home_port_type">
-        <div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?> WINDOWS:</div>
-      </div>
-      <div class="home_port_command">
-        <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
-        <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
-      </div>
-    <?php }
-    if($pool_configuration['suggested_platform_asic']) { ?>
-      <div class="home_port_type">
-        <div class="text_reveal_button"><span class="material-symbols-outlined icon_small">terminal</span><?php echo $port['type']; ?>:</div>
-      </div>
-      <div class="home_port_command">
-        <strong><?php echo $pool_configuration['suggested_software_windows']; ?></strong><?php echo $pool_configuration['suggested_command_algo']; ?><b><?php echo $server_configuration['algorithm']; ?></b><?php echo $pool_configuration['suggested_command_open']; ?><b>stratum+tcp://<?php echo getServerVariable('SERVER_NAME').':'.$port['port']; ?></b><?php echo $pool_configuration['suggested_command_wallet']; ?><b>&lt;WALLET&gt;</b>
-        <?php if ($pool_configuration['suggested_command_worker'] != '') { echo ''.$pool_configuration['suggested_command_worker'].'<b>&lt;WORKER&gt;</b>';} ?>
-      </div>
-    <?php } ?>
-    </div>
   <?php } ?>
 </div>

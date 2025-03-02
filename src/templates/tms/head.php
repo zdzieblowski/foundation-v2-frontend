@@ -16,9 +16,7 @@
   <script src="common/methods.js"></script>
   <style>
     :root {
-      --color-pool:
-        <?php echo $pool_configuration['color']; ?>
-      ;
+      --color-pool: <?php echo $pool_configuration['color']; ?>;
     }
   </style>
   <?php } else {

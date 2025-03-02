@@ -1,6 +1,7 @@
 <?php
+
 $page_configuration = [
-  'version' => '0.4.19',
+  'version' => '0.4.20',
   'debug_mode' => True,
 
   'html_language' => 'en',
@@ -13,4 +14,5 @@ $page_configuration = [
   'page_title' => 'The Mining Site',
   'page_short_title' => 'TMS'
 ];
+
 ?>

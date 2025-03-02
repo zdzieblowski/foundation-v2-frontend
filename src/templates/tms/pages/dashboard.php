@@ -303,7 +303,7 @@ if (isset($_POST['save_address'])) {
       </div>
       <?php
       if (!$payments_found) {
-      ?>
+        ?>
         <div class="text_normal">No payments to <b><?php echo $_COOKIE['address_'.$pool]; ?></b> were found.</div>
       <?php
       }
