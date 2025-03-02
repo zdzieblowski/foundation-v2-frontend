@@ -4,16 +4,13 @@ $blocks_combined = getData('http://'.$pool_configuration['ip'].':'.$pool_configu
 $payments_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/historical/payments?limit=10&order=timestamp&direction=descending');
 ?>
 <div class="text_header">Dashboard</div>
-<?php if (isset($_POST['save_address'])): ?>
-  <?php
+<?php if (isset($_POST['save_address'])):
   setcookie('address_'.$pool, $_POST['save_address']);
   header('Refresh:0; url=?pool='.$pool.'&page=dashboard');
-?>
-<?php else: ?>
-  <?php if (!isset($_COOKIE['address_'.$pool])): ?>
+else:
+  if (!isset($_COOKIE['address_'.$pool])): ?>
     <div class="text_normal">Enter wallet address to see your statistics.</div>
-  <?php else: ?>
-    <?php
+  <?php else:
     $wallet_found = False;
     $blocks_found = False;
     $payments_found = False;
