@@ -2,6 +2,7 @@
 require_once 'common/configuration.php';
 require_once 'common/methods.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="<?php echo $page_configuration['html_language']; ?>">
 
@@ -32,32 +33,26 @@ require_once 'common/methods.php';
     <link rel="apple-touch-icon" href="<?php echo $page_configuration['directory_templates'].'/'.$page_configuration['page_template']; ?>/assets/apple-touch-icon.png" sizes="180x180">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-  <?php
-  if (!empty($pool)) {
-    $page_title = $page_configuration['page_title'].': '.$pool_configuration['title'];
-  ?>
+  <?php if (!empty($pool)) { $page_title = $page_configuration['page_title'].': '.$pool_configuration['title']; ?>
     <script src="common/methods.js"></script>
     <style>
       :root {
         --color-pool: <?php echo $pool_configuration['color']; ?>;
       }
     </style>
-  <?php } else {
-    $page_title = $page_configuration['page_title'];
-  }
-  ?>
+  <?php } else { $page_title = $page_configuration['page_title']; } ?>
     <title><?php echo $page_title; ?></title>
   </head>
-  
-  <body>  
+
+  <body>
     <?php include $page_configuration['directory_templates'].'/'.$page_configuration['page_template'].'/components/header.php'; ?>
     <div class="content_wrap">
       <div class="width_max">
         <div class="content">
-          <?php include $page_configuration['directory_templates'].'/'.$page_configuration['page_template'].'/components/'.$mode.'.php'; ?>
+          <?php include $page_configuration['directory_templates'].'/'.$page_configuration['page_template'].'/'.$mode.'.php'; ?>
         </div>
       </div>
-    </div>  
+    </div>
     <?php include $page_configuration['directory_templates'].'/'.$page_configuration['page_template'].'/components/footer.php'; ?>
   </body>
 
