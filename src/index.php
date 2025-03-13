@@ -1,6 +1,12 @@
 <?php
 require_once 'common/configuration.php';
 require_once 'common/methods.php';
+
+if (!empty($_GET['api'])) {
+
+  include 'common/api.php';
+
+} else {
 ?>
 
 <!DOCTYPE html>
@@ -57,3 +63,6 @@ require_once 'common/methods.php';
   </body>
 
 </html>
+<?php
+}
+?>

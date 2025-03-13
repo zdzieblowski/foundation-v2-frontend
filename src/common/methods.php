@@ -22,6 +22,22 @@ function debugData($data, $debug_mode): void
   }
 }
 
+function filterData($input, $filters): array
+{
+  $output = array();
+  $count = 0;
+
+  foreach($input as $item){
+    $output[$count]=(object)[];
+    foreach($filters as $filter) {
+      $output[$count]->$filter = $item[$filter];
+    }
+    $count = $count+1;
+  }
+
+  return $output;
+}
+
 function getWorkerName($miner): string
 {
   $worker_name = explode('.', $miner, 2)[1];

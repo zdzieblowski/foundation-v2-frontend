@@ -336,7 +336,7 @@ a.donate_item_link:active {
 
 .footer_content_right {
   display: grid;
-  grid-template-columns: repeat(2, min-content);
+  grid-template-columns: repeat(3, min-content);
   align-items: center;
   column-gap: var(--gap-normal);
 }
