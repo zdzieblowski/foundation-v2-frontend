@@ -336,8 +336,11 @@ a.donate_item_link:active {
 
 .footer_content_right {
   display: grid;
-  grid-template-columns: repeat(3, min-content);
   align-items: center;
+}
+
+.footer_ispool {
+  grid-template-columns: repeat(3, min-content);
   column-gap: var(--gap-normal);
 }
 

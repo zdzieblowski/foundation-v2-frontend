@@ -5,8 +5,8 @@
       <br>
       <pre class="footer_version">        VERSION <b><?php echo $page_configuration['version']; ?></b></pre>
     </div>
-    <div class="footer_content_right">
-      <?php if (!empty($pool)) { ?>
+    <?php if (!empty($pool)) { ?>
+    <div class="footer_content_right footer_ispool">
       <div>
           <a href="?pool=<?php echo $pool; ?>&page=donate"><span
               class="material-symbols-outlined">volunteer_activism</span></a>
@@ -15,8 +15,10 @@
           <a href="?api=<?php echo $pool; ?>" target="_blank"><span
               class="material-symbols-outlined">api</span></a>
       </div>
-      <?php } ?>
-     <div>
+    <?php } else { ?>
+    <div class="footer_content_right">
+    <?php } ?>
+      <div>
         <a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank"><img src="common/assets/github.svg" height="24" alt></a>
       </div>
     </div>
