@@ -1,5 +1,5 @@
 <?php
-$rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/rounds?order=timestamp&direction=descending');
+$rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/rounds?limit=10&order=timestamp&direction=descending');
 ?>
 <div class="text_header">Rounds</div>
 <div class="text_normal">List of current rounds.</div>
@@ -70,7 +70,7 @@ $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configur
       </div>
     </div>
     <?php if ($round != end($rounds_current)) { ?>
-      <hr class="hr_inner list_hr">
+      <hr class="hr_inner hr_list">
     <?php
     }
   }
