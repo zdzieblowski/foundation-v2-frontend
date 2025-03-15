@@ -1,6 +1,6 @@
 <?php
-$miners_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners?limit=10&order=hashrate&direction=descending');
-$workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/workers?order=hashrate&direction=descending');
+$miners_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/miners?order=hashrate&direction=descending&hashrate=gt0');
+$workers_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/workers?order=hashrate&direction=descending&hashrate=gt0');
 ?>
 <div class="text_header">Miners</div>
 <div class="text_normal">List of miners and workers.</div>

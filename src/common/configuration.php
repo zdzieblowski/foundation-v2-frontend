@@ -1,7 +1,7 @@
 <?php
 
 $page_configuration = [
-  'version' => '0.4.22',
+  'version' => '0.4.23',
   'debug_mode' => True,
 
   'html_language' => 'en',
