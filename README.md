@@ -33,11 +33,7 @@ Template files are by default stored in separate forders in the ``templates/`` d
 Templates contain everything that defines the look and feel of this front-end and can be configured and modified to a high degree to meet your specifications.
 
 ## Usage
-If installed and configured properly the front-end should be accessible from any web browser at the address you defined in your virtual host's configuration. Here are some examples URLs based on the TMS website:
-- https://themining.site/
-- https://themining.site/?pool=EVR
-- https://themining.site/?pool=EVR&page=dashboard
-- https://themining.site/?api=EVR
+If installed and configured properly the front-end should be accessible from any web browser at the address you defined in your virtual host's configuration.
 
 ## Community
-Please forgive the state of this manual and in case of any questions, suggestions or comments feel free to submit an issue or pull request. 
+Please forgive the current state of this instruction manual and in case of any questions, suggestions or comments feel free to submit an issue or pull request. 
