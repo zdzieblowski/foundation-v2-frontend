@@ -1,12 +1,12 @@
 <?php
 header('Content-type: application/json');
 
-$pool_api = $_GET['api'];
+$api_request = $_GET['api'];
 
 $api_response = (object)[];
-$api_response->request = $pool_api;
+$api_response->request = $api_request;
 
-$pool_configuration_file = $page_configuration['directory_configurations'].'/'.$pool_api.'/configuration.php';
+$pool_configuration_file = $page_configuration['directory_configurations'].'/'.$api_request.'/configuration.php';
 
 if (file_exists($pool_configuration_file)) {
   require_once($pool_configuration_file);

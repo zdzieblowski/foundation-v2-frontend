@@ -1,8 +1,8 @@
 <?php
 
 $page_configuration = [
-  'version' => '0.4.24',
-  'debug_mode' => True,
+  'version' => '0.5.0 β',
+  'debug_mode' => False,
 
   'html_language' => 'en',
 
