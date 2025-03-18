@@ -27,13 +27,15 @@ Configuration for pool specific settings are stored by default in separate folde
 > **There will be an template available in the future that will not contain any copyrighted material.**\
 > Until then please develop your own templates using files contained in this repository as a base and inspiration.\
 > \
-> *I case you will develop an universal template that you wish to share with others please submit it via a pull request.*
+> *In case you'll develop a template that you wish to share with others please submit it via a pull request.*
 
 Template files are by default stored in separate forders in the ``templates/`` directory.\
 Templates contain everything that defines the look and feel of this front-end and can be configured and modified to a high degree to meet your specifications.
 
 ## Usage
-If installed and configured properly the front-end should be accessible from any web browser at the address you defined in your virtual host's configuration.
+If installed and configured properly the front-end should be accessible from any web browser at the address you defined in your virtual host's configuration.\
+\
+I should probably also mention that there's an "API" mode - ex. https://themining.site/?api=EVR
 
 ## Community
 Please forgive the current state of this instruction manual and in case of any questions, suggestions or comments feel free to submit an issue or pull request. 
