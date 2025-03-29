@@ -1,7 +1,7 @@
 <?php
 
 $page_configuration = [
-  'version' => '0.5.0 β',
+  'version' => '0.5.1',
   'debug_mode' => False,
 
   'html_language' => 'en',
@@ -9,10 +9,10 @@ $page_configuration = [
   'directory_templates' => 'templates',
   'directory_configurations' => 'configurations',
 
-  'page_template' => 'tms',
+  'page_template' => 'empty',
 
-  'page_title' => 'The Mining Site',
-  'page_short_title' => 'TMS'
+  'page_title' => 'PAGE TITLE',
+  'page_short_title' => 'PT'
 ];
 
 ?>
