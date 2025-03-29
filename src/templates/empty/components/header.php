@@ -1,22 +1,14 @@
+<?php if (!empty($pool)) { ?>
+  <a class="header_navi_item <?php if (!$_GET['page']) { echo 'header_navi_item_select'; } ?>" href="<?php echo '?pool='.$pool; ?>">
+    <span class="material-symbols-outlined">home</span>
+  </a>
+<?php } ?>
+
+
 <div class="header">
   <div class="width_max header_content">
     <div class="header_top">
       <div class="header_top_left">
-      <?php if (empty($pool)) { ?>
-        <div>
-          <a class="header_navi_item">
-            <span class="material-symbols-outlined">
-              <?php echo getRandomEmote(); ?>
-            </span>
-          </a>
-        </div>
-      <?php } else { ?>
-        <div>
-          <a class="header_navi_item <?php if (!$_GET['page']) { echo 'header_navi_item_select'; } ?>" href="<?php echo '?pool='.$pool; ?>">
-            <span class="material-symbols-outlined">home</span>
-          </a>
-        </div>
-      <?php } ?>
         <div class="width_min">
           <svg xmlns="http://www.w3.org/2000/svg" id="logo" version="1.1" viewBox="0 0 622.2 329.2" class="header_logo">
             <defs>
