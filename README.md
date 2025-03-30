@@ -26,10 +26,15 @@ Templates contain everything that defines the look and feel of this front-end an
 
 **Currently available template called ``empty`` is an minimalistic example to help users create their own templates.**
 
+Live examples:\
+<a href="https://developing.themining.site" target="_blank">empty template</a>\
+<a href="https://themining.site" target="_blank">The Mining Site template</a>
+
 ## Usage
 If installed and configured properly the front-end should be accessible from any web browser at the address you defined in your virtual host's configuration.\
 \
-I should probably also mention that there's an "API" mode - ex. https://themining.site/?api=EVR
+I should probably also mention that there's an "API" mode - ex. <a href="https://themining.site/?api=EVR" target="_blank">https://themining.site/?api=EVR</a>
+
 
 ## Community
 Please forgive the current state of this instruction manual and in case of any questions, suggestions or comments feel free to submit an issue or pull request. 
