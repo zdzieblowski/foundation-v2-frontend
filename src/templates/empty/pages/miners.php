@@ -31,6 +31,7 @@ foreach ($miners_current as $miner) {
           <br>
         <?php } ?>
         <h2><?php echo $worker_name; ?></h2>
+        <br>
         Hashrate: <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?> |
         Worker type: <?php echo ($worker['solo'] ? 'SOLO' : 'SHARED'); ?> |
         Efficiency: <?php echo formatPercents($worker['efficiency'], $pool_configuration['math_precision']); ?> |

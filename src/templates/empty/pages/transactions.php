@@ -24,6 +24,7 @@ foreach ($transactions_current as $transaction) {
           <br>
         <?php } ?>
         <h2><?php echo privacyFilter($payment['miner']); ?></h2>
+        <br>
         Date: <?php echo formatDateTime($payment['timestamp']); ?> |
         Amount:
         <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>

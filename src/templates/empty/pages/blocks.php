@@ -19,11 +19,12 @@ foreach ($blocks_combined as $block) {
   <?php debugData($block['hash'] . ' | ' . $block['submitted'] . ' | ' . $block['timestamp'] . ' | ' . $block['height'] . ' | ' . $block['difficulty'] . ' | ' . $block['luck'] . ' | ' . $block['worker'] . ' | ' . $block['transaction'], $page_configuration['debug_mode']); ?>
   <div class="wrap">
     <h2><?php echo $block['round']; ?></h2>
+    <br>
     <?php
     $count = 0;
     foreach ($rounds_combined as $round) {
-      if ($round['round'] == $block['round']) { 
-        if ($count > 0) {        
+      if ($round['round'] == $block['round']) {
+        if ($count > 0) {
         ?>
           <br>
         <?php } ?>
