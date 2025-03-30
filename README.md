@@ -21,16 +21,10 @@ Configuration for pool specific settings are stored by default in separate folde
 > To disable a pool configuration remove its folder with all its contents.
 
 ### Templates
-> [!CAUTION]
-> The only currently available template is copyrighted by [TMS](https://themining.site) for whom this front-end was initially developed.\
-> \
-> **There will be an template available in the future that will not contain any copyrighted material.**\
-> Until then please develop your own templates using files contained in this repository as a base and inspiration.\
-> \
-> *In case you'll develop a template that you wish to share with others please submit it via a pull request.*
-
 Template files are by default stored in separate forders in the ``templates/`` directory.\
 Templates contain everything that defines the look and feel of this front-end and can be configured and modified to a high degree to meet your specifications.
+
+**Currently available template called ``empty`` is an minimalistic example to help users create their own templates.**
 
 ## Usage
 If installed and configured properly the front-end should be accessible from any web browser at the address you defined in your virtual host's configuration.\
