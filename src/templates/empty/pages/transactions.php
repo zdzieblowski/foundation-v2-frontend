@@ -21,15 +21,14 @@ foreach ($transactions_current as $transaction) {
       if ($payment['transaction'] == $transaction['transaction']) {
         if($count > 0) {
         ?>
-        <br>
+          <br>
         <?php } ?>
         <h2><?php echo privacyFilter($payment['miner']); ?></h2>
         Date: <?php echo formatDateTime($payment['timestamp']); ?> |
         Amount:
         <?php echo formatLargeNumbers($payment['amount'], $pool_configuration['math_precision']) . $server_configuration['symbol']; ?>
         <br>
-        <?php debugData($payment['miner'] . ' | ' . $payment['timestamp'] . ' | ' . $payment['amount'], $page_configuration['debug_mode']); ?>
-        <?php
+        <?php debugData($payment['miner'] . ' | ' . $payment['timestamp'] . ' | ' . $payment['amount'], $page_configuration['debug_mode']);
         $count ++;
       }
     }

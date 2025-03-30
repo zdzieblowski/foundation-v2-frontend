@@ -22,8 +22,11 @@ foreach ($blocks_combined as $block) {
     <?php
     $count = 0;
     foreach ($rounds_combined as $round) {
-      if ($round['round'] == $block['round']) { ?>
-        <br>
+      if ($round['round'] == $block['round']) { 
+        if ($count > 0) {        
+        ?>
+          <br>
+        <?php } ?>
         Worker: <?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?> |
         Valid shares: <?php echo formatLargeNumbers($round['valid'], $pool_configuration['math_precision']); ?> |
         Stale shares: <?php echo formatLargeNumbers($round['stale'], $pool_configuration['math_precision']); ?> |

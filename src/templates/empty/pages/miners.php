@@ -40,7 +40,7 @@ foreach ($miners_current as $miner) {
         Invalid shares: <?php echo formatLargeNumbers($worker['invalid'], $pool_configuration['math_precision']); ?>
         <br>
         <?php debugData($worker['hashrate'] . ' | ' . ($worker['solo'] ? 'true' : 'false') . ' | ' . $worker['efficiency'] . ' | ' . $worker['effort'] . ' | ' . $worker['valid'] . ' | ' . $worker['stale'] . ' | ' . $worker['invalid'], $page_configuration['debug_mode']);
-	$count++;
+	      $count++;
       }
     }
   ?>
