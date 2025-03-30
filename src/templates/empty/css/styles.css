@@ -69,6 +69,7 @@ input {
   border: 0;
   padding: 10px;
   font-family: monospace;
+  margin-bottom: 10px;
 }
 
 input[type=text] {

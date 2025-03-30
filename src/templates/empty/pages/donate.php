@@ -51,6 +51,6 @@
 <h4>Litecoin</h4>
 <h2>ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09</h2>
 <br>
-<a href="https://litecoinspace.org/address/ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09" target="_blank">
+<a href="https://litecoinspace.org/address/ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09" target="_blank" style="margin-bottom: 10px; display: inline-block;">
   View on explorer
 </a>

@@ -123,6 +123,8 @@ if (isset($_POST['save_address'])) {
       }
       ?>
       <hr>
+      <h2><u>Payments</u></h2>
+      <br>
       <?php
       foreach ($payments_current as $payment) {
         if ($payment['miner'] == $_COOKIE['address_' . $pool]) {
