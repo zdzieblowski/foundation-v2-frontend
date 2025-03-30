@@ -8,7 +8,7 @@
 <a href="<?php echo $pool_configuration['donation_explorer_link']; ?>" target="_blank">
   View on explorer
 </a>
-  </div>
+</div>
 </div>
 <hr>
 <h2><u>Server developer</u></h2>
