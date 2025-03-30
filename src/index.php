@@ -30,7 +30,6 @@ if (!empty($_GET['api'])) {
 
   <head>
     <link rel="stylesheet" type="text/css" href="<?php echo $page_configuration['directory_templates'].'/'.$page_configuration['page_template']; ?>/css/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="shortcut icon" href="<?php echo $page_configuration['directory_templates'].'/'.$page_configuration['page_template']; ?>/assets/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="<?php echo $page_configuration['directory_templates'].'/'.$page_configuration['page_template']; ?>/assets/favicon.svg">
     <link rel="icon" type="image/png" href="<?php echo $page_configuration['directory_templates'].'/'.$page_configuration['page_template']; ?>/assets/favicon-96x96.png" sizes="96x96">

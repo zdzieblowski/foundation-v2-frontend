@@ -1,8 +1,8 @@
 <?php
 
 $page_configuration = [
-  'version' => '0.5.1',
-  'debug_mode' => False,
+  'version' => '0.5.3',
+  'debug_mode' => True,
 
   'html_language' => 'en',
 
@@ -11,8 +11,8 @@ $page_configuration = [
 
   'page_template' => 'empty',
 
-  'page_title' => 'PAGE TITLE',
-  'page_short_title' => 'PT'
+  'page_title' => 'Mine name',
+  'page_short_title' => 'MINE'
 ];
 
 ?>

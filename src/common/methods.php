@@ -18,7 +18,7 @@ function getData($data_url): mixed
 function debugData($data, $debug_mode): void
 {
   if ($debug_mode) {
-    echo '<div class="box_debug">'.$data.'</div>';
+    echo '<code>'.$data.'</code>';
   }
 }
 

@@ -1,68 +1,56 @@
-<div class="text_header">Donate</div>
-<div class="text_normal">Consider donating to further development of this software.</div>
+<h2>Donate</h2>
+<h4>Consider donating to further development of this software.</h4>
 <hr>
-<div class="text_subheader">Pool maintenance</div>
-<div class="donate_grid">
-  <div class="donate_grid_item">
-    <div class="donate_item_name"><?php echo $pool_configuration['donation_currency']; ?></div>
-    <div class="donate_item_address"><?php echo $pool_configuration['donation_wallet']; ?></div>
-    <a class="donate_item_link" href="<?php echo $pool_configuration['donation_explorer_link']; ?>" target="_blank">
-      <span class="donate_item_link_text">View on explorer</span>
-      <span class="material-symbols-outlined">explore</span>
-    </a>
+<h2><u>Pool maintenance</u></h2>
+<h4><?php echo $pool_configuration['donation_currency']; ?></h4>
+<h2><?php echo $pool_configuration['donation_wallet']; ?></h2>
+<br>
+<a href="<?php echo $pool_configuration['donation_explorer_link']; ?>" target="_blank">
+  View on explorer
+</a>
   </div>
 </div>
 <hr>
-<div class="text_subheader">Server developer</div>
-<div class="donate_grid margin_bottom_b">
-  <div class="donate_grid_item">
-    <div class="donate_item_name">Foundation Server (v2)</div>
-    <div class="donate_item_address">github.com/blinkhash/foundation-v2-server</div>
-    <a class="donate_item_link" href="https://github.com/blinkhash/foundation-v2-server" target="_blank">
-      <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" class="donate_github_icon" alt>
-    </a>
-  </div>
-</div>
+<h2><u>Server developer</u></h2>
+<h4>Foundation Server (v2)</h4>
+<h2>github.com/blinkhash/foundation-v2-server</h2>
+<br>
+<a href="https://github.com/blinkhash/foundation-v2-server" target="_blank">
+  View on Github
+</a>
 <hr>
-<div class="text_subheader">Front-end developer</div>
-<div class="donate_grid">
-  <div class="donate_grid_item">
-    <div class="donate_item_name">Foundation Front-end (v2)</div>
-    <div class="donate_item_address">github.com/zdzieblowski/foundation-v2-frontend</div>
-    <a class="donate_item_link" href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank">
-      <span class="donate_item_link_text">View on Github</span><img src="common/assets/github.svg" height="20" class="donate_github_icon" alt>
-    </a>
-  </div>
-  <div class="donate_grid_item">
-    <div class="donate_item_name">Bitcoin</div>
-    <div class="donate_item_address">bc1q02p4rlplj9xcaq3wp4xlhmppl3u5wscvqfzjwr</div>
-    <a class="donate_item_link" href="https://www.blockchain.com/explorer/addresses/btc/bc1q02p4rlplj9xcaq3wp4xlhmppl3u5wscvqfzjwr" target="_blank">
-      <span class="donate_item_link_text">View on explorer</span>
-      <span class="material-symbols-outlined">explore</span>
-    </a>
-  </div>
-  <div class="donate_grid_item">
-    <div class="donate_item_name">Ethereum</div>
-    <div class="donate_item_address">0x9a1f33562981dBa95a8b9a3813e5f8C736BCBCEa</div>
-    <a class="donate_item_link" href="https://etherscan.io/address/0x9a1f33562981dBa95a8b9a3813e5f8C736BCBCEa" target="_blank">
-      <span class="donate_item_link_text">View on explorer</span>
-      <span class="material-symbols-outlined">explore</span>
-    </a>
-  </div>
-  <div class="donate_grid_item">
-    <div class="donate_item_name">Dogecoin</div>
-    <div class="donate_item_address">DMatnZJEo1UQE72UswofEHH61uQhPhBYDw</div>
-    <a class="donate_item_link" href="https://dogechain.info/address/DMatnZJEo1UQE72UswofEHH61uQhPhBYDw" target="_blank">
-      <span class="donate_item_link_text">View on explorer</span>
-      <span class="material-symbols-outlined">explore</span>
-    </a>
-  </div>
-  <div class="donate_grid_item">
-    <div class="donate_item_name">Litecoin</div>
-    <div class="donate_item_address">ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09</div>
-    <a class="donate_item_link" href="https://litecoinspace.org/address/ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09" target="_blank">
-      <span class="donate_item_link_text">View on explorer</span>
-      <span class="material-symbols-outlined">explore</span>
-    </a>
-  </div>
-</div>
+<h2><u>Front-end developer</u></h2>
+<h4>Foundation Front-end (v2)</h4>
+<h2>github.com/zdzieblowski/foundation-v2-frontend</h2>
+<br>
+<a href="https://github.com/zdzieblowski/foundation-v2-frontend" target="_blank">
+  View on Github
+</a>
+<br><br>
+<h4>Bitcoin</h4>
+<h2>bc1q02p4rlplj9xcaq3wp4xlhmppl3u5wscvqfzjwr</h2>
+<br>
+<a href="https://www.blockchain.com/explorer/addresses/btc/bc1q02p4rlplj9xcaq3wp4xlhmppl3u5wscvqfzjwr" target="_blank">
+  View on explorer
+</a>
+<br><br>
+<h4>Ethereum</h4>
+<h2>0x9a1f33562981dBa95a8b9a3813e5f8C736BCBCEa</h2>
+<br>
+<a href="https://etherscan.io/address/0x9a1f33562981dBa95a8b9a3813e5f8C736BCBCEa" target="_blank">
+  View on explorer
+</a>
+<br><br>
+<h4>Dogecoin</h4>
+<h2>DMatnZJEo1UQE72UswofEHH61uQhPhBYDw</h2>
+<br>
+<a href="https://dogechain.info/address/DMatnZJEo1UQE72UswofEHH61uQhPhBYDw" target="_blank">
+  View on explorer
+</a>
+<br><br>
+<h4>Litecoin</h4>
+<h2>ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09</h2>
+<br>
+<a href="https://litecoinspace.org/address/ltc1qpg82c03up0rngasps4tju89e0wfmr2ls7r9q09" target="_blank">
+  View on explorer
+</a>

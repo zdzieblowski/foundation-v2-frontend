@@ -1,78 +1,27 @@
 <?php
 $rounds_current = getData('http://'.$pool_configuration['ip'].':'.$pool_configuration['port'].'/api/v2/'.$pool_configuration['name'].'/current/rounds?limit=10&order=timestamp&direction=descending');
 ?>
-<div class="text_header">Rounds</div>
-<div class="text_normal">List of current rounds.</div>
+<h2>Rounds</h2>
+<h4>List of current rounds.</h4>
 <hr>
-<div class="list_wrap">
   <?php
   foreach ($rounds_current as $round) {
     ?>
-    <a onclick="revealContent('tx_<?php echo $round['id']; ?>');" class="cursor_pointer">
-      <div class="box_small_long_content bg_vlight_bdr_pool reveal_button"><div>
-        <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">cached</span><div>Round: <b><?php echo $round['id']; ?></b></div></div>
-        <div class="text_reveal_button"><span class="material-symbols-outlined margin_right_b">memory</span><div>Worker: <b><?php echo privacyFilter($round['miner']).'.'.getWorkerName($round['worker']); ?></b></div></div></div>
-        <div class="text_right reveal_button">
-          &nbsp;
-          <span class="material-symbols-outlined">unfold_more</span>
-        </div>
-        <?php debugData($round['worker'], $page_configuration['debug_mode']); ?>
-      </div>
-    </a>
-    <div id="tx_<?php echo $round['id']; ?>" class="margin_top_a hidden">
-      <div class="list_wrap gap_small">
-        <div class="columns_two gap_small">
-          <div class="box_small bg_light">
-            <div>Submitted</div>
-            <div class="text_heavy text_right"><?php echo formatDateTime($round['submitted']); ?></div>
-            <?php debugData($round['submitted'], $page_configuration['debug_mode']); ?>
-          </div>
-          <div class="box_small bg_dark">
-            <div>Confirmed</div>
-            <div class="text_heavy text_right"><?php echo formatDateTime($round['timestamp']); ?></div>
-            <?php debugData($round['timestamp'], $page_configuration['debug_mode']); ?>
-          </div>
-        </div>
-        <div class="columns_three gap_small">
-          <div class="box_small bg_light">
-            <div>Invalid shares</div>
-            <div class="text_heavy text_right"><?php echo $round['invalid']; ?></div>
-            <?php debugData($round['invalid'], $page_configuration['debug_mode']); ?>
-          </div>
-          <div class="box_small bg_light">
-            <div>Stale shares</div>
-            <div class="text_heavy text_right"><?php echo $round['stale']; ?></div>
-            <?php debugData($round['stale'], $page_configuration['debug_mode']); ?>
-          </div>
-          <div class="box_small bg_dark">
-            <div>Valid shares</div>
-            <div class="text_heavy text_right"><?php echo $round['valid']; ?></div>
-            <?php debugData($round['valid'], $page_configuration['debug_mode']); ?>
-          </div>
-        </div>
-        <div class="columns_three gap_small">
-          <div class="box_small bg_light">
-            <div>Time</div>
-            <div class="text_heavy text_right"><?php echo formatLargeNumbers($round['times'], $pool_configuration['math_precision']); ?></div>
-            <?php debugData($round['times'], $page_configuration['debug_mode']); ?>
-          </div>
-          <div class="box_small bg_dark">
-            <div>Work type</div>
-            <div class="text_heavy text_right"><?php echo ($round['solo'] ? 'SOLO' : 'SHARED'); ?></div>
-            <?php debugData($round['solo'] ? 'true' : 'false', $page_configuration['debug_mode']); ?>
-          </div>
-          <div class="box_small bg_pool">
-            <div>Work ammount</div>
-            <div class="text_heavy text_right"><?php echo formatLargeNumbers($round['work'], $pool_configuration['math_precision']); ?></div>
-            <?php debugData($round['work'], $page_configuration['debug_mode']); ?>
-          </div>
-        </div>
-      </div>
-    </div>
+        <h2><?php echo $round['id']; ?></h2>
+        Worker: <?php echo privacyFilter($round['miner']).'.'.getWorkerName($round['worker']); ?> | 
+        Submitted: <?php echo formatDateTime($round['submitted']); ?> | 
+        Confirmed: <?php echo formatDateTime($round['timestamp']); ?> | 
+        Invalid shares: <?php echo $round['invalid']; ?> | 
+        Stale shares: <?php echo $round['stale']; ?> | 
+        Valid shares: <?php echo $round['valid']; ?> | 
+        Time: <?php echo formatLargeNumbers($round['times'], $pool_configuration['math_precision']); ?> | 
+        Work type: <?php echo ($round['solo'] ? 'SOLO' : 'SHARED'); ?> | 
+        Work ammount: <?php echo formatLargeNumbers($round['work'], $pool_configuration['math_precision']); ?>
+        <br>
+        <?php debugData($round['worker'].' | '.$round['submitted'].' | '.$round['timestamp'].' | '.$round['invalid'].' | '.$round['stale'].' | '.$round['valid'].' | '.$round['times'].' | '.($round['solo'] ? 'true' : 'false').' | '.$round['work'], $page_configuration['debug_mode']); ?>
     <?php if ($round != end($rounds_current)) { ?>
       <hr class="hr_inner hr_list">
     <?php
     }
   }
   ?>
-</div>

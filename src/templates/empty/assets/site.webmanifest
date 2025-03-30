@@ -1,6 +1,6 @@
 {
-  "name": "PAGE TITLE",
-  "short_name": "PT",
+  "name": "Mine name",
+  "short_name": "MINE",
   "icons": [
     {
       "src": "web-app-manifest-192x192.png",
