@@ -19,7 +19,10 @@ foreach ($transactions_current as $transaction) {
     $count = 0;
     foreach ($payments_current as $payment) {
       if ($payment['transaction'] == $transaction['transaction']) {
+        if($count > 0) {
         ?>
+        <br>
+        <?php } ?>
         <h2><?php echo privacyFilter($payment['miner']); ?></h2>
         Date: <?php echo formatDateTime($payment['timestamp']); ?> |
         Amount:
@@ -27,7 +30,7 @@ foreach ($transactions_current as $transaction) {
         <br>
         <?php debugData($payment['miner'] . ' | ' . $payment['timestamp'] . ' | ' . $payment['amount'], $page_configuration['debug_mode']); ?>
         <?php
-        $count = $count + 1;
+        $count ++;
       }
     }
     ?>

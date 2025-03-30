@@ -22,14 +22,16 @@ foreach ($miners_current as $miner) {
   <?php debugData($miner['miner'] . ' | ' . $miner['hashrate'] . ' | ' . $miner['efficiency'] . ' | ' . $miner['effort'] . ' | ' . $miner['balance'] . ' | ' . $miner['immature'] . ' | ' . $miner['paid'] . ' | ' . $miner['valid'] . ' | ' . $miner['stale'] . ' | ' . $miner['invalid'], $page_configuration['debug_mode']); ?>
   <div class="wrap">
     <?php
+    $count = 0;
     foreach ($workers_current as $worker) {
       if ($worker['miner'] == $miner['miner']) {
         $worker_name = getWorkerName($worker['worker']);
+        if($count > 0) {
         ?>
+          <br>
+        <?php } ?>
         <h2><?php echo $worker_name; ?></h2>
-        Hashrate:
-        <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?>
-        |
+        Hashrate: <?php echo formatLargeNumbers($worker['hashrate'], $pool_configuration['math_precision']) . $pool_configuration['hashrate_unit']; ?> |
         Worker type: <?php echo ($worker['solo'] ? 'SOLO' : 'SHARED'); ?> |
         Efficiency: <?php echo formatPercents($worker['efficiency'], $pool_configuration['math_precision']); ?> |
         Effort: <?php echo formatPercents($worker['effort'], $pool_configuration['math_precision']); ?> |
@@ -38,6 +40,7 @@ foreach ($miners_current as $miner) {
         Invalid shares: <?php echo formatLargeNumbers($worker['invalid'], $pool_configuration['math_precision']); ?>
         <br>
         <?php debugData($worker['hashrate'] . ' | ' . ($worker['solo'] ? 'true' : 'false') . ' | ' . $worker['efficiency'] . ' | ' . $worker['effort'] . ' | ' . $worker['valid'] . ' | ' . $worker['stale'] . ' | ' . $worker['invalid'], $page_configuration['debug_mode']);
+	$count++;
       }
     }
   ?>

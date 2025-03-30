@@ -16,23 +16,21 @@ foreach ($blocks_combined as $block) {
   Luck: <?php echo formatPercents($block['luck'], $pool_configuration['math_precision']); ?> |
   Winner: <?php echo privacyFilter($block['miner']) . '.' . getWorkerName($block['worker']); ?> |
   Transaction: <?php echo privacyFilter($block['transaction'], 21); ?>
-  <br>
   <?php debugData($block['hash'] . ' | ' . $block['submitted'] . ' | ' . $block['timestamp'] . ' | ' . $block['height'] . ' | ' . $block['difficulty'] . ' | ' . $block['luck'] . ' | ' . $block['worker'] . ' | ' . $block['transaction'], $page_configuration['debug_mode']); ?>
   <div class="wrap">
-    <h2><?php echo $block['round']; ?></h2><br>
+    <h2><?php echo $block['round']; ?></h2>
     <?php
     $count = 0;
     foreach ($rounds_combined as $round) {
       if ($round['round'] == $block['round']) { ?>
+        <br>
         Worker: <?php echo privacyFilter($round['miner']) . '.' . getWorkerName($round['worker']); ?> |
         Valid shares: <?php echo formatLargeNumbers($round['valid'], $pool_configuration['math_precision']); ?> |
         Stale shares: <?php echo formatLargeNumbers($round['stale'], $pool_configuration['math_precision']); ?> |
         Invalid shares: <?php echo formatLargeNumbers($round['invalid'], $pool_configuration['math_precision']); ?>
         <br>
-        <?php debugData($round['worker'] . ' | ' . $round['valid'] . ' | ' . $round['stale'] . ' | ' . $round['invalid'], $page_configuration['debug_mode']); ?>
-        <br>
-        <?php
-        $count = $count + 1;
+        <?php debugData($round['worker'] . ' | ' . $round['valid'] . ' | ' . $round['stale'] . ' | ' . $round['invalid'], $page_configuration['debug_mode']);
+        $count ++;
       }
     }
     ?>
